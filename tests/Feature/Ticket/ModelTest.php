@@ -6,7 +6,7 @@
 
 namespace Tests\Feature\GammaMatrix\Playground\Matrix\Ticket;
 
-use GammaMatrix\Playground\Test\Feature\App\Models\ModelCase;
+use Tests\Feature\GammaMatrix\Playground\Matrix\ModelCase;
 
 /**
  * \Tests\Feature\GammaMatrix\Playground\Matrix\Ticket\ModelTest
@@ -14,25 +14,25 @@ use GammaMatrix\Playground\Test\Feature\App\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    public const MODEL = \GammaMatrix\Playground\Matrix\Models\Ticket::class;
+    protected string $modelClass = \GammaMatrix\Playground\Matrix\Models\Ticket::class;
 
     protected bool $hasRelationships = true;
 
     protected array $hasOne = [
         'creator' => [
             'key'        => 'created_by_id',
-            'rule'       => 'first',
-            'modelClass' => \App\Models\User::class,
+            'rule'       => 'create',
+            'modelClass' => \GammaMatrix\Playground\Test\Models\User::class,
         ],
         'modifier' => [
             'key'        => 'modified_by_id',
-            'rule'       => 'first',
-            'modelClass' => \App\Models\User::class,
+            'rule'       => 'create',
+            'modelClass' => \GammaMatrix\Playground\Test\Models\User::class,
         ],
         'owner' => [
             'key'        => 'owned_by_id',
-            'rule'       => 'first',
-            'modelClass' => \App\Models\User::class,
+            'rule'       => 'create',
+            'modelClass' => \GammaMatrix\Playground\Test\Models\User::class,
         ],
         'parent' => [
             'key'        => 'parent_id',
@@ -52,7 +52,7 @@ class ModelTest extends ModelCase
         'completedBy' => [
             'key'        => 'completed_by_id',
             'rule'       => 'create',
-            'modelClass' => \App\Models\User::class,
+            'modelClass' => \GammaMatrix\Playground\Test\Models\User::class,
         ],
         'epic' => [
             'key'        => 'epic_id',
@@ -82,7 +82,7 @@ class ModelTest extends ModelCase
         'reportedBy' => [
             'key'        => 'reported_by_id',
             'rule'       => 'create',
-            'modelClass' => \App\Models\User::class,
+            'modelClass' => \GammaMatrix\Playground\Test\Models\User::class,
         ],
         'roadmap' => [
             'key'        => 'roadmap_id',
