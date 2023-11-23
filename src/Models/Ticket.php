@@ -315,7 +315,7 @@ class Ticket extends Model
     public function completedBy(): HasOne
     {
         return $this->hasOne(
-            \App\Models\User::class,
+            config('playground.user', '\\App\\Models\\User'),
             'id',
             'completed_by_id'
         );
@@ -387,7 +387,7 @@ class Ticket extends Model
     public function reportedBy(): HasOne
     {
         return $this->hasOne(
-            \App\Models\User::class,
+            config('playground.user', '\\App\\Models\\User'),
             'id',
             'reported_by_id'
         );

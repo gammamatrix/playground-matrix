@@ -32,6 +32,8 @@ database/migrations/*.disabled
 
 resources/packages
 
+composer.lock
+
 tmp-*
 temp-*
 

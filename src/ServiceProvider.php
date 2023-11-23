@@ -34,6 +34,9 @@ class ServiceProvider extends AuthServiceProvider
                     => config_path('playground-matrix.php')
             ], 'playground-config');
 
+            // Publish migrations
+            $this->publishMigrations();
+
             // Load migrations
             if (!empty($config['load'])
                 && !empty($config['load']['migrations'])
@@ -57,6 +60,39 @@ class ServiceProvider extends AuthServiceProvider
             'playground-matrix'
         );
     }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function publishMigrations()
+    {
+        $migrations = [];
+
+        foreach ([
+            '2020_01_02_100001_create_matrix_backlogs_table.php',
+            '2020_01_02_100001_create_matrix_boards_table.php',
+            '2020_01_02_100001_create_matrix_epics_table.php',
+            '2020_01_02_100001_create_matrix_flows_table.php',
+            '2020_01_02_100001_create_matrix_milestones_table.php',
+            '2020_01_02_100001_create_matrix_notes_table.php',
+            '2020_01_02_100001_create_matrix_projects_table.php',
+            '2020_01_02_100001_create_matrix_releases_table.php',
+            '2020_01_02_100001_create_matrix_roadmaps_table.php',
+            '2020_01_02_100001_create_matrix_sources_table.php',
+            '2020_01_02_100001_create_matrix_sprints_table.php',
+            '2020_01_02_100001_create_matrix_tags_table.php',
+            '2020_01_02_100001_create_matrix_teams_table.php',
+            '2020_01_02_100001_create_matrix_tickets_table.php',
+            '2020_01_02_100001_create_matrix_versions_table.php',
+        ] as $file) {
+            $migrations[dirname(__DIR__).'/database/migrations/'.$file] = database_path('migrations/'.$file);
+        }
+
+        $this->publishes($migrations, 'playground-migrations');
+    }
+
 
     public function about()
     {

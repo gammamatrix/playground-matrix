@@ -6,7 +6,7 @@
 
 namespace Tests\Unit\GammaMatrix\Playground\Matrix\Sprint;
 
-use GammaMatrix\Playground\Test\Unit\App\Models\ModelCase;
+use Tests\Unit\GammaMatrix\Playground\Matrix\ModelCase;
 
 /**
  * \Tests\Unit\GammaMatrix\Playground\Matrix\Sprint\ModelTest
@@ -14,7 +14,7 @@ use GammaMatrix\Playground\Test\Unit\App\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    public const MODEL = \GammaMatrix\Playground\Matrix\Models\Sprint::class;
+    protected string $modelClass = \GammaMatrix\Playground\Matrix\Models\Sprint::class;
 
     protected bool $hasRelationships = true;
 
