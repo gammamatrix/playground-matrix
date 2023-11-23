@@ -100,11 +100,8 @@ class ServiceProvider extends AuthServiceProvider
 
         $version = $this->version();
 
-        $redirect = defined('\App\Providers\RouteServiceProvider::HOME') ? \App\Providers\RouteServiceProvider::HOME : null;
-
         AboutCommand::add('Playground Matrix', fn () => [
             '<fg=yellow;options=bold>Load</> Migrations' => !empty($config['load']['migrations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
-
             'Package' => $this->package,
             'Version' => $version,
         ]);
