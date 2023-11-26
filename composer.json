@@ -1,6 +1,6 @@
 {
     "name": "gammamatrix/playground-matrix",
-    "description": "Playground: Provide the Matrix models for a Laravel application.",
+    "description": "Playground: Provide the Matrix models for a Playground Laravel application.",
     "keywords": [
         "matrix",
         "projects",
@@ -9,7 +9,7 @@
         "laravel",
         "playground"
     ],
-    "homepage": "https://github.com/gammamatrix/playground-matrix",
+    "homepage": "https://github.com/gammamatrix/playground-matrix/wiki",
     "license": "MIT",
     "authors": [
         {
