@@ -1,6 +1,8 @@
-# playground-matrix
+# Playground Matrix
 
-The playground-matrix package.
+The Playground Matrix is a package for [Laravel](https://laravel.com/docs/10.x) applications.
+
+This application provides the models to use Playground Matrix, a project management tool.
 
 ## Installation
 
@@ -12,7 +14,7 @@ composer require gammamatrix/playground-matrix
 
 ## Configuration
 
-All options are disabled by default.
+Migrations are disabled by default. This package may sometimes be installed where another system handles the migrations.
 
 See the contents of the published config file: [config/playground-matrix.php](config/playground-matrix.php)
 
@@ -23,14 +25,29 @@ php artisan vendor:publish --provider="GammaMatrix\Playground\Matrix\ServiceProv
 
 ### Environment Variables
 
-playground-matrix.load.migrations
-PLAYGROUND_MATRIX_LOAD_MIGRATIONS
-
-
 |  env()                              | config()                            |
 |-------------------------------------|-------------------------------------|
 | `PLAYGROUND_MATRIX_LOAD_MIGRATIONS` | `playground-matrix.load.migrations` |
+- The loading option for migrations does not take effect if the migrations have been exported to your app. The control for loading is handled in the package [ServiceProvider.](src/ServiceProvider.php)
 
+## Models
+
+This package includes [factories](database/factories), models and [migrations](database/migrations) for:
+- [Backlogs](src/Models/Backlog.php)
+- [Boards](src/Models/Board.php)
+- [Epics](src/Models/Epic.php)
+- [Flows](src/Models/Flow.php)
+- [Milestones](src/Models/Milestone.php)
+- [Notes](src/Models/Note.php)
+- [Projects](src/Models/Project.php)
+- [Releases](src/Models/Release.php)
+- [Roadmaps](src/Models/Roadmap.php)
+- [Sources](src/Models/Source.php)
+- [Sprints](src/Models/Sprint.php)
+- [Tags](src/Models/Tag.php)
+- [Teams](src/Models/Team.php)
+- [Tickets](src/Models/Ticket.php)
+- [Versions](src/Models/Version.php)
 
 ## Migrations
 
@@ -43,6 +60,12 @@ You can publish the migrations file with:
 ```bash
 php artisan vendor:publish --provider="GammaMatrix\Playground\Matrix\ServiceProvider" --tag="playground-migrations"
 ```
+
+## About
+
+Playground Matrix provides information in the `artisan about` command.
+
+<img src="resources/docs/artisan-about-playground-matrix.png" alt="screenshot of artisan about command with Playground Matrix.">
 
 ## Tests
 
