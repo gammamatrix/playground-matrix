@@ -1,5 +1,8 @@
 # Playground Matrix
 
+![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/image-data/coverage.svg)
+![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?)
+
 The Playground Matrix is a package for [Laravel](https://laravel.com/docs/10.x) applications.
 
 This application provides the models to use Playground Matrix, a project management tool.
