@@ -19,6 +19,7 @@ class Board extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'board_type' => null,
+        'backlog_id' => null,
         'epic_id' => null,
         'flow_id' => null,
         'milestone_id' => null,
@@ -121,6 +122,7 @@ class Board extends Model
         'owned_by_id',
         'parent_id',
         'board_type',
+        'backlog_id',
         'epic_id',
         'flow_id',
         'milestone_id',
@@ -192,6 +194,18 @@ class Board extends Model
         'roadmap',
         'sources',
     ];
+
+    /**
+     * The backlog of the board.
+     */
+    public function backlog(): HasOne
+    {
+        return $this->hasOne(
+            Backlog::class,
+            'id',
+            'backlog_id'
+        );
+    }
 
     /**
      * The epic of the board.

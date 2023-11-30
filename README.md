@@ -1,7 +1,7 @@
 # Playground Matrix
 
-![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/image-data/coverage.svg)
-![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?)
+[![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/testdox.txt)
+[![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/coverage.svg)](tests)
 
 The Playground Matrix is a package for [Laravel](https://laravel.com/docs/10.x) applications.
 

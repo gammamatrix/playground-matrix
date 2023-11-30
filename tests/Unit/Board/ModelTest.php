@@ -23,6 +23,7 @@ class ModelTest extends ModelCase
         'modifier',
         'owner',
         'parent',
+        'backlog',
         'epic',
         'flow',
         'milestone',
