@@ -39,6 +39,11 @@ class ModelTest extends ModelCase
             'rule'       => 'create',
             'modelClass' => \GammaMatrix\Playground\Matrix\Models\Epic::class,
         ],
+        'backlog' => [
+            'key'        => 'backlog_id',
+            'rule'       => 'create',
+            'modelClass' => \GammaMatrix\Playground\Matrix\Models\Backlog::class,
+        ],
         'board' => [
             'key'        => 'board_id',
             'rule'       => 'create',

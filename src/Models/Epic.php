@@ -19,6 +19,7 @@ class Epic extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'epic_type' => null,
+        'backlog_id' => null,
         'board_id' => null,
         'flow_id' => null,
         'milestone_id' => null,
@@ -121,6 +122,7 @@ class Epic extends Model
         'owned_by_id',
         'parent_id',
         'epic_type',
+        'backlog_id',
         'board_id',
         'flow_id',
         'milestone_id',
@@ -192,6 +194,18 @@ class Epic extends Model
         'roadmap',
         'sources',
     ];
+
+    /**
+     * The backlog of the epic.
+     */
+    public function backlog(): HasOne
+    {
+        return $this->hasOne(
+            Backlog::class,
+            'id',
+            'backlog_id'
+        );
+    }
 
     /**
      * The board of the epic.
