@@ -28,8 +28,11 @@ jobs:
             "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "blocks": [
               {
-                "type": "mrkdwn",
-                "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
               }
             ]
           }
@@ -74,8 +77,11 @@ jobs:
             "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "blocks": [
               {
-                "type": "mrkdwn",
-                "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
               }
             ]
           }
