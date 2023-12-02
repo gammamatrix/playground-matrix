@@ -18,6 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Slack notification
+      id: slack
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        channel-id: 'C068A06PV43'
+        payload: |
+          {
+            "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "blocks": [
+              {
+                "type": "mrkdwn",
+                "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+              }
+            ]
+          }
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
     - uses: actions/checkout@v3
     - name: Run php-actions/composer@v6
       uses: php-actions/composer@v6
@@ -48,33 +65,17 @@ jobs:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
     - name: Slack notification
-      id: slack
       uses: slackapi/slack-github-action@v1.24.0
       with:
         channel-id: 'C068A06PV43'
+        update-ts: ${{ steps.slack.outputs.ts }}
         payload: |
           {
-            "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "blocks": [
               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                }
-              },
-              {
-                "type": "section",
-                "fields": [
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Status:*\n${{ job.status }}/"
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "*Pipeline:*\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View workflow>"
-                  }
-                ]
+                "type": "mrkdwn",
+                "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
               }
             ]
           }
