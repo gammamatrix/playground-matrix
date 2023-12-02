@@ -18,20 +18,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Slack notification
+    - name: "Slack notification: IN PROGRESS"
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
       with:
         channel-id: 'C068A06PV43'
         payload: |
           {
-            "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "text": "CI Build Status for playground-matrix: IN PROGRESS\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "blocks": [
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "*CI Build Status for playground-matrix:* *IN PROGRESS*\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
@@ -67,20 +67,20 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-    - name: Slack notification
+    - name: "Slack notification: Finished"
       uses: slackapi/slack-github-action@v1.24.0
       with:
         channel-id: 'C068A06PV43'
         update-ts: ${{ steps.slack.outputs.ts }}
         payload: |
           {
-            "text": "CI Build Status for playground-matrix: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "text": "CI Build Status for playground-matrix: DONE\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
             "blocks": [
               {
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* ${{ job.status }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "*CI Build Status for playground-matrix:* DONE\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
