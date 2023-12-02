@@ -18,6 +18,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set start timestamp to calculate duration
+      id: timestamp_start
+      run: |
+        printf 'timestamp_start=%(%s)T\n' >> "$GITHUB_OUTPUT"
+    - name: Set the start date for the build
+      id: date_start
+      run: |
+        echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
     - name: "Slack notification: IN PROGRESS"
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
@@ -31,7 +39,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* *IN PROGRESS*\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "CI Build Status for playground-matrix: :runner: *IN PROGRESS*\n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* \n*Duration:* \n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
@@ -67,7 +75,18 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-    - name: "Slack notification: Finished"
+    - name: Calculate duration
+      id: timestamp_duration
+      if: ${{ !cancelled() }}
+      run: |
+        printf -v now '%(%s)T'
+        TIMESTAMP_DURATION=$((now - ${{ steps.timestamp_start.outputs.timestamp_start }}))
+    - name: Set the end date for the build
+      if: ${{ !cancelled() }}
+      id: date_end
+      run: |
+        echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+    - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
         channel-id: 'C068A06PV43'
@@ -80,7 +99,28 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* DONE\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "*CI Build Status for playground-matrix:* DONE :white_check_mark:\n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* ${{ steps.date_end.outputs.DATE_END }}\n*Duration:* ${{ steps.date_end.outputs.TIMESTAMP_DURATION }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
+              }
+            ]
+          }
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+    - name: "Slack notification: Failed"
+      if: ${{ failure() }}
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        channel-id: 'C068A06PV43'
+        update-ts: ${{ steps.slack.outputs.ts }}
+        payload: |
+          {
+            "text": "CI Build Status for playground-matrix: FAILED\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*CI Build Status for playground-matrix:* FAILED :warning: \n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* ${{ steps.date_end.outputs.DATE_END }}\n*Duration:* ${{ steps.timestamp_duration.outputs.TIMESTAMP_DURATION }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
