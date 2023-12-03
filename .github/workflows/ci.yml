@@ -76,10 +76,12 @@ jobs:
     - name: Stopping timer
       if: ${{ !cancelled() }}
       id: timer_end
+      env:
+        TIMESTAMP_START: ${{ steps.timer_start.outputs.TIMESTAMP_START }}
       run: |
         echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
         echo "TIMESTAMP_END=$(date +"%s")" >> $GITHUB_OUTPUT
-        echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${{ steps.timer_start.outputs.TIMESTAMP_START }})" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${TIMESTAMP_START})'" >> $GITHUB_OUTPUT
         echo "DURATION_PHRASE=$(date -ud "${TIMESTAMP_DURATION}" +"%M minutes %S seconds)" >> $GITHUB_OUTPUT
         echo "### $DATE_END" >> $GITHUB_STEP_SUMMARY
         echo "### $DURATION_PHRASE" >> $GITHUB_STEP_SUMMARY
