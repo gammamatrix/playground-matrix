@@ -23,7 +23,7 @@ jobs:
       run: |
         echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
         echo "TIMESTAMP_START=$(date +'%s')" >> $GITHUB_OUTPUT
-        echo "### $DATE_START" >> $GITHUB_STEP_SUMMARY
+        echo "### START: ${DATE_START}" >> $GITHUB_STEP_SUMMARY
     - name: "Slack notification: IN PROGRESS"
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
@@ -84,7 +84,7 @@ jobs:
         echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${TIMESTAMP_START})" >> $GITHUB_OUTPUT
         echo "DURATION_PHRASE=$(date -ud '${TIMESTAMP_DURATION}' +'%M minutes %S seconds')" >> $GITHUB_OUTPUT
         echo "### $DATE_END" >> $GITHUB_STEP_SUMMARY
-        echo "### $DURATION_PHRASE" >> $GITHUB_STEP_SUMMARY
+        echo "### DURATION: ${DURATION_PHRASE}" >> $GITHUB_STEP_SUMMARY
     - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
