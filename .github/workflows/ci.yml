@@ -78,8 +78,11 @@ jobs:
       run: |
         echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
         echo "TIMESTAMP_END=$(date +'%s')" >> $GITHUB_ENV
-        echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${TIMESTAMP_START})" >> $GITHUB_ENV
-        echo "DURATION_PHRASE=$(date -ud '${TIMESTAMP_DURATION}' +'%M minutes %S seconds')" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP_DURATION=$((${TIMESTAMP_END} - ${TIMESTAMP_START}))" >> $GITHUB_ENV
+        echo "TIMESTAMP_DURATION_HOURS=$((${TIMESTAMP_DURATION} / 3600))" >> $GITHUB_ENV
+        echo "TIMESTAMP_DURATION_MINUTES=$((${TIMESTAMP_DURATION} / 60))" >> $GITHUB_ENV
+        echo "TIMESTAMP_DURATION_SECONDS=$((${TIMESTAMP_DURATION} - (${TIMESTAMP_DURATION_MINUTES} * 60)))" >> $GITHUB_ENV
+        echo "DURATION_PHRASE=${TIMESTAMP_DURATION_HOURS}:${TIMESTAMP_DURATION_MINUTES}:${TIMESTAMP_DURATION_SECONDS}" >> $GITHUB_OUTPUT
     - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
