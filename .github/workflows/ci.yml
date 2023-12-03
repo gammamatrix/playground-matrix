@@ -21,7 +21,9 @@ jobs:
     - name: Preparing timer
       id: timer_start
       run: |
-        (echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT) && (echo "TIMESTAMP_START=$(date +"%s")" >> ${GITHUB_ENV})
+        echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP_START=$(date +"%s")" >> $GITHUB_OUTPUT
+        echo "### $DATE_START" >> $GITHUB_STEP_SUMMARY
     - name: "Slack notification: IN PROGRESS"
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
@@ -75,10 +77,12 @@ jobs:
       if: ${{ !cancelled() }}
       id: timer_end
       run: |
-        (echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT)
-        && (echo "TIMESTAMP_END=$(date +"%s")" >> ${GITHUB_ENV})
-        && (echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${{ steps.timer_start.outputs.TIMESTAMP_START }})")
-        && (echo "DURATION_PHRASE=$(date -ud "${TIMESTAMP_DURATION}" +"%M minutes %S seconds)" >> ${GITHUB_ENV})
+        echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP_END=$(date +"%s")" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${{ steps.timer_start.outputs.TIMESTAMP_START }})" >> $GITHUB_OUTPUT
+        echo "DURATION_PHRASE=$(date -ud "${TIMESTAMP_DURATION}" +"%M minutes %S seconds)" >> $GITHUB_OUTPUT
+        echo "### $DATE_END" >> $GITHUB_STEP_SUMMARY
+        echo "### $DURATION_PHRASE" >> $GITHUB_STEP_SUMMARY
     - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
