@@ -44,11 +44,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Status:* IN PROGRESS"
+                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Duration:* --"
+                    "text": "*End:*\n--"
                   }
                 ]
               },
@@ -57,11 +57,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
+                    "text": "*Status:* IN PROGRESS"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*End:*\n--"
+                    "text": ":hourglass: --"
                   }
                 ]
               },
@@ -141,11 +141,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Status:* Success"
+                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Duration:* ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
+                    "text": "*End:*\n${{ steps.timer_end.outputs.DATE_END }}"
                   }
                 ]
               },
@@ -154,11 +154,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
+                    "text": "*Status:* Success"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*End:*\n${{ steps.timer_end.outputs.DATE_END }}"
+                    "text": ":hourglass: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
                   }
                 ]
               },
@@ -202,11 +202,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Status:* FAILED"
+                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Duration:* ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
+                    "text": "*End:*\n${{ steps.timer_end.outputs.DATE_END }}"
                   }
                 ]
               },
@@ -215,11 +215,11 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Start:*\n${{ steps.timer_start.outputs.DATE_START }}"
+                    "text": "*Status:* FAILED"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*End:*\n${{ steps.timer_end.outputs.DATE_END }}"
+                    "text": ":hourglass: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
                   }
                 ]
               },
