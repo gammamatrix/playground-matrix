@@ -50,28 +50,28 @@ jobs:
         php_version: "8.2"
         php_extensions: intl
         version: 2.x
-    - uses: php-actions/phpunit@v3
-      env:
-        XDEBUG_MODE: coverage
-      with:
-        version: "10.1"
-        php_version: "8.2"
-        php_extensions: xdebug
-        coverage_clover: clover.xml
-        coverage_text: true
-    - name: Make code coverage badge
-      uses: timkrase/phpunit-coverage-badge@v1.2.1
-      with:
-        coverage_badge_path: output/coverage.svg
-        push_badge: false
-    - name: Git push to testing/develop branch
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        publish_dir: ./output
-        publish_branch: testing/develop
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
+    # - uses: php-actions/phpunit@v3
+    #   env:
+    #     XDEBUG_MODE: coverage
+    #   with:
+    #     version: "10.1"
+    #     php_version: "8.2"
+    #     php_extensions: xdebug
+    #     coverage_clover: clover.xml
+    #     coverage_text: true
+    # - name: Make code coverage badge
+    #   uses: timkrase/phpunit-coverage-badge@v1.2.1
+    #   with:
+    #     coverage_badge_path: output/coverage.svg
+    #     push_badge: false
+    # - name: Git push to testing/develop branch
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     publish_dir: ./output
+    #     publish_branch: testing/develop
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     user_name: 'github-actions[bot]'
+    #     user_email: 'github-actions[bot]@users.noreply.github.com'
     - name: Stopping timer
       if: ${{ !cancelled() }}
       id: timer_end
@@ -88,8 +88,8 @@ jobs:
         # echo "TIMESTAMP_DURATION_MINUTES=$((${TIMESTAMP_DURATION} / 60))" >> $GITHUB_OUTPUT
         # echo "TIMESTAMP_DURATION_SECONDS=$((${TIMESTAMP_DURATION} - (${TIMESTAMP_DURATION_MINUTES} * 60)))" >> $GITHUB_OUTPUT
         # echo "DURATION_PHRASE=${TIMESTAMP_DURATION_HOURS}:${TIMESTAMP_DURATION_MINUTES}:${TIMESTAMP_DURATION_SECONDS}" >> $GITHUB_OUTPUT
-        #echo "DURATION_PHRASE=${TIMESTAMP_DURATION}" >> $GITHUB_OUTPUT
-        echo "DURATION_PHRASE=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        echo "DURATION_PHRASE=${TIMESTAMP_START}" >> $GITHUB_OUTPUT
+        # echo "DURATION_PHRASE=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
     - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
