@@ -18,14 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set start timestamp to calculate duration
-      id: timestamp_start
+    - name: Preparing timer
+      id: timer_start
       run: |
-        printf 'timestamp_start=%(%s)T\n' >> "$GITHUB_OUTPUT"
-    - name: Set the start date for the build
-      id: date_start
-      run: |
-        echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        (echo "DATE_START=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT) && (echo "TIMESTAMP_START=$(date +"%s")" >> ${GITHUB_ENV})
     - name: "Slack notification: IN PROGRESS"
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
@@ -39,7 +35,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "CI Build Status for playground-matrix: :runner: *IN PROGRESS*\n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* \n*Duration:* \n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "CI Build Status for playground-matrix: :runner: *IN PROGRESS*\n*Start:* ${{ steps.timer_start.outputs.DATE_START }}\n*End:* \n*Duration:* \n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
@@ -75,17 +71,14 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-    - name: Calculate duration
-      id: timestamp_duration
+    - name: Stopping timer
       if: ${{ !cancelled() }}
+      id: timer_end
       run: |
-        printf -v now '%(%s)T'
-        TIMESTAMP_DURATION=$((now - ${{ steps.timestamp_start.outputs.timestamp_start }}))
-    - name: Set the end date for the build
-      if: ${{ !cancelled() }}
-      id: date_end
-      run: |
-        echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+        (echo "DATE_END=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT)
+        && (echo "TIMESTAMP_END=$(date +"%s")" >> ${GITHUB_ENV})
+        && (echo "TIMESTAMP_DURATION=(${TIMESTAMP_END} - ${{ steps.timer_start.outputs.TIMESTAMP_START }})")
+        && (echo "DURATION_PHRASE=$(date -ud "${TIMESTAMP_DURATION}" +"%M minutes %S seconds)" >> ${GITHUB_ENV})
     - name: "Slack notification: Done"
       uses: slackapi/slack-github-action@v1.24.0
       with:
@@ -99,14 +92,14 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* DONE :white_check_mark:\n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* ${{ steps.date_end.outputs.DATE_END }}\n*Duration:* ${{ steps.date_end.outputs.TIMESTAMP_DURATION }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "*CI Build Status for playground-matrix:* DONE :white_check_mark:\n*Start:* ${{ steps.timer_start.outputs.DATE_START }}\n*End:* ${{ steps.timer_end.outputs.DATE_END }}\n*Duration:* ${{ steps.timer_end.outputs.DURATION_PHRASE }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
           }
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-    - name: "Slack notification: Failed"
+    - name: "Send a notification for failures"
       if: ${{ failure() }}
       uses: slackapi/slack-github-action@v1.24.0
       with:
@@ -120,7 +113,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*CI Build Status for playground-matrix:* FAILED :warning: \n*Start:* ${{ steps.date_start.outputs.DATE_START }}\n*End:* ${{ steps.date_end.outputs.DATE_END }}\n*Duration:* ${{ steps.timestamp_duration.outputs.TIMESTAMP_DURATION }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  "text": "*CI Build Status for playground-matrix:* FAILED :warning: \n*Start:* ${{ steps.timer_start.outputs.DATE_START }}\n*End:* ${{ steps.timer_end.outputs.DATE_END }}\n*Duration:* ${{ steps.timer_end.outputs.DURATION_PHRASE }}\n*PR: *${{ github.event.pull_request.html_url || github.event.head_commit.url }}\n*Build:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                 }
               }
             ]
