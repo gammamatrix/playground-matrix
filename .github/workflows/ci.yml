@@ -61,7 +61,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": ":hourglass: --"
+                    "text": ":timer_clock: --"
                   }
                 ]
               },
@@ -158,7 +158,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": ":hourglass: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
+                    "text": ":timer_clock: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
                   }
                 ]
               },
@@ -219,7 +219,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": ":hourglass: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
+                    "text": ":timer_clock: ${{ steps.timer_end.outputs.DURATION_PHRASE }}"
                   }
                 ]
               },
