@@ -1,120 +1,120 @@
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Backlog\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Backlog\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Board\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Board\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Epic\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Epic\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Flow\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Flow\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Milestone\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Milestone\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Note\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Note\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Project\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Project\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Release\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Release\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Roadmap\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Roadmap\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Source\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Source\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Sprint\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Sprint\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Tag\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Tag\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Team\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Team\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Ticket\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Ticket\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Feature\GammaMatrix\Playground\Matrix\Version\Model)
+Model (Tests\Feature\Playground\Matrix\Models\Version\Model)
  [x] Model instance
  [x] Verify relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Backlog\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Backlog\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Board\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Board\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Epic\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Epic\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Flow\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Flow\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Milestone\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Milestone\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Note\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Note\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Project\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Project\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Release\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Release\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Roadmap\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Roadmap\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Source\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Source\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Sprint\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Sprint\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Tag\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Tag\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Team\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Team\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Ticket\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Ticket\Model)
  [x] Model instance
  [x] Verify model relationships
 
-Model (Tests\Unit\GammaMatrix\Playground\Matrix\Version\Model)
+Model (Tests\Unit\Playground\Matrix\Models\Version\Model)
  [x] Model instance
  [x] Verify model relationships
 
