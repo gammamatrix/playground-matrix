@@ -1,26 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace Database\Factories\GammaMatrix\Playground\Matrix\Models;
+namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Playground\Matrix\Models\Sprint;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Matrix\Models\SprintFactory
+ * \Database\Factories\Playground\Matrix\Models\SprintFactory
  *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Matrix\Models\Sprint>
+ * @extends Factory<Sprint>
  */
 class SprintFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<Sprint>
      */
-    protected $model = \GammaMatrix\Playground\Matrix\Models\Sprint::class;
+    protected $model = Sprint::class;
 
     /**
      * Define the model's default state.
@@ -29,9 +29,10 @@ class SprintFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->bs;
+        $title = $this->faker->sentence(3);
+
         return [
-            'label' => fake()->bs,
+            'label' => $this->faker->sentence(3),
             'title' => $title,
             'slug' => Str::slug($title, '-'),
             'description' => $this->faker->sentence(3),

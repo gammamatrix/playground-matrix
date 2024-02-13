@@ -1,20 +1,24 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Matrix\Models;
 
-namespace GammaMatrix\Playground\Matrix\Models;
-
-use GammaMatrix\Playground\Models\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Playground\Models\Model;
 
 /**
- * \GammaMatrix\Playground\Matrix\Models\Backlog
+ * \Playground\Matrix\Models\Backlog
  */
 class Backlog extends Model
 {
     protected $table = 'matrix_backlogs';
 
+    /**
+     * The default values for attributes.
+     *
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'created_by_id' => null,
         'modified_by_id' => null,
@@ -77,6 +81,11 @@ class Backlog extends Model
         'sources' => '{}',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
@@ -148,6 +157,11 @@ class Backlog extends Model
         'sources' => 'array',
     ];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'owned_by_id',
         'parent_id',

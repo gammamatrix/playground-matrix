@@ -1,26 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace Database\Factories\GammaMatrix\Playground\Matrix\Models;
+namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Playground\Matrix\Models\Roadmap;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Matrix\Models\RoadmapFactory
+ * \Database\Factories\Playground\Matrix\Models\RoadmapFactory
  *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Matrix\Models\Roadmap>
+ * @extends Factory<Roadmap>
  */
 class RoadmapFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<Roadmap>
      */
-    protected $model = \GammaMatrix\Playground\Matrix\Models\Roadmap::class;
+    protected $model = Roadmap::class;
 
     /**
      * Define the model's default state.
@@ -29,9 +29,10 @@ class RoadmapFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->bs;
+        $title = $this->faker->sentence(3);
+
         return [
-            'label' => fake()->bs,
+            'label' => $this->faker->sentence(3),
             'title' => $title,
             'slug' => Str::slug($title, '-'),
             'description' => $this->faker->sentence(3),
