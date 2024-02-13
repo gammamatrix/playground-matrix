@@ -1,26 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace Database\Factories\GammaMatrix\Playground\Matrix\Models;
+namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Playground\Matrix\Models\Milestone;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Matrix\Models\MilestoneFactory
+ * \Database\Factories\Playground\Matrix\Models\MilestoneFactory
  *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Matrix\Models\Milestone>
+ * @extends Factory<Milestone>
  */
 class MilestoneFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<Milestone>
      */
-    protected $model = \GammaMatrix\Playground\Matrix\Models\Milestone::class;
+    protected $model = Milestone::class;
 
     /**
      * Define the model's default state.
@@ -29,9 +29,10 @@ class MilestoneFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->bs;
+        $title = $this->faker->sentence(3);
+
         return [
-            'label' => fake()->bs,
+            'label' => $this->faker->sentence(3),
             'title' => $title,
             'slug' => Str::slug($title, '-'),
             'description' => $this->faker->sentence(3),

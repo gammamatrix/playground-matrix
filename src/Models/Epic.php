@@ -1,20 +1,24 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Matrix\Models;
 
-namespace GammaMatrix\Playground\Matrix\Models;
-
-use GammaMatrix\Playground\Models\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Playground\Models\Model;
 
 /**
- * \GammaMatrix\Playground\Matrix\Models\Epic
+ * \Playground\Matrix\Models\Epic
  */
 class Epic extends Model
 {
     protected $table = 'matrix_epics';
 
+    /**
+     * The default values for attributes.
+     *
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'owned_by_id' => null,
         'parent_id' => null,
@@ -47,6 +51,11 @@ class Epic extends Model
         'sources' => '{}',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'epic_type' => 'string',
         'gids' => 'integer',
@@ -118,6 +127,11 @@ class Epic extends Model
         'sources' => 'array',
     ];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'owned_by_id',
         'parent_id',

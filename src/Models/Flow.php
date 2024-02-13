@@ -1,20 +1,24 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Matrix\Models;
 
-namespace GammaMatrix\Playground\Matrix\Models;
-
-use GammaMatrix\Playground\Models\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Playground\Models\Model;
 
 /**
- * \GammaMatrix\Playground\Matrix\Models\Flow
+ * \Playground\Matrix\Models\Flow
  */
 class Flow extends Model
 {
     protected $table = 'matrix_flows';
 
+    /**
+     * The default values for attributes.
+     *
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'owned_by_id' => null,
         'parent_id' => null,
@@ -32,6 +36,11 @@ class Flow extends Model
         'options' => '{}',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'flow_type' => 'string',
         'gids' => 'integer',
@@ -99,6 +108,11 @@ class Flow extends Model
         'sources' => 'array',
     ];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'owned_by_id',
         'parent_id',

@@ -1,26 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace Database\Factories\GammaMatrix\Playground\Matrix\Models;
+namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Playground\Matrix\Models\Ticket;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Matrix\Models\TicketFactory
+ * \Database\Factories\Playground\Matrix\Models\TicketFactory
  *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Matrix\Models\Ticket>
+ * @extends Factory<Ticket>
  */
 class TicketFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<Ticket>
      */
-    protected $model = \GammaMatrix\Playground\Matrix\Models\Ticket::class;
+    protected $model = Ticket::class;
 
     /**
      * Define the model's default state.
@@ -29,9 +29,10 @@ class TicketFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->bs;
+        $title = $this->faker->sentence(3);
+
         return [
-            'label' => fake()->bs,
+            'label' => $this->faker->sentence(3),
             'title' => $title,
             'slug' => Str::slug($title, '-'),
             'description' => $this->faker->sentence(3),

@@ -1,15 +1,14 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace GammaMatrix\Playground\Matrix;
+namespace Playground\Matrix;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 
 /**
- * \GammaMatrix\Playground\Matrix\ServiceProvider
+ * \Playground\Matrix\ServiceProvider
  */
 class ServiceProvider extends AuthServiceProvider
 {
@@ -25,23 +24,26 @@ class ServiceProvider extends AuthServiceProvider
      */
     public function boot()
     {
-        $config = config('playground-matrix');
+        /**
+         * @var array<string, mixed> $config
+         */
+        $config = config($this->package);
 
-        if (!empty($config) && $this->app->runningInConsole()) {
-            // Publish configuration
-            $this->publishes([
-                dirname(__DIR__).'/config/playground-matrix.php'
-                    => config_path('playground-matrix.php')
-            ], 'playground-config');
+        if (! empty($config['load']) && is_array($config['load'])) {
 
-            // Publish migrations
-            $this->publishMigrations();
+            if ($this->app->runningInConsole()) {
+                // Publish configuration
+                $this->publishes([
+                    sprintf('%1$s/config/%2$s.php', dirname(__DIR__), $this->package) => config_path(sprintf('%1$s.php', $this->package)),
+                ], 'playground-config');
 
-            // Load migrations
-            if (!empty($config['load'])
-                && !empty($config['load']['migrations'])
-            ) {
-                $this->loadMigrationsFrom(dirname(__DIR__). '/database/migrations');
+                // Publish migrations
+                $this->publishMigrations();
+
+                // Load migrations
+                if (! empty($config['load']['migrations'])) {
+                    $this->loadMigrationsFrom(dirname(__DIR__).'/database/migrations');
+                }
             }
         }
 
@@ -50,23 +52,19 @@ class ServiceProvider extends AuthServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/config/playground-matrix.php',
+            dirname(__DIR__).'/config/playground-matrix.php',
             'playground-matrix'
         );
     }
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function publishMigrations()
+    public function publishMigrations(): void
     {
         $migrations = [];
 
@@ -93,21 +91,23 @@ class ServiceProvider extends AuthServiceProvider
         $this->publishes($migrations, 'playground-migrations');
     }
 
-
-    public function about()
+    public function about(): void
     {
         $config = config($this->package);
+        $config = is_array($config) ? $config : [];
+
+        $load = ! empty($config['load']) && is_array($config['load']) ? $config['load'] : [];
 
         $version = $this->version();
 
         AboutCommand::add('Playground Matrix', fn () => [
-            '<fg=yellow;options=bold>Load</> Migrations' => !empty($config['load']['migrations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
+            '<fg=yellow;options=bold>Load</> Migrations' => ! empty($load['migrations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
             'Package' => $this->package,
             'Version' => $version,
         ]);
     }
 
-    public function version()
+    public function version(): string
     {
         return static::VERSION;
     }

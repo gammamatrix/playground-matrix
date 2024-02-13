@@ -1,26 +1,26 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
-
-namespace Database\Factories\GammaMatrix\Playground\Matrix\Models;
+namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Playground\Matrix\Models\Source;
 
 /**
- * \Database\Factories\GammaMatrix\Playground\Matrix\Models\SourceFactory
+ * \Database\Factories\Playground\Matrix\Models\SourceFactory
  *
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\GammaMatrix\Playground\Matrix\Models\Source>
+ * @extends Factory<Source>
  */
 class SourceFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<Source>
      */
-    protected $model = \GammaMatrix\Playground\Matrix\Models\Source::class;
+    protected $model = Source::class;
 
     /**
      * Define the model's default state.
@@ -29,9 +29,10 @@ class SourceFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->bs;
+        $title = $this->faker->sentence(3);
+
         return [
-            'label' => fake()->bs,
+            'label' => $this->faker->sentence(3),
             'title' => $title,
             'slug' => Str::slug($title, '-'),
             'description' => $this->faker->sentence(3),

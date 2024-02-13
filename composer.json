@@ -20,10 +20,10 @@
     ],
     "require": {
         "php": "^8.1",
-        "gammamatrix/playground": "dev-develop|dev-master|^73.0"
+        "gammamatrix/playground": "dev-develop|dev-master|dev-feature/*|^73.0"
     },
     "require-dev": {
-        "gammamatrix/playground-test": "dev-develop|dev-master|^73.0"
+        "gammamatrix/playground-test": "dev-develop|dev-master|dev-feature/*|^73.0"
     },
     "suggest": {
         "gammamatrix/playground-matrix-resource": "Provides a resource API and optional Blade UI to interact with the models provided in this package."
@@ -32,14 +32,14 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Database\\Factories\\GammaMatrix\\Playground\\Matrix\\Models\\": "database/factories/",
-            "GammaMatrix\\Playground\\Matrix\\": "src/"
+            "Database\\Factories\\Playground\\Matrix\\Models\\": "database/factories/",
+            "Playground\\Matrix\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Feature\\GammaMatrix\\Playground\\Matrix\\": "tests/Feature/",
-            "Tests\\Unit\\GammaMatrix\\Playground\\Matrix\\": "tests/Unit/"
+            "Tests\\Feature\\Playground\\Matrix\\": "tests/Feature/",
+            "Tests\\Unit\\Playground\\Matrix\\": "tests/Unit/"
         }
     },
     "config": {
@@ -56,13 +56,13 @@
         },
         "laravel": {
             "providers": [
-                "GammaMatrix\\Playground\\Matrix\\ServiceProvider"
+                "Playground\\Matrix\\ServiceProvider"
             ]
         }
     },
     "scripts": {
-        "test": "phpunit",
-        "format": "php-cs-fixer fix --allow-risky=yes",
-        "analyse": "phpstan analyse"
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max"
     }
 }

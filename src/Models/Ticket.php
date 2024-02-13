@@ -1,20 +1,24 @@
 <?php
 /**
- * GammaMatrix
+ * Playground
  */
+namespace Playground\Matrix\Models;
 
-namespace GammaMatrix\Playground\Matrix\Models;
-
-use GammaMatrix\Playground\Models\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Playground\Models\Model;
 
 /**
- * \GammaMatrix\Playground\Matrix\Models\Ticket
+ * \Playground\Matrix\Models\Ticket
  */
 class Ticket extends Model
 {
     protected $table = 'matrix_tickets';
 
+    /**
+     * The default values for attributes.
+     *
+     * @var array<string, mixed>
+     */
     protected $attributes = [
         'created_by_id' => null,
         'modified_by_id' => null,
@@ -96,6 +100,11 @@ class Ticket extends Model
         'sources' => '{}',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'created_at' => 'timestamp',
         'updated_at' => 'timestamp',
@@ -182,6 +191,11 @@ class Ticket extends Model
         'sources' => 'array',
     ];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'owned_by_id',
         'parent_id',
@@ -314,8 +328,13 @@ class Ticket extends Model
      */
     public function completedBy(): HasOne
     {
+        /**
+         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         */
+        $uc = config('playground.user', '\\App\\Models\\User');
+
         return $this->hasOne(
-            config('playground.user', '\\App\\Models\\User'),
+            $uc,
             'id',
             'completed_by_id'
         );
@@ -386,8 +405,13 @@ class Ticket extends Model
      */
     public function reportedBy(): HasOne
     {
+        /**
+         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         */
+        $uc = config('playground.user', '\\App\\Models\\User');
+
         return $this->hasOne(
-            config('playground.user', '\\App\\Models\\User'),
+            $uc,
             'id',
             'reported_by_id'
         );

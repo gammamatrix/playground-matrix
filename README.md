@@ -2,6 +2,7 @@
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/coverage.svg)](tests)
+[![PHPStan Level 9](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L120)
 
 The Playground Matrix is a package for [Laravel](https://laravel.com/docs/10.x) applications.
 
@@ -15,6 +16,12 @@ You can install the package via composer:
 composer require gammamatrix/playground-matrix
 ```
 
+## `artisan:about`
+
+Playground Matrix provides information in the `artisan about` command.
+
+<img src="resources/docs/artisan-about-playground-matrix.png" alt="screenshot of artisan about command with Playground Matrix.">
+
 ## Configuration
 
 Migrations are disabled by default. This package may sometimes be installed where another system handles the migrations.
@@ -23,7 +30,7 @@ See the contents of the published config file: [config/playground-matrix.php](co
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Matrix\ServiceProvider" --tag="playground-config"
+php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag="playground-config"
 ```
 
 ### Environment Variables
@@ -61,16 +68,29 @@ See the contents of the published config file: [database/migrations](database/mi
 
 You can publish the migrations file with:
 ```bash
-php artisan vendor:publish --provider="GammaMatrix\Playground\Matrix\ServiceProvider" --tag="playground-migrations"
+php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag="playground-migrations"
 ```
 
-## About
+## PHPStan
 
-Playground Matrix provides information in the `artisan about` command.
+Tests at level 9 on:
+- `config/`
+- `database/`
+- `src/`
+- `tests/Feature/`
+- `tests/Unit/`
 
-<img src="resources/docs/artisan-about-playground-matrix.png" alt="screenshot of artisan about command with Playground Matrix.">
+```sh
+composer analyse
+```
 
-## Tests
+## Coding Standards
+
+```sh
+composer format
+```
+
+## Testing
 
 ```sh
 composer test
@@ -79,3 +99,11 @@ composer test
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Credits
+
+- [Jeremy Postlethwaite](https://github.com/gammamatrix)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
