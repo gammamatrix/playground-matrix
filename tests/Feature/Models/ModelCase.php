@@ -17,9 +17,9 @@ class ModelCase extends BaseModelCase
 {
     use DatabaseTransactions;
 
-    protected bool $load_migrations_cms = true;
-
     protected bool $load_migrations_laravel = false;
+
+    protected bool $load_migrations_matrix = true;
 
     protected bool $load_migrations_playground = true;
 
@@ -41,7 +41,7 @@ class ModelCase extends BaseModelCase
         Carbon::setTestNow(Carbon::now());
 
         if (! empty(env('TEST_DB_MIGRATIONS'))) {
-            if ($this->load_migrations_cms) {
+            if ($this->load_migrations_matrix) {
                 $this->loadMigrationsFrom(dirname(dirname(dirname(__DIR__))).'/database/migrations');
             }
             // if ($this->load_migrations_laravel) {
