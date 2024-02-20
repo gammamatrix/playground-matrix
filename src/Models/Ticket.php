@@ -359,7 +359,7 @@ class Ticket extends Model
         /**
          * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
          */
-        $uc = config('playground.user', '\\App\\Models\\User');
+        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
 
         return $this->hasOne(
             $uc,
@@ -436,7 +436,7 @@ class Ticket extends Model
         /**
          * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
          */
-        $uc = config('playground.user', '\\App\\Models\\User');
+        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
 
         return $this->hasOne(
             $uc,
