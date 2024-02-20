@@ -4,7 +4,6 @@
  */
 namespace Tests\Unit\Playground\Matrix\Models;
 
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Playground\Matrix\ServiceProvider;
 use Playground\ServiceProvider as PlaygroundServiceProvider;
 use Playground\Test\Unit\Models\ModelCase as BaseModelCase;
@@ -14,8 +13,6 @@ use Playground\Test\Unit\Models\ModelCase as BaseModelCase;
  */
 class ModelCase extends BaseModelCase
 {
-    use DatabaseTransactions;
-
     protected function getPackageProviders($app)
     {
         return [
@@ -24,17 +21,6 @@ class ModelCase extends BaseModelCase
         ];
     }
 
-    // /**
-    //  * Define database migrations.
-    //  *
-    //  * @return void
-    //  */
-    // protected function defineDatabaseMigrations()
-    // {
-    //     // $this->loadLaravelMigrations(['--database' => 'testbench']);
-    //     $this->loadMigrationsFrom(workbench_path('database/migrations'));
-    // }
-
     /**
      * Set up the environment.
      *
@@ -42,9 +28,8 @@ class ModelCase extends BaseModelCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('auth.providers.users.model', 'Playground\\Test\\Models\\User');
-        $app['config']->set('playground.user', 'Playground\\Test\\Models\\User');
-        $app['config']->set('playground.auth.verify', 'user');
+        $app['config']->set('auth.providers.users.model', 'Playground\\Models\\User');
+        $app['config']->set('playground-auth.verify', 'user');
 
         $app['config']->set('playground-matrix.load.migrations', true);
     }

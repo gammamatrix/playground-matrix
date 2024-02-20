@@ -19,17 +19,17 @@ class ModelTest extends ModelCase
         'creator' => [
             'key' => 'created_by_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Test\Models\User::class,
+            'modelClass' => \Playground\Models\User::class,
         ],
         'modifier' => [
             'key' => 'modified_by_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Test\Models\User::class,
+            'modelClass' => \Playground\Models\User::class,
         ],
         'owner' => [
             'key' => 'owned_by_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Test\Models\User::class,
+            'modelClass' => \Playground\Models\User::class,
         ],
         'parent' => [
             'key' => 'parent_id',
