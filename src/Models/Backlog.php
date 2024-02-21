@@ -53,8 +53,8 @@ class Backlog extends Model
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resumed_at' => null,
         'resolved_at' => null,
+        'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
         'po' => 0,
@@ -115,6 +115,7 @@ class Backlog extends Model
      * @var array<string, string>
      */
     protected $casts = [
+        'backlog_type' => 'string',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
@@ -269,6 +270,7 @@ class Backlog extends Model
         'board',
         'flow',
         'meta',
+        'notes',
         'options',
         'roadmap',
         'sources',
