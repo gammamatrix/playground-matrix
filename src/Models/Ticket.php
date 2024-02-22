@@ -57,8 +57,8 @@ class Ticket extends Model
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resumed_at' => null,
         'resolved_at' => null,
+        'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
         'po' => 0,
@@ -134,9 +134,10 @@ class Ticket extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'created_at' => 'timestamp',
-        'updated_at' => 'timestamp',
-        'deleted_at' => 'timestamp',
+        'ticket_type' => 'string',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
         'start_at' => 'datetime',
         'planned_start_at' => 'datetime',
         'end_at' => 'datetime',
@@ -322,6 +323,7 @@ class Ticket extends Model
         'flow',
         'history',
         'meta',
+        'notes',
         'options',
         'roadmap',
         'sources',
