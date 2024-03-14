@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Playground
  */
@@ -62,6 +64,8 @@ class ModelCase extends BaseModelCase
     {
         $app['config']->set('auth.providers.users.model', 'Playground\\Models\\User');
         $app['config']->set('playground-auth.verify', 'user');
+        $app['config']->set('auth.testing.password', 'password');
+        $app['config']->set('auth.testing.hashed', false);
 
         $app['config']->set('playground-matrix.load.migrations', true);
     }

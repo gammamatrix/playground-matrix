@@ -4,9 +4,11 @@
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/coverage.svg)](tests)
 [![PHPStan Level 9](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L120)
 
-The Playground Matrix is a package for [Laravel](https://laravel.com/docs/10.x) applications.
+The Playground Matrix is a package for [Laravel](https://laravel.com/docs/11.x) applications.
 
 This application provides the models to use Playground Matrix, a project management tool.
+
+Read more on using Playground Matrix [at the Read the Docs for Playground.](https://gammamatrix-playground.readthedocs.io/)
 
 ## Installation
 
