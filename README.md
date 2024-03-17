@@ -8,7 +8,7 @@ The Playground Matrix is a package for [Laravel](https://laravel.com/docs/11.x) 
 
 This application provides the models to use Playground Matrix, a project management tool.
 
-Read more on using Playground Matrix [at the Read the Docs for Playground.](https://gammamatrix-playground.readthedocs.io/)
+Read more on using [Playground Matrix at Read the Docs: Playground Documentation.](https://gammamatrix-playground.readthedocs.io/en/develop/components/matrix.html)
 
 ## Installation
 

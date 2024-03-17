@@ -9,7 +9,7 @@
         "laravel",
         "playground"
     ],
-    "homepage": "https://gammamatrix-playground.readthedocs.io/",
+    "homepage": "https://gammamatrix-playground.readthedocs.io/en/develop/components/matrix.html",
     "license": "MIT",
     "authors": [
         {
