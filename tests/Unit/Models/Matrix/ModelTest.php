@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * Playground
+ */
+namespace Tests\Unit\Playground\Matrix\Models\Matrix;
+
+use Tests\Unit\Playground\Matrix\Models\ModelCase;
+
+/**
+ * \Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest
+ */
+class ModelTest extends ModelCase
+{
+    protected string $modelClass = \Playground\Matrix\Models\Matrix::class;
+
+    protected bool $hasRelationships = true;
+
+    protected array $hasOne = [
+        'creator',
+        'modifier',
+        'owner',
+        'parent',
+    ];
+}
