@@ -18,6 +18,11 @@ Model (Tests\Feature\Playground\Matrix\Models\Flow\Model)
  [x] Verify model relationships
  [x] Factory create
 
+Model (Tests\Feature\Playground\Matrix\Models\Matrix\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Factory create
+
 Model (Tests\Feature\Playground\Matrix\Models\Milestone\Model)
  [x] Model instance
  [x] Verify model relationships
@@ -89,6 +94,11 @@ Model (Tests\Unit\Playground\Matrix\Models\Epic\Model)
  [x] Model factory make
 
 Model (Tests\Unit\Playground\Matrix\Models\Flow\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
+
+Model (Tests\Unit\Playground\Matrix\Models\Matrix\Model)
  [x] Model instance
  [x] Verify model relationships
  [x] Model factory make

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-03-17 07:12:36</timestamp>
+  <timestamp>2024-04-01 23:01:55</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>195</methodCount>
+    <methodCount>196</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>205</totalCrap>
+    <totalCrap>206</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -523,6 +523,17 @@
       <methodName>team</methodName>
       <methodSignature>team(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>team(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>casts</methodName>
+      <methodSignature>casts(): array</methodSignature>
+      <fullMethod>casts(): array</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
