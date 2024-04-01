@@ -6,11 +6,15 @@
 
 The Playground Matrix is a package for [Laravel](https://laravel.com/docs/11.x) applications.
 
-This application provides the models to use Playground Matrix, a project management tool.
+This package provides the models to use Playground Matrix, a project management tool.
 
 Read more on using [Playground Matrix at Read the Docs: Playground Documentation.](https://gammamatrix-playground.readthedocs.io/en/develop/components/matrix.html)
 
 ## Installation
+
+This package is required with [playground-matrix-api (API without UI)](https://github.com/gammamatrix/playground-matrix-api) or [playground-matrix-resource (API with UI)](https://github.com/gammamatrix/playground-matrix-resource)
+
+If you do not need an API and just want the models, then the package may be installed with:
 
 You can install the package via composer:
 
@@ -49,6 +53,7 @@ This package includes [factories](database/factories), models and [migrations](d
 - [Boards](src/Models/Board.php)
 - [Epics](src/Models/Epic.php)
 - [Flows](src/Models/Flow.php)
+- [Matrices](src/Models/Matrix.php)
 - [Milestones](src/Models/Milestone.php)
 - [Notes](src/Models/Note.php)
 - [Projects](src/Models/Project.php)
@@ -66,7 +71,7 @@ This package includes [factories](database/factories), models and [migrations](d
 All migrations are disabled by default.
 
 See the contents of the published config file: [database/migrations](database/migrations)
-- NOTE: There are 15 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
+- NOTE: There are 16 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
 
 You can publish the migrations file with:
 ```bash

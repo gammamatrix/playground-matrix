@@ -1,6 +1,6 @@
 {
     "name": "gammamatrix/playground-matrix",
-    "description": "Playground: Provide the Matrix models for a Playground Laravel application.",
+    "description": "Playground: This package provides the models to use Playground Matrix, a project management tool.",
     "keywords": [
         "matrix",
         "projects",
