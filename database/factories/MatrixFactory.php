@@ -8,21 +8,21 @@ namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Playground\Matrix\Models\Milestone;
+use Playground\Matrix\Models\Matrix;
 
 /**
- * \Database\Factories\Playground\Matrix\Models\MilestoneFactory
+ * \Database\Factories\Playground\Matrix\Models\MatrixFactory
  *
- * @extends Factory<Milestone>
+ * @extends Factory<Matrix>
  */
-class MilestoneFactory extends Factory
+class MatrixFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Milestone>
+     * @var class-string<Matrix>
      */
-    protected $model = Milestone::class;
+    protected $model = Matrix::class;
 
     /**
      * Define the model's default state.

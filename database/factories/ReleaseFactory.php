@@ -41,7 +41,6 @@ class ReleaseFactory extends Factory
             'introduction' => $this->faker->sentence(3),
             'content' => $this->faker->sentence(3),
             'summary' => $this->faker->sentence(3),
-
         ];
     }
 }
