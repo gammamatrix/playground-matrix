@@ -68,9 +68,7 @@ This package includes [factories](database/factories), models and [migrations](d
 
 ## Migrations
 
-All migrations are disabled by default.
-
-See the contents of the published config file: [database/migrations](database/migrations)
+All [database/migrations](database/migrations) are disabled by default.
 - NOTE: There are 16 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
 
 You can publish the migrations file with:
