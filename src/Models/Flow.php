@@ -273,6 +273,7 @@ class Flow extends Model
             'avatar' => 'string',
             'ui' => 'array',
             'assets' => 'array',
+            'flow' => 'array',
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
