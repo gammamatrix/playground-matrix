@@ -27,6 +27,7 @@ return new class() extends Migration
             $table->uuid('created_by_id')->nullable()->index();
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
+            $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
             $table->string('matrix_type')->nullable()->index();
 
@@ -64,7 +65,7 @@ return new class() extends Migration
 
             // Matrix
 
-            $table->string('matrix')->default('');
+            $table->json('matrix')->nullable()->default(new Expression('(JSON_OBJECT())'));
             $table->bigInteger('x')->nullable();
             $table->bigInteger('y')->nullable();
             $table->bigInteger('z')->nullable();

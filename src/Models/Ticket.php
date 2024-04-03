@@ -11,6 +11,131 @@ use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Ticket
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property string $ticket_type
+ * @property ?string $backlog_id
+ * @property ?string $board_id
+ * @property ?string $completed_by_id
+ * @property ?string $duplicate_id
+ * @property ?string $epic_id
+ * @property ?string $fixed_by_id
+ * @property ?string $flow_id
+ * @property ?string $matrix_id
+ * @property ?string $milestone_id
+ * @property ?string $note_id
+ * @property ?string $project_id
+ * @property ?string $release_id
+ * @property ?string $reported_by_id
+ * @property ?string $roadmap_id
+ * @property ?string $source_id
+ * @property ?string $sprint_id
+ * @property ?string $tag_id
+ * @property ?string $team_id
+ * @property ?string $version_id
+ * @property ?string $version_fixed_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $fixed_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $resolved_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property int $revision
+ * @property array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
+ * @property bool $duplicate
+ * @property bool $fixed
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $problem
+ * @property bool $published
+ * @property bool $released
+ * @property bool $retired
+ * @property bool $resolved
+ * @property bool $suspended
+ * @property bool $unknown
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property string $content
+ * @property string $summary
+ * @property string $key
+ * @property string $handler
+ * @property int $code
+ * @property string $key_code_hash
+ * @property string $priority
+ * @property string $severity
+ * @property string $resolution
+ * @property string $step
+ * @property string $state
+ * @property string $workflow_type
+ * @property int $points
+ * @property string $actual
+ * @property string $expected
+ * @property string $story
+ * @property string $steps
+ * @property string $criteria
+ * @property ?float $reproducibility
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property array $ui
+ * @property array $assets
+ * @property array $backlog
+ * @property array $board
+ * @property array $flow
+ * @property array $history
+ * @property array $meta
+ * @property array $notes
+ * @property array $options
+ * @property array $roadmap
+ * @property array $sources
  */
 class Ticket extends Model
 {
@@ -26,13 +151,14 @@ class Ticket extends Model
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
-        'ticket_type' => null,
         'duplicate_id' => null,
         'backlog_id' => null,
         'board_id' => null,
         'completed_by_id' => null,
         'epic_id' => null,
+        'fixed_by_id' => null,
         'flow_id' => null,
+        'matrix_id' => null,
         'milestone_id' => null,
         'note_id' => null,
         'project_id' => null,
@@ -45,6 +171,7 @@ class Ticket extends Model
         'team_id' => null,
         'version_id' => null,
         'version_fixed_id' => null,
+        'ticket_type' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
@@ -150,12 +277,14 @@ class Ticket extends Model
         'owned_by_id',
         'parent_id',
         'ticket_type',
-        'duplicate_id',
         'backlog_id',
         'board_id',
         'completed_by_id',
+        'duplicate_id',
         'epic_id',
+        'fixed_by_id',
         'flow_id',
+        'matrix_id',
         'milestone_id',
         'note_id',
         'project_id',
@@ -242,6 +371,10 @@ class Ticket extends Model
         'state',
         'workflow_type',
         'points',
+        'actual',
+        'expected',
+        'story',
+        'steps',
         'story',
         'criteria',
         'reproducibility',
@@ -298,7 +431,7 @@ class Ticket extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
+            'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
             'z' => 'integer',
@@ -417,6 +550,23 @@ class Ticket extends Model
             Epic::class,
             'id',
             'epic_id'
+        );
+    }
+
+    /**
+     * The fixed by user of the ticket.
+     */
+    public function fixedBy(): HasOne
+    {
+        /**
+         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         */
+        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
+
+        return $this->hasOne(
+            $uc,
+            'id',
+            'fixed_by_id'
         );
     }
 
