@@ -7,7 +7,6 @@ declare(strict_types=1);
 namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use Playground\Matrix\Models\Ticket;
 
 /**
@@ -33,10 +32,24 @@ class TicketFactory extends Factory
     {
         $title = $this->faker->sentence(3);
 
+        $key = $this->faker->lexify();
+        $code = $this->faker->randomNumber(8);
+
+        $slug = sprintf(
+            '%1$s-%2$d',
+            $key,
+            $code
+        );
+
+        $key_code_hash = md5($slug);
+
         return [
             'label' => $this->faker->sentence(3),
             'title' => $title,
-            'slug' => Str::slug($title, '-'),
+            'key' => $key,
+            'slug' => $slug,
+            'key_code_hash' => $key_code_hash,
+            'code' => $code,
             'description' => $this->faker->sentence(3),
             'introduction' => $this->faker->sentence(3),
             'content' => $this->faker->sentence(3),
