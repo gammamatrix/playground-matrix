@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-02 20:02:54</timestamp>
+  <timestamp>2024-04-03 00:46:58</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>196</methodCount>
+    <methodCount>197</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>206</totalCrap>
+    <totalCrap>208</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -1835,6 +1835,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>fixedBy</methodName>
+      <methodSignature>fixedBy(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>fixedBy(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
