@@ -11,6 +11,109 @@ use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Backlog
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property ?string $backlog_type
+ * @property ?string $board_id
+ * @property ?string $epic_id
+ * @property ?string $flow_id
+ * @property ?string $matrix_id
+ * @property ?string $milestone_id
+ * @property ?string $note_id
+ * @property ?string $project_id
+ * @property ?string $release_id
+ * @property ?string $roadmap_id
+ * @property ?string $source_id
+ * @property ?string $sprint_id
+ * @property ?string $tag_id
+ * @property ?string $team_id
+ * @property ?string $ticket_id
+ * @property ?string $version_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $fixed_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $resolved_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property ?array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
+ * @property bool $duplicate
+ * @property bool $fixed
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $prioritized
+ * @property bool $problem
+ * @property bool $published
+ * @property bool $released
+ * @property bool $retired
+ * @property bool $resolved
+ * @property bool $special
+ * @property bool $suspended
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property string $timezone
+ * @property ?string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property ?string $content
+ * @property ?string $summary
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $backlog
+ * @property ?array $board
+ * @property ?array $flow
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $roadmap
+ * @property ?array $sources
  */
 class Backlog extends Model
 {
@@ -91,11 +194,13 @@ class Backlog extends Model
         'locked' => false,
         'pending' => false,
         'planned' => false,
+        'prioritized' => false,
         'problem' => false,
         'published' => false,
         'released' => false,
         'retired' => false,
         'resolved' => false,
+        'special' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -192,11 +297,13 @@ class Backlog extends Model
         'locked',
         'pending',
         'planned',
+        'prioritized',
         'problem',
         'published',
         'released',
         'retired',
         'resolved',
+        'special',
         'suspended',
         'unknown',
         'label',
@@ -282,11 +389,13 @@ class Backlog extends Model
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
+            'prioritized' => 'boolean',
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
             'retired' => 'boolean',
             'resolved' => 'boolean',
+            'special' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
