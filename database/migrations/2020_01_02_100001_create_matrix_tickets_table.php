@@ -1,15 +1,18 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Playground\Matrix\Models\Ticket
+ */
 return new class() extends Migration
 {
     /**
@@ -18,6 +21,7 @@ return new class() extends Migration
     public function up(): void
     {
         Schema::create('matrix_tickets', function (Blueprint $table) {
+
             // Primary key
 
             $table->uuid('id')->primary();
@@ -28,6 +32,7 @@ return new class() extends Migration
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
+            $table->string('ticket_type')->nullable()->index();
             $table->uuid('duplicate_id')->nullable()->index();
             $table->uuid('backlog_id')->nullable()->index();
             $table->uuid('board_id')->nullable()->index();
@@ -48,7 +53,6 @@ return new class() extends Migration
             $table->uuid('team_id')->nullable()->index();
             $table->uuid('version_id')->nullable()->index();
             $table->uuid('version_fixed_id')->nullable()->index();
-            $table->string('ticket_type')->nullable()->index();
 
             // Dates
 
@@ -115,15 +119,18 @@ return new class() extends Migration
             $table->boolean('locked')->default(0);
             $table->boolean('pending')->default(0);
             $table->boolean('planned')->default(0);
+            $table->boolean('prioritized')->default(0);
             $table->boolean('problem')->default(0);
             $table->boolean('published')->default(0);
             $table->boolean('released')->default(0);
             $table->boolean('retired')->default(0);
             $table->boolean('resolved')->default(0);
+            $table->boolean('special')->default(0);
             $table->boolean('suspended')->default(0);
             $table->boolean('unknown')->default(0);
+            $table->boolean('cron')->default(0)->index();
 
-            // Strings
+            // Columns
 
             $table->string('label')->default('');
             $table->string('title')->default('');
@@ -152,7 +159,7 @@ return new class() extends Migration
             $table->mediumText('criteria')->nullable();
             $table->decimal('reproducibility', 8, 2)->nullable()->default(null);
 
-            // UI
+            // Ui
 
             $table->string('icon')->default('');
             $table->string('image')->default('');

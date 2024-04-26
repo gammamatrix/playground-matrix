@@ -1,11 +1,12 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
@@ -76,6 +77,7 @@ use Playground\Models\Model;
  * @property bool $canceled
  * @property bool $closed
  * @property bool $completed
+ * @property bool $cron
  * @property bool $duplicate
  * @property bool $fixed
  * @property bool $flagged
@@ -91,10 +93,10 @@ use Playground\Models\Model;
  * @property bool $resolved
  * @property bool $special
  * @property bool $suspended
+ * @property bool $unknown
  * @property string $label
  * @property string $title
  * @property string $byline
- * @property string $timezone
  * @property ?string $slug
  * @property string $url
  * @property string $description
@@ -144,45 +146,6 @@ class Backlog extends Model
         'team_id' => null,
         'ticket_id' => null,
         'version_id' => null,
-        'created_at' => null,
-        'updated_at' => null,
-        'deleted_at' => null,
-        'start_at' => null,
-        'planned_start_at' => null,
-        'end_at' => null,
-        'planned_end_at' => null,
-        'canceled_at' => null,
-        'closed_at' => null,
-        'embargo_at' => null,
-        'fixed_at' => null,
-        'postponed_at' => null,
-        'published_at' => null,
-        'released_at' => null,
-        'resolved_at' => null,
-        'resumed_at' => null,
-        'suspended_at' => null,
-        'gids' => 0,
-        'po' => 0,
-        'pg' => 0,
-        'pw' => 0,
-        'only_admin' => false,
-        'only_user' => false,
-        'only_guest' => false,
-        'allow_public' => false,
-        'status' => 0,
-        'rank' => 0,
-        'size' => 0,
-        'matrix' => '',
-        'x' => null,
-        'y' => null,
-        'z' => null,
-        'r' => null,
-        'theta' => null,
-        'rho' => null,
-        'phi' => null,
-        'elevation' => null,
-        'latitude' => null,
-        'longitude' => null,
         'active' => true,
         'canceled' => false,
         'closed' => false,
@@ -194,13 +157,11 @@ class Backlog extends Model
         'locked' => false,
         'pending' => false,
         'planned' => false,
-        'prioritized' => false,
         'problem' => false,
         'published' => false,
         'released' => false,
         'retired' => false,
         'resolved' => false,
-        'special' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -225,6 +186,35 @@ class Backlog extends Model
         'options' => '{}',
         'roadmap' => '{}',
         'sources' => '{}',
+        'created_at' => null,
+        'updated_at' => null,
+        'deleted_at' => null,
+        'start_at' => null,
+        'planned_start_at' => null,
+        'end_at' => null,
+        'planned_end_at' => null,
+        'canceled_at' => null,
+        'closed_at' => null,
+        'embargo_at' => null,
+        'fixed_at' => null,
+        'postponed_at' => null,
+        'published_at' => null,
+        'released_at' => null,
+        'resumed_at' => null,
+        'resolved_at' => null,
+        'suspended_at' => null,
+        'gids' => 0,
+        'po' => 0,
+        'pg' => 0,
+        'pw' => 0,
+        'only_admin' => false,
+        'only_user' => false,
+        'only_guest' => false,
+        'allow_public' => false,
+        'status' => 0,
+        'rank' => 0,
+        'size' => 0,
+        'cron' => false,
     ];
 
     /**
@@ -275,21 +265,11 @@ class Backlog extends Model
         'status',
         'rank',
         'size',
-        'matrix',
-        'x',
-        'y',
-        'z',
-        'r',
-        'theta',
-        'rho',
-        'phi',
-        'elevation',
-        'latitude',
-        'longitude',
         'active',
         'canceled',
         'closed',
         'completed',
+        'cron',
         'duplicate',
         'fixed',
         'flagged',
@@ -297,13 +277,11 @@ class Backlog extends Model
         'locked',
         'pending',
         'planned',
-        'prioritized',
         'problem',
         'published',
         'released',
         'retired',
         'resolved',
-        'special',
         'suspended',
         'unknown',
         'label',
@@ -324,7 +302,6 @@ class Backlog extends Model
         'board',
         'flow',
         'meta',
-        'notes',
         'options',
         'roadmap',
         'sources',
@@ -367,21 +344,11 @@ class Backlog extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
-            'x' => 'integer',
-            'y' => 'integer',
-            'z' => 'integer',
-            'r' => 'float',
-            'theta' => 'float',
-            'rho' => 'float',
-            'phi' => 'float',
-            'elevation' => 'float',
-            'latitude' => 'float',
-            'longitude' => 'float',
             'active' => 'boolean',
             'canceled' => 'boolean',
             'closed' => 'boolean',
             'completed' => 'boolean',
+            'cron' => 'boolean',
             'duplicate' => 'boolean',
             'fixed' => 'boolean',
             'flagged' => 'boolean',
@@ -389,13 +356,11 @@ class Backlog extends Model
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
-            'prioritized' => 'boolean',
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
             'retired' => 'boolean',
             'resolved' => 'boolean',
-            'special' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -588,6 +553,30 @@ class Backlog extends Model
             Version::class,
             'id',
             'version_id'
+        );
+    }
+
+    /**
+     * The sprints of the backlog.
+     */
+    public function sprints(): HasMany
+    {
+        return $this->hasMany(
+            Sprint::class,
+            'sprint_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tickets of the backlog.
+     */
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(
+            Ticket::class,
+            'ticket_id',
+            'id'
         );
     }
 }
