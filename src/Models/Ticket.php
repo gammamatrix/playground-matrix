@@ -6,7 +6,6 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
@@ -155,10 +154,10 @@ class Ticket extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'ticket_type' => null,
-        'board_id' => null,
-        'duplicate_id' => null,
         'backlog_id' => null,
+        'board_id' => null,
         'completed_by_id' => null,
+        'duplicate_id' => null,
         'epic_id' => null,
         'fixed_by_id' => null,
         'flow_id' => null,
@@ -255,8 +254,8 @@ class Ticket extends Model
         'points' => 0,
         'actual' => null,
         'expected' => null,
-        'steps' => null,
         'story' => null,
+        'steps' => null,
         'criteria' => null,
         'reproducibility' => null,
         'icon' => '',
@@ -284,10 +283,10 @@ class Ticket extends Model
         'owned_by_id',
         'parent_id',
         'ticket_type',
-        'board_id',
-        'duplicate_id',
         'backlog_id',
+        'board_id',
         'completed_by_id',
+        'duplicate_id',
         'epic_id',
         'fixed_by_id',
         'flow_id',
@@ -383,7 +382,6 @@ class Ticket extends Model
         'expected',
         'story',
         'steps',
-        'story',
         'criteria',
         'reproducibility',
         'icon',
@@ -396,7 +394,6 @@ class Ticket extends Model
         'flow',
         'history',
         'meta',
-        'notes',
         'options',
         'roadmap',
         'sources',
@@ -489,7 +486,10 @@ class Ticket extends Model
             'state' => 'string',
             'workflow_type' => 'string',
             'points' => 'integer',
+            'actual' => 'string',
+            'expected' => 'string',
             'story' => 'string',
+            'steps' => 'string',
             'criteria' => 'string',
             'reproducibility' => 'decimal',
             'icon' => 'string',
