@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-27 05:19:54</timestamp>
+  <timestamp>2024-04-27 17:12:26</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>204</methodCount>
+    <methodCount>206</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>214</totalCrap>
+    <totalCrap>216</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -553,6 +553,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Flow</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Flow</className>
       <methodName>note</methodName>
       <methodSignature>note(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>note(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
@@ -644,6 +655,17 @@
       <methodName>flow</methodName>
       <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Milestone</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
