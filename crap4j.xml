@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-26 19:06:18</timestamp>
+  <timestamp>2024-04-27 04:58:04</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>199</methodCount>
+    <methodCount>203</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>212</totalCrap>
+    <totalCrap>213</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -50,6 +50,17 @@
       <methodName>flow</methodName>
       <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Backlog</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -182,9 +193,9 @@
       <methodName>sprints</methodName>
       <methodSignature>sprints(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
       <fullMethod>sprints(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -193,9 +204,9 @@
       <methodName>tickets</methodName>
       <methodSignature>tickets(): Illuminate\Database\Eloquent\Relations\HasMany</methodSignature>
       <fullMethod>tickets(): Illuminate\Database\Eloquent\Relations\HasMany</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -237,6 +248,17 @@
       <methodName>flow</methodName>
       <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Board</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1400,6 +1422,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Sprint</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Sprint</className>
       <methodName>milestone</methodName>
       <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
@@ -1865,9 +1898,9 @@
       <methodName>fixedBy</methodName>
       <methodSignature>fixedBy(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>fixedBy(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1876,6 +1909,17 @@
       <methodName>flow</methodName>
       <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
