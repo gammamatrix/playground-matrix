@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-27 18:02:30</timestamp>
+  <timestamp>2024-04-27 22:37:53</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>208</methodCount>
+    <methodCount>210</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>218</totalCrap>
+    <totalCrap>220</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -861,6 +861,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Project</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Project</className>
       <methodName>milestone</methodName>
       <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
@@ -1007,6 +1018,17 @@
       <methodName>flow</methodName>
       <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Release</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
