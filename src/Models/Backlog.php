@@ -175,6 +175,17 @@ class Backlog extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
+        'matrix' => '{}',
+        'x' => null,
+        'y' => null,
+        'z' => null,
+        'r' => null,
+        'theta' => null,
+        'rho' => null,
+        'phi' => null,
+        'elevation' => null,
+        'latitude' => null,
+        'longitude' => null,
         'active' => true,
         'canceled' => false,
         'closed' => false,
@@ -267,6 +278,17 @@ class Backlog extends Model
         'status',
         'rank',
         'size',
+        'matrix',
+        'x',
+        'y',
+        'z',
+        'r',
+        'theta',
+        'rho',
+        'phi',
+        'elevation',
+        'latitude',
+        'longitude',
         'active',
         'canceled',
         'closed',
@@ -344,6 +366,17 @@ class Backlog extends Model
             'only_guest' => 'boolean',
             'allow_public' => 'boolean',
             'status' => 'integer',
+            'matrix' => 'array',
+            'x' => 'integer',
+            'y' => 'integer',
+            'z' => 'integer',
+            'r' => 'float',
+            'theta' => 'float',
+            'rho' => 'float',
+            'phi' => 'float',
+            'elevation' => 'float',
+            'latitude' => 'float',
+            'longitude' => 'float',
             'rank' => 'integer',
             'size' => 'integer',
             'active' => 'boolean',
@@ -423,6 +456,18 @@ class Backlog extends Model
             Flow::class,
             'id',
             'flow_id'
+        );
+    }
+
+    /**
+     * The matrix of the backlog.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
         );
     }
 
@@ -565,7 +610,7 @@ class Backlog extends Model
     {
         return $this->hasMany(
             Sprint::class,
-            'sprint_id',
+            'backlog_id',
             'id'
         );
     }
@@ -577,7 +622,7 @@ class Backlog extends Model
     {
         return $this->hasMany(
             Ticket::class,
-            'ticket_id',
+            'backlog_id',
             'id'
         );
     }

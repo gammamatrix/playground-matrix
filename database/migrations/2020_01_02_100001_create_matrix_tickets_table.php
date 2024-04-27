@@ -11,7 +11,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Playground\Matrix\Models\Ticket
+ * \Playground\Matrix\Models\Ticket
  */
 return new class() extends Migration
 {
@@ -112,6 +112,7 @@ return new class() extends Migration
             $table->boolean('canceled')->default(0);
             $table->boolean('closed')->default(0);
             $table->boolean('completed')->default(0);
+            $table->boolean('cron')->default(0)->index();
             $table->boolean('duplicate')->default(0);
             $table->boolean('fixed')->default(0);
             $table->boolean('flagged')->default(0);
@@ -128,7 +129,6 @@ return new class() extends Migration
             $table->boolean('special')->default(0);
             $table->boolean('suspended')->default(0);
             $table->boolean('unknown')->default(0);
-            $table->boolean('cron')->default(0)->index();
 
             // Columns
 

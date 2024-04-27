@@ -11,7 +11,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Backlog
+ * \Playground\Matrix\Models\Backlog
  */
 return new class() extends Migration
 {
@@ -93,13 +93,13 @@ return new class() extends Migration
             $table->bigInteger('x')->nullable();
             $table->bigInteger('y')->nullable();
             $table->bigInteger('z')->nullable();
-            $table->decimal('r', 65, 10)->nullable()->default(null);
-            $table->decimal('theta', 10, 6)->nullable()->default(null);
-            $table->decimal('rho', 10, 6)->nullable()->default(null);
-            $table->decimal('phi', 10, 6)->nullable()->default(null);
-            $table->decimal('elevation', 65, 10)->nullable()->default(null);
-            $table->decimal('latitude', 8, 6)->nullable()->default(null);
-            $table->decimal('longitude', 9, 6)->nullable()->default(null);
+            $table->decimal('r', 65, 10)->nullable();
+            $table->decimal('theta', 10, 6)->nullable();
+            $table->decimal('rho', 10, 6)->nullable();
+            $table->decimal('phi', 10, 6)->nullable();
+            $table->decimal('elevation', 65, 10)->nullable();
+            $table->decimal('latitude', 8, 6)->nullable();
+            $table->decimal('longitude', 9, 6)->nullable();
 
             // Flags
 
@@ -130,7 +130,7 @@ return new class() extends Migration
             $table->string('label')->default('');
             $table->string('title')->default('');
             $table->string('byline')->default('');
-            $table->string('slug')->nullable()->default(null)->index();
+            $table->string('slug')->nullable()->index();
             $table->string('url')->default('');
             $table->string('description')->default('');
             $table->string('introduction')->default('');

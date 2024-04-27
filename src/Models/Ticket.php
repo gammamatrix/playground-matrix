@@ -202,7 +202,7 @@ class Ticket extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -588,6 +588,18 @@ class Ticket extends Model
             Flow::class,
             'id',
             'flow_id'
+        );
+    }
+
+    /**
+     * The matrix of the ticket.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
         );
     }
 
