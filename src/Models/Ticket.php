@@ -107,10 +107,10 @@ use Playground\Models\Model;
  * @property string $introduction
  * @property ?string $content
  * @property ?string $summary
- * @property string $key
  * @property string $handler
- * @property int $code
- * @property string $key_code_hash
+ * @property ?string $key
+ * @property ?int $code
+ * @property ?string $key_code_hash
  * @property string $priority
  * @property string $severity
  * @property string $resolution
@@ -241,10 +241,10 @@ class Ticket extends Model
         'introduction' => '',
         'content' => null,
         'summary' => null,
-        'key' => '',
         'handler' => '',
-        'code' => 0,
-        'key_code_hash' => '',
+        'key' => null,
+        'code' => null,
+        'key_code_hash' => null,
         'priority' => '',
         'severity' => '',
         'resolution' => '',
@@ -367,10 +367,7 @@ class Ticket extends Model
         'introduction',
         'content',
         'summary',
-        'key',
         'handler',
-        'code',
-        'key_code_hash',
         'priority',
         'severity',
         'resolution',

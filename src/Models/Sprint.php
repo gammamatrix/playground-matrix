@@ -22,6 +22,7 @@ use Playground\Models\Model;
  * @property ?string $board_id
  * @property ?string $epic_id
  * @property ?string $flow_id
+ * @property ?string $matrix_id
  * @property ?string $milestone_id
  * @property ?string $note_id
  * @property ?string $project_id
@@ -32,7 +33,6 @@ use Playground\Models\Model;
  * @property ?string $team_id
  * @property ?string $ticket_id
  * @property ?string $version_id
- * @property ?string $matrix_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at

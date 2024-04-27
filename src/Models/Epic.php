@@ -76,6 +76,7 @@ use Playground\Models\Model;
  * @property bool $canceled
  * @property bool $closed
  * @property bool $completed
+ * @property bool $cron
  * @property bool $duplicate
  * @property bool $fixed
  * @property bool $flagged
@@ -90,7 +91,6 @@ use Playground\Models\Model;
  * @property bool $resolved
  * @property bool $suspended
  * @property bool $unknown
- * @property bool $cron
  * @property string $label
  * @property string $title
  * @property string $byline
@@ -457,7 +457,7 @@ class Epic extends Model
     }
 
     /**
-     * The matrix of the board.
+     * The matrix of the epic.
      */
     public function matrix(): HasOne
     {
