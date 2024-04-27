@@ -25,6 +25,7 @@ class ModelTest extends ModelCase
         'backlog',
         'epic',
         'flow',
+        'matrix',
         'milestone',
         'project',
         'release',

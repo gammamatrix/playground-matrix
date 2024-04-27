@@ -27,6 +27,7 @@ class ModelTest extends ModelCase
         'completedBy',
         'epic',
         'flow',
+        'matrix',
         'milestone',
         'project',
         'release',
