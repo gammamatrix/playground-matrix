@@ -15,5 +15,14 @@ class ModelTest extends ModelCase
 {
     protected string $modelClass = \Playground\Matrix\Models\Note::class;
 
-    protected bool $hasRelationships = false;
+    protected bool $hasRelationships = true;
+
+    protected array $hasOne = [
+        'creator',
+        'modifier',
+        'owner',
+        'parent',
+        'matrix',
+        'tag',
+    ];
 }
