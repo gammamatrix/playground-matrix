@@ -26,6 +26,7 @@ class ModelTest extends ModelCase
         'board',
         'epic',
         'flow',
+        'matrix',
         'project',
         'release',
         'roadmap',

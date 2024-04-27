@@ -26,6 +26,7 @@ class ModelTest extends ModelCase
         'board',
         'completedBy',
         'epic',
+        'fixedBy',
         'flow',
         'matrix',
         'milestone',

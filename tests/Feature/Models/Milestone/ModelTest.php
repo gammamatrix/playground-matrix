@@ -58,6 +58,11 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Flow::class,
         ],
+        'matrix' => [
+            'key' => 'matrix_id',
+            'rule' => 'create',
+            'modelClass' => \Playground\Matrix\Models\Matrix::class,
+        ],
         'project' => [
             'key' => 'project_id',
             'rule' => 'create',

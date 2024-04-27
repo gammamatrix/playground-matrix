@@ -1,15 +1,18 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * \Playground\Matrix\Models\Milestone
+ */
 return new class() extends Migration
 {
     /**
@@ -18,6 +21,7 @@ return new class() extends Migration
     public function up(): void
     {
         Schema::create('matrix_milestones', function (Blueprint $table) {
+
             // Primary key
 
             $table->uuid('id')->primary();
@@ -62,8 +66,8 @@ return new class() extends Migration
             $table->dateTime('postponed_at')->nullable();
             $table->dateTime('published_at')->nullable();
             $table->dateTime('released_at')->nullable();
-            $table->dateTime('resumed_at')->nullable();
             $table->dateTime('resolved_at')->nullable()->index();
+            $table->dateTime('resumed_at')->nullable();
             $table->dateTime('suspended_at')->nullable();
 
             // Permissions
@@ -89,13 +93,13 @@ return new class() extends Migration
             $table->bigInteger('x')->nullable();
             $table->bigInteger('y')->nullable();
             $table->bigInteger('z')->nullable();
-            $table->decimal('r', 65, 10)->nullable()->default(null);
-            $table->decimal('theta', 10, 6)->nullable()->default(null);
-            $table->decimal('rho', 10, 6)->nullable()->default(null);
-            $table->decimal('phi', 10, 6)->nullable()->default(null);
-            $table->decimal('elevation', 65, 10)->nullable()->default(null);
-            $table->decimal('latitude', 8, 6)->nullable()->default(null);
-            $table->decimal('longitude', 9, 6)->nullable()->default(null);
+            $table->decimal('r', 65, 10)->nullable();
+            $table->decimal('theta', 10, 6)->nullable();
+            $table->decimal('rho', 10, 6)->nullable();
+            $table->decimal('phi', 10, 6)->nullable();
+            $table->decimal('elevation', 65, 10)->nullable();
+            $table->decimal('latitude', 8, 6)->nullable();
+            $table->decimal('longitude', 9, 6)->nullable();
 
             // Flags
 
@@ -103,6 +107,7 @@ return new class() extends Migration
             $table->boolean('canceled')->default(0);
             $table->boolean('closed')->default(0);
             $table->boolean('completed')->default(0);
+            $table->boolean('cron')->default(0)->index();
             $table->boolean('duplicate')->default(0);
             $table->boolean('fixed')->default(0);
             $table->boolean('flagged')->default(0);
@@ -118,19 +123,19 @@ return new class() extends Migration
             $table->boolean('suspended')->default(0);
             $table->boolean('unknown')->default(0);
 
-            // Strings
+            // Columns
 
             $table->string('label')->default('');
             $table->string('title')->default('');
             $table->string('byline')->default('');
-            $table->string('slug')->nullable()->default(null)->index();
+            $table->string('slug')->nullable()->index();
             $table->string('url')->default('');
             $table->string('description')->default('');
             $table->string('introduction')->default('');
             $table->mediumText('content')->nullable();
             $table->mediumText('summary')->nullable();
 
-            // UI
+            // Ui
 
             $table->string('icon')->default('');
             $table->string('image')->default('');
