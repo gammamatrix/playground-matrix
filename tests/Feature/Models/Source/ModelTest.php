@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Feature\Playground\Matrix\Models\Source;
 
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
@@ -38,50 +38,10 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Source::class,
         ],
-        'backlog' => [
-            'key' => 'backlog_id',
+        'matrix' => [
+            'key' => 'matrix_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Backlog::class,
-        ],
-        'board' => [
-            'key' => 'board_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Board::class,
-        ],
-        'epic' => [
-            'key' => 'epic_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Epic::class,
-        ],
-        'flow' => [
-            'key' => 'flow_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Flow::class,
-        ],
-        'milestone' => [
-            'key' => 'milestone_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Milestone::class,
-        ],
-        'project' => [
-            'key' => 'project_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Project::class,
-        ],
-        'release' => [
-            'key' => 'release_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Release::class,
-        ],
-        'roadmap' => [
-            'key' => 'roadmap_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Roadmap::class,
-        ],
-        'sprint' => [
-            'key' => 'sprint_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+            'modelClass' => \Playground\Matrix\Models\Matrix::class,
         ],
         'tag' => [
             'key' => 'tag_id',
@@ -92,16 +52,6 @@ class ModelTest extends ModelCase
             'key' => 'team_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Team::class,
-        ],
-        'ticket' => [
-            'key' => 'ticket_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Ticket::class,
-        ],
-        'version' => [
-            'key' => 'version_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Version::class,
         ],
     ];
 }

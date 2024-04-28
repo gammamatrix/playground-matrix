@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -11,6 +11,103 @@ use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Roadmap
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property ?string $roadmap_type
+ * @property ?string $backlog_id
+ * @property ?string $board_id
+ * @property ?string $epic_id
+ * @property ?string $flow_id
+ * @property ?string $matrix_id
+ * @property ?string $milestone_id
+ * @property ?string $note_id
+ * @property ?string $project_id
+ * @property ?string $release_id
+ * @property ?string $source_id
+ * @property ?string $sprint_id
+ * @property ?string $tag_id
+ * @property ?string $team_id
+ * @property ?string $ticket_id
+ * @property ?string $version_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property ?array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
+ * @property bool $cron
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $problem
+ * @property bool $published
+ * @property bool $released
+ * @property bool $resolved
+ * @property bool $suspended
+ * @property bool $unknown
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property ?string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property ?string $content
+ * @property ?string $summary
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $backlog
+ * @property ?array $board
+ * @property ?array $flow
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $roadmap
+ * @property ?array $sources
  */
 class Roadmap extends Model
 {
@@ -31,6 +128,7 @@ class Roadmap extends Model
         'board_id' => null,
         'epic_id' => null,
         'flow_id' => null,
+        'matrix_id' => null,
         'milestone_id' => null,
         'note_id' => null,
         'project_id' => null,
@@ -51,11 +149,9 @@ class Roadmap extends Model
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
-        'fixed_at' => null,
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -69,7 +165,7 @@ class Roadmap extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -84,8 +180,7 @@ class Roadmap extends Model
         'canceled' => false,
         'closed' => false,
         'completed' => false,
-        'duplicate' => false,
-        'fixed' => false,
+        'cron' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
@@ -94,8 +189,6 @@ class Roadmap extends Model
         'problem' => false,
         'published' => false,
         'released' => false,
-        'retired' => false,
-        'resolved' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -135,6 +228,7 @@ class Roadmap extends Model
         'board_id',
         'epic_id',
         'flow_id',
+        'matrix_id',
         'milestone_id',
         'note_id',
         'project_id',
@@ -152,12 +246,10 @@ class Roadmap extends Model
         'canceled_at',
         'closed_at',
         'embargo_at',
-        'fixed_at',
         'postponed_at',
         'published_at',
         'released_at',
         'resumed_at',
-        'resolved_at',
         'suspended_at',
         'gids',
         'po',
@@ -185,8 +277,7 @@ class Roadmap extends Model
         'canceled',
         'closed',
         'completed',
-        'duplicate',
-        'fixed',
+        'cron',
         'flagged',
         'internal',
         'locked',
@@ -195,8 +286,6 @@ class Roadmap extends Model
         'problem',
         'published',
         'released',
-        'retired',
-        'resolved',
         'suspended',
         'unknown',
         'label',
@@ -217,7 +306,6 @@ class Roadmap extends Model
         'board',
         'flow',
         'meta',
-        'notes',
         'options',
         'roadmap',
         'sources',
@@ -242,12 +330,10 @@ class Roadmap extends Model
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
-            'fixed_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
             'released_at' => 'datetime',
             'resumed_at' => 'datetime',
-            'resolved_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
@@ -260,7 +346,7 @@ class Roadmap extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
+            'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
             'z' => 'integer',
@@ -275,8 +361,7 @@ class Roadmap extends Model
             'canceled' => 'boolean',
             'closed' => 'boolean',
             'completed' => 'boolean',
-            'duplicate' => 'boolean',
-            'fixed' => 'boolean',
+            'cron' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
@@ -285,8 +370,6 @@ class Roadmap extends Model
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
-            'retired' => 'boolean',
-            'resolved' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -359,6 +442,18 @@ class Roadmap extends Model
             Flow::class,
             'id',
             'flow_id'
+        );
+    }
+
+    /**
+     * The matrix of the roadmap.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
         );
     }
 

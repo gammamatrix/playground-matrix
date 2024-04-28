@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Unit\Playground\Matrix\Models\Roadmap;
 
 use Tests\Unit\Playground\Matrix\Models\ModelCase;
@@ -26,6 +26,7 @@ class ModelTest extends ModelCase
         'board',
         'epic',
         'flow',
+        'matrix',
         'milestone',
         'project',
         'release',

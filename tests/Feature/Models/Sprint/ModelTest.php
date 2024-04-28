@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Feature\Playground\Matrix\Models\Sprint;
 
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
