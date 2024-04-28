@@ -1,15 +1,91 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Matrix
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property ?string $matrix_type
+ * @property ?string $matrix_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property ?array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
+ * @property bool $cron
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $problem
+ * @property bool $retired
+ * @property bool $suspended
+ * @property bool $unknown
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property ?string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property ?string $content
+ * @property ?string $summary
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $sources
  */
 class Matrix extends Model
 {
@@ -26,6 +102,7 @@ class Matrix extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'matrix_type' => null,
+        'matrix_id' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
@@ -35,6 +112,8 @@ class Matrix extends Model
         'planned_end_at' => null,
         'canceled_at' => null,
         'closed_at' => null,
+        'embargo_at' => null,
+        'postponed_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -48,7 +127,7 @@ class Matrix extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -62,6 +141,8 @@ class Matrix extends Model
         'active' => true,
         'canceled' => false,
         'closed' => false,
+        'completed' => false,
+        'cron' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
@@ -100,12 +181,15 @@ class Matrix extends Model
         'owned_by_id',
         'parent_id',
         'matrix_type',
+        'matrix_id',
         'start_at',
         'planned_start_at',
         'end_at',
         'planned_end_at',
         'canceled_at',
         'closed_at',
+        'embargo_at',
+        'postponed_at',
         'resumed_at',
         'suspended_at',
         'gids',
@@ -133,6 +217,8 @@ class Matrix extends Model
         'active',
         'canceled',
         'closed',
+        'completed',
+        'cron',
         'flagged',
         'internal',
         'locked',
@@ -157,7 +243,6 @@ class Matrix extends Model
         'ui',
         'assets',
         'meta',
-        'notes',
         'options',
         'sources',
     ];
@@ -180,6 +265,8 @@ class Matrix extends Model
             'planned_end_at' => 'datetime',
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
+            'embargo_at' => 'datetime',
+            'postponed_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
@@ -193,7 +280,7 @@ class Matrix extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
+            'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
             'z' => 'integer',
@@ -207,6 +294,8 @@ class Matrix extends Model
             'active' => 'boolean',
             'canceled' => 'boolean',
             'closed' => 'boolean',
+            'completed' => 'boolean',
+            'cron' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
@@ -230,14 +319,23 @@ class Matrix extends Model
             'avatar' => 'string',
             'ui' => 'array',
             'assets' => 'array',
-            'backlog' => 'array',
-            'board' => 'array',
-            'flow' => 'array',
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
             'roadmap' => 'array',
             'sources' => 'array',
         ];
+    }
+
+    /**
+     * The matrix of the matrix.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
+        );
     }
 }
