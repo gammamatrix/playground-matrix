@@ -472,8 +472,8 @@ class Ticket extends Model
             'introduction' => 'string',
             'content' => 'string',
             'summary' => 'string',
-            'key' => 'string',
             'handler' => 'string',
+            'key' => 'string',
             'code' => 'integer',
             'key_code_hash' => 'string',
             'priority' => 'string',
@@ -609,6 +609,18 @@ class Ticket extends Model
             Milestone::class,
             'id',
             'milestone_id'
+        );
+    }
+
+    /**
+     * The note of the ticket.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
         );
     }
 

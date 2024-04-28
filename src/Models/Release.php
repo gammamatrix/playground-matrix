@@ -469,6 +469,18 @@ class Release extends Model
     }
 
     /**
+     * The note of the release.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the release.
      */
     public function project(): HasOne

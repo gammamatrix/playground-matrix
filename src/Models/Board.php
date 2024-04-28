@@ -481,6 +481,18 @@ class Board extends Model
     }
 
     /**
+     * The note of the board.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the board.
      */
     public function project(): HasOne

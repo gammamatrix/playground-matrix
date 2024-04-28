@@ -483,6 +483,18 @@ class Project extends Model
     }
 
     /**
+     * The note of the project.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The release of the project.
      */
     public function release(): HasOne

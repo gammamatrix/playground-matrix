@@ -63,6 +63,11 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Milestone::class,
         ],
+        'note' => [
+            'key' => 'note_id',
+            'rule' => 'create',
+            'modelClass' => \Playground\Matrix\Models\Note::class,
+        ],
         'project' => [
             'key' => 'project_id',
             'rule' => 'create',

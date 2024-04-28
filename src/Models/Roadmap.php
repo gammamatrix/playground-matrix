@@ -470,6 +470,18 @@ class Roadmap extends Model
     }
 
     /**
+     * The note of the roadmap.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the roadmap.
      */
     public function project(): HasOne

@@ -475,6 +475,18 @@ class Milestone extends Model
     }
 
     /**
+     * The note of the milestone.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the milestone.
      */
     public function project(): HasOne

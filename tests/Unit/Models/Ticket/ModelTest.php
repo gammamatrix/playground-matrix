@@ -30,6 +30,7 @@ class ModelTest extends ModelCase
         'flow',
         'matrix',
         'milestone',
+        'note',
         'project',
         'release',
         'reportedBy',

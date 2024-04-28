@@ -481,6 +481,18 @@ class Epic extends Model
     }
 
     /**
+     * The note of the epic.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the epic.
      */
     public function project(): HasOne

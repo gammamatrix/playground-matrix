@@ -469,7 +469,7 @@ class Sprint extends Model
     }
 
     /**
-     * The matrix of the board.
+     * The matrix of the sprint.
      */
     public function matrix(): HasOne
     {
@@ -477,6 +477,18 @@ class Sprint extends Model
             Matrix::class,
             'id',
             'matrix_id'
+        );
+    }
+
+    /**
+     * The note of the sprint.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
         );
     }
 
