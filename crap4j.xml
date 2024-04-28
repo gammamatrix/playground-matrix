@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-27 22:37:53</timestamp>
+  <timestamp>2024-04-28 17:57:56</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>210</methodCount>
+    <methodCount>186</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>220</totalCrap>
+    <totalCrap>196</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -607,6 +607,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Milestone</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -1191,6 +1202,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Roadmap</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Roadmap</className>
       <methodName>milestone</methodName>
       <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
@@ -1301,97 +1323,9 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Source</className>
-      <methodName>backlog</methodName>
-      <methodSignature>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>board</methodName>
-      <methodSignature>board(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>board(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>epic</methodName>
-      <methodSignature>epic(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>epic(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>flow</methodName>
-      <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>milestone</methodName>
-      <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>project</methodName>
-      <methodSignature>project(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>project(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>release</methodName>
-      <methodSignature>release(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>release(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>roadmap</methodName>
-      <methodSignature>roadmap(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>roadmap(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>sprint</methodName>
-      <methodSignature>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1414,28 +1348,6 @@
       <methodName>team</methodName>
       <methodSignature>team(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>team(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>ticket</methodName>
-      <methodSignature>ticket(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>ticket(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>version</methodName>
-      <methodSignature>version(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>version(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1620,141 +1532,9 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Tag</className>
-      <methodName>backlog</methodName>
-      <methodSignature>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>board</methodName>
-      <methodSignature>board(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>board(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>epic</methodName>
-      <methodSignature>epic(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>epic(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>flow</methodName>
-      <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>milestone</methodName>
-      <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>project</methodName>
-      <methodSignature>project(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>project(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>release</methodName>
-      <methodSignature>release(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>release(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>roadmap</methodName>
-      <methodSignature>roadmap(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>roadmap(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>source</methodName>
-      <methodSignature>source(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>source(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>sprint</methodName>
-      <methodSignature>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>team</methodName>
-      <methodSignature>team(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>team(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>ticket</methodName>
-      <methodSignature>ticket(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>ticket(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>version</methodName>
-      <methodSignature>version(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>version(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1818,9 +1598,31 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Team</className>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
       <methodName>milestone</methodName>
       <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
+      <methodName>note</methodName>
+      <methodSignature>note(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>note(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2126,53 +1928,9 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Version</className>
-      <methodName>backlog</methodName>
-      <methodSignature>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>backlog(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>board</methodName>
-      <methodSignature>board(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>board(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>epic</methodName>
-      <methodSignature>epic(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>epic(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>flow</methodName>
-      <methodSignature>flow(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>flow(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>milestone</methodName>
-      <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <methodName>matrix</methodName>
+      <methodSignature>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>matrix(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2184,17 +1942,6 @@
       <methodName>project</methodName>
       <methodSignature>project(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>project(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>release</methodName>
-      <methodSignature>release(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>release(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2217,17 +1964,6 @@
       <methodName>source</methodName>
       <methodSignature>source(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
       <fullMethod>source(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>sprint</methodName>
-      <methodSignature>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>sprint(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
