@@ -83,7 +83,6 @@ use Playground\Models\Model;
  * @property bool $problem
  * @property bool $published
  * @property bool $released
- * @property bool $resolved
  * @property bool $suspended
  * @property bool $unknown
  * @property string $label

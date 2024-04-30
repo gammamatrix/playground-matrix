@@ -43,9 +43,11 @@ use Playground\Models\Model;
  * @property ?Carbon $canceled_at
  * @property ?Carbon $closed_at
  * @property ?Carbon $embargo_at
+ * @property ?Carbon $fixed_at
  * @property ?Carbon $postponed_at
  * @property ?Carbon $published_at
  * @property ?Carbon $released_at
+ * @property ?Carbon $resolved_at
  * @property ?Carbon $resumed_at
  * @property ?Carbon $suspended_at
  * @property int $gids
@@ -76,6 +78,7 @@ use Playground\Models\Model;
  * @property bool $completed
  * @property bool $cron
  * @property bool $flagged
+ * @property bool $fixed
  * @property bool $internal
  * @property bool $locked
  * @property bool $pending
@@ -83,6 +86,8 @@ use Playground\Models\Model;
  * @property bool $problem
  * @property bool $published
  * @property bool $released
+ * @property bool $resolved
+ * @property bool $retired
  * @property bool $suspended
  * @property bool $unknown
  * @property string $label
@@ -148,9 +153,11 @@ class Release extends Model
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
+        'fixed_at' => null,
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
+        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -181,6 +188,7 @@ class Release extends Model
         'completed' => false,
         'cron' => false,
         'flagged' => false,
+        'fixed' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
@@ -188,6 +196,8 @@ class Release extends Model
         'problem' => false,
         'published' => false,
         'released' => false,
+        'resolved' => false,
+        'retired' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -245,9 +255,11 @@ class Release extends Model
         'canceled_at',
         'closed_at',
         'embargo_at',
+        'fixed_at',
         'postponed_at',
         'published_at',
         'released_at',
+        'resolved_at',
         'resumed_at',
         'suspended_at',
         'gids',
@@ -278,6 +290,7 @@ class Release extends Model
         'completed',
         'cron',
         'flagged',
+        'fixed',
         'internal',
         'locked',
         'pending',
@@ -285,6 +298,7 @@ class Release extends Model
         'problem',
         'published',
         'released',
+        'retired',
         'suspended',
         'unknown',
         'label',
@@ -329,9 +343,11 @@ class Release extends Model
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
+            'fixed_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
             'released_at' => 'datetime',
+            'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
@@ -362,6 +378,7 @@ class Release extends Model
             'completed' => 'boolean',
             'cron' => 'boolean',
             'flagged' => 'boolean',
+            'fixed' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
@@ -369,6 +386,8 @@ class Release extends Model
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
+            'resolved' => 'boolean',
+            'retired' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
