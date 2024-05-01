@@ -17,6 +17,9 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
+    /**
+     * @var array<int, string> Test has one relationships.
+     */
     protected array $hasOne = [
         'creator',
         'modifier',
