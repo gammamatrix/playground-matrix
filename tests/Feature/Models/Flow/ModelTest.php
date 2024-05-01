@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Feature\Playground\Matrix\Models\Flow;
 
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
@@ -37,6 +37,11 @@ class ModelTest extends ModelCase
             'key' => 'parent_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Flow::class,
+        ],
+        'matrix' => [
+            'key' => 'matrix_id',
+            'rule' => 'create',
+            'modelClass' => \Playground\Matrix\Models\Matrix::class,
         ],
         'note' => [
             'key' => 'note_id',

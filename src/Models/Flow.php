@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -11,6 +11,83 @@ use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Flow
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property ?string $flow_type
+ * @property ?string $matrix_id
+ * @property ?string $note_id
+ * @property ?string $tag_id
+ * @property ?string $team_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property ?array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $cron
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $problem
+ * @property bool $retired
+ * @property bool $suspended
+ * @property bool $unknown
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property ?string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property ?string $content
+ * @property ?string $summary
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $flow
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $backlog
+ * @property ?array $board
+ * @property ?array $roadmap
+ * @property ?array $sources
  */
 class Flow extends Model
 {
@@ -27,6 +104,7 @@ class Flow extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'flow_type' => null,
+        'matrix_id' => null,
         'note_id' => null,
         'tag_id' => null,
         'team_id' => null,
@@ -37,14 +115,8 @@ class Flow extends Model
         'planned_start_at' => null,
         'end_at' => null,
         'planned_end_at' => null,
-        'canceled_at' => null,
-        'closed_at' => null,
         'embargo_at' => null,
-        'fixed_at' => null,
         'postponed_at' => null,
-        'published_at' => null,
-        'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -58,7 +130,7 @@ class Flow extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -70,21 +142,14 @@ class Flow extends Model
         'latitude' => null,
         'longitude' => null,
         'active' => true,
-        'canceled' => false,
-        'closed' => false,
-        'completed' => false,
-        'duplicate' => false,
-        'fixed' => false,
+        'cron' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
         'planned' => false,
         'problem' => false,
-        'published' => false,
-        'released' => false,
         'retired' => false,
-        'resolved' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -101,10 +166,14 @@ class Flow extends Model
         'avatar' => '',
         'ui' => '{}',
         'assets' => '{}',
+        'backlog' => '{}',
+        'board' => '{}',
         'flow' => '{}',
         'meta' => '{}',
         'notes' => '[]',
         'options' => '{}',
+        'roadmap' => '{}',
+        'sources' => '{}',
     ];
 
     /**
@@ -116,6 +185,7 @@ class Flow extends Model
         'owned_by_id',
         'parent_id',
         'flow_type',
+        'matrix_id',
         'note_id',
         'tag_id',
         'team_id',
@@ -123,15 +193,9 @@ class Flow extends Model
         'planned_start_at',
         'end_at',
         'planned_end_at',
-        'canceled_at',
-        'closed_at',
         'embargo_at',
-        'fixed_at',
         'postponed_at',
-        'published_at',
-        'released_at',
         'resumed_at',
-        'resolved_at',
         'suspended_at',
         'gids',
         'po',
@@ -156,21 +220,14 @@ class Flow extends Model
         'latitude',
         'longitude',
         'active',
-        'canceled',
-        'closed',
-        'completed',
-        'duplicate',
-        'fixed',
+        'cron',
         'flagged',
         'internal',
         'locked',
         'pending',
         'planned',
         'problem',
-        'published',
-        'released',
         'retired',
-        'resolved',
         'suspended',
         'unknown',
         'label',
@@ -187,10 +244,13 @@ class Flow extends Model
         'avatar',
         'ui',
         'assets',
+        'backlog',
+        'board',
         'flow',
         'meta',
-        'notes',
         'options',
+        'roadmap',
+        'sources',
     ];
 
     /**
@@ -209,15 +269,9 @@ class Flow extends Model
             'planned_start_at' => 'datetime',
             'end_at' => 'datetime',
             'planned_end_at' => 'datetime',
-            'canceled_at' => 'datetime',
-            'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
-            'fixed_at' => 'datetime',
             'postponed_at' => 'datetime',
-            'published_at' => 'datetime',
-            'released_at' => 'datetime',
             'resumed_at' => 'datetime',
-            'resolved_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
@@ -230,7 +284,7 @@ class Flow extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
+            'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
             'z' => 'integer',
@@ -242,21 +296,14 @@ class Flow extends Model
             'latitude' => 'float',
             'longitude' => 'float',
             'active' => 'boolean',
-            'canceled' => 'boolean',
-            'closed' => 'boolean',
-            'completed' => 'boolean',
-            'duplicate' => 'boolean',
-            'fixed' => 'boolean',
+            'cron' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
             'problem' => 'boolean',
-            'published' => 'boolean',
-            'released' => 'boolean',
             'retired' => 'boolean',
-            'resolved' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -273,6 +320,8 @@ class Flow extends Model
             'avatar' => 'string',
             'ui' => 'array',
             'assets' => 'array',
+            'backlog' => 'array',
+            'board' => 'array',
             'flow' => 'array',
             'meta' => 'array',
             'notes' => 'array',
@@ -280,6 +329,18 @@ class Flow extends Model
             'roadmap' => 'array',
             'sources' => 'array',
         ];
+    }
+
+    /**
+     * The matrix of the flow.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
+        );
     }
 
     /**

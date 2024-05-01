@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -17,20 +17,20 @@ use Playground\Models\Model;
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
- * @property string $ticket_type
+ * @property ?string $ticket_type
+ * @property ?string $duplicate_id
  * @property ?string $backlog_id
  * @property ?string $board_id
- * @property ?string $completed_by_id
- * @property ?string $duplicate_id
+ * @property ?scalar $completed_by_id
  * @property ?string $epic_id
- * @property ?string $fixed_by_id
+ * @property ?scalar $fixed_by_id
  * @property ?string $flow_id
  * @property ?string $matrix_id
  * @property ?string $milestone_id
  * @property ?string $note_id
  * @property ?string $project_id
  * @property ?string $release_id
- * @property ?string $reported_by_id
+ * @property ?scalar $reported_by_id
  * @property ?string $roadmap_id
  * @property ?string $source_id
  * @property ?string $sprint_id
@@ -66,8 +66,7 @@ use Playground\Models\Model;
  * @property int $status
  * @property int $rank
  * @property int $size
- * @property int $revision
- * @property array $matrix
+ * @property ?array $matrix
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
@@ -82,6 +81,7 @@ use Playground\Models\Model;
  * @property bool $canceled
  * @property bool $closed
  * @property bool $completed
+ * @property bool $cron
  * @property bool $duplicate
  * @property bool $fixed
  * @property bool $flagged
@@ -89,26 +89,28 @@ use Playground\Models\Model;
  * @property bool $locked
  * @property bool $pending
  * @property bool $planned
+ * @property bool $prioritized
  * @property bool $problem
  * @property bool $published
  * @property bool $released
  * @property bool $retired
  * @property bool $resolved
+ * @property bool $special
  * @property bool $suspended
  * @property bool $unknown
  * @property string $label
  * @property string $title
  * @property string $byline
- * @property string $slug
+ * @property ?string $slug
  * @property string $url
  * @property string $description
  * @property string $introduction
- * @property string $content
- * @property string $summary
- * @property string $key
+ * @property ?string $content
+ * @property ?string $summary
  * @property string $handler
- * @property int $code
- * @property string $key_code_hash
+ * @property ?string $key
+ * @property ?int $code
+ * @property ?string $key_code_hash
  * @property string $priority
  * @property string $severity
  * @property string $resolution
@@ -116,26 +118,26 @@ use Playground\Models\Model;
  * @property string $state
  * @property string $workflow_type
  * @property int $points
- * @property string $actual
- * @property string $expected
- * @property string $story
- * @property string $steps
- * @property string $criteria
- * @property ?float $reproducibility
+ * @property ?string $actual
+ * @property ?string $expected
+ * @property ?string $story
+ * @property ?string $steps
+ * @property ?string $criteria
+ * @property ?double $reproducibility
  * @property string $icon
  * @property string $image
  * @property string $avatar
- * @property array $ui
- * @property array $assets
- * @property array $backlog
- * @property array $board
- * @property array $flow
- * @property array $history
- * @property array $meta
- * @property array $notes
- * @property array $options
- * @property array $roadmap
- * @property array $sources
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $backlog
+ * @property ?array $board
+ * @property ?array $flow
+ * @property ?array $history
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $roadmap
+ * @property ?array $sources
  */
 class Ticket extends Model
 {
@@ -151,10 +153,11 @@ class Ticket extends Model
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
-        'duplicate_id' => null,
+        'ticket_type' => null,
         'backlog_id' => null,
         'board_id' => null,
         'completed_by_id' => null,
+        'duplicate_id' => null,
         'epic_id' => null,
         'fixed_by_id' => null,
         'flow_id' => null,
@@ -169,9 +172,8 @@ class Ticket extends Model
         'sprint_id' => null,
         'tag_id' => null,
         'team_id' => null,
-        'version_id' => null,
         'version_fixed_id' => null,
-        'ticket_type' => null,
+        'version_id' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
@@ -186,8 +188,8 @@ class Ticket extends Model
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
+        'resolved_at' => null,
         'suspended_at' => null,
         'gids' => 0,
         'po' => 0,
@@ -200,7 +202,7 @@ class Ticket extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -215,6 +217,7 @@ class Ticket extends Model
         'canceled' => false,
         'closed' => false,
         'completed' => false,
+        'cron' => false,
         'duplicate' => false,
         'fixed' => false,
         'flagged' => false,
@@ -222,6 +225,7 @@ class Ticket extends Model
         'locked' => false,
         'pending' => false,
         'planned' => false,
+        'prioritized' => false,
         'problem' => false,
         'published' => false,
         'released' => false,
@@ -238,10 +242,10 @@ class Ticket extends Model
         'introduction' => '',
         'content' => null,
         'summary' => null,
-        'key' => '',
         'handler' => '',
-        'code' => 0,
-        'key_code_hash' => '',
+        'key' => null,
+        'code' => null,
+        'key_code_hash' => null,
         'priority' => '',
         'severity' => '',
         'resolution' => '',
@@ -251,8 +255,8 @@ class Ticket extends Model
         'points' => 0,
         'actual' => null,
         'expected' => null,
-        'steps' => null,
         'story' => null,
+        'steps' => null,
         'criteria' => null,
         'reproducibility' => null,
         'icon' => '',
@@ -298,8 +302,8 @@ class Ticket extends Model
         'sprint_id',
         'tag_id',
         'team_id',
-        'version_id',
         'version_fixed_id',
+        'version_id',
         'start_at',
         'planned_start_at',
         'end_at',
@@ -340,6 +344,7 @@ class Ticket extends Model
         'canceled',
         'closed',
         'completed',
+        'cron',
         'duplicate',
         'fixed',
         'flagged',
@@ -347,6 +352,7 @@ class Ticket extends Model
         'locked',
         'pending',
         'planned',
+        'prioritized',
         'problem',
         'published',
         'released',
@@ -363,10 +369,7 @@ class Ticket extends Model
         'introduction',
         'content',
         'summary',
-        'key',
         'handler',
-        'code',
-        'key_code_hash',
         'priority',
         'severity',
         'resolution',
@@ -378,7 +381,6 @@ class Ticket extends Model
         'expected',
         'story',
         'steps',
-        'story',
         'criteria',
         'reproducibility',
         'icon',
@@ -391,7 +393,6 @@ class Ticket extends Model
         'flow',
         'history',
         'meta',
-        'notes',
         'options',
         'roadmap',
         'sources',
@@ -449,6 +450,7 @@ class Ticket extends Model
             'canceled' => 'boolean',
             'closed' => 'boolean',
             'completed' => 'boolean',
+            'cron' => 'boolean',
             'duplicate' => 'boolean',
             'fixed' => 'boolean',
             'flagged' => 'boolean',
@@ -456,6 +458,7 @@ class Ticket extends Model
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
+            'prioritized' => 'boolean',
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
@@ -472,8 +475,8 @@ class Ticket extends Model
             'introduction' => 'string',
             'content' => 'string',
             'summary' => 'string',
-            'key' => 'string',
             'handler' => 'string',
+            'key' => 'string',
             'code' => 'integer',
             'key_code_hash' => 'string',
             'priority' => 'string',
@@ -483,7 +486,10 @@ class Ticket extends Model
             'state' => 'string',
             'workflow_type' => 'string',
             'points' => 'integer',
+            'actual' => 'string',
+            'expected' => 'string',
             'story' => 'string',
+            'steps' => 'string',
             'criteria' => 'string',
             'reproducibility' => 'decimal',
             'icon' => 'string',
@@ -586,6 +592,18 @@ class Ticket extends Model
     }
 
     /**
+     * The matrix of the ticket.
+     */
+    public function matrix(): HasOne
+    {
+        return $this->hasOne(
+            Matrix::class,
+            'id',
+            'matrix_id'
+        );
+    }
+
+    /**
      * The milestone of the ticket.
      */
     public function milestone(): HasOne
@@ -594,6 +612,18 @@ class Ticket extends Model
             Milestone::class,
             'id',
             'milestone_id'
+        );
+    }
+
+    /**
+     * The note of the ticket.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
         );
     }
 

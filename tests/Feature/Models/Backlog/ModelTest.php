@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Feature\Playground\Matrix\Models\Backlog;
 
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
@@ -17,6 +17,23 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
+    /**
+     * @var array<string, array<string, mixed>> Test has many relationships.
+     */
+    protected array $hasMany = [
+        'sprints' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+        ],
+        'tickets' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Ticket::class,
+        ],
+    ];
+
+    /**
+     * @var array<string, array<string, mixed>> Test has one relationships.
+     */
     protected array $hasOne = [
         'creator' => [
             'key' => 'created_by_id',
@@ -25,12 +42,12 @@ class ModelTest extends ModelCase
         ],
         'modifier' => [
             'key' => 'modified_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'owner' => [
             'key' => 'owned_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'parent' => [
@@ -52,6 +69,11 @@ class ModelTest extends ModelCase
             'key' => 'flow_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Flow::class,
+        ],
+        'matrix' => [
+            'key' => 'matrix_id',
+            'rule' => 'create',
+            'modelClass' => \Playground\Matrix\Models\Matrix::class,
         ],
         'milestone' => [
             'key' => 'milestone_id',

@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Unit\Playground\Matrix\Models\Note;
 
 use Tests\Unit\Playground\Matrix\Models\ModelCase;
@@ -15,5 +15,17 @@ class ModelTest extends ModelCase
 {
     protected string $modelClass = \Playground\Matrix\Models\Note::class;
 
-    protected bool $hasRelationships = false;
+    protected bool $hasRelationships = true;
+
+    /**
+     * @var array<int, string> Test has one relationships.
+     */
+    protected array $hasOne = [
+        'creator',
+        'modifier',
+        'owner',
+        'parent',
+        'matrix',
+        'tag',
+    ];
 }

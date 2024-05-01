@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Tests\Unit\Playground\Matrix\Models\Board;
 
 use Tests\Unit\Playground\Matrix\Models\ModelCase;
@@ -17,6 +17,9 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
+    /**
+     * @var array<int, string> Test has one relationships.
+     */
     protected array $hasOne = [
         'creator',
         'modifier',
@@ -25,7 +28,9 @@ class ModelTest extends ModelCase
         'backlog',
         'epic',
         'flow',
+        'matrix',
         'milestone',
+        'note',
         'project',
         'release',
         'roadmap',

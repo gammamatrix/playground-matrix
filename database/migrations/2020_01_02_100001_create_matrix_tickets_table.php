@@ -1,15 +1,18 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * \Playground\Matrix\Models\Ticket
+ */
 return new class() extends Migration
 {
     /**
@@ -18,6 +21,7 @@ return new class() extends Migration
     public function up(): void
     {
         Schema::create('matrix_tickets', function (Blueprint $table) {
+
             // Primary key
 
             $table->uuid('id')->primary();
@@ -28,6 +32,7 @@ return new class() extends Migration
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
+            $table->string('ticket_type')->nullable()->index();
             $table->uuid('duplicate_id')->nullable()->index();
             $table->uuid('backlog_id')->nullable()->index();
             $table->uuid('board_id')->nullable()->index();
@@ -48,7 +53,6 @@ return new class() extends Migration
             $table->uuid('team_id')->nullable()->index();
             $table->uuid('version_id')->nullable()->index();
             $table->uuid('version_fixed_id')->nullable()->index();
-            $table->string('ticket_type')->nullable()->index();
 
             // Dates
 
@@ -94,13 +98,13 @@ return new class() extends Migration
             $table->bigInteger('x')->nullable();
             $table->bigInteger('y')->nullable();
             $table->bigInteger('z')->nullable();
-            $table->decimal('r', 65, 10)->nullable()->default(null);
-            $table->decimal('theta', 10, 6)->nullable()->default(null);
-            $table->decimal('rho', 10, 6)->nullable()->default(null);
-            $table->decimal('phi', 10, 6)->nullable()->default(null);
-            $table->decimal('elevation', 65, 10)->nullable()->default(null);
-            $table->decimal('latitude', 8, 6)->nullable()->default(null);
-            $table->decimal('longitude', 9, 6)->nullable()->default(null);
+            $table->decimal('r', 65, 10)->nullable();
+            $table->decimal('theta', 10, 6)->nullable();
+            $table->decimal('rho', 10, 6)->nullable();
+            $table->decimal('phi', 10, 6)->nullable();
+            $table->decimal('elevation', 65, 10)->nullable();
+            $table->decimal('latitude', 8, 6)->nullable();
+            $table->decimal('longitude', 9, 6)->nullable();
 
             // Flags
 
@@ -108,6 +112,7 @@ return new class() extends Migration
             $table->boolean('canceled')->default(0);
             $table->boolean('closed')->default(0);
             $table->boolean('completed')->default(0);
+            $table->boolean('cron')->default(0)->index();
             $table->boolean('duplicate')->default(0);
             $table->boolean('fixed')->default(0);
             $table->boolean('flagged')->default(0);
@@ -115,29 +120,31 @@ return new class() extends Migration
             $table->boolean('locked')->default(0);
             $table->boolean('pending')->default(0);
             $table->boolean('planned')->default(0);
+            $table->boolean('prioritized')->default(0);
             $table->boolean('problem')->default(0);
             $table->boolean('published')->default(0);
             $table->boolean('released')->default(0);
-            $table->boolean('retired')->default(0);
             $table->boolean('resolved')->default(0);
+            $table->boolean('retired')->default(0);
+            $table->boolean('special')->default(0);
             $table->boolean('suspended')->default(0);
             $table->boolean('unknown')->default(0);
 
-            // Strings
+            // Columns
 
-            $table->string('label')->default('');
-            $table->string('title')->default('');
-            $table->string('byline')->default('');
-            $table->string('slug')->nullable()->default(null)->index();
-            $table->string('url')->default('');
-            $table->string('description')->default('');
-            $table->string('introduction')->default('');
+            $table->string('label', 128)->default('');
+            $table->string('title', 255)->default('');
+            $table->string('byline', 255)->default('');
+            $table->string('slug', 128)->nullable()->index();
+            $table->string('url', 512)->default('');
+            $table->string('description', 512)->default('');
+            $table->string('introduction', 512)->default('');
             $table->mediumText('content')->nullable();
             $table->mediumText('summary')->nullable();
-            $table->string('key')->default('');
             $table->string('handler')->default('');
-            $table->bigInteger('code')->default(0)->unsigned()->index();
-            $table->string('key_code_hash')->default('');
+            $table->string('key', 32)->nullable()->index();
+            $table->bigInteger('code')->nullable()->unsigned()->index();
+            $table->string('key_code_hash')->nullable();
             $table->string('priority')->default('');
             $table->string('severity')->default('');
             $table->string('resolution')->default('');
@@ -150,13 +157,13 @@ return new class() extends Migration
             $table->mediumText('story')->nullable();
             $table->mediumText('steps')->nullable();
             $table->mediumText('criteria')->nullable();
-            $table->decimal('reproducibility', 8, 2)->nullable()->default(null);
+            $table->decimal('reproducibility', 8, 2)->nullable();
 
-            // UI
+            // Ui
 
-            $table->string('icon')->default('');
-            $table->string('image')->default('');
-            $table->string('avatar')->default('');
+            $table->string('icon', 128)->default('');
+            $table->string('image', 512)->default('');
+            $table->string('avatar', 512)->default('');
             $table->json('ui')->nullable()->default(new Expression('(JSON_OBJECT())'));
 
             // JSON

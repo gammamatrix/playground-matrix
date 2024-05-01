@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -11,6 +11,92 @@ use Playground\Models\Model;
 
 /**
  * \Playground\Matrix\Models\Source
+ *
+ * @property string $id
+ * @property ?scalar $created_by_id
+ * @property ?scalar $modified_by_id
+ * @property ?scalar $owned_by_id
+ * @property ?string $parent_id
+ * @property ?string $source_type
+ * @property ?string $matrix_id
+ * @property ?string $tag_id
+ * @property ?string $team_id
+ * @property ?Carbon $created_at
+ * @property ?Carbon $updated_at
+ * @property ?Carbon $deleted_at
+ * @property ?Carbon $start_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $end_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $fixed_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $resolved_at
+ * @property ?Carbon $suspended_at
+ * @property int $gids
+ * @property int $po
+ * @property int $pg
+ * @property int $pw
+ * @property bool $only_admin
+ * @property bool $only_user
+ * @property bool $only_guest
+ * @property bool $allow_public
+ * @property int $status
+ * @property int $rank
+ * @property int $size
+ * @property ?array $matrix
+ * @property ?int $x
+ * @property ?int $y
+ * @property ?int $z
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
+ * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
+ * @property bool $cron
+ * @property bool $duplicate
+ * @property bool $fixed
+ * @property bool $flagged
+ * @property bool $internal
+ * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $problem
+ * @property bool $published
+ * @property bool $released
+ * @property bool $retired
+ * @property bool $resolved
+ * @property bool $suspended
+ * @property bool $unknown
+ * @property string $label
+ * @property string $title
+ * @property string $byline
+ * @property ?string $slug
+ * @property string $url
+ * @property string $description
+ * @property string $introduction
+ * @property ?string $content
+ * @property ?string $summary
+ * @property string $icon
+ * @property string $image
+ * @property string $avatar
+ * @property ?array $ui
+ * @property ?array $assets
+ * @property ?array $meta
+ * @property ?array $notes
+ * @property ?array $options
+ * @property ?array $sources
  */
 class Source extends Model
 {
@@ -27,20 +113,9 @@ class Source extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'source_type' => null,
-        'backlog_id' => null,
-        'board_id' => null,
-        'epic_id' => null,
-        'flow_id' => null,
-        'milestone_id' => null,
-        'note_id' => null,
-        'project_id' => null,
-        'release_id' => null,
-        'roadmap_id' => null,
-        'sprint_id' => null,
+        'matrix_id' => null,
         'tag_id' => null,
         'team_id' => null,
-        'ticket_id' => null,
-        'version_id' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
@@ -55,8 +130,8 @@ class Source extends Model
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
+        'resolved_at' => null,
         'suspended_at' => null,
         'gids' => 0,
         'po' => 0,
@@ -69,7 +144,7 @@ class Source extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '',
+        'matrix' => '{}',
         'x' => null,
         'y' => null,
         'z' => null,
@@ -84,6 +159,7 @@ class Source extends Model
         'canceled' => false,
         'closed' => false,
         'completed' => false,
+        'cron' => false,
         'duplicate' => false,
         'fixed' => false,
         'flagged' => false,
@@ -112,13 +188,9 @@ class Source extends Model
         'avatar' => '',
         'ui' => '{}',
         'assets' => '{}',
-        'backlog' => '{}',
-        'board' => '{}',
-        'flow' => '{}',
         'meta' => '{}',
         'notes' => '[]',
         'options' => '{}',
-        'roadmap' => '{}',
         'sources' => '{}',
     ];
 
@@ -131,20 +203,9 @@ class Source extends Model
         'owned_by_id',
         'parent_id',
         'source_type',
-        'backlog_id',
-        'board_id',
-        'epic_id',
-        'flow_id',
-        'milestone_id',
-        'note_id',
-        'project_id',
-        'release_id',
-        'roadmap_id',
-        'sprint_id',
+        'matrix_id',
         'tag_id',
         'team_id',
-        'ticket_id',
-        'version_id',
         'start_at',
         'planned_start_at',
         'end_at',
@@ -185,6 +246,7 @@ class Source extends Model
         'canceled',
         'closed',
         'completed',
+        'cron',
         'duplicate',
         'fixed',
         'flagged',
@@ -195,8 +257,8 @@ class Source extends Model
         'problem',
         'published',
         'released',
-        'retired',
         'resolved',
+        'retired',
         'suspended',
         'unknown',
         'label',
@@ -213,13 +275,8 @@ class Source extends Model
         'avatar',
         'ui',
         'assets',
-        'backlog',
-        'board',
-        'flow',
         'meta',
-        'notes',
         'options',
-        'roadmap',
         'sources',
     ];
 
@@ -260,7 +317,7 @@ class Source extends Model
             'status' => 'integer',
             'rank' => 'integer',
             'size' => 'integer',
-            'matrix' => 'string',
+            'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
             'z' => 'integer',
@@ -275,6 +332,7 @@ class Source extends Model
             'canceled' => 'boolean',
             'closed' => 'boolean',
             'completed' => 'boolean',
+            'cron' => 'boolean',
             'duplicate' => 'boolean',
             'fixed' => 'boolean',
             'flagged' => 'boolean',
@@ -285,8 +343,8 @@ class Source extends Model
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
-            'retired' => 'boolean',
             'resolved' => 'boolean',
+            'retired' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -303,122 +361,22 @@ class Source extends Model
             'avatar' => 'string',
             'ui' => 'array',
             'assets' => 'array',
-            'backlog' => 'array',
-            'board' => 'array',
-            'flow' => 'array',
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
-            'roadmap' => 'array',
             'sources' => 'array',
         ];
     }
 
     /**
-     * The backlog of the source.
+     * The matrix of the source.
      */
-    public function backlog(): HasOne
+    public function matrix(): HasOne
     {
         return $this->hasOne(
-            Backlog::class,
+            Matrix::class,
             'id',
-            'backlog_id'
-        );
-    }
-
-    /**
-     * The board of the source.
-     */
-    public function board(): HasOne
-    {
-        return $this->hasOne(
-            Board::class,
-            'id',
-            'board_id'
-        );
-    }
-
-    /**
-     * The epic of the source.
-     */
-    public function epic(): HasOne
-    {
-        return $this->hasOne(
-            Epic::class,
-            'id',
-            'epic_id'
-        );
-    }
-
-    /**
-     * The flow of the source.
-     */
-    public function flow(): HasOne
-    {
-        return $this->hasOne(
-            Flow::class,
-            'id',
-            'flow_id'
-        );
-    }
-
-    /**
-     * The milestone of the source.
-     */
-    public function milestone(): HasOne
-    {
-        return $this->hasOne(
-            Milestone::class,
-            'id',
-            'milestone_id'
-        );
-    }
-
-    /**
-     * The project of the source.
-     */
-    public function project(): HasOne
-    {
-        return $this->hasOne(
-            Project::class,
-            'id',
-            'project_id'
-        );
-    }
-
-    /**
-     * The release of the source.
-     */
-    public function release(): HasOne
-    {
-        return $this->hasOne(
-            Release::class,
-            'id',
-            'release_id'
-        );
-    }
-
-    /**
-     * The roadmap of the source.
-     */
-    public function roadmap(): HasOne
-    {
-        return $this->hasOne(
-            Roadmap::class,
-            'id',
-            'roadmap_id'
-        );
-    }
-
-    /**
-     * The sprint of the source.
-     */
-    public function sprint(): HasOne
-    {
-        return $this->hasOne(
-            Sprint::class,
-            'id',
-            'sprint_id'
+            'matrix_id'
         );
     }
 
@@ -443,30 +401,6 @@ class Source extends Model
             Team::class,
             'id',
             'team_id'
-        );
-    }
-
-    /**
-     * The ticket of the source.
-     */
-    public function ticket(): HasOne
-    {
-        return $this->hasOne(
-            Ticket::class,
-            'id',
-            'ticket_id'
-        );
-    }
-
-    /**
-     * The version of the source.
-     */
-    public function version(): HasOne
-    {
-        return $this->hasOne(
-            Version::class,
-            'id',
-            'version_id'
         );
     }
 }
