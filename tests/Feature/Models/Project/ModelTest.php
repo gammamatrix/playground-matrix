@@ -17,6 +17,9 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
+    /**
+     * @var array<string, array<string, mixed>> Test has one relationships.
+     */
     protected array $hasOne = [
         'creator' => [
             'key' => 'created_by_id',
@@ -25,12 +28,12 @@ class ModelTest extends ModelCase
         ],
         'modifier' => [
             'key' => 'modified_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'owner' => [
             'key' => 'owned_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'parent' => [
@@ -63,15 +66,15 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Matrix::class,
         ],
-        'note' => [
-            'key' => 'note_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Note::class,
-        ],
         'milestone' => [
             'key' => 'milestone_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Milestone::class,
+        ],
+        'note' => [
+            'key' => 'note_id',
+            'rule' => 'create',
+            'modelClass' => \Playground\Matrix\Models\Note::class,
         ],
         'release' => [
             'key' => 'release_id',
