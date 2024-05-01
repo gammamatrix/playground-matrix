@@ -18,13 +18,22 @@ class ModelTest extends ModelCase
     protected bool $hasRelationships = true;
 
     /**
-     * @var array<string, array<string, mixed>> Test hasMany relationships.
+     * @var array<string, array<string, mixed>> Test has many relationships.
      */
     protected array $hasMany = [
-        'sprints' => ['key' => 'backlog_id', 'modelClass' => \Playground\Matrix\Models\Sprint::class],
-        'tickets' => ['key' => 'backlog_id', 'modelClass' => \Playground\Matrix\Models\Ticket::class],
+        'sprints' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+        ],
+        'tickets' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Ticket::class,
+        ],
     ];
 
+    /**
+     * @var array<string, array<string, mixed>> Test has one relationships.
+     */
     protected array $hasOne = [
         'creator' => [
             'key' => 'created_by_id',
@@ -33,12 +42,12 @@ class ModelTest extends ModelCase
         ],
         'modifier' => [
             'key' => 'modified_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'owner' => [
             'key' => 'owned_by_id',
-            'rule' => 'create',
+            'rule' => 'first',
             'modelClass' => \Playground\Models\User::class,
         ],
         'parent' => [
