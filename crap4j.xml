@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-05-01 07:37:51</timestamp>
+  <timestamp>2024-05-11 07:39:41</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>194</methodCount>
@@ -1488,9 +1488,9 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Sprint</className>
-      <methodName>note</methodName>
-      <methodSignature>note(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>note(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <methodName>milestone</methodName>
+      <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1499,9 +1499,9 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Sprint</className>
-      <methodName>milestone</methodName>
-      <methodSignature>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
-      <fullMethod>milestone(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
+      <methodName>note</methodName>
+      <methodSignature>note(): Illuminate\Database\Eloquent\Relations\HasOne</methodSignature>
+      <fullMethod>note(): Illuminate\Database\Eloquent\Relations\HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
