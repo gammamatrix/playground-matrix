@@ -322,7 +322,6 @@ class Matrix extends Model
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
-            'roadmap' => 'array',
             'sources' => 'array',
         ];
     }

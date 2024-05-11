@@ -481,18 +481,6 @@ class Sprint extends Model
     }
 
     /**
-     * The note of the sprint.
-     */
-    public function note(): HasOne
-    {
-        return $this->hasOne(
-            Note::class,
-            'id',
-            'note_id'
-        );
-    }
-
-    /**
      * The milestone of the sprint.
      */
     public function milestone(): HasOne
@@ -501,6 +489,18 @@ class Sprint extends Model
             Milestone::class,
             'id',
             'milestone_id'
+        );
+    }
+
+    /**
+     * The note of the sprint.
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
         );
     }
 
