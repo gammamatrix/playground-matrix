@@ -422,6 +422,8 @@ class Sprint extends Model
 
     /**
      * The backlog of the sprint.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -434,6 +436,8 @@ class Sprint extends Model
 
     /**
      * The board of the sprint.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -446,6 +450,8 @@ class Sprint extends Model
 
     /**
      * The epic of the sprint.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -458,6 +464,8 @@ class Sprint extends Model
 
     /**
      * The flow of the sprint.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -470,6 +478,8 @@ class Sprint extends Model
 
     /**
      * The matrix of the sprint.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -481,19 +491,9 @@ class Sprint extends Model
     }
 
     /**
-     * The note of the sprint.
-     */
-    public function note(): HasOne
-    {
-        return $this->hasOne(
-            Note::class,
-            'id',
-            'note_id'
-        );
-    }
-
-    /**
      * The milestone of the sprint.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -505,7 +505,23 @@ class Sprint extends Model
     }
 
     /**
+     * The note of the sprint.
+     *
+     * @return HasOne<Note>
+     */
+    public function note(): HasOne
+    {
+        return $this->hasOne(
+            Note::class,
+            'id',
+            'note_id'
+        );
+    }
+
+    /**
      * The project of the sprint.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -518,6 +534,8 @@ class Sprint extends Model
 
     /**
      * The release of the sprint.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -530,6 +548,8 @@ class Sprint extends Model
 
     /**
      * The roadmap of the sprint.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -542,6 +562,8 @@ class Sprint extends Model
 
     /**
      * The source of the sprint.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -554,6 +576,8 @@ class Sprint extends Model
 
     /**
      * The tag of the sprint.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -566,6 +590,8 @@ class Sprint extends Model
 
     /**
      * The team of the sprint.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -578,6 +604,8 @@ class Sprint extends Model
 
     /**
      * The ticket of the sprint.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -590,6 +618,8 @@ class Sprint extends Model
 
     /**
      * The version of the sprint.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

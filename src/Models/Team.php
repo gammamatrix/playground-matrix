@@ -386,6 +386,8 @@ class Team extends Model
 
     /**
      * The backlog of the team.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -398,6 +400,8 @@ class Team extends Model
 
     /**
      * The board of the team.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -410,6 +414,8 @@ class Team extends Model
 
     /**
      * The epic of the team.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -422,6 +428,8 @@ class Team extends Model
 
     /**
      * The flow of the team.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -434,6 +442,8 @@ class Team extends Model
 
     /**
      * The matrix of the team.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -446,6 +456,8 @@ class Team extends Model
 
     /**
      * The milestone of the team.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -458,6 +470,8 @@ class Team extends Model
 
     /**
      * The note of the team.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -470,6 +484,8 @@ class Team extends Model
 
     /**
      * The project of the team.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -482,6 +498,8 @@ class Team extends Model
 
     /**
      * The release of the team.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -494,6 +512,8 @@ class Team extends Model
 
     /**
      * The roadmap of the team.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -506,6 +526,8 @@ class Team extends Model
 
     /**
      * The source of the team.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -518,6 +540,8 @@ class Team extends Model
 
     /**
      * The sprint of the team.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -530,6 +554,8 @@ class Team extends Model
 
     /**
      * The tag of the team.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -542,6 +568,8 @@ class Team extends Model
 
     /**
      * The ticket of the team.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -554,6 +582,8 @@ class Team extends Model
 
     /**
      * The version of the team.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

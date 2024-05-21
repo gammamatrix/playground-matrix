@@ -154,11 +154,9 @@ class Milestone extends Model
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
-        'fixed_at' => null,
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -257,11 +255,9 @@ class Milestone extends Model
         'canceled_at',
         'closed_at',
         'embargo_at',
-        'fixed_at',
         'postponed_at',
         'published_at',
         'released_at',
-        'resolved_at',
         'resumed_at',
         'suspended_at',
         'gids',
@@ -346,12 +342,10 @@ class Milestone extends Model
             'planned_end_at' => 'datetime',
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
-            'fixed_at' => 'datetime',
             'embargo_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
             'released_at' => 'datetime',
-            'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
@@ -422,6 +416,8 @@ class Milestone extends Model
 
     /**
      * The backlog of the milestone.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -434,6 +430,8 @@ class Milestone extends Model
 
     /**
      * The board of the milestone.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -446,6 +444,8 @@ class Milestone extends Model
 
     /**
      * The epic of the milestone.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -458,6 +458,8 @@ class Milestone extends Model
 
     /**
      * The flow of the milestone.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -470,6 +472,8 @@ class Milestone extends Model
 
     /**
      * The matrix of the milestone.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -482,6 +486,8 @@ class Milestone extends Model
 
     /**
      * The note of the milestone.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -494,6 +500,8 @@ class Milestone extends Model
 
     /**
      * The project of the milestone.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -506,6 +514,8 @@ class Milestone extends Model
 
     /**
      * The release of the milestone.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -518,6 +528,8 @@ class Milestone extends Model
 
     /**
      * The roadmap of the milestone.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -530,6 +542,8 @@ class Milestone extends Model
 
     /**
      * The source of the milestone.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -542,6 +556,8 @@ class Milestone extends Model
 
     /**
      * The sprint of the milestone.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -554,6 +570,8 @@ class Milestone extends Model
 
     /**
      * The tag of the milestone.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -566,6 +584,8 @@ class Milestone extends Model
 
     /**
      * The team of the milestone.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -578,6 +598,8 @@ class Milestone extends Model
 
     /**
      * The ticket of the milestone.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -590,6 +612,8 @@ class Milestone extends Model
 
     /**
      * The version of the milestone.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

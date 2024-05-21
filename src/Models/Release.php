@@ -153,11 +153,9 @@ class Release extends Model
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
-        'fixed_at' => null,
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -188,7 +186,6 @@ class Release extends Model
         'completed' => false,
         'cron' => false,
         'flagged' => false,
-        'fixed' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
@@ -196,8 +193,6 @@ class Release extends Model
         'problem' => false,
         'published' => false,
         'released' => false,
-        'resolved' => false,
-        'retired' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -255,11 +250,9 @@ class Release extends Model
         'canceled_at',
         'closed_at',
         'embargo_at',
-        'fixed_at',
         'postponed_at',
         'published_at',
         'released_at',
-        'resolved_at',
         'resumed_at',
         'suspended_at',
         'gids',
@@ -290,7 +283,6 @@ class Release extends Model
         'completed',
         'cron',
         'flagged',
-        'fixed',
         'internal',
         'locked',
         'pending',
@@ -298,7 +290,6 @@ class Release extends Model
         'problem',
         'published',
         'released',
-        'retired',
         'suspended',
         'unknown',
         'label',
@@ -343,11 +334,9 @@ class Release extends Model
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
-            'fixed_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
             'released_at' => 'datetime',
-            'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
@@ -378,7 +367,6 @@ class Release extends Model
             'completed' => 'boolean',
             'cron' => 'boolean',
             'flagged' => 'boolean',
-            'fixed' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
@@ -386,8 +374,6 @@ class Release extends Model
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
-            'resolved' => 'boolean',
-            'retired' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -417,6 +403,8 @@ class Release extends Model
 
     /**
      * The backlog of the release.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -429,6 +417,8 @@ class Release extends Model
 
     /**
      * The board of the release.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -441,6 +431,8 @@ class Release extends Model
 
     /**
      * The epic of the release.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -453,6 +445,8 @@ class Release extends Model
 
     /**
      * The flow of the release.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -465,6 +459,8 @@ class Release extends Model
 
     /**
      * The matrix of the release.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -477,6 +473,8 @@ class Release extends Model
 
     /**
      * The milestone of the release.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -489,6 +487,8 @@ class Release extends Model
 
     /**
      * The note of the release.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -501,6 +501,8 @@ class Release extends Model
 
     /**
      * The project of the release.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -513,6 +515,8 @@ class Release extends Model
 
     /**
      * The roadmap of the release.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -525,6 +529,8 @@ class Release extends Model
 
     /**
      * The source of the release.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -537,6 +543,8 @@ class Release extends Model
 
     /**
      * The sprint of the release.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -549,6 +557,8 @@ class Release extends Model
 
     /**
      * The tag of the release.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -561,6 +571,8 @@ class Release extends Model
 
     /**
      * The team of the release.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -573,6 +585,8 @@ class Release extends Model
 
     /**
      * The ticket of the release.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -585,6 +599,8 @@ class Release extends Model
 
     /**
      * The version of the release.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

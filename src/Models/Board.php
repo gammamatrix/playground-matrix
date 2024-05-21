@@ -422,6 +422,8 @@ class Board extends Model
 
     /**
      * The backlog of the board.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -434,6 +436,8 @@ class Board extends Model
 
     /**
      * The epic of the board.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -446,6 +450,8 @@ class Board extends Model
 
     /**
      * The flow of the board.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -458,6 +464,8 @@ class Board extends Model
 
     /**
      * The matrix of the board.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -470,6 +478,8 @@ class Board extends Model
 
     /**
      * The milestone of the board.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -482,6 +492,8 @@ class Board extends Model
 
     /**
      * The note of the board.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -494,6 +506,8 @@ class Board extends Model
 
     /**
      * The project of the board.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -506,6 +520,8 @@ class Board extends Model
 
     /**
      * The release of the board.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -518,6 +534,8 @@ class Board extends Model
 
     /**
      * The roadmap of the board.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -530,6 +548,8 @@ class Board extends Model
 
     /**
      * The source of the board.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -542,6 +562,8 @@ class Board extends Model
 
     /**
      * The sprint of the board.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -554,6 +576,8 @@ class Board extends Model
 
     /**
      * The tag of the board.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -566,6 +590,8 @@ class Board extends Model
 
     /**
      * The team of the board.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -578,6 +604,8 @@ class Board extends Model
 
     /**
      * The ticket of the board.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -590,6 +618,8 @@ class Board extends Model
 
     /**
      * The version of the board.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

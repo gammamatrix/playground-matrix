@@ -425,6 +425,8 @@ class Backlog extends Model
 
     /**
      * The board of the backlog.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -437,6 +439,8 @@ class Backlog extends Model
 
     /**
      * The epic of the backlog.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -449,6 +453,8 @@ class Backlog extends Model
 
     /**
      * The flow of the backlog.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -461,6 +467,8 @@ class Backlog extends Model
 
     /**
      * The matrix of the backlog.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -473,6 +481,8 @@ class Backlog extends Model
 
     /**
      * The milestone of the backlog.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -485,6 +495,8 @@ class Backlog extends Model
 
     /**
      * The note of the backlog.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -497,6 +509,8 @@ class Backlog extends Model
 
     /**
      * The project of the backlog.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -509,6 +523,8 @@ class Backlog extends Model
 
     /**
      * The release of the backlog.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -521,6 +537,8 @@ class Backlog extends Model
 
     /**
      * The roadmap of the backlog.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -533,6 +551,8 @@ class Backlog extends Model
 
     /**
      * The source of the backlog.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -545,6 +565,8 @@ class Backlog extends Model
 
     /**
      * The sprint of the backlog.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -557,6 +579,8 @@ class Backlog extends Model
 
     /**
      * The tag of the backlog.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -569,6 +593,8 @@ class Backlog extends Model
 
     /**
      * The team of the backlog.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -581,6 +607,8 @@ class Backlog extends Model
 
     /**
      * The ticket of the backlog.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -593,6 +621,8 @@ class Backlog extends Model
 
     /**
      * The version of the backlog.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {
@@ -605,6 +635,8 @@ class Backlog extends Model
 
     /**
      * The sprints of the backlog.
+     *
+     * @return HasMany<Sprint>
      */
     public function sprints(): HasMany
     {
@@ -617,6 +649,8 @@ class Backlog extends Model
 
     /**
      * The tickets of the backlog.
+     *
+     * @return HasMany<Ticket>
      */
     public function tickets(): HasMany
     {

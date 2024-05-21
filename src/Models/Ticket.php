@@ -6,6 +6,7 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
@@ -511,6 +512,8 @@ class Ticket extends Model
 
     /**
      * The backlog of the ticket.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -523,6 +526,8 @@ class Ticket extends Model
 
     /**
      * The board of the ticket.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -535,11 +540,13 @@ class Ticket extends Model
 
     /**
      * The completed by user of the ticket.
+     *
+     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
      */
     public function completedBy(): HasOne
     {
         /**
-         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
          */
         $uc = config('auth.providers.users.model', '\\App\\Models\\User');
 
@@ -552,6 +559,8 @@ class Ticket extends Model
 
     /**
      * The epic of the ticket.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -564,11 +573,13 @@ class Ticket extends Model
 
     /**
      * The fixed by user of the ticket.
+     *
+     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
      */
     public function fixedBy(): HasOne
     {
         /**
-         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
          */
         $uc = config('auth.providers.users.model', '\\App\\Models\\User');
 
@@ -581,6 +592,8 @@ class Ticket extends Model
 
     /**
      * The flow of the ticket.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -593,6 +606,8 @@ class Ticket extends Model
 
     /**
      * The matrix of the ticket.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -605,6 +620,8 @@ class Ticket extends Model
 
     /**
      * The milestone of the ticket.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -617,6 +634,8 @@ class Ticket extends Model
 
     /**
      * The note of the ticket.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -629,6 +648,8 @@ class Ticket extends Model
 
     /**
      * The project of the ticket.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -641,6 +662,8 @@ class Ticket extends Model
 
     /**
      * The release of the ticket.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -653,11 +676,13 @@ class Ticket extends Model
 
     /**
      * The reported by user of the ticket.
+     *
+     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
      */
     public function reportedBy(): HasOne
     {
         /**
-         * @var class-string<\Illuminate\Contracts\Auth\Authenticatable>
+         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
          */
         $uc = config('auth.providers.users.model', '\\App\\Models\\User');
 
@@ -670,6 +695,8 @@ class Ticket extends Model
 
     /**
      * The roadmap of the ticket.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -682,6 +709,8 @@ class Ticket extends Model
 
     /**
      * The source of the ticket.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -694,6 +723,8 @@ class Ticket extends Model
 
     /**
      * The sprint of the ticket.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -706,6 +737,8 @@ class Ticket extends Model
 
     /**
      * The tag of the ticket.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -718,6 +751,8 @@ class Ticket extends Model
 
     /**
      * The team of the ticket.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -730,6 +765,8 @@ class Ticket extends Model
 
     /**
      * The version of the ticket.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

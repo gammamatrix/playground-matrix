@@ -322,13 +322,14 @@ class Matrix extends Model
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
-            'roadmap' => 'array',
             'sources' => 'array',
         ];
     }
 
     /**
      * The matrix of the matrix.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {

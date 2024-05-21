@@ -76,6 +76,7 @@ use Playground\Models\Model;
  * @property bool $closed
  * @property bool $completed
  * @property bool $cron
+ * @property bool $duplicate
  * @property bool $fixed
  * @property bool $flagged
  * @property bool $internal
@@ -158,7 +159,6 @@ class Project extends Model
         'postponed_at' => null,
         'published_at' => null,
         'released_at' => null,
-        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
         'gids' => 0,
@@ -188,17 +188,13 @@ class Project extends Model
         'closed' => false,
         'completed' => false,
         'cron' => false,
-        'fixed' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
         'planned' => false,
         'problem' => false,
-        'published' => false,
         'released' => false,
-        'resolved' => false,
-        'retired' => false,
         'suspended' => false,
         'unknown' => false,
         'label' => '',
@@ -262,7 +258,6 @@ class Project extends Model
         'postponed_at',
         'published_at',
         'released_at',
-        'resolved_at',
         'resumed_at',
         'suspended_at',
         'gids',
@@ -298,10 +293,7 @@ class Project extends Model
         'pending',
         'planned',
         'problem',
-        'published',
         'released',
-        'resolved',
-        'retired',
         'suspended',
         'unknown',
         'label',
@@ -352,7 +344,6 @@ class Project extends Model
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
             'released_at' => 'datetime',
-            'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
             'gids' => 'integer',
@@ -382,17 +373,13 @@ class Project extends Model
             'closed' => 'boolean',
             'completed' => 'boolean',
             'cron' => 'boolean',
-            'fixed' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
             'problem' => 'boolean',
-            'published' => 'boolean',
             'released' => 'boolean',
-            'resolved' => 'boolean',
-            'retired' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
             'label' => 'string',
@@ -425,6 +412,8 @@ class Project extends Model
 
     /**
      * The backlog of the project.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -437,6 +426,8 @@ class Project extends Model
 
     /**
      * The board of the project.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -449,6 +440,8 @@ class Project extends Model
 
     /**
      * The epic of the project.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -461,6 +454,8 @@ class Project extends Model
 
     /**
      * The flow of the project.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -473,6 +468,8 @@ class Project extends Model
 
     /**
      * The matrix of the project.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -485,6 +482,8 @@ class Project extends Model
 
     /**
      * The milestone of the project.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -497,6 +496,8 @@ class Project extends Model
 
     /**
      * The note of the project.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -509,6 +510,8 @@ class Project extends Model
 
     /**
      * The release of the project.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -521,6 +524,8 @@ class Project extends Model
 
     /**
      * The roadmap of the project.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -533,6 +538,8 @@ class Project extends Model
 
     /**
      * The source of the project.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -545,6 +552,8 @@ class Project extends Model
 
     /**
      * The sprint of the project.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -557,6 +566,8 @@ class Project extends Model
 
     /**
      * The tag of the project.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -569,6 +580,8 @@ class Project extends Model
 
     /**
      * The team of the project.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -581,6 +594,8 @@ class Project extends Model
 
     /**
      * The ticket of the project.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -593,6 +608,8 @@ class Project extends Model
 
     /**
      * The version of the project.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

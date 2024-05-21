@@ -279,6 +279,8 @@ class Note extends Model
 
     /**
      * The matrix of the note.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -291,6 +293,8 @@ class Note extends Model
 
     /**
      * The tag of the note.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
