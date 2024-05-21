@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-05-11 07:39:41</timestamp>
+  <timestamp>2024-05-21 00:51:09</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>194</methodCount>
+    <methodCount>196</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>204</totalCrap>
+    <totalCrap>221.03</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Matrix\Concerns</package>
+      <className>Playground\Matrix\Concerns\Creating</className>
+      <methodName>getProjectKey</methodName>
+      <methodSignature>getProjectKey(Playground\Matrix\Models\Ticket $ticket): string</methodSignature>
+      <fullMethod>getProjectKey(Playground\Matrix\Models\Ticket $ticket): string</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Concerns</package>
+      <className>Playground\Matrix\Concerns\Creating</className>
+      <methodName>handleTicketCode</methodName>
+      <methodSignature>handleTicketCode(Playground\Matrix\Models\Ticket $ticket): void</methodSignature>
+      <fullMethod>handleTicketCode(Playground\Matrix\Models\Ticket $ticket): void</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Backlog</className>
@@ -2096,9 +2118,9 @@
       <methodName>boot</methodName>
       <methodSignature>boot()</methodSignature>
       <fullMethod>boot()</fullMethod>
-      <crap>6</crap>
+      <crap>6.03</crap>
       <complexity>6</complexity>
-      <coverage>100</coverage>
+      <coverage>90.91</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2129,8 +2151,8 @@
       <methodName>about</methodName>
       <methodSignature>about(): void</methodSignature>
       <fullMethod>about(): void</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>10</crap>
+      <complexity>10</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
