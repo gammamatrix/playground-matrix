@@ -422,6 +422,8 @@ class Epic extends Model
 
     /**
      * The backlog of the epic.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -434,6 +436,8 @@ class Epic extends Model
 
     /**
      * The board of the epic.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -446,6 +450,8 @@ class Epic extends Model
 
     /**
      * The flow of the epic.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -458,6 +464,8 @@ class Epic extends Model
 
     /**
      * The matrix of the epic.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -470,6 +478,8 @@ class Epic extends Model
 
     /**
      * The milestone of the epic.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -482,6 +492,8 @@ class Epic extends Model
 
     /**
      * The note of the epic.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -494,6 +506,8 @@ class Epic extends Model
 
     /**
      * The project of the epic.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -506,6 +520,8 @@ class Epic extends Model
 
     /**
      * The release of the epic.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -518,6 +534,8 @@ class Epic extends Model
 
     /**
      * The roadmap of the epic.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -530,6 +548,8 @@ class Epic extends Model
 
     /**
      * The source of the epic.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -542,6 +562,8 @@ class Epic extends Model
 
     /**
      * The sprint of the epic.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -554,6 +576,8 @@ class Epic extends Model
 
     /**
      * The tag of the epic.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -566,6 +590,8 @@ class Epic extends Model
 
     /**
      * The team of the epic.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -578,6 +604,8 @@ class Epic extends Model
 
     /**
      * The ticket of the epic.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -590,6 +618,8 @@ class Epic extends Model
 
     /**
      * The version of the epic.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

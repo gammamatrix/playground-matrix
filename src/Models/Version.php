@@ -287,6 +287,8 @@ class Version extends Model
 
     /**
      * The matrix of the version.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -299,6 +301,8 @@ class Version extends Model
 
     /**
      * The project of the version.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -311,6 +315,8 @@ class Version extends Model
 
     /**
      * The roadmap of the version.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -323,6 +329,8 @@ class Version extends Model
 
     /**
      * The source of the version.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -335,6 +343,8 @@ class Version extends Model
 
     /**
      * The tag of the version.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -347,6 +357,8 @@ class Version extends Model
 
     /**
      * The team of the version.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -359,6 +371,8 @@ class Version extends Model
 
     /**
      * The ticket of the version.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {

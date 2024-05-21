@@ -399,6 +399,8 @@ class Roadmap extends Model
 
     /**
      * The backlog of the roadmap.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -411,6 +413,8 @@ class Roadmap extends Model
 
     /**
      * The board of the roadmap.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -423,6 +427,8 @@ class Roadmap extends Model
 
     /**
      * The epic of the roadmap.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -435,6 +441,8 @@ class Roadmap extends Model
 
     /**
      * The flow of the roadmap.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -447,6 +455,8 @@ class Roadmap extends Model
 
     /**
      * The matrix of the roadmap.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -459,6 +469,8 @@ class Roadmap extends Model
 
     /**
      * The milestone of the roadmap.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -471,6 +483,8 @@ class Roadmap extends Model
 
     /**
      * The note of the roadmap.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -483,6 +497,8 @@ class Roadmap extends Model
 
     /**
      * The project of the roadmap.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -495,6 +511,8 @@ class Roadmap extends Model
 
     /**
      * The release of the roadmap.
+     *
+     * @return HasOne<Release>
      */
     public function release(): HasOne
     {
@@ -507,6 +525,8 @@ class Roadmap extends Model
 
     /**
      * The source of the roadmap.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -519,6 +539,8 @@ class Roadmap extends Model
 
     /**
      * The sprint of the roadmap.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -531,6 +553,8 @@ class Roadmap extends Model
 
     /**
      * The tag of the roadmap.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -543,6 +567,8 @@ class Roadmap extends Model
 
     /**
      * The team of the roadmap.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -555,6 +581,8 @@ class Roadmap extends Model
 
     /**
      * The ticket of the roadmap.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -567,6 +595,8 @@ class Roadmap extends Model
 
     /**
      * The version of the roadmap.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

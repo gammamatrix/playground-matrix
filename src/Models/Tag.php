@@ -256,6 +256,8 @@ class Tag extends Model
 
     /**
      * The matrix of the tag.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {

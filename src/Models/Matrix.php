@@ -328,6 +328,8 @@ class Matrix extends Model
 
     /**
      * The matrix of the matrix.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {

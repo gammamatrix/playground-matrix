@@ -333,6 +333,8 @@ class Flow extends Model
 
     /**
      * The matrix of the flow.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -345,6 +347,8 @@ class Flow extends Model
 
     /**
      * The note of the flow.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -357,6 +361,8 @@ class Flow extends Model
 
     /**
      * The tag of the flow.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -369,6 +375,8 @@ class Flow extends Model
 
     /**
      * The team of the flow.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {

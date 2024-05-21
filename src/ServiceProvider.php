@@ -1,9 +1,9 @@
 <?php
-
-declare(strict_types=1);
 /**
  * Playground
  */
+
+declare(strict_types=1);
 namespace Playground\Matrix;
 
 use Illuminate\Foundation\Console\AboutCommand;
@@ -61,7 +61,7 @@ class ServiceProvider extends AuthServiceProvider
     {
         $this->mergeConfigFrom(
             dirname(__DIR__).'/config/playground-matrix.php',
-            'playground-matrix'
+            $this->package
         );
     }
 
@@ -74,6 +74,7 @@ class ServiceProvider extends AuthServiceProvider
             '2020_01_02_100001_create_matrix_boards_table.php',
             '2020_01_02_100001_create_matrix_epics_table.php',
             '2020_01_02_100001_create_matrix_flows_table.php',
+            '2020_01_02_100001_create_matrix_matrices_table.php',
             '2020_01_02_100001_create_matrix_milestones_table.php',
             '2020_01_02_100001_create_matrix_notes_table.php',
             '2020_01_02_100001_create_matrix_projects_table.php',
@@ -99,10 +100,16 @@ class ServiceProvider extends AuthServiceProvider
 
         $load = ! empty($config['load']) && is_array($config['load']) ? $config['load'] : [];
 
+        $keys = ! empty($config['keys']) && is_array($config['keys']) ? $config['keys'] : [];
+
         $version = $this->version();
 
-        AboutCommand::add('Playground Matrix', fn () => [
+        AboutCommand::add('Playground: Matrix', fn () => [
             '<fg=yellow;options=bold>Load</> Migrations' => ! empty($load['migrations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
+
+            '<fg=yellow;options=bold>Keys</> Default' => ! empty($keys['default']) && is_string($keys['default']) ? '<fg=green;options=bold>'.$keys['default'].'</>' : '',
+            '<fg=yellow;options=bold>Keys</> Empty' => ! empty($keys['allow_empty']) ? '<fg=green;options=bold>ALLOWED</>' : '<fg=yellow;options=bold>IGNORED</>',
+
             'Package' => $this->package,
             'Version' => $version,
         ]);

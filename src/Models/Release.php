@@ -403,6 +403,8 @@ class Release extends Model
 
     /**
      * The backlog of the release.
+     *
+     * @return HasOne<Backlog>
      */
     public function backlog(): HasOne
     {
@@ -415,6 +417,8 @@ class Release extends Model
 
     /**
      * The board of the release.
+     *
+     * @return HasOne<Board>
      */
     public function board(): HasOne
     {
@@ -427,6 +431,8 @@ class Release extends Model
 
     /**
      * The epic of the release.
+     *
+     * @return HasOne<Epic>
      */
     public function epic(): HasOne
     {
@@ -439,6 +445,8 @@ class Release extends Model
 
     /**
      * The flow of the release.
+     *
+     * @return HasOne<Flow>
      */
     public function flow(): HasOne
     {
@@ -451,6 +459,8 @@ class Release extends Model
 
     /**
      * The matrix of the release.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -463,6 +473,8 @@ class Release extends Model
 
     /**
      * The milestone of the release.
+     *
+     * @return HasOne<Milestone>
      */
     public function milestone(): HasOne
     {
@@ -475,6 +487,8 @@ class Release extends Model
 
     /**
      * The note of the release.
+     *
+     * @return HasOne<Note>
      */
     public function note(): HasOne
     {
@@ -487,6 +501,8 @@ class Release extends Model
 
     /**
      * The project of the release.
+     *
+     * @return HasOne<Project>
      */
     public function project(): HasOne
     {
@@ -499,6 +515,8 @@ class Release extends Model
 
     /**
      * The roadmap of the release.
+     *
+     * @return HasOne<Roadmap>
      */
     public function roadmap(): HasOne
     {
@@ -511,6 +529,8 @@ class Release extends Model
 
     /**
      * The source of the release.
+     *
+     * @return HasOne<Source>
      */
     public function source(): HasOne
     {
@@ -523,6 +543,8 @@ class Release extends Model
 
     /**
      * The sprint of the release.
+     *
+     * @return HasOne<Sprint>
      */
     public function sprint(): HasOne
     {
@@ -535,6 +557,8 @@ class Release extends Model
 
     /**
      * The tag of the release.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -547,6 +571,8 @@ class Release extends Model
 
     /**
      * The team of the release.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {
@@ -559,6 +585,8 @@ class Release extends Model
 
     /**
      * The ticket of the release.
+     *
+     * @return HasOne<Ticket>
      */
     public function ticket(): HasOne
     {
@@ -571,6 +599,8 @@ class Release extends Model
 
     /**
      * The version of the release.
+     *
+     * @return HasOne<Version>
      */
     public function version(): HasOne
     {

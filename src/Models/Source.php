@@ -352,6 +352,8 @@ class Source extends Model
 
     /**
      * The matrix of the source.
+     *
+     * @return HasOne<Matrix>
      */
     public function matrix(): HasOne
     {
@@ -364,6 +366,8 @@ class Source extends Model
 
     /**
      * The tag of the source.
+     *
+     * @return HasOne<Tag>
      */
     public function tag(): HasOne
     {
@@ -376,6 +380,8 @@ class Source extends Model
 
     /**
      * The team of the source.
+     *
+     * @return HasOne<Team>
      */
     public function team(): HasOne
     {

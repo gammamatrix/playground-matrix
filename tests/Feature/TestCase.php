@@ -4,16 +4,16 @@
  */
 
 declare(strict_types=1);
-namespace Tests\Feature\Playground\Matrix\Models;
+namespace Tests\Feature\Playground\Matrix;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Playground\Test\Feature\Models\ModelCase as BaseModelCase;
+use Playground\Test\OrchestraTestCase;
 use Tests\Unit\Playground\Matrix\PackageProviders;
 
 /**
- * \Tests\Feature\Playground\Matrix\Models\ModelCase
+ * \Tests\Feature\Playground\Matrix\TestCase
  */
-class ModelCase extends BaseModelCase
+class TestCase extends OrchestraTestCase
 {
     use DatabaseTransactions;
     use PackageProviders;
@@ -35,13 +35,13 @@ class ModelCase extends BaseModelCase
     {
         if (! empty(env('TEST_DB_MIGRATIONS'))) {
             if ($this->load_migrations_laravel) {
-                $this->loadMigrationsFrom(dirname(dirname(dirname(__DIR__))).'/database/migrations-laravel');
+                $this->loadMigrationsFrom(dirname(dirname(__DIR__)).'/database/migrations-laravel');
             }
             if ($this->load_migrations_package) {
-                $this->loadMigrationsFrom(dirname(dirname(dirname(__DIR__))).'/database/migrations');
+                $this->loadMigrationsFrom(dirname(dirname(__DIR__)).'/database/migrations');
             }
             if ($this->load_migrations_playground) {
-                $this->loadMigrationsFrom(dirname(dirname(dirname(__DIR__))).'/database/migrations-playground');
+                $this->loadMigrationsFrom(dirname(dirname(__DIR__)).'/database/migrations-playground');
             }
         }
     }
