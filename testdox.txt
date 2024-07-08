@@ -1,14 +1,14 @@
 Command (Tests\Feature\Playground\Matrix\Console\Commands\About\Command)
  [x] Command about displays package information and succeed with code 0
 
-Get Project Key (Tests\Feature\Playground\Matrix\Console\Commands\About\GetProjectKey)
+Get Project Key (Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKey)
  [x] GetProjectKey with ticket and empty project key allowed
  [x] GetProjectKey with ticket and empty project key disabled
  [x] GetProjectKey with ticket and empty project key allowed with default key
  [x] GetProjectKey with ticket and empty project key disabled with default key
  [x] GetProjectKey with ticket and project key
 
-Handle Ticket Code (Tests\Feature\Playground\Matrix\Console\Commands\About\HandleTicketCode)
+Handle Ticket Code (Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCode)
  [x] HandleTicketCode with ticket and empty project key allowed
  [x] HandleTicketCode with ticket and empty project key disabled
  [x] HandleTicketCode with ticket and empty project key allowed with default key
