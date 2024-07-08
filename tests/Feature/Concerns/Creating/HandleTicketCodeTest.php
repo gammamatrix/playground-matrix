@@ -4,16 +4,18 @@
  */
 
 declare(strict_types=1);
-namespace Tests\Feature\Playground\Matrix\Console\Commands\About;
+namespace Tests\Feature\Playground\Matrix\Concerns\Creating;
 
+use PHPUnit\Framework\Attributes\CoversTrait;
 use Playground\Matrix\Concerns\Creating;
 use Playground\Matrix\Models\Project;
 use Playground\Matrix\Models\Ticket;
 use Tests\Feature\Playground\Matrix\TestCase;
 
 /**
- * \Tests\Feature\Playground\Matrix\Console\Commands\About\HandleTicketCodeTest
+ * \Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest
  */
+#[CoversTrait(Creating::class)]
 class HandleTicketCodeTest extends TestCase
 {
     use Creating;
