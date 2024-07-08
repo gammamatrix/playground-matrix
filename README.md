@@ -76,6 +76,34 @@ You can publish the migrations file with:
 php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag="playground-migrations"
 ```
 
+## Cloc
+
+```sh
+composer cloc
+```
+
+```
+➜  playground-matrix git:(develop) ✗ composer cloc
+> cloc --exclude-dir=output,vendor .
+     160 text files.
+     100 unique files.
+      62 files ignored.
+
+github.com/AlDanial/cloc v 1.98  T=0.17 s (574.5 files/s, 89466.2 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+PHP                             92           1065           3751          10043
+YAML                             1              5              0            275
+XML                              3              0              2            223
+Markdown                         2             39              0             85
+JSON                             1              0              0             70
+INI                              1              3              0             12
+-------------------------------------------------------------------------------
+SUM:                           100           1112           3753          10708
+-------------------------------------------------------------------------------
+```
+
 ## PHPStan
 
 Tests at level 9 on:

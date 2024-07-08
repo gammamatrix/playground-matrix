@@ -16,12 +16,21 @@ use Tests\Feature\Playground\Matrix\TestCase;
 #[CoversClass(ServiceProvider::class)]
 class CommandTest extends TestCase
 {
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    protected function defineEnvironment($app)
+    {
+        parent::defineEnvironment($app);
+
+        $app['config']->set('playground-matrix.load.migrations', true);
+    }
+
     public function test_command_about_displays_package_information_and_succeed_with_code_0(): void
     {
-        config([
-            'playground-matrix.load.migrations' => true,
-        ]);
-
         /**
          * @var \Illuminate\Testing\PendingCommand $result
          */
