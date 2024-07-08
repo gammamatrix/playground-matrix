@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.9995320542817" branch-rate="0" lines-covered="2136" lines-valid="2137" branches-covered="0" branches-valid="0" complexity="221" version="0.4" timestamp="1720397414">
+<coverage line-rate="1" branch-rate="0" lines-covered="2137" lines-valid="2137" branches-covered="0" branches-valid="0" complexity="221" version="0.4" timestamp="1720399759">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -5115,11 +5115,11 @@
         </class>
       </classes>
     </package>
-    <package name="ServiceProvider.php" line-rate="0.97959183673469" branch-rate="0" complexity="20">
+    <package name="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="20">
       <classes>
-        <class name="Playground\Matrix\ServiceProvider" filename="ServiceProvider.php" line-rate="0.97959183673469" branch-rate="0" complexity="20">
+        <class name="Playground\Matrix\ServiceProvider" filename="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="20">
           <methods>
-            <method name="boot" signature="" line-rate="0.90909090909091" branch-rate="0" complexity="6">
+            <method name="boot" signature="" line-rate="1" branch-rate="0" complexity="6">
               <lines>
                 <line number="32" hits="108"/>
                 <line number="34" hits="108"/>
@@ -5129,7 +5129,7 @@
                 <line number="40" hits="108"/>
                 <line number="43" hits="108"/>
                 <line number="46" hits="108"/>
-                <line number="47" hits="0"/>
+                <line number="47" hits="1"/>
                 <line number="52" hits="108"/>
                 <line number="53" hits="108"/>
               </lines>
@@ -5198,7 +5198,7 @@
             <line number="40" hits="108"/>
             <line number="43" hits="108"/>
             <line number="46" hits="108"/>
-            <line number="47" hits="0"/>
+            <line number="47" hits="1"/>
             <line number="52" hits="108"/>
             <line number="53" hits="108"/>
             <line number="62" hits="108"/>
