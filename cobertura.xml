@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="2137" lines-valid="2137" branches-covered="0" branches-valid="0" complexity="221" version="0.4" timestamp="1720459905">
+<coverage line-rate="1" branch-rate="0" lines-covered="2132" lines-valid="2132" branches-covered="0" branches-valid="0" complexity="215" version="0.4" timestamp="1722467103">
   <sources>
     <source>/app/src</source>
   </sources>
@@ -5115,9 +5115,9 @@
         </class>
       </classes>
     </package>
-    <package name="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="20">
+    <package name="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="14">
       <classes>
-        <class name="Playground\Matrix\ServiceProvider" filename="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="20">
+        <class name="Playground\Matrix\ServiceProvider" filename="ServiceProvider.php" line-rate="1" branch-rate="0" complexity="14">
           <methods>
             <method name="boot" signature="" line-rate="1" branch-rate="0" complexity="6">
               <lines>
@@ -5167,25 +5167,16 @@
                 <line number="93" hits="108"/>
               </lines>
             </method>
-            <method name="about" signature="" line-rate="1" branch-rate="0" complexity="10">
+            <method name="about" signature="" line-rate="1" branch-rate="0" complexity="5">
               <lines>
                 <line number="98" hits="108"/>
                 <line number="99" hits="108"/>
                 <line number="101" hits="108"/>
                 <line number="103" hits="108"/>
+                <line number="104" hits="108"/>
                 <line number="105" hits="108"/>
+                <line number="106" hits="108"/>
                 <line number="107" hits="108"/>
-                <line number="108" hits="108"/>
-                <line number="110" hits="108"/>
-                <line number="111" hits="108"/>
-                <line number="113" hits="108"/>
-                <line number="114" hits="108"/>
-                <line number="115" hits="108"/>
-              </lines>
-            </method>
-            <method name="version" signature="" line-rate="1" branch-rate="0" complexity="1">
-              <lines>
-                <line number="120" hits="108"/>
               </lines>
             </method>
           </methods>
@@ -5230,15 +5221,10 @@
             <line number="99" hits="108"/>
             <line number="101" hits="108"/>
             <line number="103" hits="108"/>
+            <line number="104" hits="108"/>
             <line number="105" hits="108"/>
+            <line number="106" hits="108"/>
             <line number="107" hits="108"/>
-            <line number="108" hits="108"/>
-            <line number="110" hits="108"/>
-            <line number="111" hits="108"/>
-            <line number="113" hits="108"/>
-            <line number="114" hits="108"/>
-            <line number="115" hits="108"/>
-            <line number="120" hits="108"/>
           </lines>
         </class>
       </classes>
