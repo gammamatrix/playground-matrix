@@ -6,9 +6,9 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
-use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
+use Playground\Models\User;
 
 /**
  * \Playground\Matrix\Models\Ticket
@@ -541,17 +541,12 @@ class Ticket extends Model
     /**
      * The completed by user of the ticket.
      *
-     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
+     * @return HasOne<User>
      */
     public function completedBy(): HasOne
     {
-        /**
-         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
-         */
-        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
-
         return $this->hasOne(
-            $uc,
+            User::class,
             'id',
             'completed_by_id'
         );
@@ -574,17 +569,12 @@ class Ticket extends Model
     /**
      * The fixed by user of the ticket.
      *
-     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
+     * @return HasOne<User>
      */
     public function fixedBy(): HasOne
     {
-        /**
-         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
-         */
-        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
-
         return $this->hasOne(
-            $uc,
+            User::class,
             'id',
             'fixed_by_id'
         );
@@ -677,17 +667,12 @@ class Ticket extends Model
     /**
      * The reported by user of the ticket.
      *
-     * @return HasOne<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
+     * @return HasOne<User>
      */
     public function reportedBy(): HasOne
     {
-        /**
-         * @var class-string<EloquentModel&\Illuminate\Contracts\Auth\Authenticatable>
-         */
-        $uc = config('auth.providers.users.model', '\\App\\Models\\User');
-
         return $this->hasOne(
-            $uc,
+            User::class,
             'id',
             'reported_by_id'
         );
