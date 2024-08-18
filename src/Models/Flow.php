@@ -6,6 +6,7 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
 
@@ -13,11 +14,11 @@ use Playground\Models\Model;
  * \Playground\Matrix\Models\Flow
  *
  * @property string $id
+ * @property ?string $flow_type
  * @property ?scalar $created_by_id
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
- * @property ?string $flow_type
  * @property ?string $matrix_id
  * @property ?string $note_id
  * @property ?string $tag_id
@@ -25,14 +26,18 @@ use Playground\Models\Model;
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
- * @property ?Carbon $start_at
- * @property ?Carbon $planned_start_at
- * @property ?Carbon $end_at
- * @property ?Carbon $planned_end_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
  * @property ?Carbon $embargo_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $planned_start_at
  * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $resolved_at
  * @property ?Carbon $resumed_at
  * @property ?Carbon $suspended_at
+ * @property ?Carbon $timer_end_at
+ * @property ?Carbon $timer_start_at
  * @property int $gids
  * @property int $po
  * @property int $pg
@@ -56,16 +61,25 @@ use Playground\Models\Model;
  * @property ?double $latitude
  * @property ?double $longitude
  * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
  * @property bool $cron
+ * @property bool $featured
  * @property bool $flagged
  * @property bool $internal
  * @property bool $locked
  * @property bool $pending
  * @property bool $planned
+ * @property bool $prioritized
  * @property bool $problem
+ * @property bool $published
+ * @property bool $released
  * @property bool $retired
+ * @property bool $special
  * @property bool $suspended
  * @property bool $unknown
+ * @property string $locale
  * @property string $label
  * @property string $title
  * @property string $byline
@@ -80,13 +94,9 @@ use Playground\Models\Model;
  * @property string $avatar
  * @property ?array $ui
  * @property ?array $assets
- * @property ?array $flow
  * @property ?array $meta
  * @property ?array $notes
  * @property ?array $options
- * @property ?array $backlog
- * @property ?array $board
- * @property ?array $roadmap
  * @property ?array $sources
  */
 class Flow extends Model
@@ -99,11 +109,11 @@ class Flow extends Model
      * @var array<string, mixed>
      */
     protected $attributes = [
+        'flow_type' => null,
         'created_by_id' => null,
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
-        'flow_type' => null,
         'matrix_id' => null,
         'note_id' => null,
         'tag_id' => null,
@@ -111,14 +121,18 @@ class Flow extends Model
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
-        'start_at' => null,
-        'planned_start_at' => null,
-        'end_at' => null,
-        'planned_end_at' => null,
+        'canceled_at' => null,
+        'closed_at' => null,
         'embargo_at' => null,
+        'planned_end_at' => null,
+        'planned_start_at' => null,
         'postponed_at' => null,
+        'published_at' => null,
+        'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
+        'timer_end_at' => null,
+        'timer_start_at' => null,
         'gids' => 0,
         'po' => 0,
         'pg' => 0,
@@ -142,16 +156,25 @@ class Flow extends Model
         'latitude' => null,
         'longitude' => null,
         'active' => true,
+        'canceled' => false,
+        'closed' => false,
+        'completed' => false,
         'cron' => false,
+        'featured' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
         'planned' => false,
+        'prioritized' => false,
         'problem' => false,
+        'published' => false,
+        'released' => false,
         'retired' => false,
+        'special' => false,
         'suspended' => false,
         'unknown' => false,
+        'locale' => '',
         'label' => '',
         'title' => '',
         'byline' => '',
@@ -166,13 +189,9 @@ class Flow extends Model
         'avatar' => '',
         'ui' => '{}',
         'assets' => '{}',
-        'backlog' => '{}',
-        'board' => '{}',
-        'flow' => '{}',
         'meta' => '{}',
         'notes' => '[]',
         'options' => '{}',
-        'roadmap' => '{}',
         'sources' => '{}',
     ];
 
@@ -182,21 +201,25 @@ class Flow extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'flow_type',
         'owned_by_id',
         'parent_id',
-        'flow_type',
         'matrix_id',
         'note_id',
         'tag_id',
         'team_id',
-        'start_at',
-        'planned_start_at',
-        'end_at',
-        'planned_end_at',
+        'canceled_at',
+        'closed_at',
         'embargo_at',
+        'planned_end_at',
+        'planned_start_at',
         'postponed_at',
+        'published_at',
+        'resolved_at',
         'resumed_at',
         'suspended_at',
+        'timer_end_at',
+        'timer_start_at',
         'gids',
         'po',
         'pg',
@@ -220,16 +243,25 @@ class Flow extends Model
         'latitude',
         'longitude',
         'active',
+        'canceled',
+        'closed',
+        'completed',
         'cron',
+        'featured',
         'flagged',
         'internal',
         'locked',
         'pending',
         'planned',
+        'prioritized',
         'problem',
+        'published',
+        'released',
         'retired',
+        'special',
         'suspended',
         'unknown',
+        'locale',
         'label',
         'title',
         'byline',
@@ -244,12 +276,8 @@ class Flow extends Model
         'avatar',
         'ui',
         'assets',
-        'backlog',
-        'board',
-        'flow',
         'meta',
         'options',
-        'roadmap',
         'sources',
     ];
 
@@ -265,14 +293,18 @@ class Flow extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
-            'start_at' => 'datetime',
-            'planned_start_at' => 'datetime',
-            'end_at' => 'datetime',
-            'planned_end_at' => 'datetime',
+            'canceled_at' => 'datetime',
+            'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
+            'planned_end_at' => 'datetime',
+            'planned_start_at' => 'datetime',
             'postponed_at' => 'datetime',
+            'published_at' => 'datetime',
+            'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
+            'timer_end_at' => 'datetime',
+            'timer_start_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
             'pg' => 'integer',
@@ -296,16 +328,25 @@ class Flow extends Model
             'latitude' => 'float',
             'longitude' => 'float',
             'active' => 'boolean',
+            'canceled' => 'boolean',
+            'closed' => 'boolean',
+            'completed' => 'boolean',
             'cron' => 'boolean',
+            'featured' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
+            'prioritized' => 'boolean',
             'problem' => 'boolean',
+            'published' => 'boolean',
+            'released' => 'boolean',
             'retired' => 'boolean',
+            'special' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
+            'locale' => 'string',
             'label' => 'string',
             'title' => 'string',
             'byline' => 'string',
@@ -320,13 +361,9 @@ class Flow extends Model
             'avatar' => 'string',
             'ui' => 'array',
             'assets' => 'array',
-            'backlog' => 'array',
-            'board' => 'array',
-            'flow' => 'array',
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
-            'roadmap' => 'array',
             'sources' => 'array',
         ];
     }
@@ -384,6 +421,146 @@ class Flow extends Model
             Team::class,
             'id',
             'team_id'
+        );
+    }
+
+    /**
+     * The backlogs of the flow.
+     *
+     * @return HasMany<Backlog>
+     */
+    public function backlogs(): HasMany
+    {
+        return $this->hasMany(
+            Backlog::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The boards of the flow.
+     *
+     * @return HasMany<Board>
+     */
+    public function boards(): HasMany
+    {
+        return $this->hasMany(
+            Board::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The epics of the flow.
+     *
+     * @return HasMany<Epic>
+     */
+    public function epics(): HasMany
+    {
+        return $this->hasMany(
+            Epic::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The milestones of the flow.
+     *
+     * @return HasMany<Milestone>
+     */
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(
+            Milestone::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The projects of the flow.
+     *
+     * @return HasMany<Project>
+     */
+    public function projects(): HasMany
+    {
+        return $this->hasMany(
+            Project::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The releases of the flow.
+     *
+     * @return HasMany<Release>
+     */
+    public function releases(): HasMany
+    {
+        return $this->hasMany(
+            Release::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The roadmaps of the flow.
+     *
+     * @return HasMany<Roadmap>
+     */
+    public function roadmaps(): HasMany
+    {
+        return $this->hasMany(
+            Roadmap::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The sprints of the flow.
+     *
+     * @return HasMany<Sprint>
+     */
+    public function sprints(): HasMany
+    {
+        return $this->hasMany(
+            Sprint::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The teams of the flow.
+     *
+     * @return HasMany<Team>
+     */
+    public function teams(): HasMany
+    {
+        return $this->hasMany(
+            Team::class,
+            'flow_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tickets of the flow.
+     *
+     * @return HasMany<Ticket>
+     */
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(
+            Ticket::class,
+            'flow_id',
+            'id'
         );
     }
 }

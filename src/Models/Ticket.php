@@ -6,56 +6,55 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
-use Playground\Models\User;
 
 /**
  * \Playground\Matrix\Models\Ticket
  *
  * @property string $id
+ * @property ?string $ticket_type
  * @property ?scalar $created_by_id
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
- * @property ?string $ticket_type
- * @property ?string $duplicate_id
  * @property ?string $backlog_id
  * @property ?string $board_id
- * @property ?scalar $completed_by_id
  * @property ?string $epic_id
- * @property ?scalar $fixed_by_id
  * @property ?string $flow_id
  * @property ?string $matrix_id
  * @property ?string $milestone_id
  * @property ?string $note_id
  * @property ?string $project_id
  * @property ?string $release_id
- * @property ?scalar $reported_by_id
  * @property ?string $roadmap_id
  * @property ?string $source_id
  * @property ?string $sprint_id
  * @property ?string $tag_id
  * @property ?string $team_id
  * @property ?string $version_id
+ * @property ?scalar $completed_by_id
+ * @property ?string $duplicate_id
+ * @property ?scalar $fixed_by_id
+ * @property ?scalar $reported_by_id
  * @property ?string $version_fixed_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
- * @property ?Carbon $start_at
- * @property ?Carbon $planned_start_at
- * @property ?Carbon $end_at
- * @property ?Carbon $planned_end_at
  * @property ?Carbon $canceled_at
  * @property ?Carbon $closed_at
  * @property ?Carbon $embargo_at
  * @property ?Carbon $fixed_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $planned_start_at
  * @property ?Carbon $postponed_at
  * @property ?Carbon $published_at
- * @property ?Carbon $released_at
- * @property ?Carbon $resumed_at
  * @property ?Carbon $resolved_at
+ * @property ?Carbon $resumed_at
  * @property ?Carbon $suspended_at
+ * @property ?Carbon $timer_end_at
+ * @property ?Carbon $timer_start_at
  * @property int $gids
  * @property int $po
  * @property int $pg
@@ -84,6 +83,7 @@ use Playground\Models\User;
  * @property bool $completed
  * @property bool $cron
  * @property bool $duplicate
+ * @property bool $featured
  * @property bool $fixed
  * @property bool $flagged
  * @property bool $internal
@@ -94,11 +94,12 @@ use Playground\Models\User;
  * @property bool $problem
  * @property bool $published
  * @property bool $released
- * @property bool $retired
  * @property bool $resolved
+ * @property bool $retired
  * @property bool $special
  * @property bool $suspended
  * @property bool $unknown
+ * @property string $locale
  * @property string $label
  * @property string $title
  * @property string $byline
@@ -108,16 +109,16 @@ use Playground\Models\User;
  * @property string $introduction
  * @property ?string $content
  * @property ?string $summary
- * @property string $handler
+ * @property ?string $handler
  * @property ?string $key
  * @property ?int $code
  * @property ?string $key_code_hash
- * @property string $priority
- * @property string $severity
- * @property string $resolution
- * @property string $step
- * @property string $state
- * @property string $workflow_type
+ * @property ?string $priority
+ * @property ?string $severity
+ * @property ?string $resolution
+ * @property ?string $step
+ * @property ?string $state
+ * @property ?string $workflow_type
  * @property int $points
  * @property ?string $actual
  * @property ?string $expected
@@ -150,48 +151,47 @@ class Ticket extends Model
      * @var array<string, mixed>
      */
     protected $attributes = [
+        'ticket_type' => null,
         'created_by_id' => null,
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
-        'ticket_type' => null,
         'backlog_id' => null,
         'board_id' => null,
-        'completed_by_id' => null,
-        'duplicate_id' => null,
         'epic_id' => null,
-        'fixed_by_id' => null,
         'flow_id' => null,
         'matrix_id' => null,
         'milestone_id' => null,
         'note_id' => null,
         'project_id' => null,
         'release_id' => null,
-        'reported_by_id' => null,
         'roadmap_id' => null,
         'source_id' => null,
         'sprint_id' => null,
         'tag_id' => null,
         'team_id' => null,
-        'version_fixed_id' => null,
         'version_id' => null,
+        'completed_by_id' => null,
+        'duplicate_id' => null,
+        'fixed_by_id' => null,
+        'reported_by_id' => null,
+        'version_fixed_id' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
-        'start_at' => null,
-        'planned_start_at' => null,
-        'end_at' => null,
-        'planned_end_at' => null,
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
         'fixed_at' => null,
+        'planned_end_at' => null,
+        'planned_start_at' => null,
         'postponed_at' => null,
         'published_at' => null,
-        'released_at' => null,
-        'resumed_at' => null,
         'resolved_at' => null,
+        'resumed_at' => null,
         'suspended_at' => null,
+        'timer_end_at' => null,
+        'timer_start_at' => null,
         'gids' => 0,
         'po' => 0,
         'pg' => 0,
@@ -220,6 +220,7 @@ class Ticket extends Model
         'completed' => false,
         'cron' => false,
         'duplicate' => false,
+        'featured' => false,
         'fixed' => false,
         'flagged' => false,
         'internal' => false,
@@ -230,10 +231,12 @@ class Ticket extends Model
         'problem' => false,
         'published' => false,
         'released' => false,
-        'retired' => false,
         'resolved' => false,
+        'retired' => false,
+        'special' => false,
         'suspended' => false,
         'unknown' => false,
+        'locale' => '',
         'label' => '',
         'title' => '',
         'byline' => '',
@@ -243,16 +246,16 @@ class Ticket extends Model
         'introduction' => '',
         'content' => null,
         'summary' => null,
-        'handler' => '',
+        'handler' => null,
         'key' => null,
         'code' => null,
         'key_code_hash' => null,
-        'priority' => '',
-        'severity' => '',
-        'resolution' => '',
-        'step' => '',
-        'state' => '',
-        'workflow_type' => '',
+        'priority' => null,
+        'severity' => null,
+        'resolution' => null,
+        'step' => null,
+        'state' => null,
+        'workflow_type' => null,
         'points' => 0,
         'actual' => null,
         'expected' => null,
@@ -282,43 +285,42 @@ class Ticket extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'ticket_type',
         'owned_by_id',
         'parent_id',
-        'ticket_type',
         'backlog_id',
         'board_id',
-        'completed_by_id',
-        'duplicate_id',
         'epic_id',
-        'fixed_by_id',
         'flow_id',
         'matrix_id',
         'milestone_id',
         'note_id',
         'project_id',
         'release_id',
-        'reported_by_id',
         'roadmap_id',
         'source_id',
         'sprint_id',
         'tag_id',
         'team_id',
-        'version_fixed_id',
         'version_id',
-        'start_at',
-        'planned_start_at',
-        'end_at',
-        'planned_end_at',
+        'completed_by_id',
+        'duplicate_id',
+        'fixed_by_id',
+        'reported_by_id',
+        'version_fixed_id',
         'canceled_at',
         'closed_at',
         'embargo_at',
         'fixed_at',
+        'planned_end_at',
+        'planned_start_at',
         'postponed_at',
         'published_at',
-        'released_at',
-        'resumed_at',
         'resolved_at',
+        'resumed_at',
         'suspended_at',
+        'timer_end_at',
+        'timer_start_at',
         'gids',
         'po',
         'pg',
@@ -347,6 +349,7 @@ class Ticket extends Model
         'completed',
         'cron',
         'duplicate',
+        'featured',
         'fixed',
         'flagged',
         'internal',
@@ -357,10 +360,12 @@ class Ticket extends Model
         'problem',
         'published',
         'released',
-        'retired',
         'resolved',
+        'retired',
+        'special',
         'suspended',
         'unknown',
+        'locale',
         'label',
         'title',
         'byline',
@@ -371,6 +376,9 @@ class Ticket extends Model
         'content',
         'summary',
         'handler',
+        'key',
+        'code',
+        'key_code_hash',
         'priority',
         'severity',
         'resolution',
@@ -411,20 +419,19 @@ class Ticket extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
-            'start_at' => 'datetime',
-            'planned_start_at' => 'datetime',
-            'end_at' => 'datetime',
-            'planned_end_at' => 'datetime',
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
             'fixed_at' => 'datetime',
+            'planned_end_at' => 'datetime',
+            'planned_start_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
-            'released_at' => 'datetime',
-            'resumed_at' => 'datetime',
             'resolved_at' => 'datetime',
+            'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
+            'timer_end_at' => 'datetime',
+            'timer_start_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
             'pg' => 'integer',
@@ -453,6 +460,7 @@ class Ticket extends Model
             'completed' => 'boolean',
             'cron' => 'boolean',
             'duplicate' => 'boolean',
+            'featured' => 'boolean',
             'fixed' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
@@ -463,10 +471,12 @@ class Ticket extends Model
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
-            'retired' => 'boolean',
             'resolved' => 'boolean',
+            'retired' => 'boolean',
+            'special' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
+            'locale' => 'string',
             'label' => 'string',
             'title' => 'string',
             'byline' => 'string',
@@ -539,20 +549,6 @@ class Ticket extends Model
     }
 
     /**
-     * The completed by user of the ticket.
-     *
-     * @return HasOne<User>
-     */
-    public function completedBy(): HasOne
-    {
-        return $this->hasOne(
-            User::class,
-            'id',
-            'completed_by_id'
-        );
-    }
-
-    /**
      * The epic of the ticket.
      *
      * @return HasOne<Epic>
@@ -563,20 +559,6 @@ class Ticket extends Model
             Epic::class,
             'id',
             'epic_id'
-        );
-    }
-
-    /**
-     * The fixed by user of the ticket.
-     *
-     * @return HasOne<User>
-     */
-    public function fixedBy(): HasOne
-    {
-        return $this->hasOne(
-            User::class,
-            'id',
-            'fixed_by_id'
         );
     }
 
@@ -665,20 +647,6 @@ class Ticket extends Model
     }
 
     /**
-     * The reported by user of the ticket.
-     *
-     * @return HasOne<User>
-     */
-    public function reportedBy(): HasOne
-    {
-        return $this->hasOne(
-            User::class,
-            'id',
-            'reported_by_id'
-        );
-    }
-
-    /**
      * The roadmap of the ticket.
      *
      * @return HasOne<Roadmap>
@@ -759,6 +727,174 @@ class Ticket extends Model
             Version::class,
             'id',
             'version_id'
+        );
+    }
+
+    /**
+     * The completed by user of the ticket.
+     *
+     * @return HasOne<\Playground\Models\User>
+     */
+    public function completedBy(): HasOne
+    {
+        return $this->hasOne(
+            \Playground\Models\User::class,
+            'id',
+            'completed_by_id'
+        );
+    }
+
+    /**
+     * The fixed by user of the ticket.
+     *
+     * @return HasOne<\Playground\Models\User>
+     */
+    public function fixedBy(): HasOne
+    {
+        return $this->hasOne(
+            \Playground\Models\User::class,
+            'id',
+            'fixed_by_id'
+        );
+    }
+
+    /**
+     * The reported by user of the ticket.
+     *
+     * @return HasOne<\Playground\Models\User>
+     */
+    public function reportedBy(): HasOne
+    {
+        return $this->hasOne(
+            \Playground\Models\User::class,
+            'id',
+            'reported_by_id'
+        );
+    }
+
+    /**
+     * The backlogs of the ticket.
+     *
+     * @return HasMany<Backlog>
+     */
+    public function backlogs(): HasMany
+    {
+        return $this->hasMany(
+            Backlog::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The boards of the ticket.
+     *
+     * @return HasMany<Board>
+     */
+    public function boards(): HasMany
+    {
+        return $this->hasMany(
+            Board::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The epics of the ticket.
+     *
+     * @return HasMany<Epic>
+     */
+    public function epics(): HasMany
+    {
+        return $this->hasMany(
+            Epic::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The milestones of the ticket.
+     *
+     * @return HasMany<Milestone>
+     */
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(
+            Milestone::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The projects of the ticket.
+     *
+     * @return HasMany<Project>
+     */
+    public function projects(): HasMany
+    {
+        return $this->hasMany(
+            Project::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The releases of the ticket.
+     *
+     * @return HasMany<Release>
+     */
+    public function releases(): HasMany
+    {
+        return $this->hasMany(
+            Release::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The roadmaps of the ticket.
+     *
+     * @return HasMany<Roadmap>
+     */
+    public function roadmaps(): HasMany
+    {
+        return $this->hasMany(
+            Roadmap::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The sprints of the ticket.
+     *
+     * @return HasMany<Sprint>
+     */
+    public function sprints(): HasMany
+    {
+        return $this->hasMany(
+            Sprint::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The teams of the ticket.
+     *
+     * @return HasMany<Team>
+     */
+    public function teams(): HasMany
+    {
+        return $this->hasMany(
+            Team::class,
+            'ticket_id',
+            'id'
         );
     }
 }

@@ -18,6 +18,48 @@ class ModelTest extends ModelCase
     protected bool $hasRelationships = true;
 
     /**
+     * @var array<string, array<string, mixed>> Test has many relationships.
+     */
+    protected array $hasMany = [
+        'backlogs' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Backlog::class,
+        ],
+        'boards' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Board::class,
+        ],
+        'epics' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Epic::class,
+        ],
+        'milestones' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Milestone::class,
+        ],
+        'projects' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Project::class,
+        ],
+        'releases' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Release::class,
+        ],
+        'roadmaps' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Roadmap::class,
+        ],
+        'sprints' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+        ],
+        'teams' => [
+            'key' => 'ticket_id',
+            'modelClass' => \Playground\Matrix\Models\Team::class,
+        ],
+    ];
+
+    /**
      * @var array<string, array<string, mixed>> Test has one relationships.
      */
     protected array $hasOne = [
@@ -51,20 +93,10 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Board::class,
         ],
-        'completedBy' => [
-            'key' => 'completed_by_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Models\User::class,
-        ],
         'epic' => [
             'key' => 'epic_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Epic::class,
-        ],
-        'fixedBy' => [
-            'key' => 'fixed_by_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Models\User::class,
         ],
         'flow' => [
             'key' => 'flow_id',
@@ -96,11 +128,6 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Release::class,
         ],
-        'reportedBy' => [
-            'key' => 'reported_by_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Models\User::class,
-        ],
         'roadmap' => [
             'key' => 'roadmap_id',
             'rule' => 'create',
@@ -130,6 +157,21 @@ class ModelTest extends ModelCase
             'key' => 'version_id',
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Version::class,
+        ],
+        'completedBy' => [
+            'key' => 'completed_by_id',
+            'rule' => 'first',
+            'modelClass' => \Playground\Models\User::class,
+        ],
+        'fixedBy' => [
+            'key' => 'fixed_by_id',
+            'rule' => 'first',
+            'modelClass' => \Playground\Models\User::class,
+        ],
+        'reportedBy' => [
+            'key' => 'reported_by_id',
+            'rule' => 'first',
+            'modelClass' => \Playground\Models\User::class,
         ],
     ];
 }

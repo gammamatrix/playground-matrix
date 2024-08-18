@@ -21,7 +21,14 @@ class ModelTest extends ModelCase
      * @var array<int, string> Test has many relationships.
      */
     protected array $hasMany = [
+        'boards',
+        'epics',
+        'milestones',
+        'projects',
+        'releases',
+        'roadmaps',
         'sprints',
+        'teams',
         'tickets',
     ];
 

@@ -43,4 +43,36 @@ class SprintFactory extends Factory
             'summary' => $this->faker->sentence(3),
         ];
     }
+
+    // States: flags
+
+    /**
+     * @return Factory<Sprint>
+     */
+    public function locked(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'locked' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Sprint>
+     */
+    public function featured(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'featured' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Sprint>
+     */
+    public function special(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'special' => true,
+        ]);
+    }
 }

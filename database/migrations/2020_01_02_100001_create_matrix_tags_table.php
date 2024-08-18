@@ -28,11 +28,11 @@ return new class() extends Migration
 
             // IDs
 
+            $table->string('tag_type')->nullable()->index();
             $table->uuid('created_by_id')->nullable()->index();
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
-            $table->string('tag_type')->nullable()->index();
             $table->uuid('matrix_id')->nullable()->index();
 
             // Dates
@@ -75,14 +75,18 @@ return new class() extends Migration
             // Flags
 
             $table->boolean('active')->default(1)->index();
+            $table->boolean('cron')->default(0)->index();
+            $table->boolean('featured')->default(0);
             $table->boolean('flagged')->default(0);
             $table->boolean('internal')->default(0);
             $table->boolean('locked')->default(0);
             $table->boolean('retired')->default(0);
+            $table->boolean('special')->default(0);
             $table->boolean('unknown')->default(0);
 
             // Columns
 
+            $table->string('locale', 255)->default('');
             $table->string('label', 128)->default('');
             $table->string('title', 255)->default('');
             $table->string('byline', 255)->default('');

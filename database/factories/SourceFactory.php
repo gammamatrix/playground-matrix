@@ -43,4 +43,36 @@ class SourceFactory extends Factory
             'summary' => $this->faker->sentence(3),
         ];
     }
+
+    // States: flags
+
+    /**
+     * @return Factory<Source>
+     */
+    public function locked(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'locked' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Source>
+     */
+    public function featured(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'featured' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Source>
+     */
+    public function special(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'special' => true,
+        ]);
+    }
 }

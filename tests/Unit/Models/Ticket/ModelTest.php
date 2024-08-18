@@ -18,6 +18,21 @@ class ModelTest extends ModelCase
     protected bool $hasRelationships = true;
 
     /**
+     * @var array<int, string> Test has many relationships.
+     */
+    protected array $hasMany = [
+        'backlogs',
+        'boards',
+        'epics',
+        'milestones',
+        'projects',
+        'releases',
+        'roadmaps',
+        'sprints',
+        'teams',
+    ];
+
+    /**
      * @var array<int, string> Test has one relationships.
      */
     protected array $hasOne = [
@@ -27,21 +42,21 @@ class ModelTest extends ModelCase
         'parent',
         'backlog',
         'board',
-        'completedBy',
         'epic',
-        'fixedBy',
         'flow',
         'matrix',
         'milestone',
         'note',
         'project',
         'release',
-        'reportedBy',
         'roadmap',
         'source',
         'sprint',
         'tag',
         'team',
         'version',
+        'completedBy',
+        'fixedBy',
+        'reportedBy',
     ];
 }
