@@ -159,24 +159,10 @@
             "foreignKey": "project_id",
             "localKey": "id"
         },
-        "flows": {
-            "comment": "The flows of the project.",
-            "accessor": "flows",
-            "related": "Flow",
-            "foreignKey": "project_id",
-            "localKey": "id"
-        },
         "milestones": {
             "comment": "The milestones of the project.",
             "accessor": "milestones",
             "related": "Milestone",
-            "foreignKey": "project_id",
-            "localKey": "id"
-        },
-        "notes": {
-            "comment": "The notes of the project.",
-            "accessor": "notes",
-            "related": "Note",
             "foreignKey": "project_id",
             "localKey": "id"
         },
@@ -194,24 +180,10 @@
             "foreignKey": "project_id",
             "localKey": "id"
         },
-        "sources": {
-            "comment": "The sources of the project.",
-            "accessor": "sources",
-            "related": "Source",
-            "foreignKey": "project_id",
-            "localKey": "id"
-        },
         "sprints": {
             "comment": "The sprints of the project.",
             "accessor": "sprints",
             "related": "Sprint",
-            "foreignKey": "project_id",
-            "localKey": "id"
-        },
-        "tags": {
-            "comment": "The tags of the project.",
-            "accessor": "tags",
-            "related": "Tag",
             "foreignKey": "project_id",
             "localKey": "id"
         },
@@ -226,13 +198,6 @@
             "comment": "The tickets of the project.",
             "accessor": "tickets",
             "related": "Ticket",
-            "foreignKey": "project_id",
-            "localKey": "id"
-        },
-        "versions": {
-            "comment": "The versions of the project.",
-            "accessor": "versions",
-            "related": "Version",
             "foreignKey": "project_id",
             "localKey": "id"
         }
