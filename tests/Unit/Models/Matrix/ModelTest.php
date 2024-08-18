@@ -25,6 +25,5 @@ class ModelTest extends ModelCase
         'modifier',
         'owner',
         'parent',
-        'matrix',
     ];
 }

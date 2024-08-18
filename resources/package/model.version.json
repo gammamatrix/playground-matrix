@@ -1,23 +1,23 @@
 {
-    "class": "Flow",
+    "class": "Version",
     "config": "playground-matrix",
-    "fqdn": "Playground/Matrix/Models/Flow",
+    "fqdn": "Playground/Matrix/Models/Version",
     "module": "Matrix",
     "module_slug": "matrix",
-    "name": "Flow",
+    "name": "Version",
     "namespace": "Playground/Matrix",
     "organization": "Playground",
     "package": "playground-matrix",
-    "model": "Flow",
+    "model": "Version",
     "model_attribute": "title",
     "model_attribute_required": true,
-    "model_plural": "Flows",
-    "model_singular": "Flow",
-    "model_slug": "flow",
-    "model_slug_plural": "flows",
+    "model_plural": "Versions",
+    "model_singular": "Version",
+    "model_slug": "version",
+    "model_slug_plural": "versions",
     "recipe": "matrix",
     "type": "playground-model",
-    "table": "matrix_flows",
+    "table": "matrix_versions",
     "perPage": null,
     "controller": true,
     "factory": true,
@@ -32,103 +32,110 @@
     "implements": [],
     "HasOne": {
         "matrix": {
-            "comment": "The matrix of the flow.",
+            "comment": "The matrix of the version.",
             "accessor": "matrix",
             "related": "Matrix",
             "foreignKey": "id",
             "localKey": "matrix_id"
         },
-        "note": {
-            "comment": "The note of the flow.",
-            "accessor": "note",
-            "related": "Note",
+        "project": {
+            "comment": "The project of the version.",
+            "accessor": "project",
+            "related": "Project",
             "foreignKey": "id",
-            "localKey": "note_id"
+            "localKey": "project_id"
         },
         "tag": {
-            "comment": "The tag of the flow.",
+            "comment": "The tag of the version.",
             "accessor": "tag",
             "related": "Tag",
             "foreignKey": "id",
             "localKey": "tag_id"
         },
         "team": {
-            "comment": "The team of the flow.",
+            "comment": "The team of the version.",
             "accessor": "team",
             "related": "Team",
             "foreignKey": "id",
             "localKey": "team_id"
+        },
+        "ticket": {
+            "comment": "The ticket of the version.",
+            "accessor": "ticket",
+            "related": "Ticket",
+            "foreignKey": "id",
+            "localKey": "ticket_id"
         }
     },
     "HasMany": {
         "backlogs": {
-            "comment": "The backlogs of the flow.",
+            "comment": "The backlogs of the version.",
             "accessor": "backlogs",
             "related": "Backlog",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "boards": {
-            "comment": "The boards of the flow.",
+            "comment": "The boards of the version.",
             "accessor": "boards",
             "related": "Board",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "epics": {
-            "comment": "The epics of the flow.",
+            "comment": "The epics of the version.",
             "accessor": "epics",
             "related": "Epic",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "milestones": {
-            "comment": "The milestones of the flow.",
+            "comment": "The milestones of the version.",
             "accessor": "milestones",
             "related": "Milestone",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "projects": {
-            "comment": "The projects of the flow.",
+            "comment": "The projects of the version.",
             "accessor": "projects",
             "related": "Project",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "releases": {
-            "comment": "The releases of the flow.",
+            "comment": "The releases of the version.",
             "accessor": "releases",
             "related": "Release",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "roadmaps": {
-            "comment": "The roadmaps of the flow.",
+            "comment": "The roadmaps of the version.",
             "accessor": "roadmaps",
             "related": "Roadmap",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "sprints": {
-            "comment": "The sprints of the flow.",
+            "comment": "The sprints of the version.",
             "accessor": "sprints",
             "related": "Sprint",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "teams": {
-            "comment": "The teams of the flow.",
+            "comment": "The teams of the version.",
             "accessor": "teams",
             "related": "Team",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         },
         "tickets": {
-            "comment": "The tickets of the flow.",
+            "comment": "The tickets of the version.",
             "accessor": "tickets",
             "related": "Ticket",
-            "foreignKey": "flow_id",
+            "foreignKey": "version_id",
             "localKey": "id"
         }
     },
@@ -139,15 +146,16 @@
         }
     },
     "attributes": {
-        "flow_type": null,
+        "version_type": null,
         "created_by_id": null,
         "modified_by_id": null,
         "owned_by_id": null,
         "parent_id": null,
         "matrix_id": null,
-        "note_id": null,
+        "project_id": null,
         "tag_id": null,
         "team_id": null,
+        "ticket_id": null,
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
@@ -191,6 +199,7 @@
         "completed": false,
         "cron": false,
         "featured": false,
+        "fixed": false,
         "flagged": false,
         "internal": false,
         "locked": false,
@@ -200,6 +209,7 @@
         "problem": false,
         "published": false,
         "released": false,
+        "resolved": false,
         "retired": false,
         "special": false,
         "suspended": false,
@@ -225,7 +235,7 @@
         "sources": "{}"
     },
     "casts": {
-        "flow_type": "string",
+        "version_type": "string",
         "created_at": "datetime",
         "updated_at": "datetime",
         "deleted_at": "datetime",
@@ -269,6 +279,7 @@
         "completed": "boolean",
         "cron": "boolean",
         "featured": "boolean",
+        "fixed": "boolean",
         "flagged": "boolean",
         "internal": "boolean",
         "locked": "boolean",
@@ -278,6 +289,7 @@
         "problem": "boolean",
         "published": "boolean",
         "released": "boolean",
+        "resolved": "boolean",
         "retired": "boolean",
         "special": "boolean",
         "suspended": "boolean",
@@ -303,13 +315,14 @@
         "sources": "array"
     },
     "fillable": [
-        "flow_type",
+        "version_type",
         "owned_by_id",
         "parent_id",
         "matrix_id",
-        "note_id",
+        "project_id",
         "tag_id",
         "team_id",
+        "ticket_id",
         "canceled_at",
         "closed_at",
         "embargo_at",
@@ -350,6 +363,7 @@
         "completed",
         "cron",
         "featured",
+        "fixed",
         "flagged",
         "internal",
         "locked",
@@ -359,6 +373,7 @@
         "problem",
         "published",
         "released",
+        "resolved",
         "retired",
         "special",
         "suspended",
@@ -394,8 +409,8 @@
                 "type": "string"
             },
             {
-                "column": "flow_type",
-                "label": "Flow Type",
+                "column": "version_type",
+                "label": "Version Type",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -442,8 +457,8 @@
                 "type": "uuid"
             },
             {
-                "column": "note_id",
-                "label": "Note id",
+                "column": "project_id",
+                "label": "Project id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -460,6 +475,14 @@
             {
                 "column": "team_id",
                 "label": "Team id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "ticket_id",
+                "label": "Ticket id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -638,6 +661,14 @@
                 "type": "boolean"
             },
             {
+                "column": "fixed",
+                "label": "Fixed",
+                "icon": "fa-solid fa-wrench",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
                 "column": "flagged",
                 "label": "Flagged",
                 "icon": "fa-solid fa-flag",
@@ -705,6 +736,14 @@
                 "column": "released",
                 "label": "Released",
                 "icon": "fa-solid fa-dove",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "resolved",
+                "label": "Resolved",
+                "icon": "fa-solid fa-check-double text-success",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -1098,8 +1137,8 @@
             "type": "string"
         },
         {
-            "column": "flow_type",
-            "label": "Flow Type",
+            "column": "version_type",
+            "label": "Version Type",
             "icon": "",
             "nullable": false,
             "type": "string"
@@ -1140,8 +1179,8 @@
             "type": "uuid"
         },
         {
-            "column": "note_id",
-            "label": "Note id",
+            "column": "project_id",
+            "label": "Project id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1156,6 +1195,13 @@
         {
             "column": "team_id",
             "label": "Team id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "ticket_id",
+            "label": "Ticket id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1462,6 +1508,13 @@
             "type": "boolean"
         },
         {
+            "column": "fixed",
+            "label": "Fixed",
+            "icon": "fa-solid fa-wrench",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
             "column": "flagged",
             "label": "Flagged",
             "icon": "fa-solid fa-flag",
@@ -1521,6 +1574,13 @@
             "column": "released",
             "label": "Released",
             "icon": "fa-solid fa-dove",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "resolved",
+            "label": "Resolved",
+            "icon": "fa-solid fa-check-double text-success",
             "nullable": false,
             "type": "boolean"
         },
@@ -1687,7 +1747,7 @@
         }
     ],
     "create": {
-        "migration": "2020_01_02_100001_create_matrix_flows_table",
+        "migration": "2020_01_02_100001_create_matrix_versions_table",
         "primary": "uuid",
         "timestamps": true,
         "softDeletes": true,
@@ -1697,9 +1757,9 @@
             "with": false
         },
         "ids": {
-            "flow_type": {
-                "column": "flow_type",
-                "label": "Flow Type",
+            "version_type": {
+                "column": "version_type",
+                "label": "Version Type",
                 "description": "",
                 "foreign": null,
                 "icon": "",
@@ -1781,13 +1841,13 @@
                 "unsigned": false,
                 "type": "uuid"
             },
-            "note_id": {
-                "column": "note_id",
-                "label": "Note id",
+            "project_id": {
+                "column": "project_id",
+                "label": "Project id",
                 "description": "",
                 "foreign": {
                     "references": "id",
-                    "on": "matrix_notes"
+                    "on": "matrix_projects"
                 },
                 "icon": "",
                 "index": true,
@@ -1818,6 +1878,21 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_teams"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "ticket_id": {
+                "column": "ticket_id",
+                "label": "Ticket id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_tickets"
                 },
                 "icon": "",
                 "index": true,
@@ -2036,6 +2111,17 @@
                 "readOnly": false,
                 "type": "boolean"
             },
+            "fixed": {
+                "column": "fixed",
+                "label": "Fixed",
+                "description": "",
+                "icon": "fa-solid fa-wrench",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
             "flagged": {
                 "column": "flagged",
                 "label": "Flagged",
@@ -2129,6 +2215,17 @@
                 "label": "Released",
                 "description": "",
                 "icon": "fa-solid fa-dove",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "resolved": {
+                "column": "resolved",
+                "label": "Resolved",
+                "description": "",
+                "icon": "fa-solid fa-check-double text-success",
                 "default": false,
                 "index": false,
                 "nullable": false,

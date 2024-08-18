@@ -14,11 +14,11 @@ use Playground\Models\Model;
  * \Playground\Matrix\Models\Backlog
  *
  * @property string $id
+ * @property ?string $backlog_type
  * @property ?scalar $created_by_id
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
- * @property ?string $backlog_type
  * @property ?string $board_id
  * @property ?string $epic_id
  * @property ?string $flow_id
@@ -37,20 +37,18 @@ use Playground\Models\Model;
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
- * @property ?Carbon $start_at
- * @property ?Carbon $planned_start_at
- * @property ?Carbon $end_at
- * @property ?Carbon $planned_end_at
  * @property ?Carbon $canceled_at
  * @property ?Carbon $closed_at
  * @property ?Carbon $embargo_at
- * @property ?Carbon $fixed_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $planned_start_at
  * @property ?Carbon $postponed_at
  * @property ?Carbon $published_at
- * @property ?Carbon $released_at
- * @property ?Carbon $resumed_at
  * @property ?Carbon $resolved_at
+ * @property ?Carbon $resumed_at
  * @property ?Carbon $suspended_at
+ * @property ?Carbon $timer_end_at
+ * @property ?Carbon $timer_start_at
  * @property int $gids
  * @property int $po
  * @property int $pg
@@ -78,8 +76,7 @@ use Playground\Models\Model;
  * @property bool $closed
  * @property bool $completed
  * @property bool $cron
- * @property bool $duplicate
- * @property bool $fixed
+ * @property bool $featured
  * @property bool $flagged
  * @property bool $internal
  * @property bool $locked
@@ -90,10 +87,10 @@ use Playground\Models\Model;
  * @property bool $published
  * @property bool $released
  * @property bool $retired
- * @property bool $resolved
  * @property bool $special
  * @property bool $suspended
  * @property bool $unknown
+ * @property string $locale
  * @property string $label
  * @property string $title
  * @property string $byline
@@ -111,6 +108,7 @@ use Playground\Models\Model;
  * @property ?array $backlog
  * @property ?array $board
  * @property ?array $flow
+ * @property ?array $history
  * @property ?array $meta
  * @property ?array $notes
  * @property ?array $options
@@ -127,11 +125,11 @@ class Backlog extends Model
      * @var array<string, mixed>
      */
     protected $attributes = [
+        'backlog_type' => null,
         'created_by_id' => null,
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
-        'backlog_type' => null,
         'board_id' => null,
         'epic_id' => null,
         'flow_id' => null,
@@ -150,20 +148,18 @@ class Backlog extends Model
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
-        'start_at' => null,
-        'planned_start_at' => null,
-        'end_at' => null,
-        'planned_end_at' => null,
         'canceled_at' => null,
         'closed_at' => null,
         'embargo_at' => null,
-        'fixed_at' => null,
+        'planned_end_at' => null,
+        'planned_start_at' => null,
         'postponed_at' => null,
         'published_at' => null,
-        'released_at' => null,
-        'resumed_at' => null,
         'resolved_at' => null,
+        'resumed_at' => null,
         'suspended_at' => null,
+        'timer_end_at' => null,
+        'timer_start_at' => null,
         'gids' => 0,
         'po' => 0,
         'pg' => 0,
@@ -191,20 +187,21 @@ class Backlog extends Model
         'closed' => false,
         'completed' => false,
         'cron' => false,
-        'duplicate' => false,
-        'fixed' => false,
+        'featured' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
         'pending' => false,
         'planned' => false,
+        'prioritized' => false,
         'problem' => false,
         'published' => false,
         'released' => false,
         'retired' => false,
-        'resolved' => false,
+        'special' => false,
         'suspended' => false,
         'unknown' => false,
+        'locale' => '',
         'label' => '',
         'title' => '',
         'byline' => '',
@@ -222,6 +219,7 @@ class Backlog extends Model
         'backlog' => '{}',
         'board' => '{}',
         'flow' => '{}',
+        'history' => '{}',
         'meta' => '{}',
         'notes' => '[]',
         'options' => '{}',
@@ -235,9 +233,9 @@ class Backlog extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'backlog_type',
         'owned_by_id',
         'parent_id',
-        'backlog_type',
         'board_id',
         'epic_id',
         'flow_id',
@@ -253,20 +251,18 @@ class Backlog extends Model
         'team_id',
         'ticket_id',
         'version_id',
-        'start_at',
-        'planned_start_at',
-        'end_at',
-        'planned_end_at',
         'canceled_at',
         'closed_at',
         'embargo_at',
-        'fixed_at',
+        'planned_end_at',
+        'planned_start_at',
         'postponed_at',
         'published_at',
-        'released_at',
-        'resumed_at',
         'resolved_at',
+        'resumed_at',
         'suspended_at',
+        'timer_end_at',
+        'timer_start_at',
         'gids',
         'po',
         'pg',
@@ -294,20 +290,21 @@ class Backlog extends Model
         'closed',
         'completed',
         'cron',
-        'duplicate',
-        'fixed',
+        'featured',
         'flagged',
         'internal',
         'locked',
         'pending',
         'planned',
+        'prioritized',
         'problem',
         'published',
         'released',
         'retired',
-        'resolved',
+        'special',
         'suspended',
         'unknown',
+        'locale',
         'label',
         'title',
         'byline',
@@ -325,6 +322,7 @@ class Backlog extends Model
         'backlog',
         'board',
         'flow',
+        'history',
         'meta',
         'options',
         'roadmap',
@@ -343,20 +341,18 @@ class Backlog extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
-            'start_at' => 'datetime',
-            'planned_start_at' => 'datetime',
-            'end_at' => 'datetime',
-            'planned_end_at' => 'datetime',
             'canceled_at' => 'datetime',
             'closed_at' => 'datetime',
             'embargo_at' => 'datetime',
-            'fixed_at' => 'datetime',
+            'planned_end_at' => 'datetime',
+            'planned_start_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
-            'released_at' => 'datetime',
-            'resumed_at' => 'datetime',
             'resolved_at' => 'datetime',
+            'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
+            'timer_end_at' => 'datetime',
+            'timer_start_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
             'pg' => 'integer',
@@ -366,6 +362,8 @@ class Backlog extends Model
             'only_guest' => 'boolean',
             'allow_public' => 'boolean',
             'status' => 'integer',
+            'rank' => 'integer',
+            'size' => 'integer',
             'matrix' => 'array',
             'x' => 'integer',
             'y' => 'integer',
@@ -377,27 +375,26 @@ class Backlog extends Model
             'elevation' => 'float',
             'latitude' => 'float',
             'longitude' => 'float',
-            'rank' => 'integer',
-            'size' => 'integer',
             'active' => 'boolean',
             'canceled' => 'boolean',
             'closed' => 'boolean',
             'completed' => 'boolean',
             'cron' => 'boolean',
-            'duplicate' => 'boolean',
-            'fixed' => 'boolean',
+            'featured' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
             'pending' => 'boolean',
             'planned' => 'boolean',
+            'prioritized' => 'boolean',
             'problem' => 'boolean',
             'published' => 'boolean',
             'released' => 'boolean',
             'retired' => 'boolean',
-            'resolved' => 'boolean',
+            'special' => 'boolean',
             'suspended' => 'boolean',
             'unknown' => 'boolean',
+            'locale' => 'string',
             'label' => 'string',
             'title' => 'string',
             'byline' => 'string',
@@ -415,6 +412,7 @@ class Backlog extends Model
             'backlog' => 'array',
             'board' => 'array',
             'flow' => 'array',
+            'history' => 'array',
             'meta' => 'array',
             'notes' => 'array',
             'options' => 'array',
@@ -634,6 +632,90 @@ class Backlog extends Model
     }
 
     /**
+     * The boards of the backlog.
+     *
+     * @return HasMany<Board>
+     */
+    public function boards(): HasMany
+    {
+        return $this->hasMany(
+            Board::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The epics of the backlog.
+     *
+     * @return HasMany<Epic>
+     */
+    public function epics(): HasMany
+    {
+        return $this->hasMany(
+            Epic::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The milestones of the backlog.
+     *
+     * @return HasMany<Milestone>
+     */
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(
+            Milestone::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The projects of the backlog.
+     *
+     * @return HasMany<Project>
+     */
+    public function projects(): HasMany
+    {
+        return $this->hasMany(
+            Project::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The releases of the backlog.
+     *
+     * @return HasMany<Release>
+     */
+    public function releases(): HasMany
+    {
+        return $this->hasMany(
+            Release::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The roadmaps of the backlog.
+     *
+     * @return HasMany<Roadmap>
+     */
+    public function roadmaps(): HasMany
+    {
+        return $this->hasMany(
+            Roadmap::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
      * The sprints of the backlog.
      *
      * @return HasMany<Sprint>
@@ -642,6 +724,20 @@ class Backlog extends Model
     {
         return $this->hasMany(
             Sprint::class,
+            'backlog_id',
+            'id'
+        );
+    }
+
+    /**
+     * The teams of the backlog.
+     *
+     * @return HasMany<Team>
+     */
+    public function teams(): HasMany
+    {
+        return $this->hasMany(
+            Team::class,
             'backlog_id',
             'id'
         );

@@ -18,6 +18,52 @@ class ModelTest extends ModelCase
     protected bool $hasRelationships = true;
 
     /**
+     * @var array<string, array<string, mixed>> Test has many relationships.
+     */
+    protected array $hasMany = [
+        'backlogs' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Backlog::class,
+        ],
+        'boards' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Board::class,
+        ],
+        'epics' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Epic::class,
+        ],
+        'milestones' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Milestone::class,
+        ],
+        'projects' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Project::class,
+        ],
+        'releases' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Release::class,
+        ],
+        'roadmaps' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Roadmap::class,
+        ],
+        'sprints' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+        ],
+        'teams' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Team::class,
+        ],
+        'tickets' => [
+            'key' => 'tag_id',
+            'modelClass' => \Playground\Matrix\Models\Ticket::class,
+        ],
+    ];
+
+    /**
      * @var array<string, array<string, mixed>> Test has one relationships.
      */
     protected array $hasOne = [

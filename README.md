@@ -1,4 +1,4 @@
-# Playground Matrix
+# Playground: Matrix
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/coverage.svg)](tests)
@@ -83,24 +83,24 @@ composer cloc
 ```
 
 ```
-➜  playground-matrix git:(feature/GH-23) ✗ composer cloc
+➜  playground-matrix git:(feature/GH-25) ✗ composer cloc
 > cloc --exclude-dir=node_modules,output,vendor .
-     137 text files.
-     116 unique files.
-      23 files ignored.
+     148 text files.
+     118 unique files.
+      32 files ignored.
 
-github.com/AlDanial/cloc v 1.98  T=0.27 s (437.6 files/s, 204291.4 lines/s)
+github.com/AlDanial/cloc v 1.98  T=0.29 s (405.5 files/s, 234827.7 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-JSON                            16              0              0          38621
-PHP                             92           1060           3753          10037
+JSON                            18              0              0          49172
+PHP                             92           1285           4715          12506
 YAML                             1              5              0            275
-XML                              3              0              5            220
-Markdown                         3             44              0            121
+XML                              3              0              7            215
+Markdown                         3             44              0            102
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           116           1112           3758          49286
+SUM:                           118           1337           4722          62282
 -------------------------------------------------------------------------------
 ```
 

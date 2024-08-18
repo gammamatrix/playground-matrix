@@ -1,23 +1,23 @@
 {
-    "class": "Flow",
+    "class": "Ticket",
     "config": "playground-matrix",
-    "fqdn": "Playground/Matrix/Models/Flow",
+    "fqdn": "Playground/Matrix/Models/Ticket",
     "module": "Matrix",
     "module_slug": "matrix",
-    "name": "Flow",
+    "name": "Ticket",
     "namespace": "Playground/Matrix",
     "organization": "Playground",
     "package": "playground-matrix",
-    "model": "Flow",
+    "model": "Ticket",
     "model_attribute": "title",
     "model_attribute_required": true,
-    "model_plural": "Flows",
-    "model_singular": "Flow",
-    "model_slug": "flow",
-    "model_slug_plural": "flows",
+    "model_plural": "Tickets",
+    "model_singular": "Ticket",
+    "model_slug": "ticket",
+    "model_slug_plural": "tickets",
     "recipe": "matrix",
     "type": "playground-model",
-    "table": "matrix_flows",
+    "table": "matrix_tickets",
     "perPage": null,
     "controller": true,
     "factory": true,
@@ -31,104 +31,195 @@
     "extends": "Model",
     "implements": [],
     "HasOne": {
+        "backlog": {
+            "comment": "The backlog of the ticket.",
+            "accessor": "backlog",
+            "related": "Backlog",
+            "foreignKey": "id",
+            "localKey": "backlog_id"
+        },
+        "board": {
+            "comment": "The board of the ticket.",
+            "accessor": "board",
+            "related": "Board",
+            "foreignKey": "id",
+            "localKey": "board_id"
+        },
+        "epic": {
+            "comment": "The epic of the ticket.",
+            "accessor": "epic",
+            "related": "Epic",
+            "foreignKey": "id",
+            "localKey": "epic_id"
+        },
+        "flow": {
+            "comment": "The flow of the ticket.",
+            "accessor": "flow",
+            "related": "Flow",
+            "foreignKey": "id",
+            "localKey": "flow_id"
+        },
         "matrix": {
-            "comment": "The matrix of the flow.",
+            "comment": "The matrix of the ticket.",
             "accessor": "matrix",
             "related": "Matrix",
             "foreignKey": "id",
             "localKey": "matrix_id"
         },
+        "milestone": {
+            "comment": "The milestone of the ticket.",
+            "accessor": "milestone",
+            "related": "Milestone",
+            "foreignKey": "id",
+            "localKey": "milestone_id"
+        },
         "note": {
-            "comment": "The note of the flow.",
+            "comment": "The note of the ticket.",
             "accessor": "note",
             "related": "Note",
             "foreignKey": "id",
             "localKey": "note_id"
         },
+        "project": {
+            "comment": "The project of the ticket.",
+            "accessor": "project",
+            "related": "Project",
+            "foreignKey": "id",
+            "localKey": "project_id"
+        },
+        "release": {
+            "comment": "The release of the ticket.",
+            "accessor": "release",
+            "related": "Release",
+            "foreignKey": "id",
+            "localKey": "release_id"
+        },
+        "roadmap": {
+            "comment": "The roadmap of the ticket.",
+            "accessor": "roadmap",
+            "related": "Roadmap",
+            "foreignKey": "id",
+            "localKey": "roadmap_id"
+        },
+        "source": {
+            "comment": "The source of the ticket.",
+            "accessor": "source",
+            "related": "Source",
+            "foreignKey": "id",
+            "localKey": "source_id"
+        },
+        "sprint": {
+            "comment": "The sprint of the ticket.",
+            "accessor": "sprint",
+            "related": "Sprint",
+            "foreignKey": "id",
+            "localKey": "sprint_id"
+        },
         "tag": {
-            "comment": "The tag of the flow.",
+            "comment": "The tag of the ticket.",
             "accessor": "tag",
             "related": "Tag",
             "foreignKey": "id",
             "localKey": "tag_id"
         },
         "team": {
-            "comment": "The team of the flow.",
+            "comment": "The team of the ticket.",
             "accessor": "team",
             "related": "Team",
             "foreignKey": "id",
             "localKey": "team_id"
+        },
+        "version": {
+            "comment": "The version of the ticket.",
+            "accessor": "version",
+            "related": "Version",
+            "foreignKey": "id",
+            "localKey": "version_id"
+        },
+        "completedBy": {
+            "comment": "The completed by user of the ticket.",
+            "accessor": "completedBy",
+            "related": "\\Playground\\Models\\User",
+            "foreignKey": "id",
+            "localKey": "completed_by_id"
+        },
+        "fixedBy": {
+            "comment": "The fixed by user of the ticket.",
+            "accessor": "fixedBy",
+            "related": "\\Playground\\Models\\User",
+            "foreignKey": "id",
+            "localKey": "fixed_by_id"
+        },
+        "reportedBy": {
+            "comment": "The reported by user of the ticket.",
+            "accessor": "reportedBy",
+            "related": "\\Playground\\Models\\User",
+            "foreignKey": "id",
+            "localKey": "reported_by_id"
         }
     },
     "HasMany": {
         "backlogs": {
-            "comment": "The backlogs of the flow.",
+            "comment": "The backlogs of the ticket.",
             "accessor": "backlogs",
             "related": "Backlog",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "boards": {
-            "comment": "The boards of the flow.",
+            "comment": "The boards of the ticket.",
             "accessor": "boards",
             "related": "Board",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "epics": {
-            "comment": "The epics of the flow.",
+            "comment": "The epics of the ticket.",
             "accessor": "epics",
             "related": "Epic",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "milestones": {
-            "comment": "The milestones of the flow.",
+            "comment": "The milestones of the ticket.",
             "accessor": "milestones",
             "related": "Milestone",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "projects": {
-            "comment": "The projects of the flow.",
+            "comment": "The projects of the ticket.",
             "accessor": "projects",
             "related": "Project",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "releases": {
-            "comment": "The releases of the flow.",
+            "comment": "The releases of the ticket.",
             "accessor": "releases",
             "related": "Release",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "roadmaps": {
-            "comment": "The roadmaps of the flow.",
+            "comment": "The roadmaps of the ticket.",
             "accessor": "roadmaps",
             "related": "Roadmap",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "sprints": {
-            "comment": "The sprints of the flow.",
+            "comment": "The sprints of the ticket.",
             "accessor": "sprints",
             "related": "Sprint",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         },
         "teams": {
-            "comment": "The teams of the flow.",
+            "comment": "The teams of the ticket.",
             "accessor": "teams",
             "related": "Team",
-            "foreignKey": "flow_id",
-            "localKey": "id"
-        },
-        "tickets": {
-            "comment": "The tickets of the flow.",
-            "accessor": "tickets",
-            "related": "Ticket",
-            "foreignKey": "flow_id",
+            "foreignKey": "ticket_id",
             "localKey": "id"
         }
     },
@@ -139,21 +230,38 @@
         }
     },
     "attributes": {
-        "flow_type": null,
+        "ticket_type": null,
         "created_by_id": null,
         "modified_by_id": null,
         "owned_by_id": null,
         "parent_id": null,
+        "backlog_id": null,
+        "board_id": null,
+        "epic_id": null,
+        "flow_id": null,
         "matrix_id": null,
+        "milestone_id": null,
         "note_id": null,
+        "project_id": null,
+        "release_id": null,
+        "roadmap_id": null,
+        "source_id": null,
+        "sprint_id": null,
         "tag_id": null,
         "team_id": null,
+        "version_id": null,
+        "completed_by_id": null,
+        "duplicate_id": null,
+        "fixed_by_id": null,
+        "reported_by_id": null,
+        "version_fixed_id": null,
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
         "canceled_at": null,
         "closed_at": null,
         "embargo_at": null,
+        "fixed_at": null,
         "planned_end_at": null,
         "planned_start_at": null,
         "postponed_at": null,
@@ -190,7 +298,9 @@
         "closed": false,
         "completed": false,
         "cron": false,
+        "duplicate": false,
         "featured": false,
+        "fixed": false,
         "flagged": false,
         "internal": false,
         "locked": false,
@@ -200,6 +310,7 @@
         "problem": false,
         "published": false,
         "released": false,
+        "resolved": false,
         "retired": false,
         "special": false,
         "suspended": false,
@@ -214,24 +325,47 @@
         "introduction": "",
         "content": null,
         "summary": null,
+        "handler": null,
+        "key": null,
+        "code": null,
+        "key_code_hash": null,
+        "priority": null,
+        "severity": null,
+        "resolution": null,
+        "step": null,
+        "state": null,
+        "workflow_type": null,
+        "points": 0,
+        "actual": null,
+        "expected": null,
+        "story": null,
+        "steps": null,
+        "criteria": null,
+        "reproducibility": null,
         "icon": "",
         "image": "",
         "avatar": "",
         "ui": "{}",
         "assets": "{}",
+        "backlog": "{}",
+        "board": "{}",
+        "flow": "{}",
+        "history": "{}",
         "meta": "{}",
         "notes": "[]",
         "options": "{}",
+        "roadmap": "{}",
         "sources": "{}"
     },
     "casts": {
-        "flow_type": "string",
+        "ticket_type": "string",
         "created_at": "datetime",
         "updated_at": "datetime",
         "deleted_at": "datetime",
         "canceled_at": "datetime",
         "closed_at": "datetime",
         "embargo_at": "datetime",
+        "fixed_at": "datetime",
         "planned_end_at": "datetime",
         "planned_start_at": "datetime",
         "postponed_at": "datetime",
@@ -268,7 +402,9 @@
         "closed": "boolean",
         "completed": "boolean",
         "cron": "boolean",
+        "duplicate": "boolean",
         "featured": "boolean",
+        "fixed": "boolean",
         "flagged": "boolean",
         "internal": "boolean",
         "locked": "boolean",
@@ -278,6 +414,7 @@
         "problem": "boolean",
         "published": "boolean",
         "released": "boolean",
+        "resolved": "boolean",
         "retired": "boolean",
         "special": "boolean",
         "suspended": "boolean",
@@ -292,27 +429,66 @@
         "introduction": "string",
         "content": "string",
         "summary": "string",
+        "handler": "string",
+        "key": "string",
+        "code": "integer",
+        "key_code_hash": "string",
+        "priority": "string",
+        "severity": "string",
+        "resolution": "string",
+        "step": "string",
+        "state": "string",
+        "workflow_type": "string",
+        "points": "integer",
+        "actual": "string",
+        "expected": "string",
+        "story": "string",
+        "steps": "string",
+        "criteria": "string",
+        "reproducibility": "decimal",
         "icon": "string",
         "image": "string",
         "avatar": "string",
         "ui": "array",
         "assets": "array",
+        "backlog": "array",
+        "board": "array",
+        "flow": "array",
+        "history": "array",
         "meta": "array",
         "notes": "array",
         "options": "array",
+        "roadmap": "array",
         "sources": "array"
     },
     "fillable": [
-        "flow_type",
+        "ticket_type",
         "owned_by_id",
         "parent_id",
+        "backlog_id",
+        "board_id",
+        "epic_id",
+        "flow_id",
         "matrix_id",
+        "milestone_id",
         "note_id",
+        "project_id",
+        "release_id",
+        "roadmap_id",
+        "source_id",
+        "sprint_id",
         "tag_id",
         "team_id",
+        "version_id",
+        "completed_by_id",
+        "duplicate_id",
+        "fixed_by_id",
+        "reported_by_id",
+        "version_fixed_id",
         "canceled_at",
         "closed_at",
         "embargo_at",
+        "fixed_at",
         "planned_end_at",
         "planned_start_at",
         "postponed_at",
@@ -349,7 +525,9 @@
         "closed",
         "completed",
         "cron",
+        "duplicate",
         "featured",
+        "fixed",
         "flagged",
         "internal",
         "locked",
@@ -359,6 +537,7 @@
         "problem",
         "published",
         "released",
+        "resolved",
         "retired",
         "special",
         "suspended",
@@ -373,13 +552,35 @@
         "introduction",
         "content",
         "summary",
+        "handler",
+        "key",
+        "code",
+        "key_code_hash",
+        "priority",
+        "severity",
+        "resolution",
+        "step",
+        "state",
+        "workflow_type",
+        "points",
+        "actual",
+        "expected",
+        "story",
+        "steps",
+        "criteria",
+        "reproducibility",
         "icon",
         "image",
         "avatar",
         "ui",
         "assets",
+        "backlog",
+        "board",
+        "flow",
+        "history",
         "meta",
         "options",
+        "roadmap",
         "sources"
     ],
     "filters": {
@@ -394,8 +595,8 @@
                 "type": "string"
             },
             {
-                "column": "flow_type",
-                "label": "Flow Type",
+                "column": "ticket_type",
+                "label": "Ticket Type",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -434,6 +635,38 @@
                 "type": "uuid"
             },
             {
+                "column": "backlog_id",
+                "label": "Backlog id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "board_id",
+                "label": "Board id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "epic_id",
+                "label": "Epic id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "flow_id",
+                "label": "Flow id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
                 "column": "matrix_id",
                 "label": "Matrix id",
                 "icon": "",
@@ -442,8 +675,56 @@
                 "type": "uuid"
             },
             {
+                "column": "milestone_id",
+                "label": "Milestone id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
                 "column": "note_id",
                 "label": "Note id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "project_id",
+                "label": "Project id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "release_id",
+                "label": "Release id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "roadmap_id",
+                "label": "Roadmap id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "source_id",
+                "label": "Source id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "sprint_id",
+                "label": "Sprint id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -460,6 +741,54 @@
             {
                 "column": "team_id",
                 "label": "Team id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "version_id",
+                "label": "Version id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "completed_by_id",
+                "label": "Completed by id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "duplicate_id",
+                "label": "Duplicate id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "fixed_by_id",
+                "label": "Fixed by id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "reported_by_id",
+                "label": "Reported by id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "version_fixed_id",
+                "label": "Version fixed id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -510,6 +839,14 @@
             {
                 "column": "embargo_at",
                 "label": "Embargo at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "fixed_at",
+                "label": "Fixed at",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -630,9 +967,25 @@
                 "type": "boolean"
             },
             {
+                "column": "duplicate",
+                "label": "Duplicate",
+                "icon": "fa-solid fa-clone",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
                 "column": "featured",
                 "label": "Featured",
                 "icon": "fa-solid fa-star text-warning",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "fixed",
+                "label": "Fixed",
+                "icon": "fa-solid fa-wrench",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -705,6 +1058,14 @@
                 "column": "released",
                 "label": "Released",
                 "icon": "fa-solid fa-dove",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "resolved",
+                "label": "Resolved",
+                "icon": "fa-solid fa-check-double text-success",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -827,6 +1188,142 @@
                 "nullable": true,
                 "unsigned": true,
                 "type": "mediumText"
+            },
+            {
+                "column": "handler",
+                "label": "Handler",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "key",
+                "label": "Key",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "code",
+                "label": "Code",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "bigInteger"
+            },
+            {
+                "column": "key_code_hash",
+                "label": "Key code hash",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "priority",
+                "label": "Priority",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "severity",
+                "label": "Severity",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "resolution",
+                "label": "Resolution",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "step",
+                "label": "Step",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "state",
+                "label": "State",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "workflow_type",
+                "label": "Workflow type",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "string"
+            },
+            {
+                "column": "points",
+                "label": "Points",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "bigInteger"
+            },
+            {
+                "column": "actual",
+                "label": "Actual",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "mediumText"
+            },
+            {
+                "column": "expected",
+                "label": "Expected",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "mediumText"
+            },
+            {
+                "column": "story",
+                "label": "Story",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "mediumText"
+            },
+            {
+                "column": "steps",
+                "label": "Steps",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "mediumText"
+            },
+            {
+                "column": "criteria",
+                "label": "Criteria",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "mediumText"
+            },
+            {
+                "column": "reproducibility",
+                "label": "Reproducibility",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "decimal"
             }
         ],
         "permissions": [
@@ -1055,6 +1552,38 @@
                 "type": "JSON_OBJECT"
             },
             {
+                "column": "backlog",
+                "label": "Backlog",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "JSON_OBJECT"
+            },
+            {
+                "column": "board",
+                "label": "Board",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "JSON_OBJECT"
+            },
+            {
+                "column": "flow",
+                "label": "Flow",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "JSON_OBJECT"
+            },
+            {
+                "column": "history",
+                "label": "History",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "JSON_OBJECT"
+            },
+            {
                 "column": "meta",
                 "label": "Meta",
                 "icon": "",
@@ -1073,6 +1602,14 @@
             {
                 "column": "options",
                 "label": "Options",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "JSON_OBJECT"
+            },
+            {
+                "column": "roadmap",
+                "label": "Roadmap",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -1098,8 +1635,8 @@
             "type": "string"
         },
         {
-            "column": "flow_type",
-            "label": "Flow Type",
+            "column": "ticket_type",
+            "label": "Ticket Type",
             "icon": "",
             "nullable": false,
             "type": "string"
@@ -1133,6 +1670,34 @@
             "type": "uuid"
         },
         {
+            "column": "backlog_id",
+            "label": "Backlog id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "board_id",
+            "label": "Board id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "epic_id",
+            "label": "Epic id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "flow_id",
+            "label": "Flow id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
             "column": "matrix_id",
             "label": "Matrix id",
             "icon": "",
@@ -1140,8 +1705,50 @@
             "type": "uuid"
         },
         {
+            "column": "milestone_id",
+            "label": "Milestone id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
             "column": "note_id",
             "label": "Note id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "project_id",
+            "label": "Project id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "release_id",
+            "label": "Release id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "roadmap_id",
+            "label": "Roadmap id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "source_id",
+            "label": "Source id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "sprint_id",
+            "label": "Sprint id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1156,6 +1763,48 @@
         {
             "column": "team_id",
             "label": "Team id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "version_id",
+            "label": "Version id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "completed_by_id",
+            "label": "Completed by id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "duplicate_id",
+            "label": "Duplicate id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "fixed_by_id",
+            "label": "Fixed by id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "reported_by_id",
+            "label": "Reported by id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "version_fixed_id",
+            "label": "Version fixed id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1198,6 +1847,13 @@
         {
             "column": "embargo_at",
             "label": "Embargo at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "fixed_at",
+            "label": "Fixed at",
             "icon": "",
             "nullable": false,
             "type": "string"
@@ -1455,9 +2111,23 @@
             "type": "boolean"
         },
         {
+            "column": "duplicate",
+            "label": "Duplicate",
+            "icon": "fa-solid fa-clone",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
             "column": "featured",
             "label": "Featured",
             "icon": "fa-solid fa-star text-warning",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "fixed",
+            "label": "Fixed",
+            "icon": "fa-solid fa-wrench",
             "nullable": false,
             "type": "boolean"
         },
@@ -1521,6 +2191,13 @@
             "column": "released",
             "label": "Released",
             "icon": "fa-solid fa-dove",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "resolved",
+            "label": "Resolved",
+            "icon": "fa-solid fa-check-double text-success",
             "nullable": false,
             "type": "boolean"
         },
@@ -1623,6 +2300,125 @@
             "type": "mediumText"
         },
         {
+            "column": "handler",
+            "label": "Handler",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "key",
+            "label": "Key",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "code",
+            "label": "Code",
+            "icon": "",
+            "nullable": false,
+            "type": "bigInteger"
+        },
+        {
+            "column": "key_code_hash",
+            "label": "Key code hash",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "priority",
+            "label": "Priority",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "severity",
+            "label": "Severity",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "resolution",
+            "label": "Resolution",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "step",
+            "label": "Step",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "state",
+            "label": "State",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "workflow_type",
+            "label": "Workflow type",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "points",
+            "label": "Points",
+            "icon": "",
+            "nullable": false,
+            "type": "bigInteger"
+        },
+        {
+            "column": "actual",
+            "label": "Actual",
+            "icon": "",
+            "nullable": false,
+            "type": "mediumText"
+        },
+        {
+            "column": "expected",
+            "label": "Expected",
+            "icon": "",
+            "nullable": false,
+            "type": "mediumText"
+        },
+        {
+            "column": "story",
+            "label": "Story",
+            "icon": "",
+            "nullable": false,
+            "type": "mediumText"
+        },
+        {
+            "column": "steps",
+            "label": "Steps",
+            "icon": "",
+            "nullable": false,
+            "type": "mediumText"
+        },
+        {
+            "column": "criteria",
+            "label": "Criteria",
+            "icon": "",
+            "nullable": false,
+            "type": "mediumText"
+        },
+        {
+            "column": "reproducibility",
+            "label": "Reproducibility",
+            "icon": "",
+            "nullable": false,
+            "type": "decimal"
+        },
+        {
             "column": "icon",
             "label": "Icon",
             "icon": "",
@@ -1658,6 +2454,34 @@
             "type": "JSON_OBJECT"
         },
         {
+            "column": "backlog",
+            "label": "Backlog",
+            "icon": "",
+            "nullable": false,
+            "type": "JSON_OBJECT"
+        },
+        {
+            "column": "board",
+            "label": "Board",
+            "icon": "",
+            "nullable": false,
+            "type": "JSON_OBJECT"
+        },
+        {
+            "column": "flow",
+            "label": "Flow",
+            "icon": "",
+            "nullable": false,
+            "type": "JSON_OBJECT"
+        },
+        {
+            "column": "history",
+            "label": "History",
+            "icon": "",
+            "nullable": false,
+            "type": "JSON_OBJECT"
+        },
+        {
             "column": "meta",
             "label": "Meta",
             "icon": "",
@@ -1679,6 +2503,13 @@
             "type": "JSON_OBJECT"
         },
         {
+            "column": "roadmap",
+            "label": "Roadmap",
+            "icon": "",
+            "nullable": false,
+            "type": "JSON_OBJECT"
+        },
+        {
             "column": "sources",
             "label": "Sources",
             "icon": "",
@@ -1687,7 +2518,7 @@
         }
     ],
     "create": {
-        "migration": "2020_01_02_100001_create_matrix_flows_table",
+        "migration": "2020_01_02_100001_create_matrix_tickets_table",
         "primary": "uuid",
         "timestamps": true,
         "softDeletes": true,
@@ -1697,9 +2528,9 @@
             "with": false
         },
         "ids": {
-            "flow_type": {
-                "column": "flow_type",
-                "label": "Flow Type",
+            "ticket_type": {
+                "column": "ticket_type",
+                "label": "Ticket Type",
                 "description": "",
                 "foreign": null,
                 "icon": "",
@@ -1766,6 +2597,66 @@
                 "unsigned": false,
                 "type": "uuid"
             },
+            "backlog_id": {
+                "column": "backlog_id",
+                "label": "Backlog id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_backlogs"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "board_id": {
+                "column": "board_id",
+                "label": "Board id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_boards"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "epic_id": {
+                "column": "epic_id",
+                "label": "Epic id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_epics"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "flow_id": {
+                "column": "flow_id",
+                "label": "Flow id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_flows"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
             "matrix_id": {
                 "column": "matrix_id",
                 "label": "Matrix id",
@@ -1781,6 +2672,21 @@
                 "unsigned": false,
                 "type": "uuid"
             },
+            "milestone_id": {
+                "column": "milestone_id",
+                "label": "Milestone id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_milestones"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
             "note_id": {
                 "column": "note_id",
                 "label": "Note id",
@@ -1788,6 +2694,81 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_notes"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "project_id": {
+                "column": "project_id",
+                "label": "Project id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_projects"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "release_id": {
+                "column": "release_id",
+                "label": "Release id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_releases"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "roadmap_id": {
+                "column": "roadmap_id",
+                "label": "Roadmap id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_roadmaps"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "source_id": {
+                "column": "source_id",
+                "label": "Source id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_sources"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "sprint_id": {
+                "column": "sprint_id",
+                "label": "Sprint id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_sprints"
                 },
                 "icon": "",
                 "index": true,
@@ -1818,6 +2799,96 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_teams"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "version_id": {
+                "column": "version_id",
+                "label": "Version id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_versions"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "completed_by_id": {
+                "column": "completed_by_id",
+                "label": "Completed by id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "users"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "duplicate_id": {
+                "column": "duplicate_id",
+                "label": "Duplicate id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_tickets"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "fixed_by_id": {
+                "column": "fixed_by_id",
+                "label": "Fixed by id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "users"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "reported_by_id": {
+                "column": "reported_by_id",
+                "label": "Reported by id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "users"
+                },
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "version_fixed_id": {
+                "column": "version_fixed_id",
+                "label": "Version fixed id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_versions"
                 },
                 "icon": "",
                 "index": true,
@@ -1861,6 +2932,17 @@
             "embargo_at": {
                 "column": "embargo_at",
                 "label": "Embargo at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "fixed_at": {
+                "column": "fixed_at",
+                "label": "Fixed at",
                 "description": "",
                 "icon": "",
                 "html": false,
@@ -2025,11 +3107,33 @@
                 "readOnly": false,
                 "type": "boolean"
             },
+            "duplicate": {
+                "column": "duplicate",
+                "label": "Duplicate",
+                "description": "",
+                "icon": "fa-solid fa-clone",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
             "featured": {
                 "column": "featured",
                 "label": "Featured",
                 "description": "",
                 "icon": "fa-solid fa-star text-warning",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "fixed": {
+                "column": "fixed",
+                "label": "Fixed",
+                "description": "",
+                "icon": "fa-solid fa-wrench",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -2129,6 +3233,17 @@
                 "label": "Released",
                 "description": "",
                 "icon": "fa-solid fa-dove",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "resolved": {
+                "column": "resolved",
+                "label": "Resolved",
+                "description": "",
+                "icon": "fa-solid fa-check-double text-success",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -2306,6 +3421,199 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "mediumText"
+            },
+            "handler": {
+                "column": "handler",
+                "label": "Handler",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "key": {
+                "column": "key",
+                "label": "Key",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string",
+                "size": 32
+            },
+            "code": {
+                "column": "code",
+                "label": "Code",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "bigInteger",
+                "unsigned": true
+            },
+            "key_code_hash": {
+                "column": "key_code_hash",
+                "label": "Key code hash",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "priority": {
+                "column": "priority",
+                "label": "Priority",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "severity": {
+                "column": "severity",
+                "label": "Severity",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "resolution": {
+                "column": "resolution",
+                "label": "Resolution",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "step": {
+                "column": "step",
+                "label": "Step",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "state": {
+                "column": "state",
+                "label": "State",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "workflow_type": {
+                "column": "workflow_type",
+                "label": "Workflow type",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "string"
+            },
+            "points": {
+                "column": "points",
+                "label": "Points",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "bigInteger",
+                "unsigned": true,
+                "default": 0
+            },
+            "actual": {
+                "column": "actual",
+                "label": "Actual",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "mediumText"
+            },
+            "expected": {
+                "column": "expected",
+                "label": "Expected",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "mediumText"
+            },
+            "story": {
+                "column": "story",
+                "label": "Story",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "mediumText"
+            },
+            "steps": {
+                "column": "steps",
+                "label": "Steps",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "mediumText"
+            },
+            "criteria": {
+                "column": "criteria",
+                "label": "Criteria",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "mediumText"
+            },
+            "reproducibility": {
+                "column": "reproducibility",
+                "label": "Reproducibility",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "decimal",
+                "precision": 8,
+                "scale": 2
             }
         },
         "permissions": {
@@ -2668,6 +3976,54 @@
                 "type": "JSON_OBJECT",
                 "default": "{}"
             },
+            "backlog": {
+                "column": "backlog",
+                "label": "Backlog",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "JSON_OBJECT",
+                "default": "{}"
+            },
+            "board": {
+                "column": "board",
+                "label": "Board",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "JSON_OBJECT",
+                "default": "{}"
+            },
+            "flow": {
+                "column": "flow",
+                "label": "Flow",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "JSON_OBJECT",
+                "default": "{}"
+            },
+            "history": {
+                "column": "history",
+                "label": "History",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "JSON_OBJECT",
+                "default": "{}"
+            },
             "meta": {
                 "column": "meta",
                 "label": "Meta",
@@ -2696,6 +4052,18 @@
             "options": {
                 "column": "options",
                 "label": "Options",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "JSON_OBJECT",
+                "default": "{}"
+            },
+            "roadmap": {
+                "column": "roadmap",
+                "label": "Roadmap",
                 "description": "",
                 "icon": "",
                 "html": false,

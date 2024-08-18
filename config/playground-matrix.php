@@ -6,7 +6,7 @@
 declare(strict_types=1);
 
 /**
- *  Configuration and Environment Variables
+ * Playground: Matrix Configuration and Environment Variables
  */
 return [
 

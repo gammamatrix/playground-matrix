@@ -1,13 +1,13 @@
 {
     "name": "gammamatrix/playground-matrix",
-    "description": "Playground: This package provides the models to use Playground Matrix, a project management tool.",
+    "description": "Playground: This package provides the models to use Playground Matrix, a Project Management System.",
     "keywords": [
-        "matrix",
-        "projects",
-        "tickets",
         "gammamatrix",
         "laravel",
-        "playground"
+        "matrix",
+        "playground",
+        "projects",
+        "tickets"
     ],
     "homepage": "https://github.com/gammamatrix/playground-matrix",
     "license": "MIT",

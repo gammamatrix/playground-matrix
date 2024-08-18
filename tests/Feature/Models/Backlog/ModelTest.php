@@ -21,9 +21,37 @@ class ModelTest extends ModelCase
      * @var array<string, array<string, mixed>> Test has many relationships.
      */
     protected array $hasMany = [
+        'boards' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Board::class,
+        ],
+        'epics' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Epic::class,
+        ],
+        'milestones' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Milestone::class,
+        ],
+        'projects' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Project::class,
+        ],
+        'releases' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Release::class,
+        ],
+        'roadmaps' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Roadmap::class,
+        ],
         'sprints' => [
             'key' => 'backlog_id',
             'modelClass' => \Playground\Matrix\Models\Sprint::class,
+        ],
+        'teams' => [
+            'key' => 'backlog_id',
+            'modelClass' => \Playground\Matrix\Models\Team::class,
         ],
         'tickets' => [
             'key' => 'backlog_id',

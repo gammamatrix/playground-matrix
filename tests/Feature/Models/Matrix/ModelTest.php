@@ -41,10 +41,5 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => \Playground\Matrix\Models\Matrix::class,
         ],
-        'matrix' => [
-            'key' => 'matrix_id',
-            'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Matrix::class,
-        ],
     ];
 }

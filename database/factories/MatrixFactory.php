@@ -43,4 +43,36 @@ class MatrixFactory extends Factory
             'summary' => $this->faker->sentence(3),
         ];
     }
+
+    // States: flags
+
+    /**
+     * @return Factory<Matrix>
+     */
+    public function locked(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'locked' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Matrix>
+     */
+    public function featured(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'featured' => true,
+        ]);
+    }
+
+    /**
+     * @return Factory<Matrix>
+     */
+    public function special(): Factory
+    {
+        return $this->state(fn (array $attributes) => [
+            'special' => true,
+        ]);
+    }
 }
