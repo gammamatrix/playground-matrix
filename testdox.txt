@@ -1,5 +1,5 @@
 Command (Tests\Feature\Playground\Matrix\Console\Commands\About\Command)
- [x] Command about displays package information and succeed with code 0
+ [x] Command about displays package information and succeed
 
 Get Project Key (Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKey)
  [x] GetProjectKey with ticket and empty project key allowed
