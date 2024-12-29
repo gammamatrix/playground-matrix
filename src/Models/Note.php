@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Playground
  */
@@ -6,6 +7,7 @@
 declare(strict_types=1);
 namespace Playground\Matrix\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Playground\Models\Model;
@@ -39,13 +41,13 @@ use Playground\Models\Model;
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
- * @property ?double $r
- * @property ?double $theta
- * @property ?double $rho
- * @property ?double $phi
- * @property ?double $elevation
- * @property ?double $latitude
- * @property ?double $longitude
+ * @property ?float $r
+ * @property ?float $theta
+ * @property ?float $rho
+ * @property ?float $phi
+ * @property ?float $elevation
+ * @property ?float $latitude
+ * @property ?float $longitude
  * @property bool $active
  * @property bool $canceled
  * @property bool $closed
@@ -87,6 +89,9 @@ use Playground\Models\Model;
  */
 class Note extends Model
 {
+    /** @use HasFactory<\Database\Factories\Playground\Matrix\Models\NoteFactory> */
+    use HasFactory;
+
     protected $table = 'matrix_notes';
 
     /**
