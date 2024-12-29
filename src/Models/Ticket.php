@@ -72,13 +72,13 @@ use Playground\Models\Model;
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
- * @property ?float $r
- * @property ?float $theta
- * @property ?float $rho
- * @property ?float $phi
- * @property ?float $elevation
- * @property ?float $latitude
- * @property ?float $longitude
+ * @property ?double $r
+ * @property ?double $theta
+ * @property ?double $rho
+ * @property ?double $phi
+ * @property ?double $elevation
+ * @property ?double $latitude
+ * @property ?double $longitude
  * @property bool $active
  * @property bool $canceled
  * @property bool $closed
@@ -127,7 +127,7 @@ use Playground\Models\Model;
  * @property ?string $story
  * @property ?string $steps
  * @property ?string $criteria
- * @property ?float $reproducibility
+ * @property ?double $reproducibility
  * @property string $icon
  * @property string $image
  * @property string $avatar
@@ -528,7 +528,7 @@ class Ticket extends Model
     /**
      * The backlog of the ticket.
      *
-     * @return HasOne<Backlog>
+     * @return HasOne<Backlog, $this>
      */
     public function backlog(): HasOne
     {
@@ -542,7 +542,7 @@ class Ticket extends Model
     /**
      * The board of the ticket.
      *
-     * @return HasOne<Board>
+     * @return HasOne<Board, $this>
      */
     public function board(): HasOne
     {
@@ -556,7 +556,7 @@ class Ticket extends Model
     /**
      * The epic of the ticket.
      *
-     * @return HasOne<Epic>
+     * @return HasOne<Epic, $this>
      */
     public function epic(): HasOne
     {
@@ -570,7 +570,7 @@ class Ticket extends Model
     /**
      * The flow of the ticket.
      *
-     * @return HasOne<Flow>
+     * @return HasOne<Flow, $this>
      */
     public function flow(): HasOne
     {
@@ -584,7 +584,7 @@ class Ticket extends Model
     /**
      * The matrix of the ticket.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -598,7 +598,7 @@ class Ticket extends Model
     /**
      * The milestone of the ticket.
      *
-     * @return HasOne<Milestone>
+     * @return HasOne<Milestone, $this>
      */
     public function milestone(): HasOne
     {
@@ -612,7 +612,7 @@ class Ticket extends Model
     /**
      * The note of the ticket.
      *
-     * @return HasOne<Note>
+     * @return HasOne<Note, $this>
      */
     public function note(): HasOne
     {
@@ -626,7 +626,7 @@ class Ticket extends Model
     /**
      * The project of the ticket.
      *
-     * @return HasOne<Project>
+     * @return HasOne<Project, $this>
      */
     public function project(): HasOne
     {
@@ -640,7 +640,7 @@ class Ticket extends Model
     /**
      * The release of the ticket.
      *
-     * @return HasOne<Release>
+     * @return HasOne<Release, $this>
      */
     public function release(): HasOne
     {
@@ -654,7 +654,7 @@ class Ticket extends Model
     /**
      * The roadmap of the ticket.
      *
-     * @return HasOne<Roadmap>
+     * @return HasOne<Roadmap, $this>
      */
     public function roadmap(): HasOne
     {
@@ -668,7 +668,7 @@ class Ticket extends Model
     /**
      * The source of the ticket.
      *
-     * @return HasOne<Source>
+     * @return HasOne<Source, $this>
      */
     public function source(): HasOne
     {
@@ -682,7 +682,7 @@ class Ticket extends Model
     /**
      * The sprint of the ticket.
      *
-     * @return HasOne<Sprint>
+     * @return HasOne<Sprint, $this>
      */
     public function sprint(): HasOne
     {
@@ -696,7 +696,7 @@ class Ticket extends Model
     /**
      * The tag of the ticket.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -710,7 +710,7 @@ class Ticket extends Model
     /**
      * The team of the ticket.
      *
-     * @return HasOne<Team>
+     * @return HasOne<Team, $this>
      */
     public function team(): HasOne
     {
@@ -724,7 +724,7 @@ class Ticket extends Model
     /**
      * The version of the ticket.
      *
-     * @return HasOne<Version>
+     * @return HasOne<Version, $this>
      */
     public function version(): HasOne
     {
@@ -738,7 +738,7 @@ class Ticket extends Model
     /**
      * The completed by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User>
+     * @return HasOne<\Playground\Models\User, $this>
      */
     public function completedBy(): HasOne
     {
@@ -752,7 +752,7 @@ class Ticket extends Model
     /**
      * The fixed by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User>
+     * @return HasOne<\Playground\Models\User, $this>
      */
     public function fixedBy(): HasOne
     {
@@ -766,7 +766,7 @@ class Ticket extends Model
     /**
      * The reported by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User>
+     * @return HasOne<\Playground\Models\User, $this>
      */
     public function reportedBy(): HasOne
     {
@@ -780,7 +780,7 @@ class Ticket extends Model
     /**
      * The backlogs of the ticket.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -794,7 +794,7 @@ class Ticket extends Model
     /**
      * The boards of the ticket.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -808,7 +808,7 @@ class Ticket extends Model
     /**
      * The epics of the ticket.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -822,7 +822,7 @@ class Ticket extends Model
     /**
      * The milestones of the ticket.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -836,7 +836,7 @@ class Ticket extends Model
     /**
      * The projects of the ticket.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -850,7 +850,7 @@ class Ticket extends Model
     /**
      * The releases of the ticket.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -864,7 +864,7 @@ class Ticket extends Model
     /**
      * The roadmaps of the ticket.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -878,7 +878,7 @@ class Ticket extends Model
     /**
      * The sprints of the ticket.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -892,7 +892,7 @@ class Ticket extends Model
     /**
      * The teams of the ticket.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
