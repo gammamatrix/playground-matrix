@@ -376,7 +376,7 @@ class Source extends Model
     /**
      * The matrix of the source.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -390,7 +390,7 @@ class Source extends Model
     /**
      * The note of the source.
      *
-     * @return HasOne<Note>
+     * @return HasOne<Note, $this>
      */
     public function note(): HasOne
     {
@@ -404,7 +404,7 @@ class Source extends Model
     /**
      * The tag of the source.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -418,7 +418,7 @@ class Source extends Model
     /**
      * The team of the source.
      *
-     * @return HasOne<Team>
+     * @return HasOne<Team, $this>
      */
     public function team(): HasOne
     {
@@ -432,7 +432,7 @@ class Source extends Model
     /**
      * The backlogs of the source.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -446,7 +446,7 @@ class Source extends Model
     /**
      * The boards of the source.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -460,7 +460,7 @@ class Source extends Model
     /**
      * The epics of the source.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -474,7 +474,7 @@ class Source extends Model
     /**
      * The milestones of the source.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -488,7 +488,7 @@ class Source extends Model
     /**
      * The projects of the source.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -502,7 +502,7 @@ class Source extends Model
     /**
      * The releases of the source.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -516,7 +516,7 @@ class Source extends Model
     /**
      * The roadmaps of the source.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -530,7 +530,7 @@ class Source extends Model
     /**
      * The sprints of the source.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -544,7 +544,7 @@ class Source extends Model
     /**
      * The teams of the source.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -558,7 +558,7 @@ class Source extends Model
     /**
      * The tickets of the source.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

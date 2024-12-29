@@ -47,30 +47,21 @@ class SourceFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Source>
-     */
-    public function locked(): Factory
+    public function locked(): SourceFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Source>
-     */
-    public function featured(): Factory
+    public function featured(): SourceFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Source>
-     */
-    public function special(): Factory
+    public function special(): SourceFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

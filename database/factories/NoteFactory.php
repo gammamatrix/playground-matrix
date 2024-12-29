@@ -47,30 +47,21 @@ class NoteFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Note>
-     */
-    public function locked(): Factory
+    public function locked(): NoteFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Note>
-     */
-    public function featured(): Factory
+    public function featured(): NoteFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Note>
-     */
-    public function special(): Factory
+    public function special(): NoteFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

@@ -47,30 +47,21 @@ class BacklogFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Backlog>
-     */
-    public function locked(): Factory
+    public function locked(): BacklogFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Backlog>
-     */
-    public function featured(): Factory
+    public function featured(): BacklogFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Backlog>
-     */
-    public function special(): Factory
+    public function special(): BacklogFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

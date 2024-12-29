@@ -47,30 +47,21 @@ class TeamFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Team>
-     */
-    public function locked(): Factory
+    public function locked(): TeamFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Team>
-     */
-    public function featured(): Factory
+    public function featured(): TeamFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Team>
-     */
-    public function special(): Factory
+    public function special(): TeamFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

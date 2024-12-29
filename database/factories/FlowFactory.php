@@ -47,30 +47,21 @@ class FlowFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Flow>
-     */
-    public function locked(): Factory
+    public function locked(): FlowFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Flow>
-     */
-    public function featured(): Factory
+    public function featured(): FlowFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Flow>
-     */
-    public function special(): Factory
+    public function special(): FlowFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

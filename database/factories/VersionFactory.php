@@ -47,30 +47,21 @@ class VersionFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Version>
-     */
-    public function locked(): Factory
+    public function locked(): VersionFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Version>
-     */
-    public function featured(): Factory
+    public function featured(): VersionFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Version>
-     */
-    public function special(): Factory
+    public function special(): VersionFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

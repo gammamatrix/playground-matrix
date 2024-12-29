@@ -60,30 +60,21 @@ class TicketFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Ticket>
-     */
-    public function locked(): Factory
+    public function locked(): TicketFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Ticket>
-     */
-    public function featured(): Factory
+    public function featured(): TicketFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Ticket>
-     */
-    public function special(): Factory
+    public function special(): TicketFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

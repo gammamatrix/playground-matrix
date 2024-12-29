@@ -47,30 +47,21 @@ class RoadmapFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Roadmap>
-     */
-    public function locked(): Factory
+    public function locked(): RoadmapFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Roadmap>
-     */
-    public function featured(): Factory
+    public function featured(): RoadmapFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Roadmap>
-     */
-    public function special(): Factory
+    public function special(): RoadmapFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

@@ -429,7 +429,7 @@ class Sprint extends Model
     /**
      * The backlog of the sprint.
      *
-     * @return HasOne<Backlog>
+     * @return HasOne<Backlog, $this>
      */
     public function backlog(): HasOne
     {
@@ -443,7 +443,7 @@ class Sprint extends Model
     /**
      * The board of the sprint.
      *
-     * @return HasOne<Board>
+     * @return HasOne<Board, $this>
      */
     public function board(): HasOne
     {
@@ -457,7 +457,7 @@ class Sprint extends Model
     /**
      * The epic of the sprint.
      *
-     * @return HasOne<Epic>
+     * @return HasOne<Epic, $this>
      */
     public function epic(): HasOne
     {
@@ -471,7 +471,7 @@ class Sprint extends Model
     /**
      * The flow of the sprint.
      *
-     * @return HasOne<Flow>
+     * @return HasOne<Flow, $this>
      */
     public function flow(): HasOne
     {
@@ -485,7 +485,7 @@ class Sprint extends Model
     /**
      * The matrix of the sprint.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -499,7 +499,7 @@ class Sprint extends Model
     /**
      * The milestone of the sprint.
      *
-     * @return HasOne<Milestone>
+     * @return HasOne<Milestone, $this>
      */
     public function milestone(): HasOne
     {
@@ -513,7 +513,7 @@ class Sprint extends Model
     /**
      * The note of the sprint.
      *
-     * @return HasOne<Note>
+     * @return HasOne<Note, $this>
      */
     public function note(): HasOne
     {
@@ -527,7 +527,7 @@ class Sprint extends Model
     /**
      * The project of the sprint.
      *
-     * @return HasOne<Project>
+     * @return HasOne<Project, $this>
      */
     public function project(): HasOne
     {
@@ -541,7 +541,7 @@ class Sprint extends Model
     /**
      * The release of the sprint.
      *
-     * @return HasOne<Release>
+     * @return HasOne<Release, $this>
      */
     public function release(): HasOne
     {
@@ -555,7 +555,7 @@ class Sprint extends Model
     /**
      * The roadmap of the sprint.
      *
-     * @return HasOne<Roadmap>
+     * @return HasOne<Roadmap, $this>
      */
     public function roadmap(): HasOne
     {
@@ -569,7 +569,7 @@ class Sprint extends Model
     /**
      * The source of the sprint.
      *
-     * @return HasOne<Source>
+     * @return HasOne<Source, $this>
      */
     public function source(): HasOne
     {
@@ -583,7 +583,7 @@ class Sprint extends Model
     /**
      * The tag of the sprint.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -597,7 +597,7 @@ class Sprint extends Model
     /**
      * The team of the sprint.
      *
-     * @return HasOne<Team>
+     * @return HasOne<Team, $this>
      */
     public function team(): HasOne
     {
@@ -611,7 +611,7 @@ class Sprint extends Model
     /**
      * The ticket of the sprint.
      *
-     * @return HasOne<Ticket>
+     * @return HasOne<Ticket, $this>
      */
     public function ticket(): HasOne
     {
@@ -625,7 +625,7 @@ class Sprint extends Model
     /**
      * The version of the sprint.
      *
-     * @return HasOne<Version>
+     * @return HasOne<Version, $this>
      */
     public function version(): HasOne
     {
@@ -639,7 +639,7 @@ class Sprint extends Model
     /**
      * The backlogs of the sprint.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -653,7 +653,7 @@ class Sprint extends Model
     /**
      * The boards of the sprint.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -667,7 +667,7 @@ class Sprint extends Model
     /**
      * The epics of the sprint.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -681,7 +681,7 @@ class Sprint extends Model
     /**
      * The milestones of the sprint.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -695,7 +695,7 @@ class Sprint extends Model
     /**
      * The projects of the sprint.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -709,7 +709,7 @@ class Sprint extends Model
     /**
      * The releases of the sprint.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -723,7 +723,7 @@ class Sprint extends Model
     /**
      * The roadmaps of the sprint.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -737,7 +737,7 @@ class Sprint extends Model
     /**
      * The teams of the sprint.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -751,7 +751,7 @@ class Sprint extends Model
     /**
      * The tickets of the sprint.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

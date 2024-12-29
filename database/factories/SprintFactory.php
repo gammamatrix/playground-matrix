@@ -47,30 +47,21 @@ class SprintFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Sprint>
-     */
-    public function locked(): Factory
+    public function locked(): SprintFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Sprint>
-     */
-    public function featured(): Factory
+    public function featured(): SprintFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Sprint>
-     */
-    public function special(): Factory
+    public function special(): SprintFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

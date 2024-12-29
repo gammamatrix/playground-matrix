@@ -47,30 +47,21 @@ class EpicFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Epic>
-     */
-    public function locked(): Factory
+    public function locked(): EpicFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Epic>
-     */
-    public function featured(): Factory
+    public function featured(): EpicFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Epic>
-     */
-    public function special(): Factory
+    public function special(): EpicFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,
