@@ -47,30 +47,21 @@ class ProjectFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Project>
-     */
-    public function locked(): Factory
+    public function locked(): ProjectFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Project>
-     */
-    public function featured(): Factory
+    public function featured(): ProjectFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Project>
-     */
-    public function special(): Factory
+    public function special(): ProjectFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

@@ -322,7 +322,7 @@ class Note extends Model
     /**
      * The matrix of the note.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -336,7 +336,7 @@ class Note extends Model
     /**
      * The tag of the note.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -350,7 +350,7 @@ class Note extends Model
     /**
      * The backlogs of the note.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -364,7 +364,7 @@ class Note extends Model
     /**
      * The boards of the note.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -378,7 +378,7 @@ class Note extends Model
     /**
      * The epics of the note.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -392,7 +392,7 @@ class Note extends Model
     /**
      * The milestones of the note.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -406,7 +406,7 @@ class Note extends Model
     /**
      * The projects of the note.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -420,7 +420,7 @@ class Note extends Model
     /**
      * The releases of the note.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -434,7 +434,7 @@ class Note extends Model
     /**
      * The roadmaps of the note.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -448,7 +448,7 @@ class Note extends Model
     /**
      * The sprints of the note.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -462,7 +462,7 @@ class Note extends Model
     /**
      * The teams of the note.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -476,7 +476,7 @@ class Note extends Model
     /**
      * The tickets of the note.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

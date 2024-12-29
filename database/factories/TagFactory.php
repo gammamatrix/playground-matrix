@@ -47,30 +47,21 @@ class TagFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Tag>
-     */
-    public function locked(): Factory
+    public function locked(): TagFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Tag>
-     */
-    public function featured(): Factory
+    public function featured(): TagFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Tag>
-     */
-    public function special(): Factory
+    public function special(): TagFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

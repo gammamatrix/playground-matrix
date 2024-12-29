@@ -47,30 +47,21 @@ class BoardFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Board>
-     */
-    public function locked(): Factory
+    public function locked(): BoardFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Board>
-     */
-    public function featured(): Factory
+    public function featured(): BoardFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Board>
-     */
-    public function special(): Factory
+    public function special(): BoardFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

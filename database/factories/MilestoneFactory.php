@@ -47,30 +47,21 @@ class MilestoneFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Milestone>
-     */
-    public function locked(): Factory
+    public function locked(): MilestoneFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Milestone>
-     */
-    public function featured(): Factory
+    public function featured(): MilestoneFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Milestone>
-     */
-    public function special(): Factory
+    public function special(): MilestoneFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

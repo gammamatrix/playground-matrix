@@ -47,30 +47,21 @@ class ReleaseFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Release>
-     */
-    public function locked(): Factory
+    public function locked(): ReleaseFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Release>
-     */
-    public function featured(): Factory
+    public function featured(): ReleaseFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Release>
-     */
-    public function special(): Factory
+    public function special(): ReleaseFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

@@ -449,7 +449,7 @@ class Project extends Model
     /**
      * The backlog of the project.
      *
-     * @return HasOne<Backlog>
+     * @return HasOne<Backlog, $this>
      */
     public function backlog(): HasOne
     {
@@ -463,7 +463,7 @@ class Project extends Model
     /**
      * The board of the project.
      *
-     * @return HasOne<Board>
+     * @return HasOne<Board, $this>
      */
     public function board(): HasOne
     {
@@ -477,7 +477,7 @@ class Project extends Model
     /**
      * The epic of the project.
      *
-     * @return HasOne<Epic>
+     * @return HasOne<Epic, $this>
      */
     public function epic(): HasOne
     {
@@ -491,7 +491,7 @@ class Project extends Model
     /**
      * The flow of the project.
      *
-     * @return HasOne<Flow>
+     * @return HasOne<Flow, $this>
      */
     public function flow(): HasOne
     {
@@ -505,7 +505,7 @@ class Project extends Model
     /**
      * The matrix of the project.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -519,7 +519,7 @@ class Project extends Model
     /**
      * The milestone of the project.
      *
-     * @return HasOne<Milestone>
+     * @return HasOne<Milestone, $this>
      */
     public function milestone(): HasOne
     {
@@ -533,7 +533,7 @@ class Project extends Model
     /**
      * The note of the project.
      *
-     * @return HasOne<Note>
+     * @return HasOne<Note, $this>
      */
     public function note(): HasOne
     {
@@ -547,7 +547,7 @@ class Project extends Model
     /**
      * The release of the project.
      *
-     * @return HasOne<Release>
+     * @return HasOne<Release, $this>
      */
     public function release(): HasOne
     {
@@ -561,7 +561,7 @@ class Project extends Model
     /**
      * The roadmap of the project.
      *
-     * @return HasOne<Roadmap>
+     * @return HasOne<Roadmap, $this>
      */
     public function roadmap(): HasOne
     {
@@ -575,7 +575,7 @@ class Project extends Model
     /**
      * The source of the project.
      *
-     * @return HasOne<Source>
+     * @return HasOne<Source, $this>
      */
     public function source(): HasOne
     {
@@ -589,7 +589,7 @@ class Project extends Model
     /**
      * The sprint of the project.
      *
-     * @return HasOne<Sprint>
+     * @return HasOne<Sprint, $this>
      */
     public function sprint(): HasOne
     {
@@ -603,7 +603,7 @@ class Project extends Model
     /**
      * The tag of the project.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -617,7 +617,7 @@ class Project extends Model
     /**
      * The team of the project.
      *
-     * @return HasOne<Team>
+     * @return HasOne<Team, $this>
      */
     public function team(): HasOne
     {
@@ -631,7 +631,7 @@ class Project extends Model
     /**
      * The ticket of the project.
      *
-     * @return HasOne<Ticket>
+     * @return HasOne<Ticket, $this>
      */
     public function ticket(): HasOne
     {
@@ -645,7 +645,7 @@ class Project extends Model
     /**
      * The version of the project.
      *
-     * @return HasOne<Version>
+     * @return HasOne<Version, $this>
      */
     public function version(): HasOne
     {
@@ -659,7 +659,7 @@ class Project extends Model
     /**
      * The backlogs of the project.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -673,7 +673,7 @@ class Project extends Model
     /**
      * The boards of the project.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -687,7 +687,7 @@ class Project extends Model
     /**
      * The epics of the project.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -701,7 +701,7 @@ class Project extends Model
     /**
      * The milestones of the project.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -715,7 +715,7 @@ class Project extends Model
     /**
      * The releases of the project.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -729,7 +729,7 @@ class Project extends Model
     /**
      * The roadmaps of the project.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -743,7 +743,7 @@ class Project extends Model
     /**
      * The sprints of the project.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -757,7 +757,7 @@ class Project extends Model
     /**
      * The teams of the project.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -771,7 +771,7 @@ class Project extends Model
     /**
      * The tickets of the project.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

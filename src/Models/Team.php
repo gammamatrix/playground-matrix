@@ -429,7 +429,7 @@ class Team extends Model
     /**
      * The backlog of the team.
      *
-     * @return HasOne<Backlog>
+     * @return HasOne<Backlog, $this>
      */
     public function backlog(): HasOne
     {
@@ -443,7 +443,7 @@ class Team extends Model
     /**
      * The board of the team.
      *
-     * @return HasOne<Board>
+     * @return HasOne<Board, $this>
      */
     public function board(): HasOne
     {
@@ -457,7 +457,7 @@ class Team extends Model
     /**
      * The epic of the team.
      *
-     * @return HasOne<Epic>
+     * @return HasOne<Epic, $this>
      */
     public function epic(): HasOne
     {
@@ -471,7 +471,7 @@ class Team extends Model
     /**
      * The flow of the team.
      *
-     * @return HasOne<Flow>
+     * @return HasOne<Flow, $this>
      */
     public function flow(): HasOne
     {
@@ -485,7 +485,7 @@ class Team extends Model
     /**
      * The matrix of the team.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -499,7 +499,7 @@ class Team extends Model
     /**
      * The milestone of the team.
      *
-     * @return HasOne<Milestone>
+     * @return HasOne<Milestone, $this>
      */
     public function milestone(): HasOne
     {
@@ -513,7 +513,7 @@ class Team extends Model
     /**
      * The note of the team.
      *
-     * @return HasOne<Note>
+     * @return HasOne<Note, $this>
      */
     public function note(): HasOne
     {
@@ -527,7 +527,7 @@ class Team extends Model
     /**
      * The project of the team.
      *
-     * @return HasOne<Project>
+     * @return HasOne<Project, $this>
      */
     public function project(): HasOne
     {
@@ -541,7 +541,7 @@ class Team extends Model
     /**
      * The release of the team.
      *
-     * @return HasOne<Release>
+     * @return HasOne<Release, $this>
      */
     public function release(): HasOne
     {
@@ -555,7 +555,7 @@ class Team extends Model
     /**
      * The roadmap of the team.
      *
-     * @return HasOne<Roadmap>
+     * @return HasOne<Roadmap, $this>
      */
     public function roadmap(): HasOne
     {
@@ -569,7 +569,7 @@ class Team extends Model
     /**
      * The source of the team.
      *
-     * @return HasOne<Source>
+     * @return HasOne<Source, $this>
      */
     public function source(): HasOne
     {
@@ -583,7 +583,7 @@ class Team extends Model
     /**
      * The sprint of the team.
      *
-     * @return HasOne<Sprint>
+     * @return HasOne<Sprint, $this>
      */
     public function sprint(): HasOne
     {
@@ -597,7 +597,7 @@ class Team extends Model
     /**
      * The tag of the team.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -611,7 +611,7 @@ class Team extends Model
     /**
      * The ticket of the team.
      *
-     * @return HasOne<Ticket>
+     * @return HasOne<Ticket, $this>
      */
     public function ticket(): HasOne
     {
@@ -625,7 +625,7 @@ class Team extends Model
     /**
      * The version of the team.
      *
-     * @return HasOne<Version>
+     * @return HasOne<Version, $this>
      */
     public function version(): HasOne
     {
@@ -639,7 +639,7 @@ class Team extends Model
     /**
      * The backlogs of the team.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -653,7 +653,7 @@ class Team extends Model
     /**
      * The boards of the team.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -667,7 +667,7 @@ class Team extends Model
     /**
      * The epics of the team.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -681,7 +681,7 @@ class Team extends Model
     /**
      * The milestones of the team.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -695,7 +695,7 @@ class Team extends Model
     /**
      * The projects of the team.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -709,7 +709,7 @@ class Team extends Model
     /**
      * The releases of the team.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -723,7 +723,7 @@ class Team extends Model
     /**
      * The roadmaps of the team.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -737,7 +737,7 @@ class Team extends Model
     /**
      * The sprints of the team.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -751,7 +751,7 @@ class Team extends Model
     /**
      * The tickets of the team.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

@@ -279,7 +279,7 @@ class Tag extends Model
     /**
      * The matrix of the tag.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -293,7 +293,7 @@ class Tag extends Model
     /**
      * The backlogs of the tag.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -307,7 +307,7 @@ class Tag extends Model
     /**
      * The boards of the tag.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -321,7 +321,7 @@ class Tag extends Model
     /**
      * The epics of the tag.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -335,7 +335,7 @@ class Tag extends Model
     /**
      * The milestones of the tag.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -349,7 +349,7 @@ class Tag extends Model
     /**
      * The projects of the tag.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -363,7 +363,7 @@ class Tag extends Model
     /**
      * The releases of the tag.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -377,7 +377,7 @@ class Tag extends Model
     /**
      * The roadmaps of the tag.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -391,7 +391,7 @@ class Tag extends Model
     /**
      * The sprints of the tag.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -405,7 +405,7 @@ class Tag extends Model
     /**
      * The teams of the tag.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -419,7 +419,7 @@ class Tag extends Model
     /**
      * The tickets of the tag.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {

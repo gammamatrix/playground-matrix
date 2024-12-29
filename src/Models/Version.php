@@ -387,7 +387,7 @@ class Version extends Model
     /**
      * The matrix of the version.
      *
-     * @return HasOne<Matrix>
+     * @return HasOne<Matrix, $this>
      */
     public function matrix(): HasOne
     {
@@ -401,7 +401,7 @@ class Version extends Model
     /**
      * The project of the version.
      *
-     * @return HasOne<Project>
+     * @return HasOne<Project, $this>
      */
     public function project(): HasOne
     {
@@ -415,7 +415,7 @@ class Version extends Model
     /**
      * The tag of the version.
      *
-     * @return HasOne<Tag>
+     * @return HasOne<Tag, $this>
      */
     public function tag(): HasOne
     {
@@ -429,7 +429,7 @@ class Version extends Model
     /**
      * The team of the version.
      *
-     * @return HasOne<Team>
+     * @return HasOne<Team, $this>
      */
     public function team(): HasOne
     {
@@ -443,7 +443,7 @@ class Version extends Model
     /**
      * The ticket of the version.
      *
-     * @return HasOne<Ticket>
+     * @return HasOne<Ticket, $this>
      */
     public function ticket(): HasOne
     {
@@ -457,7 +457,7 @@ class Version extends Model
     /**
      * The backlogs of the version.
      *
-     * @return HasMany<Backlog>
+     * @return HasMany<Backlog, $this>
      */
     public function backlogs(): HasMany
     {
@@ -471,7 +471,7 @@ class Version extends Model
     /**
      * The boards of the version.
      *
-     * @return HasMany<Board>
+     * @return HasMany<Board, $this>
      */
     public function boards(): HasMany
     {
@@ -485,7 +485,7 @@ class Version extends Model
     /**
      * The epics of the version.
      *
-     * @return HasMany<Epic>
+     * @return HasMany<Epic, $this>
      */
     public function epics(): HasMany
     {
@@ -499,7 +499,7 @@ class Version extends Model
     /**
      * The milestones of the version.
      *
-     * @return HasMany<Milestone>
+     * @return HasMany<Milestone, $this>
      */
     public function milestones(): HasMany
     {
@@ -513,7 +513,7 @@ class Version extends Model
     /**
      * The projects of the version.
      *
-     * @return HasMany<Project>
+     * @return HasMany<Project, $this>
      */
     public function projects(): HasMany
     {
@@ -527,7 +527,7 @@ class Version extends Model
     /**
      * The releases of the version.
      *
-     * @return HasMany<Release>
+     * @return HasMany<Release, $this>
      */
     public function releases(): HasMany
     {
@@ -541,7 +541,7 @@ class Version extends Model
     /**
      * The roadmaps of the version.
      *
-     * @return HasMany<Roadmap>
+     * @return HasMany<Roadmap, $this>
      */
     public function roadmaps(): HasMany
     {
@@ -555,7 +555,7 @@ class Version extends Model
     /**
      * The sprints of the version.
      *
-     * @return HasMany<Sprint>
+     * @return HasMany<Sprint, $this>
      */
     public function sprints(): HasMany
     {
@@ -569,7 +569,7 @@ class Version extends Model
     /**
      * The teams of the version.
      *
-     * @return HasMany<Team>
+     * @return HasMany<Team, $this>
      */
     public function teams(): HasMany
     {
@@ -583,7 +583,7 @@ class Version extends Model
     /**
      * The tickets of the version.
      *
-     * @return HasMany<Ticket>
+     * @return HasMany<Ticket, $this>
      */
     public function tickets(): HasMany
     {
