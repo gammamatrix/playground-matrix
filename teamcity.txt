@@ -1,586 +1,293 @@
-
 ##teamcity[testCount count='108' flowId='1']
-
 ##teamcity[testSuiteStarted name='/app/phpunit-ci.xml' flowId='1']
-
 ##teamcity[testSuiteStarted name='Unit' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Backlog/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='192' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='60' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='621' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='61' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='16' flowId='1']
-
+##teamcity[testFinished name='test_model_factory_make' duration='15' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Backlog\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Board\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Board/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Board\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Board\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Board\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='20' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='33' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Board\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Board\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Epic\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Epic/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Epic\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Epic\ModelTest::test_model_instance' flowId='1']
-
 ##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
-
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Epic\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='19' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='33' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Epic\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Epic\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Flow\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Flow/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Flow\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Flow\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Flow\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='15' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='28' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Flow\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Flow\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Matrix/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='6' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='8' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Matrix\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Milestone/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='19' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='32' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Milestone\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Note\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Note/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Note\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Note\ModelTest::test_model_instance' flowId='1']
-
 ##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Note\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='15' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='24' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Note\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Note\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Project\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Project/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Project\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Project\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Project\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='19' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='32' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Project\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Project\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Release\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Release/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Release\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Release\ModelTest::test_model_instance' flowId='1']
-
 ##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Release\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='30' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='31' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Release\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Release\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Roadmap/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='21' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='31' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Roadmap\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Source\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Source/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Source\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Source\ModelTest::test_model_instance' flowId='1']
-
 ##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Source\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='16' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='26' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Source\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Source\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Sprint/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='5' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='20' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='31' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest::test_model_factory_make' flowId='1']
-
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Sprint\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Tag\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Tag/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Tag\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Tag\ModelTest::test_model_instance' flowId='1']
-
 ##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Tag\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='14' flowId='1']
-
-##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Tag\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
-##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Tag\ModelTest' flowId='1']
-
-##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Team\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Team/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest' flowId='1']
-
-##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
-##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='19' flowId='1']
-
-##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
-##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Team\ModelTest' flowId='1']
-
-##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Ticket/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
-
-##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
-##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_verify_model_relationships' flowId='1']
-
 ##teamcity[testFinished name='test_verify_model_relationships' duration='22' flowId='1']
-
-##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_model_factory_make' flowId='1']
-
+##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Tag\ModelTest::test_model_factory_make' flowId='1']
 ##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
-##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
-
-##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Version\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Version/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest' flowId='1']
-
-##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest::test_model_instance' flowId='1']
-
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Tag\ModelTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Team\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Team/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest' flowId='1']
+##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_model_instance' flowId='1']
+##teamcity[testFinished name='test_model_instance' duration='7' flowId='1']
+##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_verify_model_relationships' flowId='1']
+##teamcity[testFinished name='test_verify_model_relationships' duration='31' flowId='1']
+##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Team\ModelTest::test_model_factory_make' flowId='1']
+##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Team\ModelTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Ticket/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
+##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_model_instance' flowId='1']
 ##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
-
+##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_verify_model_relationships' flowId='1']
+##teamcity[testFinished name='test_verify_model_relationships' duration='35' flowId='1']
+##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest::test_model_factory_make' flowId='1']
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
+##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
+##teamcity[testSuiteStarted name='Tests\Unit\Playground\Matrix\Models\Version\ModelTest' locationHint='php_qn:///app/tests/Unit/Models/Version/ModelTest.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest' flowId='1']
+##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest::test_model_instance' flowId='1']
+##teamcity[testFinished name='test_model_instance' duration='4' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='15' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='25' flowId='1']
 ##teamcity[testStarted name='test_model_factory_make' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Unit/Models/ModelCase.php::\Tests\Unit\Playground\Matrix\Models\Version\ModelTest::test_model_factory_make' flowId='1']
-
-##teamcity[testFinished name='test_model_factory_make' duration='6' flowId='1']
-
+##teamcity[testFinished name='test_model_factory_make' duration='7' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Unit\Playground\Matrix\Models\Version\ModelTest' flowId='1']
-
 ##teamcity[testSuiteFinished name='Unit' flowId='1']
-
 ##teamcity[testSuiteStarted name='Feature' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest' flowId='1']
-
 ##teamcity[testStarted name='test_getProjectKey_with_ticket_and_empty_project_key_allowed' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest::test_getProjectKey_with_ticket_and_empty_project_key_allowed' flowId='1']
-
-##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_allowed' duration='103' flowId='1']
-
+##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_allowed' duration='121' flowId='1']
 ##teamcity[testStarted name='test_getProjectKey_with_ticket_and_empty_project_key_disabled' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest::test_getProjectKey_with_ticket_and_empty_project_key_disabled' flowId='1']
-
-##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_disabled' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_disabled' duration='113' flowId='1']
 ##teamcity[testStarted name='test_getProjectKey_with_ticket_and_empty_project_key_allowed_with_default_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest::test_getProjectKey_with_ticket_and_empty_project_key_allowed_with_default_key' flowId='1']
-
-##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_allowed_with_default_key' duration='91' flowId='1']
-
+##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_allowed_with_default_key' duration='111' flowId='1']
 ##teamcity[testStarted name='test_getProjectKey_with_ticket_and_empty_project_key_disabled_with_default_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest::test_getProjectKey_with_ticket_and_empty_project_key_disabled_with_default_key' flowId='1']
-
-##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_disabled_with_default_key' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_getProjectKey_with_ticket_and_empty_project_key_disabled_with_default_key' duration='112' flowId='1']
 ##teamcity[testStarted name='test_getProjectKey_with_ticket_and_project_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/GetProjectKeyTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest::test_getProjectKey_with_ticket_and_project_key' flowId='1']
-
-##teamcity[testFinished name='test_getProjectKey_with_ticket_and_project_key' duration='101' flowId='1']
-
+##teamcity[testFinished name='test_getProjectKey_with_ticket_and_project_key' duration='113' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Concerns\Creating\GetProjectKeyTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest' flowId='1']
-
 ##teamcity[testStarted name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_with_ticket_and_empty_project_key_allowed' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed' duration='116' flowId='1']
 ##teamcity[testStarted name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_with_ticket_and_empty_project_key_disabled' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled' duration='87' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled' duration='114' flowId='1']
 ##teamcity[testStarted name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed_with_default_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_with_ticket_and_empty_project_key_allowed_with_default_key' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed_with_default_key' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_allowed_with_default_key' duration='116' flowId='1']
 ##teamcity[testStarted name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled_with_default_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_with_ticket_and_empty_project_key_disabled_with_default_key' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled_with_default_key' duration='90' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_empty_project_key_disabled_with_default_key' duration='116' flowId='1']
 ##teamcity[testStarted name='test_handleTicketCode_with_ticket_and_project_key' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_with_ticket_and_project_key' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_project_key' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_with_ticket_and_project_key' duration='115' flowId='1']
 ##teamcity[testStarted name='test_handleTicketCode_on_ticket_without_project' locationHint='php_qn:///app/tests/Feature/Concerns/Creating/HandleTicketCodeTest.php::\Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest::test_handleTicketCode_on_ticket_without_project' flowId='1']
-
-##teamcity[testFinished name='test_handleTicketCode_on_ticket_without_project' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_handleTicketCode_on_ticket_without_project' duration='100' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Concerns\Creating\HandleTicketCodeTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Console\Commands\About\CommandTest' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Matrix\Console\Commands\About\CommandTest' flowId='1']
-
 ##teamcity[testStarted name='test_command_about_displays_package_information_and_succeed' locationHint='php_qn:///app/tests/Feature/Console/Commands/About/CommandTest.php::\Tests\Feature\Playground\Matrix\Console\Commands\About\CommandTest::test_command_about_displays_package_information_and_succeed' flowId='1']
-
-##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed' duration='170' flowId='1']
-
+##teamcity[testFinished name='test_command_about_displays_package_information_and_succeed' duration='194' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Console\Commands\About\CommandTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Backlog/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='77' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='883' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='996' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='111' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Backlog\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Board\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Board/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Board\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Board\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='104' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Board\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='830' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1040' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Board\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='111' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Board\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Epic\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Epic/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Epic\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Epic\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='99' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Epic\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='830' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1020' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Epic\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='107' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Epic\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Flow\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Flow/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Flow\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Flow\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='97' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Flow\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='595' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='736' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Flow\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='84' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='108' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Flow\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Matrix/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='98' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='146' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='179' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='101' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='107' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Matrix\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Milestone/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='98' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='833' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1031' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='109' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Milestone\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Note\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Note/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Note\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Note\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='100' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Note\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='539' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='672' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Note\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='83' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='107' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Note\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Project\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Project/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Project\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Project\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Project\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='840' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1090' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Project\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='111' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Project\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Release\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Release/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Release\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Release\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='75' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Release\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='825' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1234' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Release\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='84' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='114' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Release\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Roadmap/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='75' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='835' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1123' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='110' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Roadmap\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Source\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Source/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Source\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Source\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='100' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Source\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='592' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='816' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Source\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='112' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Source\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Sprint/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='833' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1067' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='112' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Sprint\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Tag\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Tag/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Tag\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Tag\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='77' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='103' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Tag\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='591' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='673' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Tag\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='86' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='106' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Tag\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Team\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Team/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Team\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Team\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='101' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Team\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='938' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1034' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Team\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='86' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='110' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Team\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Ticket/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='100' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='1008' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='1253' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='89' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='110' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Ticket\ModelTest' flowId='1']
-
 ##teamcity[testSuiteStarted name='Tests\Feature\Playground\Matrix\Models\Version\ModelTest' locationHint='php_qn:///app/tests/Feature/Models/Version/ModelTest.php::\Tests\Feature\Playground\Matrix\Models\Version\ModelTest' flowId='1']
-
 ##teamcity[testStarted name='test_model_instance' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Version\ModelTest::test_model_instance' flowId='1']
-
-##teamcity[testFinished name='test_model_instance' duration='76' flowId='1']
-
+##teamcity[testFinished name='test_model_instance' duration='100' flowId='1']
 ##teamcity[testStarted name='test_verify_model_relationships' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Version\ModelTest::test_verify_model_relationships' flowId='1']
-
-##teamcity[testFinished name='test_verify_model_relationships' duration='683' flowId='1']
-
+##teamcity[testFinished name='test_verify_model_relationships' duration='773' flowId='1']
 ##teamcity[testStarted name='test_factory_create' locationHint='php_qn:///app/vendor/gammamatrix/playground-test/src/Feature/Models/ModelCase.php::\Tests\Feature\Playground\Matrix\Models\Version\ModelTest::test_factory_create' flowId='1']
-
-##teamcity[testFinished name='test_factory_create' duration='85' flowId='1']
-
+##teamcity[testFinished name='test_factory_create' duration='109' flowId='1']
 ##teamcity[testSuiteFinished name='Tests\Feature\Playground\Matrix\Models\Version\ModelTest' flowId='1']
-
 ##teamcity[testSuiteFinished name='Feature' flowId='1']
-
 ##teamcity[testSuiteFinished name='/app/phpunit-ci.xml' flowId='1']
