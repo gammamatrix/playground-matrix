@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Database\Factories\Playground\Matrix\Models;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -47,30 +48,21 @@ class MatrixFactory extends Factory
 
     // States: flags
 
-    /**
-     * @return Factory<Matrix>
-     */
-    public function locked(): Factory
+    public function locked(): MatrixFactory
     {
         return $this->state(fn (array $attributes) => [
             'locked' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Matrix>
-     */
-    public function featured(): Factory
+    public function featured(): MatrixFactory
     {
         return $this->state(fn (array $attributes) => [
             'featured' => true,
         ]);
     }
 
-    /**
-     * @return Factory<Matrix>
-     */
-    public function special(): Factory
+    public function special(): MatrixFactory
     {
         return $this->state(fn (array $attributes) => [
             'special' => true,

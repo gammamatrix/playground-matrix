@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Milestone/ModelTest",
+    "model": "Milestone",
+    "model_fqdn": "Playground/Matrix/Models/Milestone",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Milestone",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Milestone",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

@@ -47,7 +47,7 @@ trait Creating
         }
 
         $code = Ticket::where('key', 'LIKE', $ticket->key)->max('code');
-        $next = $code > 0 ? ++$code : 1;
+        $next = is_int($code) && $code > 0 ? ++$code : 1;
         $slug = sprintf(
             '%1$s%2$s%3$d',
             $ticket->key,

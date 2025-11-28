@@ -1,0 +1,23 @@
+{
+    "class": "TestCase",
+    "config": "playground-matrix",
+    "extends": "OrchestraTestCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/TestCase",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "TestCase",
+    "namespace": "Tests/Feature/Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-model-test-case",
+    "uses": [
+        "Tests/Unit/Playground/Matrix/PackageProviders",
+        "Playground/Test/OrchestraTestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

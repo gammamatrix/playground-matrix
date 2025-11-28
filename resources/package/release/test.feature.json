@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Release/ModelTest",
+    "model": "Release",
+    "model_fqdn": "Playground/Matrix/Models/Release",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Release",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Release",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

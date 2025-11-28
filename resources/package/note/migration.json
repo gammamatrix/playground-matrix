@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_notes_table",
+    "config": "playground-matrix",
+    "model": "Note",
+    "model_fqdn": "Playground/Matrix/Models/Note",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Note",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_notes",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

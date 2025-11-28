@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Feature\Playground\Matrix\Models;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -18,6 +19,8 @@ class ModelCase extends BaseModelCase
 {
     use DatabaseTransactions;
     use PackageProviders;
+
+    protected bool $debugModels = false;
 
     protected bool $hasMigrations = true;
 

@@ -1,0 +1,16 @@
+{
+    "class": "MilestoneFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/MilestoneFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "MilestoneFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Milestone",
+    "model_fqdn": "Playground/Matrix/Models/Milestone",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

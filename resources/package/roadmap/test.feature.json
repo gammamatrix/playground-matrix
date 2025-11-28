@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Roadmap/ModelTest",
+    "model": "Roadmap",
+    "model_fqdn": "Playground/Matrix/Models/Roadmap",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Roadmap",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Roadmap",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

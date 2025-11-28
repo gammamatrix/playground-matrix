@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Unit\Playground\Matrix;
 
 /**
@@ -17,6 +18,7 @@ trait PackageProviders
     protected function getPackageProviders($app)
     {
         return [
+            \Playground\Test\ServiceProvider::class,
             \Playground\ServiceProvider::class,
             \Playground\Matrix\ServiceProvider::class,
         ];

@@ -8,6 +8,12 @@ declare(strict_types=1);
 
 /**
  * Playground: Matrix Configuration and Environment Variables
+ *
+ * @return array{
+ *     about: bool,
+ *     load: array{migrations: bool},
+ *     keys: array{default: string, allow_empty: bool}
+ * }
  */
 return [
 
@@ -51,7 +57,6 @@ return [
 
     'keys' => [
         'default' => env('PLAYGROUND_MATRIX_KEYS_DEFAULT', ''),
-
         'allow_empty' => (bool) env('PLAYGROUND_MATRIX_KEYS_ALLOW_EMPTY', true),
     ],
 

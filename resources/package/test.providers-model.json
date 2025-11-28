@@ -1,0 +1,24 @@
+{
+    "class": "PackageProviders",
+    "config": "playground-matrix",
+    "extends": "",
+    "fqdn": "Tests/Unit/Playground/Matrix/PackageProviders",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "PackageProviders",
+    "namespace": "Tests/Unit/Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "unit",
+    "type": "providers-model",
+    "uses": [],
+    "models": [],
+    "package_providers": [
+        "\\Playground\\Test\\ServiceProvider::class",
+        "\\Playground\\ServiceProvider::class",
+        "\\Playground\\Matrix\\ServiceProvider::class"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "class": "VersionFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/VersionFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "VersionFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Version",
+    "model_fqdn": "Playground/Matrix/Models/Version",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

@@ -1,0 +1,16 @@
+{
+    "class": "TeamFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/TeamFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "TeamFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Team",
+    "model_fqdn": "Playground/Matrix/Models/Team",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

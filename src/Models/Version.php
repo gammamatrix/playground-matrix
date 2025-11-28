@@ -5,11 +5,14 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Matrix\Models;
 
+use Database\Factories\Playground\Matrix\Models\VersionFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Carbon;
 use Playground\Models\Model;
 
 /**
@@ -52,7 +55,7 @@ use Playground\Models\Model;
  * @property int $status
  * @property int $rank
  * @property int $size
- * @property ?array $matrix
+ * @property ?array<string, mixed> $matrix
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
@@ -97,25 +100,20 @@ use Playground\Models\Model;
  * @property string $icon
  * @property string $image
  * @property string $avatar
- * @property ?array $ui
- * @property ?array $assets
- * @property ?array $meta
- * @property ?array $notes
- * @property ?array $options
- * @property ?array $sources
+ * @property ?array<string, mixed> $ui
+ * @property ?array<string, mixed> $assets
+ * @property ?array<string, mixed> $meta
+ * @property ?array<int, array<string, mixed>> $notes
+ * @property ?array<string, mixed> $options
+ * @property ?array<string, mixed> $sources
  */
 class Version extends Model
 {
-    /** @use HasFactory<\Database\Factories\Playground\Matrix\Models\VersionFactory> */
+    /** @use HasFactory<VersionFactory> */
     use HasFactory;
 
     protected $table = 'matrix_versions';
 
-    /**
-     * The default values for attributes.
-     *
-     * @var array<string, mixed>
-     */
     protected $attributes = [
         'version_type' => null,
         'created_by_id' => null,
@@ -206,11 +204,6 @@ class Version extends Model
         'sources' => '{}',
     ];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'version_type',
         'owned_by_id',
@@ -295,11 +288,6 @@ class Version extends Model
         'sources',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [

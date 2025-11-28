@@ -1,0 +1,16 @@
+{
+    "class": "SprintFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/SprintFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "SprintFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Sprint",
+    "model_fqdn": "Playground/Matrix/Models/Sprint",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

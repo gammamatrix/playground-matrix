@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_matrices_table",
+    "config": "playground-matrix",
+    "model": "Matrix",
+    "model_fqdn": "Playground/Matrix/Models/Matrix",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Matrix",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_matrices",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

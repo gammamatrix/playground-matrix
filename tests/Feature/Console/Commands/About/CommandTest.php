@@ -5,11 +5,12 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Feature\Playground\Matrix\Console\Commands\About;
 
-use Illuminate\Console\Command;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Playground\Matrix\ServiceProvider;
+use Symfony\Component\Console\Command\Command;
 use Tests\Feature\Playground\Matrix\TestCase;
 
 /**

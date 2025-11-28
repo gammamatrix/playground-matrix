@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_sources_table",
+    "config": "playground-matrix",
+    "model": "Source",
+    "model_fqdn": "Playground/Matrix/Models/Source",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Source",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_sources",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Flow/ModelTest",
+    "model": "Flow",
+    "model_fqdn": "Playground/Matrix/Models/Flow",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Flow",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Flow",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

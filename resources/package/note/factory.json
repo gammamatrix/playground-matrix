@@ -1,0 +1,16 @@
+{
+    "class": "NoteFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/NoteFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "NoteFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Note",
+    "model_fqdn": "Playground/Matrix/Models/Note",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

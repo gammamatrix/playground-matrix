@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Version/ModelTest",
+    "model": "Version",
+    "model_fqdn": "Playground/Matrix/Models/Version",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Version",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Version",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

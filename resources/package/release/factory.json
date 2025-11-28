@@ -1,0 +1,16 @@
+{
+    "class": "ReleaseFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/ReleaseFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "ReleaseFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Release",
+    "model_fqdn": "Playground/Matrix/Models/Release",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

@@ -1,0 +1,16 @@
+{
+    "class": "BoardFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/BoardFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "BoardFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Board",
+    "model_fqdn": "Playground/Matrix/Models/Board",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

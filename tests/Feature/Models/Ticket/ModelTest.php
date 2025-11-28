@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Feature\Playground\Matrix\Models\Ticket;
 
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
@@ -18,9 +19,6 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
-    /**
-     * @var array<string, array<string, mixed>> Test has many relationships.
-     */
     protected array $hasMany = [
         'backlogs' => [
             'key' => 'ticket_id',
@@ -60,9 +58,6 @@ class ModelTest extends ModelCase
         ],
     ];
 
-    /**
-     * @var array<string, array<string, mixed>> Test has one relationships.
-     */
     protected array $hasOne = [
         'creator' => [
             'key' => 'created_by_id',
@@ -161,17 +156,17 @@ class ModelTest extends ModelCase
         ],
         'completedBy' => [
             'key' => 'completed_by_id',
-            'rule' => 'first',
+            'rule' => 'create',
             'modelClass' => \Playground\Models\User::class,
         ],
         'fixedBy' => [
             'key' => 'fixed_by_id',
-            'rule' => 'first',
+            'rule' => 'create',
             'modelClass' => \Playground\Models\User::class,
         ],
         'reportedBy' => [
             'key' => 'reported_by_id',
-            'rule' => 'first',
+            'rule' => 'create',
             'modelClass' => \Playground\Models\User::class,
         ],
     ];

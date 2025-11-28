@@ -1,0 +1,16 @@
+{
+    "class": "MatrixFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/MatrixFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "MatrixFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Matrix",
+    "model_fqdn": "Playground/Matrix/Models/Matrix",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

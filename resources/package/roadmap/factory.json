@@ -1,0 +1,16 @@
+{
+    "class": "RoadmapFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/RoadmapFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "RoadmapFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Roadmap",
+    "model_fqdn": "Playground/Matrix/Models/Roadmap",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

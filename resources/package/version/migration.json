@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_versions_table",
+    "config": "playground-matrix",
+    "model": "Version",
+    "model_fqdn": "Playground/Matrix/Models/Version",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Version",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_versions",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

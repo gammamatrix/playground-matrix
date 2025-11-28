@@ -2,21 +2,21 @@
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-matrix/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-matrix/testing/develop/coverage.svg)](tests)
-[![PHPStan Level 9](https://img.shields.io/badge/PHPStan-level%209-brightgreen)](.github/workflows/ci.yml#L128)
+[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-level%2010-brightgreen)](.github/workflows/ci.yml#L128)
 
-The Playground Matrix is a package for [Laravel](https://laravel.com/docs/11.x) applications.
+The Playground Matrix is a package for [Laravel](https://laravel.com/docs/12.x) applications.
 
-This package provides the models to use Playground Matrix, a project management tool.
+Playground: Provides the models to use Playground Matrix, a Project Management System.
 
-Read more on using [Playground Matrix at Read the Docs: Playground Documentation.](https://gammamatrix-playground.readthedocs.io/en/develop/components/matrix.html)
+Read more on using [Playground: Matrix at Read the Docs](https://gammamatrix-playground.readthedocs.io/en/develop/built-components/matrix.html)
 
 ## Installation
 
-This package is required with [playground-matrix-api (API without UI)](https://github.com/gammamatrix/playground-matrix-api) or [playground-matrix-resource (API with UI)](https://github.com/gammamatrix/playground-matrix-resource)
+**NOTE:** This package is required by:
+- [Playground: Matrix API](https://github.com/gammamatrix/playground-matrix-api): API without UI
+- [Playground: Matrix Resource](https://github.com/gammamatrix/playground-matrix-resource): API with UI
 
-If you do not need an API and just want the models, then the package may be installed with:
-
-You can install the package via composer:
+Install this package, with composer, to get access to the Matrix Models:
 
 ```bash
 composer require gammamatrix/playground-matrix
@@ -26,7 +26,7 @@ composer require gammamatrix/playground-matrix
 
 Playground Matrix provides information in the `artisan about` command.
 
-<img src="resources/docs/artisan-about-playground-matrix.png" alt="screenshot of artisan about command with Playground Matrix.">
+<img src="resources/docs/artisan-about-playground-matrix.png" alt="screenshot of artisan about command with Playground: Matrix.">
 
 ## Configuration
 
@@ -41,34 +41,37 @@ php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag=
 
 ### Environment Variables
 
-|  env()                              | config()                            |
-|-------------------------------------|-------------------------------------|
-| `PLAYGROUND_MATRIX_LOAD_MIGRATIONS` | `playground-matrix.load.migrations` |
+| env()                               | config()                            | Default |
+|-------------------------------------|-------------------------------------|---------|
+| `PLAYGROUND_MATRIX_ABOUT`           | `playground-matrix.about`           | `true`  |
+| `PLAYGROUND_MATRIX_LOAD_MIGRATIONS` | `playground-matrix.load.migrations` | `false` |
 - The loading option for migrations does not take effect if the migrations have been exported to your app. The control for loading is handled in the package [ServiceProvider.](src/ServiceProvider.php)
 
 ## Models
 
 This package includes [factories](database/factories), models and [migrations](database/migrations) for:
-- [Backlogs](src/Models/Backlog.php)
-- [Boards](src/Models/Board.php)
-- [Epics](src/Models/Epic.php)
-- [Flows](src/Models/Flow.php)
-- [Matrices](src/Models/Matrix.php)
-- [Milestones](src/Models/Milestone.php)
-- [Notes](src/Models/Note.php)
-- [Projects](src/Models/Project.php)
-- [Releases](src/Models/Release.php)
-- [Roadmaps](src/Models/Roadmap.php)
-- [Sources](src/Models/Source.php)
-- [Sprints](src/Models/Sprint.php)
-- [Tags](src/Models/Tag.php)
-- [Teams](src/Models/Team.php)
-- [Tickets](src/Models/Ticket.php)
-- [Versions](src/Models/Version.php)
+- [Backlog](src/Models/Backlog.php)
+- [Board](src/Models/Board.php)
+- [Epic](src/Models/Epic.php)
+- [Flow](src/Models/Flow.php)
+- [Matrix](src/Models/Matrix.php)
+- [Milestone](src/Models/Milestone.php)
+- [Note](src/Models/Note.php)
+- [Project](src/Models/Project.php)
+- [Release](src/Models/Release.php)
+- [Roadmap](src/Models/Roadmap.php)
+- [Source](src/Models/Source.php)
+- [Sprint](src/Models/Sprint.php)
+- [Tag](src/Models/Tag.php)
+- [Team](src/Models/Team.php)
+- [Ticket](src/Models/Ticket.php)
+- [Version](src/Models/Version.php)
 
 ## Migrations
 
-All [database/migrations](database/migrations) are disabled by default.
+All migrations are disabled by default.
+
+See the contents of the published config file: [database/migrations](database/migrations)
 - NOTE: There are 16 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
 
 You can publish the migrations file with:
@@ -83,30 +86,29 @@ composer cloc
 ```
 
 ```
-➜  playground-matrix git:(feature/GH-25) ✗ composer cloc
-> cloc --exclude-dir=node_modules,output,vendor .
-     148 text files.
-     118 unique files.
-      32 files ignored.
+➜  playground-matrix git:(develop) ✗ composer cloc
+     200 text files.
+     195 unique files.
+      25 files ignored.
 
-github.com/AlDanial/cloc v 1.98  T=0.29 s (405.5 files/s, 234827.7 lines/s)
+github.com/AlDanial/cloc v 2.06  T=0.13 s (1530.8 files/s, 545559.2 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-JSON                            18              0              0          49172
-PHP                             92           1285           4715          12506
+JSON                            89              0              0          50576
+PHP                             91           1461           4161          12348
+XML                             10              0              7            470
 YAML                             1              5              0            275
-XML                              3              0              7            215
-Markdown                         3             44              0            102
+Markdown                         3             46              0            132
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           118           1337           4722          62282
+SUM:                           195           1515           4168          63813
 -------------------------------------------------------------------------------
 ```
 
 ## PHPStan
 
-Tests at level 9 on:
+Tests at level 10 on:
 - `config/`
 - `database/`
 - `src/`
@@ -125,8 +127,19 @@ composer format
 
 ## Testing
 
+Unit tests
 ```sh
 composer test
+```
+
+Unit and feature tests
+```sh
+composer test-dev
+```
+
+Run unit and feature tests in parallel:
+```sh
+composer test-parallel
 ```
 
 ## Changelog

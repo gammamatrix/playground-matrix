@@ -1,0 +1,16 @@
+{
+    "class": "TagFactory",
+    "config": "playground-matrix",
+    "fqdn": "Database/Factories/Database/Factories/Playground/Matrix/Models/TagFactory",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "TagFactory",
+    "namespace": "Database/Factories/Playground/Matrix/Models",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "model": "Tag",
+    "model_fqdn": "Playground/Matrix/Models/Tag",
+    "recipe": "matrix",
+    "type": "playground-model",
+    "models": []
+}

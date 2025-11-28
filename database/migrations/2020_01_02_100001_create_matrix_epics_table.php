@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Schema;
 /**
  * \Playground\Matrix\Models\Epic
  */
-return new class() extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.

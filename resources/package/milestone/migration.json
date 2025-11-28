@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_milestones_table",
+    "config": "playground-matrix",
+    "model": "Milestone",
+    "model_fqdn": "Playground/Matrix/Models/Milestone",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Milestone",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_milestones",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

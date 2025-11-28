@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Unit/Playground/Matrix/Models/Team/ModelTest",
+    "model": "Team",
+    "model_fqdn": "Playground/Matrix/Models/Team",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Team",
+    "namespace": "Tests/Unit/Playground/Matrix/Models/Team",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "unit",
+    "type": "model",
+    "uses": [
+        "Tests/Unit/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

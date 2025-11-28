@@ -5,11 +5,14 @@
  */
 
 declare(strict_types=1);
+
 namespace Playground\Matrix\Models;
 
+use Database\Factories\Playground\Matrix\Models\EpicFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Carbon;
 use Playground\Models\Model;
 
 /**
@@ -62,7 +65,7 @@ use Playground\Models\Model;
  * @property int $status
  * @property int $rank
  * @property int $size
- * @property ?array $matrix
+ * @property ?array<string, mixed> $matrix
  * @property ?int $x
  * @property ?int $y
  * @property ?int $z
@@ -105,30 +108,25 @@ use Playground\Models\Model;
  * @property string $icon
  * @property string $image
  * @property string $avatar
- * @property ?array $ui
- * @property ?array $assets
- * @property ?array $backlog
- * @property ?array $board
- * @property ?array $flow
- * @property ?array $history
- * @property ?array $meta
- * @property ?array $notes
- * @property ?array $options
- * @property ?array $roadmap
- * @property ?array $sources
+ * @property ?array<string, mixed> $ui
+ * @property ?array<string, mixed> $assets
+ * @property ?array<string, mixed> $backlog
+ * @property ?array<string, mixed> $board
+ * @property ?array<string, mixed> $flow
+ * @property ?array<string, mixed> $history
+ * @property ?array<string, mixed> $meta
+ * @property ?array<int, array<string, mixed>> $notes
+ * @property ?array<string, mixed> $options
+ * @property ?array<string, mixed> $roadmap
+ * @property ?array<string, mixed> $sources
  */
 class Epic extends Model
 {
-    /** @use HasFactory<\Database\Factories\Playground\Matrix\Models\EpicFactory> */
+    /** @use HasFactory<EpicFactory> */
     use HasFactory;
 
     protected $table = 'matrix_epics';
 
-    /**
-     * The default values for attributes.
-     *
-     * @var array<string, mixed>
-     */
     protected $attributes = [
         'epic_type' => null,
         'created_by_id' => null,
@@ -232,11 +230,6 @@ class Epic extends Model
         'sources' => '{}',
     ];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'epic_type',
         'owned_by_id',
@@ -334,11 +327,6 @@ class Epic extends Model
         'sources',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [

@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_teams_table",
+    "config": "playground-matrix",
+    "model": "Team",
+    "model_fqdn": "Playground/Matrix/Models/Team",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Team",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_teams",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

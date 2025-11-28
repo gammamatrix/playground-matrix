@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Unit\Playground\Matrix\Models;
 
 use Playground\Test\Unit\Models\ModelCase as BaseModelCase;

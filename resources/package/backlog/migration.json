@@ -1,0 +1,17 @@
+{
+    "class": "2020_01_02_100001_create_matrix_backlogs_table",
+    "config": "playground-matrix",
+    "model": "Backlog",
+    "model_fqdn": "Playground/Matrix/Models/Backlog",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Backlog",
+    "namespace": "Playground/Matrix",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "table": "matrix_backlogs",
+    "type": "playground-model",
+    "models": [],
+    "create": true,
+    "update": false
+}

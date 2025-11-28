@@ -15,24 +15,28 @@
     "withFactories": true,
     "withMigrations": true,
     "withModels": true,
+    "withOpenAPI": false,
     "withPolicies": false,
     "withRequests": false,
     "withRoutes": false,
-    "withSwagger": false,
     "withTests": true,
+    "withTranslations": false,
     "playground": true,
+    "revision": false,
+    "docs_name": "",
+    "docs_url": "",
     "package_name": "Playground: Matrix",
-    "package_description": "Playground: This package provides the models to use Playground Matrix, a Project Management System.",
+    "model_package": "",
+    "model_package_name": "",
+    "package_description": "Playground: Provides the Matrix models for the Playground Matrix System.",
     "package_homepage": "https://github.com/gammamatrix/playground-matrix",
-    "package_keywords": [
-        "gammamatrix",
-        "laravel",
-        "matrix",
-        "playground",
-        "projects",
-        "tickets"
-    ],
     "package_license": "MIT",
+    "packagist": "gammamatrix/playground-matrix",
+    "postman_collection": "",
+    "postman_url": "",
+    "service_provider": "",
+    "type": "playground-model",
+    "version": "74.0.0",
     "package_authors": [
         {
             "name": "Jeremy Postlethwaite",
@@ -40,50 +44,55 @@
             "role": "Developer"
         }
     ],
+    "package_autoload_psr4": [],
+    "package_autoload_dev_psr4": [],
+    "package_keywords": [
+        "gammamatrix",
+        "laravel",
+        "matrix",
+        "playground"
+    ],
+    "package_laravel_providers": [
+        "Playground/Matrix/ServiceProvider"
+    ],
+    "package_providers": [],
     "package_require": {
-        "php": "^8.2",
-        "gammamatrix/playground": "*"
+        "php": "^8.4",
+        "gammamatrix/playground": "*",
+        "illuminate/database": "^12.0",
+        "illuminate/support": "^12.0"
     },
     "package_require_dev": {
-        "gammamatrix/playground-test": "*"
+        "gammamatrix/playground-test": "*",
+        "illuminate/testing": "^12.0"
     },
     "package_suggest": {
         "gammamatrix/playground-matrix-api": "Provides an API, without a UI, to interact with the models provided in this package.",
         "gammamatrix/playground-matrix-resource": "Provides a resource API and optional Blade UI to interact with the models provided in this package."
     },
-    "package_autoload_psr4": [],
-    "package_autoload_dev_psr4": [],
-    "package_providers": [
-        "Playground/ServiceProvider",
-        "Playground/Matrix/ServiceProvider"
-    ],
-    "package_laravel_providers": [],
-    "packagist": "gammamatrix/playground-matrix",
     "controllers": [],
     "models": {
-        "Backlog": "resources/configurations/playground-matrix/model.backlog.json",
-        "Board": "resources/configurations/playground-matrix/model.board.json",
-        "Epic": "resources/configurations/playground-matrix/model.epic.json",
-        "Flow": "resources/configurations/playground-matrix/model.flow.json",
-        "Matrix": "resources/configurations/playground-matrix/model.matrix.json",
-        "Milestone": "resources/configurations/playground-matrix/model.milestone.json",
-        "Note": "resources/configurations/playground-matrix/model.note.json",
-        "Project": "resources/configurations/playground-matrix/model.project.json",
-        "Release": "resources/configurations/playground-matrix/model.release.json",
-        "Roadmap": "resources/configurations/playground-matrix/model.roadmap.json",
-        "Source": "resources/configurations/playground-matrix/model.source.json",
-        "Sprint": "resources/configurations/playground-matrix/model.sprint.json",
-        "Tag": "resources/configurations/playground-matrix/model.tag.json",
-        "Team": "resources/configurations/playground-matrix/model.team.json",
-        "Ticket": "resources/configurations/playground-matrix/model.ticket.json",
-        "Version": "resources/configurations/playground-matrix/model.version.json"
+        "Backlog": "resources/package/backlog/model.json",
+        "Board": "resources/package/board/model.json",
+        "Epic": "resources/package/epic/model.json",
+        "Flow": "resources/package/flow/model.json",
+        "Matrix": "resources/package/matrix/model.json",
+        "Milestone": "resources/package/milestone/model.json",
+        "Note": "resources/package/note/model.json",
+        "Project": "resources/package/project/model.json",
+        "Release": "resources/package/release/model.json",
+        "Roadmap": "resources/package/roadmap/model.json",
+        "Source": "resources/package/source/model.json",
+        "Sprint": "resources/package/sprint/model.json",
+        "Tag": "resources/package/tag/model.json",
+        "Team": "resources/package/team/model.json",
+        "Ticket": "resources/package/ticket/model.json",
+        "Version": "resources/package/version/model.json"
     },
     "policies": [],
     "requests": [],
     "routes": [],
     "transformers": [],
-    "uses": [],
-    "service_provider": "",
-    "type": "playground-model",
-    "version": "73.0.0"
+    "translations": [],
+    "uses": []
 }

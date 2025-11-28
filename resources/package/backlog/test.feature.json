@@ -1,0 +1,22 @@
+{
+    "class": "ModelTest",
+    "config": "playground-matrix",
+    "extends": "ModelCase",
+    "fqdn": "Tests/Feature/Playground/Matrix/Models/Backlog/ModelTest",
+    "model": "Backlog",
+    "model_fqdn": "Playground/Matrix/Models/Backlog",
+    "module": "Matrix",
+    "module_slug": "matrix",
+    "name": "Backlog",
+    "namespace": "Tests/Feature/Playground/Matrix/Models/Backlog",
+    "organization": "Playground",
+    "package": "playground-matrix",
+    "playground": true,
+    "suite": "feature",
+    "type": "model",
+    "uses": [
+        "Tests/Feature/Playground/Matrix/Models/ModelCase"
+    ],
+    "models": [],
+    "package_providers": []
+}
