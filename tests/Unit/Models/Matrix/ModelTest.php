@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Playground\Matrix\Models\Matrix;
 
+use Playground\Matrix\Models\Matrix;
 use Tests\Unit\Playground\Matrix\Models\ModelCase;
 
 /**
@@ -15,7 +16,7 @@ use Tests\Unit\Playground\Matrix\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \Playground\Matrix\Models\Matrix::class;
+    protected string $modelClass = Matrix::class;
 
     protected bool $hasRelationships = true;
 

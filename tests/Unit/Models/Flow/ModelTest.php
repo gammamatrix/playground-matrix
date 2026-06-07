@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Playground\Matrix\Models\Flow;
 
+use Playground\Matrix\Models\Flow;
 use Tests\Unit\Playground\Matrix\Models\ModelCase;
 
 /**
@@ -15,7 +16,7 @@ use Tests\Unit\Playground\Matrix\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \Playground\Matrix\Models\Flow::class;
+    protected string $modelClass = Flow::class;
 
     protected bool $hasRelationships = true;
 

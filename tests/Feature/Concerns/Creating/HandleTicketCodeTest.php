@@ -5,6 +5,7 @@
  */
 
 declare(strict_types=1);
+
 namespace Tests\Feature\Playground\Matrix\Concerns\Creating;
 
 use Playground\Matrix\Concerns\Creating;
@@ -19,7 +20,7 @@ class HandleTicketCodeTest extends TestCase
 {
     use Creating;
 
-    public function test_handleTicketCode_with_ticket_and_empty_project_key_allowed(): void
+    public function test_handle_ticket_code_with_ticket_and_empty_project_key_allowed(): void
     {
         config([
             'playground-matrix.keys.default' => '',
@@ -40,7 +41,7 @@ class HandleTicketCodeTest extends TestCase
         $this->assertSame($ticket->key, $project->key);
     }
 
-    public function test_handleTicketCode_with_ticket_and_empty_project_key_disabled(): void
+    public function test_handle_ticket_code_with_ticket_and_empty_project_key_disabled(): void
     {
         config([
             'playground-matrix.keys.default' => '',
@@ -61,7 +62,7 @@ class HandleTicketCodeTest extends TestCase
         $this->assertSame($ticket->key, $project->key);
     }
 
-    public function test_handleTicketCode_with_ticket_and_empty_project_key_allowed_with_default_key(): void
+    public function test_handle_ticket_code_with_ticket_and_empty_project_key_allowed_with_default_key(): void
     {
         config([
             'playground-matrix.keys.default' => 'ME',
@@ -82,7 +83,7 @@ class HandleTicketCodeTest extends TestCase
         $this->assertSame($ticket->key, $project->key);
     }
 
-    public function test_handleTicketCode_with_ticket_and_empty_project_key_disabled_with_default_key(): void
+    public function test_handle_ticket_code_with_ticket_and_empty_project_key_disabled_with_default_key(): void
     {
         config([
             'playground-matrix.keys.default' => 'GH',
@@ -103,7 +104,7 @@ class HandleTicketCodeTest extends TestCase
         $this->assertSame($ticket->key, $project->key);
     }
 
-    public function test_handleTicketCode_with_ticket_and_project_key(): void
+    public function test_handle_ticket_code_with_ticket_and_project_key(): void
     {
         config([
             'playground-matrix.keys.default' => '',
@@ -124,7 +125,7 @@ class HandleTicketCodeTest extends TestCase
         $this->assertSame($ticket->key, $project->key);
     }
 
-    public function test_handleTicketCode_on_ticket_without_project(): void
+    public function test_handle_ticket_code_on_ticket_without_project(): void
     {
         $ticket = new Ticket;
 

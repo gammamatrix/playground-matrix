@@ -346,5 +346,4 @@ class Matrix extends Model
             'sources' => 'array',
         ];
     }
-
 }

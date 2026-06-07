@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
+use Playground\Models\User;
 
 /**
  * \Playground\Matrix\Models\Ticket
@@ -726,12 +727,12 @@ class Ticket extends Model
     /**
      * The completed by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User, $this>
+     * @return HasOne<User, $this>
      */
     public function completedBy(): HasOne
     {
         return $this->hasOne(
-            \Playground\Models\User::class,
+            User::class,
             'id',
             'completed_by_id'
         );
@@ -740,12 +741,12 @@ class Ticket extends Model
     /**
      * The fixed by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User, $this>
+     * @return HasOne<User, $this>
      */
     public function fixedBy(): HasOne
     {
         return $this->hasOne(
-            \Playground\Models\User::class,
+            User::class,
             'id',
             'fixed_by_id'
         );
@@ -754,12 +755,12 @@ class Ticket extends Model
     /**
      * The reported by user of the ticket.
      *
-     * @return HasOne<\Playground\Models\User, $this>
+     * @return HasOne<User, $this>
      */
     public function reportedBy(): HasOne
     {
         return $this->hasOne(
-            \Playground\Models\User::class,
+            User::class,
             'id',
             'reported_by_id'
         );

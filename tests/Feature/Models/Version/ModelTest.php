@@ -8,6 +8,20 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Playground\Matrix\Models\Version;
 
+use Playground\Matrix\Models\Backlog;
+use Playground\Matrix\Models\Board;
+use Playground\Matrix\Models\Epic;
+use Playground\Matrix\Models\Matrix;
+use Playground\Matrix\Models\Milestone;
+use Playground\Matrix\Models\Project;
+use Playground\Matrix\Models\Release;
+use Playground\Matrix\Models\Roadmap;
+use Playground\Matrix\Models\Sprint;
+use Playground\Matrix\Models\Tag;
+use Playground\Matrix\Models\Team;
+use Playground\Matrix\Models\Ticket;
+use Playground\Matrix\Models\Version;
+use Playground\Models\User;
 use Tests\Feature\Playground\Matrix\Models\ModelCase;
 
 /**
@@ -15,50 +29,50 @@ use Tests\Feature\Playground\Matrix\Models\ModelCase;
  */
 class ModelTest extends ModelCase
 {
-    protected string $modelClass = \Playground\Matrix\Models\Version::class;
+    protected string $modelClass = Version::class;
 
     protected bool $hasRelationships = true;
 
     protected array $hasMany = [
         'backlogs' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Backlog::class,
+            'modelClass' => Backlog::class,
         ],
         'boards' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Board::class,
+            'modelClass' => Board::class,
         ],
         'epics' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Epic::class,
+            'modelClass' => Epic::class,
         ],
         'milestones' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Milestone::class,
+            'modelClass' => Milestone::class,
         ],
         'projects' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Project::class,
+            'modelClass' => Project::class,
         ],
         'releases' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Release::class,
+            'modelClass' => Release::class,
         ],
         'roadmaps' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Roadmap::class,
+            'modelClass' => Roadmap::class,
         ],
         'sprints' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Sprint::class,
+            'modelClass' => Sprint::class,
         ],
         'teams' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Team::class,
+            'modelClass' => Team::class,
         ],
         'tickets' => [
             'key' => 'version_id',
-            'modelClass' => \Playground\Matrix\Models\Ticket::class,
+            'modelClass' => Ticket::class,
         ],
     ];
 
@@ -66,47 +80,47 @@ class ModelTest extends ModelCase
         'creator' => [
             'key' => 'created_by_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Models\User::class,
+            'modelClass' => User::class,
         ],
         'modifier' => [
             'key' => 'modified_by_id',
             'rule' => 'first',
-            'modelClass' => \Playground\Models\User::class,
+            'modelClass' => User::class,
         ],
         'owner' => [
             'key' => 'owned_by_id',
             'rule' => 'first',
-            'modelClass' => \Playground\Models\User::class,
+            'modelClass' => User::class,
         ],
         'parent' => [
             'key' => 'parent_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Version::class,
+            'modelClass' => Version::class,
         ],
         'matrix' => [
             'key' => 'matrix_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Matrix::class,
+            'modelClass' => Matrix::class,
         ],
         'project' => [
             'key' => 'project_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Project::class,
+            'modelClass' => Project::class,
         ],
         'tag' => [
             'key' => 'tag_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Tag::class,
+            'modelClass' => Tag::class,
         ],
         'team' => [
             'key' => 'team_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Team::class,
+            'modelClass' => Team::class,
         ],
         'ticket' => [
             'key' => 'ticket_id',
             'rule' => 'create',
-            'modelClass' => \Playground\Matrix\Models\Ticket::class,
+            'modelClass' => Ticket::class,
         ],
     ];
 }
