@@ -6,7 +6,7 @@
 
 The Playground Matrix is a package for [Laravel](https://laravel.com/docs/12.x) applications.
 
-Playground: Provides the models to use Playground Matrix, a Project Management System.
+Playground: This package provides the models to use Playground Matrix, a Project Management System.
 
 Read more on using [Playground: Matrix at Read the Docs](https://gammamatrix-playground.readthedocs.io/en/develop/built-components/matrix.html)
 
@@ -87,22 +87,22 @@ composer cloc
 
 ```
 ➜  playground-matrix git:(develop) ✗ composer cloc
-     200 text files.
-     195 unique files.
+     202 text files.
+     197 unique files.
       25 files ignored.
 
-github.com/AlDanial/cloc v 2.06  T=0.13 s (1530.8 files/s, 545559.2 lines/s)
+github.com/AlDanial/cloc v 2.08  T=0.20 s (961.3 files/s, 342268.5 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-JSON                            89              0              0          50576
-PHP                             91           1461           4161          12348
-XML                             10              0              7            470
+JSON                            89              0              0          50581
+PHP                             91           1464           4161          12611
+XML                             12              0              7            841
 YAML                             1              5              0            275
 Markdown                         3             46              0            132
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           195           1515           4168          63813
+SUM:                           197           1518           4168          64452
 -------------------------------------------------------------------------------
 ```
 

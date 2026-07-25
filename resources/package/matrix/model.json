@@ -2492,8 +2492,8 @@
         }
     },
     "uses": [
-        "Illuminate/Database/Eloquent/Factories/HasFactory",
         "Database/Factories/Playground/Matrix/Models/MatrixFactory",
+        "Illuminate/Database/Eloquent/Factories/HasFactory",
         "Illuminate/Support/Carbon",
         "Playground/Models/Model"
     ]

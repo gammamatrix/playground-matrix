@@ -1,6 +1,6 @@
 {
     "name": "gammamatrix/playground-matrix",
-    "description": "Playground: Provides the models to use Playground Matrix, a Project Management System.",
+    "description": "Playground: This package provides the models to use Playground Matrix, a Project Management System.",
     "keywords": [
         "gammamatrix",
         "laravel",
