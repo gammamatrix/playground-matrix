@@ -11,6 +11,7 @@ namespace Playground\Matrix\Models;
 use Database\Factories\Playground\Matrix\Models\NoteFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
@@ -25,7 +26,6 @@ use Playground\Models\Model;
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
  * @property ?string $matrix_id
- * @property ?string $tag_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
@@ -104,7 +104,6 @@ class Note extends Model
         'owned_by_id' => null,
         'parent_id' => null,
         'matrix_id' => null,
-        'tag_id' => null,
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
@@ -119,7 +118,7 @@ class Note extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -162,12 +161,12 @@ class Note extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
@@ -175,7 +174,6 @@ class Note extends Model
         'owned_by_id',
         'parent_id',
         'matrix_id',
-        'tag_id',
         'gids',
         'po',
         'pg',
@@ -322,20 +320,6 @@ class Note extends Model
     }
 
     /**
-     * The tag of the note.
-     *
-     * @return HasOne<Tag, $this>
-     */
-    public function tag(): HasOne
-    {
-        return $this->hasOne(
-            Tag::class,
-            'id',
-            'tag_id'
-        );
-    }
-
-    /**
      * The backlogs of the note.
      *
      * @return HasMany<Backlog, $this>
@@ -372,6 +356,20 @@ class Note extends Model
     {
         return $this->hasMany(
             Epic::class,
+            'note_id',
+            'id'
+        );
+    }
+
+    /**
+     * The flows of the note.
+     *
+     * @return HasMany<Flow, $this>
+     */
+    public function flows(): HasMany
+    {
+        return $this->hasMany(
+            Flow::class,
             'note_id',
             'id'
         );
@@ -434,6 +432,20 @@ class Note extends Model
     }
 
     /**
+     * The sources of the note.
+     *
+     * @return HasMany<Source, $this>
+     */
+    public function sources(): HasMany
+    {
+        return $this->hasMany(
+            Source::class,
+            'note_id',
+            'id'
+        );
+    }
+
+    /**
      * The sprints of the note.
      *
      * @return HasMany<Sprint, $this>
@@ -472,6 +484,23 @@ class Note extends Model
             Ticket::class,
             'note_id',
             'id'
+        );
+    }
+
+    /**
+     * The tags of the note.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'note_id',
+            'id',
+            'id',
+            'tag_id'
         );
     }
 }

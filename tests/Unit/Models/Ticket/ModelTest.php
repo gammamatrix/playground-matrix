@@ -30,6 +30,7 @@ class ModelTest extends ModelCase
         'roadmaps',
         'sprints',
         'teams',
+        'versions',
     ];
 
     protected array $hasOne = [
@@ -49,11 +50,12 @@ class ModelTest extends ModelCase
         'roadmap',
         'source',
         'sprint',
-        'tag',
         'team',
         'version',
         'completedBy',
+        'duplicateBy',
         'fixedBy',
         'reportedBy',
+        'versionFixed',
     ];
 }

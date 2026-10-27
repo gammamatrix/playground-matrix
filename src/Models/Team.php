@@ -11,6 +11,7 @@ namespace Playground\Matrix\Models;
 use Database\Factories\Playground\Matrix\Models\TeamFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
@@ -24,11 +25,11 @@ use Playground\Models\Model;
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
+ * @property ?string $matrix_id
  * @property ?string $backlog_id
  * @property ?string $board_id
  * @property ?string $epic_id
  * @property ?string $flow_id
- * @property ?string $matrix_id
  * @property ?string $milestone_id
  * @property ?string $note_id
  * @property ?string $project_id
@@ -36,7 +37,6 @@ use Playground\Models\Model;
  * @property ?string $roadmap_id
  * @property ?string $source_id
  * @property ?string $sprint_id
- * @property ?string $tag_id
  * @property ?string $ticket_id
  * @property ?string $version_id
  * @property ?Carbon $created_at
@@ -133,11 +133,11 @@ class Team extends Model
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
+        'matrix_id' => null,
         'backlog_id' => null,
         'board_id' => null,
         'epic_id' => null,
         'flow_id' => null,
-        'matrix_id' => null,
         'milestone_id' => null,
         'note_id' => null,
         'project_id' => null,
@@ -145,7 +145,6 @@ class Team extends Model
         'roadmap_id' => null,
         'source_id' => null,
         'sprint_id' => null,
-        'tag_id' => null,
         'ticket_id' => null,
         'version_id' => null,
         'created_at' => null,
@@ -174,7 +173,7 @@ class Team extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -217,28 +216,28 @@ class Team extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'backlog' => '{}',
-        'board' => '{}',
-        'flow' => '{}',
-        'history' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'backlog' => null,
+        'board' => null,
+        'flow' => null,
+        'history' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'roadmap' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'roadmap' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
         'team_type',
         'owned_by_id',
         'parent_id',
+        'matrix_id',
         'backlog_id',
         'board_id',
         'epic_id',
         'flow_id',
-        'matrix_id',
         'milestone_id',
         'note_id',
         'project_id',
@@ -246,7 +245,6 @@ class Team extends Model
         'roadmap_id',
         'source_id',
         'sprint_id',
-        'tag_id',
         'ticket_id',
         'version_id',
         'canceled_at',
@@ -583,20 +581,6 @@ class Team extends Model
     }
 
     /**
-     * The tag of the team.
-     *
-     * @return HasOne<Tag, $this>
-     */
-    public function tag(): HasOne
-    {
-        return $this->hasOne(
-            Tag::class,
-            'id',
-            'tag_id'
-        );
-    }
-
-    /**
      * The ticket of the team.
      *
      * @return HasOne<Ticket, $this>
@@ -667,6 +651,20 @@ class Team extends Model
     }
 
     /**
+     * The flows of the team.
+     *
+     * @return HasMany<Flow, $this>
+     */
+    public function flows(): HasMany
+    {
+        return $this->hasMany(
+            Flow::class,
+            'team_id',
+            'id'
+        );
+    }
+
+    /**
      * The milestones of the team.
      *
      * @return HasMany<Milestone, $this>
@@ -723,6 +721,20 @@ class Team extends Model
     }
 
     /**
+     * The sources of the team.
+     *
+     * @return HasMany<Source, $this>
+     */
+    public function sources(): HasMany
+    {
+        return $this->hasMany(
+            Source::class,
+            'team_id',
+            'id'
+        );
+    }
+
+    /**
      * The sprints of the team.
      *
      * @return HasMany<Sprint, $this>
@@ -747,6 +759,37 @@ class Team extends Model
             Ticket::class,
             'team_id',
             'id'
+        );
+    }
+
+    /**
+     * The versions of the team.
+     *
+     * @return HasMany<Version, $this>
+     */
+    public function versions(): HasMany
+    {
+        return $this->hasMany(
+            Version::class,
+            'team_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tags of the team.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'team_id',
+            'id',
+            'id',
+            'tag_id'
         );
     }
 }

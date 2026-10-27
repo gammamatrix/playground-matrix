@@ -10,8 +10,6 @@ namespace Playground\Matrix\Models;
 
 use Database\Factories\Playground\Matrix\Models\TagFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
 
@@ -28,6 +26,19 @@ use Playground\Models\Model;
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
+ * @property ?Carbon $canceled_at
+ * @property ?Carbon $closed_at
+ * @property ?Carbon $embargo_at
+ * @property ?Carbon $planned_end_at
+ * @property ?Carbon $planned_start_at
+ * @property ?Carbon $postponed_at
+ * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
+ * @property ?Carbon $resolved_at
+ * @property ?Carbon $resumed_at
+ * @property ?Carbon $suspended_at
+ * @property ?Carbon $timer_end_at
+ * @property ?Carbon $timer_start_at
  * @property int $gids
  * @property int $po
  * @property int $pg
@@ -51,13 +62,24 @@ use Playground\Models\Model;
  * @property ?float $latitude
  * @property ?float $longitude
  * @property bool $active
+ * @property bool $canceled
+ * @property bool $closed
+ * @property bool $completed
  * @property bool $cron
- * @property bool $featured
+ * @property bool $duplicate
+ * @property bool $fixed
  * @property bool $flagged
  * @property bool $internal
  * @property bool $locked
+ * @property bool $pending
+ * @property bool $planned
+ * @property bool $prioritized
+ * @property bool $problem
+ * @property bool $published
+ * @property bool $released
+ * @property bool $resolved
  * @property bool $retired
- * @property bool $special
+ * @property bool $suspended
  * @property bool $unknown
  * @property string $locale
  * @property string $label
@@ -96,6 +118,19 @@ class Tag extends Model
         'created_at' => null,
         'updated_at' => null,
         'deleted_at' => null,
+        'canceled_at' => null,
+        'closed_at' => null,
+        'embargo_at' => null,
+        'planned_end_at' => null,
+        'planned_start_at' => null,
+        'postponed_at' => null,
+        'published_at' => null,
+        'released_at' => null,
+        'resolved_at' => null,
+        'resumed_at' => null,
+        'suspended_at' => null,
+        'timer_end_at' => null,
+        'timer_start_at' => null,
         'gids' => 0,
         'po' => 0,
         'pg' => 0,
@@ -107,7 +142,7 @@ class Tag extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -119,13 +154,24 @@ class Tag extends Model
         'latitude' => null,
         'longitude' => null,
         'active' => true,
+        'canceled' => false,
+        'closed' => false,
+        'completed' => false,
         'cron' => false,
-        'featured' => false,
+        'duplicate' => false,
+        'fixed' => false,
         'flagged' => false,
         'internal' => false,
         'locked' => false,
+        'pending' => false,
+        'planned' => false,
+        'prioritized' => false,
+        'problem' => false,
+        'published' => false,
+        'released' => false,
+        'resolved' => false,
         'retired' => false,
-        'special' => false,
+        'suspended' => false,
         'unknown' => false,
         'locale' => '',
         'label' => '',
@@ -140,12 +186,12 @@ class Tag extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
@@ -153,6 +199,19 @@ class Tag extends Model
         'owned_by_id',
         'parent_id',
         'matrix_id',
+        'canceled_at',
+        'closed_at',
+        'embargo_at',
+        'planned_end_at',
+        'planned_start_at',
+        'postponed_at',
+        'published_at',
+        'released_at',
+        'resolved_at',
+        'resumed_at',
+        'suspended_at',
+        'timer_end_at',
+        'timer_start_at',
         'gids',
         'po',
         'pg',
@@ -176,13 +235,24 @@ class Tag extends Model
         'latitude',
         'longitude',
         'active',
+        'canceled',
+        'closed',
+        'completed',
         'cron',
-        'featured',
+        'duplicate',
+        'fixed',
         'flagged',
         'internal',
         'locked',
+        'pending',
+        'planned',
+        'prioritized',
+        'problem',
+        'published',
+        'released',
+        'resolved',
         'retired',
-        'special',
+        'suspended',
         'unknown',
         'locale',
         'label',
@@ -211,6 +281,19 @@ class Tag extends Model
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
+            'canceled_at' => 'datetime',
+            'closed_at' => 'datetime',
+            'embargo_at' => 'datetime',
+            'planned_end_at' => 'datetime',
+            'planned_start_at' => 'datetime',
+            'postponed_at' => 'datetime',
+            'published_at' => 'datetime',
+            'released_at' => 'datetime',
+            'resolved_at' => 'datetime',
+            'resumed_at' => 'datetime',
+            'suspended_at' => 'datetime',
+            'timer_end_at' => 'datetime',
+            'timer_start_at' => 'datetime',
             'gids' => 'integer',
             'po' => 'integer',
             'pg' => 'integer',
@@ -234,13 +317,24 @@ class Tag extends Model
             'latitude' => 'float',
             'longitude' => 'float',
             'active' => 'boolean',
+            'canceled' => 'boolean',
+            'closed' => 'boolean',
+            'completed' => 'boolean',
             'cron' => 'boolean',
-            'featured' => 'boolean',
+            'duplicate' => 'boolean',
+            'fixed' => 'boolean',
             'flagged' => 'boolean',
             'internal' => 'boolean',
             'locked' => 'boolean',
+            'pending' => 'boolean',
+            'planned' => 'boolean',
+            'prioritized' => 'boolean',
+            'problem' => 'boolean',
+            'published' => 'boolean',
+            'released' => 'boolean',
+            'resolved' => 'boolean',
             'retired' => 'boolean',
-            'special' => 'boolean',
+            'suspended' => 'boolean',
             'unknown' => 'boolean',
             'locale' => 'string',
             'label' => 'string',
@@ -262,159 +356,5 @@ class Tag extends Model
             'options' => 'array',
             'sources' => 'array',
         ];
-    }
-
-    /**
-     * The matrix of the tag.
-     *
-     * @return HasOne<Matrix, $this>
-     */
-    public function matrix(): HasOne
-    {
-        return $this->hasOne(
-            Matrix::class,
-            'id',
-            'matrix_id'
-        );
-    }
-
-    /**
-     * The backlogs of the tag.
-     *
-     * @return HasMany<Backlog, $this>
-     */
-    public function backlogs(): HasMany
-    {
-        return $this->hasMany(
-            Backlog::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The boards of the tag.
-     *
-     * @return HasMany<Board, $this>
-     */
-    public function boards(): HasMany
-    {
-        return $this->hasMany(
-            Board::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The epics of the tag.
-     *
-     * @return HasMany<Epic, $this>
-     */
-    public function epics(): HasMany
-    {
-        return $this->hasMany(
-            Epic::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The milestones of the tag.
-     *
-     * @return HasMany<Milestone, $this>
-     */
-    public function milestones(): HasMany
-    {
-        return $this->hasMany(
-            Milestone::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The projects of the tag.
-     *
-     * @return HasMany<Project, $this>
-     */
-    public function projects(): HasMany
-    {
-        return $this->hasMany(
-            Project::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The releases of the tag.
-     *
-     * @return HasMany<Release, $this>
-     */
-    public function releases(): HasMany
-    {
-        return $this->hasMany(
-            Release::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The roadmaps of the tag.
-     *
-     * @return HasMany<Roadmap, $this>
-     */
-    public function roadmaps(): HasMany
-    {
-        return $this->hasMany(
-            Roadmap::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The sprints of the tag.
-     *
-     * @return HasMany<Sprint, $this>
-     */
-    public function sprints(): HasMany
-    {
-        return $this->hasMany(
-            Sprint::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The teams of the tag.
-     *
-     * @return HasMany<Team, $this>
-     */
-    public function teams(): HasMany
-    {
-        return $this->hasMany(
-            Team::class,
-            'tag_id',
-            'id'
-        );
-    }
-
-    /**
-     * The tickets of the tag.
-     *
-     * @return HasMany<Ticket, $this>
-     */
-    public function tickets(): HasMany
-    {
-        return $this->hasMany(
-            Ticket::class,
-            'tag_id',
-            'id'
-        );
     }
 }

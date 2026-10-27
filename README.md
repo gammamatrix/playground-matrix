@@ -18,7 +18,7 @@ Read more on using [Playground: Matrix at Read the Docs](https://gammamatrix-pla
 
 Install this package, with composer, to get access to the Matrix Models:
 
-```bash
+```shell
 composer require gammamatrix/playground-matrix
 ```
 
@@ -35,7 +35,7 @@ Migrations are disabled by default. This package may sometimes be installed wher
 See the contents of the published config file: [config/playground-matrix.php](config/playground-matrix.php)
 
 You can publish the config file with:
-```bash
+```shell
 php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag="playground-config"
 ```
 
@@ -63,6 +63,7 @@ This package includes [factories](database/factories), models and [migrations](d
 - [Source](src/Models/Source.php)
 - [Sprint](src/Models/Sprint.php)
 - [Tag](src/Models/Tag.php)
+- [Tagged](src/Models/Tagged.php)
 - [Team](src/Models/Team.php)
 - [Ticket](src/Models/Ticket.php)
 - [Version](src/Models/Version.php)
@@ -72,37 +73,31 @@ This package includes [factories](database/factories), models and [migrations](d
 All migrations are disabled by default.
 
 See the contents of the published config file: [database/migrations](database/migrations)
-- NOTE: There are 16 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
+- NOTE: There are 17 tables that will be created, they do have indexes and unique constraints defined; however, this release does not have the foreign key constraint migrations included at this time.
 
 You can publish the migrations file with:
-```bash
+```shell
 php artisan vendor:publish --provider="Playground\Matrix\ServiceProvider" --tag="playground-migrations"
 ```
 
 ## Cloc
 
-```sh
+```shell
 composer cloc
 ```
 
-```
-➜  playground-matrix git:(develop) ✗ composer cloc
-     202 text files.
-     197 unique files.
-      25 files ignored.
-
-github.com/AlDanial/cloc v 2.08  T=0.20 s (961.3 files/s, 342268.5 lines/s)
+```terminaloutput
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-JSON                            89              0              0          50581
-PHP                             91           1464           4161          12611
-XML                             12              0              7            841
-YAML                             1              5              0            275
-Markdown                         3             46              0            132
+JSON                            94              0              0          53121
+PHP                             96           1530           4381          13187
+XML                              3              0              7            215
+YAML                             1              4              0            187
+Markdown                         3             45              0            116
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           197           1518           4168          64452
+SUM:                           198           1582           4388          66838
 -------------------------------------------------------------------------------
 ```
 
@@ -115,30 +110,30 @@ Tests at level 10 on:
 - `tests/Feature/`
 - `tests/Unit/`
 
-```sh
+```shell
 composer analyse
 ```
 
 ## Coding Standards
 
-```sh
+```shell
 composer format
 ```
 
 ## Testing
 
 Unit tests
-```sh
+```shell
 composer test
 ```
 
 Unit and feature tests
-```sh
+```shell
 composer test-dev
 ```
 
 Run unit and feature tests in parallel:
-```sh
+```shell
 composer test-parallel
 ```
 

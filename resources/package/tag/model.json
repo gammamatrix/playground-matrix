@@ -3,18 +3,38 @@
     "config": "playground-matrix",
     "fqdn": "Playground/Matrix/Models/Tag",
     "module": "Matrix",
+    "module_label": "Matrix",
+    "module_labels": "Matrices",
     "module_slug": "matrix",
+    "module_slugs": "matrices",
     "name": "Tag",
+    "names": "Tags",
     "namespace": "Playground/Matrix",
     "organization": "Playground",
     "package": "playground-matrix",
     "model": "Tag",
     "model_attribute": "title",
     "model_attribute_required": true,
-    "model_plural": "Tags",
-    "model_singular": "Tag",
+    "model_camel": "tag",
+    "model_camels": "tags",
+    "model_label": "Tag",
+    "model_labels": "Tags",
+    "model_lower": "tag",
+    "model_lowers": "tags",
+    "model_kebab": "tag",
+    "model_kebabs": "tags",
+    "model_plural": "",
+    "model_route_param": "tag",
+    "model_singular": "",
     "model_slug": "tag",
-    "model_slug_plural": "tags",
+    "model_slugs": "tags",
+    "model_slug_plural": "",
+    "model_snake": "tag",
+    "model_snakes": "tags",
+    "model_studly": "Tag",
+    "model_studlies": "Tags",
+    "model_variable": "tag",
+    "model_variables": "tags",
     "recipe": "matrix",
     "type": "playground-model",
     "table": "matrix_tags",
@@ -30,87 +50,9 @@
     "test": true,
     "extends": "Model",
     "implements": [],
-    "HasOne": {
-        "matrix": {
-            "comment": "The matrix of the tag.",
-            "accessor": "matrix",
-            "related": "Matrix",
-            "foreignKey": "id",
-            "localKey": "matrix_id"
-        }
-    },
-    "HasMany": {
-        "backlogs": {
-            "comment": "The backlogs of the tag.",
-            "accessor": "backlogs",
-            "related": "Backlog",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "boards": {
-            "comment": "The boards of the tag.",
-            "accessor": "boards",
-            "related": "Board",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "epics": {
-            "comment": "The epics of the tag.",
-            "accessor": "epics",
-            "related": "Epic",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "milestones": {
-            "comment": "The milestones of the tag.",
-            "accessor": "milestones",
-            "related": "Milestone",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "projects": {
-            "comment": "The projects of the tag.",
-            "accessor": "projects",
-            "related": "Project",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "releases": {
-            "comment": "The releases of the tag.",
-            "accessor": "releases",
-            "related": "Release",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "roadmaps": {
-            "comment": "The roadmaps of the tag.",
-            "accessor": "roadmaps",
-            "related": "Roadmap",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "sprints": {
-            "comment": "The sprints of the tag.",
-            "accessor": "sprints",
-            "related": "Sprint",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "teams": {
-            "comment": "The teams of the tag.",
-            "accessor": "teams",
-            "related": "Team",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        },
-        "tickets": {
-            "comment": "The tickets of the tag.",
-            "accessor": "tickets",
-            "related": "Ticket",
-            "foreignKey": "tag_id",
-            "localKey": "id"
-        }
-    },
+    "HasOne": [],
+    "HasMany": [],
+    "HasManyThrough": [],
     "scopes": {
         "sort": {
             "include": "minus",
@@ -127,6 +69,19 @@
         "created_at": null,
         "updated_at": null,
         "deleted_at": null,
+        "canceled_at": null,
+        "closed_at": null,
+        "embargo_at": null,
+        "planned_end_at": null,
+        "planned_start_at": null,
+        "postponed_at": null,
+        "published_at": null,
+        "released_at": null,
+        "resolved_at": null,
+        "resumed_at": null,
+        "suspended_at": null,
+        "timer_end_at": null,
+        "timer_start_at": null,
         "gids": 0,
         "po": 0,
         "pg": 0,
@@ -138,7 +93,7 @@
         "status": 0,
         "rank": 0,
         "size": 0,
-        "matrix": "{}",
+        "matrix": null,
         "x": null,
         "y": null,
         "z": null,
@@ -150,13 +105,24 @@
         "latitude": null,
         "longitude": null,
         "active": true,
+        "canceled": false,
+        "closed": false,
+        "completed": false,
         "cron": false,
-        "featured": false,
+        "duplicate": false,
+        "fixed": false,
         "flagged": false,
         "internal": false,
         "locked": false,
+        "pending": false,
+        "planned": false,
+        "prioritized": false,
+        "problem": false,
+        "published": false,
+        "released": false,
+        "resolved": false,
         "retired": false,
-        "special": false,
+        "suspended": false,
         "unknown": false,
         "locale": "",
         "label": "",
@@ -171,18 +137,31 @@
         "icon": "",
         "image": "",
         "avatar": "",
-        "ui": "{}",
-        "assets": "{}",
-        "meta": "{}",
+        "ui": null,
+        "assets": null,
+        "meta": null,
         "notes": "[]",
-        "options": "{}",
-        "sources": "{}"
+        "options": null,
+        "sources": null
     },
     "casts": {
         "tag_type": "string",
         "created_at": "datetime",
         "updated_at": "datetime",
         "deleted_at": "datetime",
+        "canceled_at": "datetime",
+        "closed_at": "datetime",
+        "embargo_at": "datetime",
+        "planned_end_at": "datetime",
+        "planned_start_at": "datetime",
+        "postponed_at": "datetime",
+        "published_at": "datetime",
+        "released_at": "datetime",
+        "resolved_at": "datetime",
+        "resumed_at": "datetime",
+        "suspended_at": "datetime",
+        "timer_end_at": "datetime",
+        "timer_start_at": "datetime",
         "gids": "integer",
         "po": "integer",
         "pg": "integer",
@@ -206,13 +185,24 @@
         "latitude": "float",
         "longitude": "float",
         "active": "boolean",
+        "canceled": "boolean",
+        "closed": "boolean",
+        "completed": "boolean",
         "cron": "boolean",
-        "featured": "boolean",
+        "duplicate": "boolean",
+        "fixed": "boolean",
         "flagged": "boolean",
         "internal": "boolean",
         "locked": "boolean",
+        "pending": "boolean",
+        "planned": "boolean",
+        "prioritized": "boolean",
+        "problem": "boolean",
+        "published": "boolean",
+        "released": "boolean",
+        "resolved": "boolean",
         "retired": "boolean",
-        "special": "boolean",
+        "suspended": "boolean",
         "unknown": "boolean",
         "locale": "string",
         "label": "string",
@@ -239,6 +229,19 @@
         "owned_by_id",
         "parent_id",
         "matrix_id",
+        "canceled_at",
+        "closed_at",
+        "embargo_at",
+        "planned_end_at",
+        "planned_start_at",
+        "postponed_at",
+        "published_at",
+        "released_at",
+        "resolved_at",
+        "resumed_at",
+        "suspended_at",
+        "timer_end_at",
+        "timer_start_at",
         "gids",
         "po",
         "pg",
@@ -262,13 +265,24 @@
         "latitude",
         "longitude",
         "active",
+        "canceled",
+        "closed",
+        "completed",
         "cron",
-        "featured",
+        "duplicate",
+        "fixed",
         "flagged",
         "internal",
         "locked",
+        "pending",
+        "planned",
+        "prioritized",
+        "problem",
+        "published",
+        "released",
+        "resolved",
         "retired",
-        "special",
+        "suspended",
         "unknown",
         "locale",
         "label",
@@ -310,7 +324,7 @@
             },
             {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -318,7 +332,7 @@
             },
             {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -326,7 +340,7 @@
             },
             {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -373,6 +387,110 @@
                 "nullable": true,
                 "unsigned": true,
                 "type": "datetime"
+            },
+            {
+                "column": "canceled_at",
+                "label": "Canceled at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "closed_at",
+                "label": "Closed at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "embargo_at",
+                "label": "Embargo at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "planned_end_at",
+                "label": "Planned end at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "planned_start_at",
+                "label": "Planned start at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "postponed_at",
+                "label": "Postponed at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "published_at",
+                "label": "Published at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "released_at",
+                "label": "Released at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "resolved_at",
+                "label": "Resolved at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "resumed_at",
+                "label": "Resumed at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "suspended_at",
+                "label": "Suspended at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "timer_end_at",
+                "label": "Timer end at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
+            },
+            {
+                "column": "timer_start_at",
+                "label": "Timer start at",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "datetime"
             }
         ],
         "flags": [
@@ -380,6 +498,30 @@
                 "column": "active",
                 "label": "Active",
                 "icon": "fa-solid fa-person-running",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "canceled",
+                "label": "Canceled",
+                "icon": "fa-solid fa-ban text-warning",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "closed",
+                "label": "Closed",
+                "icon": "fa-solid fa-xmark",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "completed",
+                "label": "Completed",
+                "icon": "fa-solid fa-check",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -393,9 +535,17 @@
                 "type": "boolean"
             },
             {
-                "column": "featured",
-                "label": "Featured",
-                "icon": "fa-solid fa-star text-warning",
+                "column": "duplicate",
+                "label": "Duplicate",
+                "icon": "fa-solid fa-clone",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "fixed",
+                "label": "Fixed",
+                "icon": "fa-solid fa-wrench text-success",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -425,6 +575,62 @@
                 "type": "boolean"
             },
             {
+                "column": "pending",
+                "label": "Pending",
+                "icon": "fa-solid fa-circle-pause text-warning",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "planned",
+                "label": "Planned",
+                "icon": "fa-solid fa-circle-pause text-success",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "prioritized",
+                "label": "Prioritized",
+                "icon": "fa-solid fa-triangle-exclamation text-success",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "problem",
+                "label": "Problem",
+                "icon": "fa-solid fa-triangle-exclamation text-danger",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "published",
+                "label": "Published",
+                "icon": "fa-solid fa-book",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "released",
+                "label": "Released",
+                "icon": "fa-solid fa-dove",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
+                "column": "resolved",
+                "label": "Resolved",
+                "icon": "fa-solid fa-check-double text-success",
+                "nullable": true,
+                "unsigned": true,
+                "type": "boolean"
+            },
+            {
                 "column": "retired",
                 "label": "Retired",
                 "icon": "fa-solid fa-chair text-success",
@@ -433,9 +639,9 @@
                 "type": "boolean"
             },
             {
-                "column": "special",
-                "label": "Special",
-                "icon": "fa-solid fa-star text-success",
+                "column": "suspended",
+                "label": "Suspended",
+                "icon": "fa-solid fa-hand text-danger",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -813,21 +1019,21 @@
         },
         {
             "column": "created_by_id",
-            "label": "Created by id",
+            "label": "Created by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "modified_by_id",
-            "label": "Modified by id",
+            "label": "Modified by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "owned_by_id",
-            "label": "Owned by id",
+            "label": "Owned by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -863,6 +1069,97 @@
         {
             "column": "deleted_at",
             "label": "Deleted At",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "canceled_at",
+            "label": "Canceled at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "closed_at",
+            "label": "Closed at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "embargo_at",
+            "label": "Embargo at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "planned_end_at",
+            "label": "Planned end at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "planned_start_at",
+            "label": "Planned start at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "postponed_at",
+            "label": "Postponed at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "published_at",
+            "label": "Published at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "released_at",
+            "label": "Released at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "resolved_at",
+            "label": "Resolved at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "resumed_at",
+            "label": "Resumed at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "suspended_at",
+            "label": "Suspended at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "timer_end_at",
+            "label": "Timer end at",
+            "icon": "",
+            "nullable": false,
+            "type": "string"
+        },
+        {
+            "column": "timer_start_at",
+            "label": "Timer start at",
             "icon": "",
             "nullable": false,
             "type": "string"
@@ -1029,6 +1326,27 @@
             "type": "boolean"
         },
         {
+            "column": "canceled",
+            "label": "Canceled",
+            "icon": "fa-solid fa-ban text-warning",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "closed",
+            "label": "Closed",
+            "icon": "fa-solid fa-xmark",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "completed",
+            "label": "Completed",
+            "icon": "fa-solid fa-check",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
             "column": "cron",
             "label": "Cron",
             "icon": "fa-regular fa-clock",
@@ -1036,9 +1354,16 @@
             "type": "boolean"
         },
         {
-            "column": "featured",
-            "label": "Featured",
-            "icon": "fa-solid fa-star text-warning",
+            "column": "duplicate",
+            "label": "Duplicate",
+            "icon": "fa-solid fa-clone",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "fixed",
+            "label": "Fixed",
+            "icon": "fa-solid fa-wrench text-success",
             "nullable": false,
             "type": "boolean"
         },
@@ -1064,6 +1389,55 @@
             "type": "boolean"
         },
         {
+            "column": "pending",
+            "label": "Pending",
+            "icon": "fa-solid fa-circle-pause text-warning",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "planned",
+            "label": "Planned",
+            "icon": "fa-solid fa-circle-pause text-success",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "prioritized",
+            "label": "Prioritized",
+            "icon": "fa-solid fa-triangle-exclamation text-success",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "problem",
+            "label": "Problem",
+            "icon": "fa-solid fa-triangle-exclamation text-danger",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "published",
+            "label": "Published",
+            "icon": "fa-solid fa-book",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "released",
+            "label": "Released",
+            "icon": "fa-solid fa-dove",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
+            "column": "resolved",
+            "label": "Resolved",
+            "icon": "fa-solid fa-check-double text-success",
+            "nullable": false,
+            "type": "boolean"
+        },
+        {
             "column": "retired",
             "label": "Retired",
             "icon": "fa-solid fa-chair text-success",
@@ -1071,9 +1445,9 @@
             "type": "boolean"
         },
         {
-            "column": "special",
-            "label": "Special",
-            "icon": "fa-solid fa-star text-success",
+            "column": "suspended",
+            "label": "Suspended",
+            "icon": "fa-solid fa-hand text-danger",
             "nullable": false,
             "type": "boolean"
         },
@@ -1243,7 +1617,7 @@
             },
             "created_by_id": {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1258,7 +1632,7 @@
             },
             "modified_by_id": {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1273,7 +1647,7 @@
             },
             "owned_by_id": {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1322,7 +1696,151 @@
                 ]
             }
         ],
-        "dates": [],
+        "dates": {
+            "canceled_at": {
+                "column": "canceled_at",
+                "label": "Canceled at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "closed_at": {
+                "column": "closed_at",
+                "label": "Closed at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "embargo_at": {
+                "column": "embargo_at",
+                "label": "Embargo at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "planned_end_at": {
+                "column": "planned_end_at",
+                "label": "Planned end at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "planned_start_at": {
+                "column": "planned_start_at",
+                "label": "Planned start at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "postponed_at": {
+                "column": "postponed_at",
+                "label": "Postponed at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "published_at": {
+                "column": "published_at",
+                "label": "Published at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "released_at": {
+                "column": "released_at",
+                "label": "Released at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "resolved_at": {
+                "column": "resolved_at",
+                "label": "Resolved at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "resumed_at": {
+                "column": "resumed_at",
+                "label": "Resumed at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "suspended_at": {
+                "column": "suspended_at",
+                "label": "Suspended at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": false,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "timer_end_at": {
+                "column": "timer_end_at",
+                "label": "Timer end at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            },
+            "timer_start_at": {
+                "column": "timer_start_at",
+                "label": "Timer start at",
+                "description": "",
+                "icon": "",
+                "html": false,
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "type": "dateTime"
+            }
+        },
         "flags": {
             "active": {
                 "column": "active",
@@ -1331,6 +1849,39 @@
                 "icon": "fa-solid fa-person-running",
                 "default": true,
                 "index": true,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "canceled": {
+                "column": "canceled",
+                "label": "Canceled",
+                "description": "",
+                "icon": "fa-solid fa-ban text-warning",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "closed": {
+                "column": "closed",
+                "label": "Closed",
+                "description": "",
+                "icon": "fa-solid fa-xmark",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "completed": {
+                "column": "completed",
+                "label": "Completed",
+                "description": "",
+                "icon": "fa-solid fa-check",
+                "default": false,
+                "index": false,
                 "nullable": false,
                 "readOnly": false,
                 "type": "boolean"
@@ -1346,11 +1897,22 @@
                 "readOnly": false,
                 "type": "boolean"
             },
-            "featured": {
-                "column": "featured",
-                "label": "Featured",
+            "duplicate": {
+                "column": "duplicate",
+                "label": "Duplicate",
                 "description": "",
-                "icon": "fa-solid fa-star text-warning",
+                "icon": "fa-solid fa-clone",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "fixed": {
+                "column": "fixed",
+                "label": "Fixed",
+                "description": "",
+                "icon": "fa-solid fa-wrench text-success",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -1390,6 +1952,83 @@
                 "readOnly": false,
                 "type": "boolean"
             },
+            "pending": {
+                "column": "pending",
+                "label": "Pending",
+                "description": "",
+                "icon": "fa-solid fa-circle-pause text-warning",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "planned": {
+                "column": "planned",
+                "label": "Planned",
+                "description": "",
+                "icon": "fa-solid fa-circle-pause text-success",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "prioritized": {
+                "column": "prioritized",
+                "label": "Prioritized",
+                "description": "",
+                "icon": "fa-solid fa-triangle-exclamation text-success",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "problem": {
+                "column": "problem",
+                "label": "Problem",
+                "description": "",
+                "icon": "fa-solid fa-triangle-exclamation text-danger",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "published": {
+                "column": "published",
+                "label": "Published",
+                "description": "",
+                "icon": "fa-solid fa-book",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "released": {
+                "column": "released",
+                "label": "Released",
+                "description": "",
+                "icon": "fa-solid fa-dove",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
+            "resolved": {
+                "column": "resolved",
+                "label": "Resolved",
+                "description": "",
+                "icon": "fa-solid fa-check-double text-success",
+                "default": false,
+                "index": false,
+                "nullable": false,
+                "readOnly": false,
+                "type": "boolean"
+            },
             "retired": {
                 "column": "retired",
                 "label": "Retired",
@@ -1401,11 +2040,11 @@
                 "readOnly": false,
                 "type": "boolean"
             },
-            "special": {
-                "column": "special",
-                "label": "Special",
+            "suspended": {
+                "column": "suspended",
+                "label": "Suspended",
                 "description": "",
-                "icon": "fa-solid fa-star text-success",
+                "icon": "fa-solid fa-hand text-danger",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -1706,7 +2345,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "x": {
                 "column": "x",
@@ -1896,7 +2535,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         },
         "json": {
@@ -1910,7 +2549,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "meta": {
                 "column": "meta",
@@ -1922,7 +2561,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "notes": {
                 "column": "notes",
@@ -1947,7 +2586,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "sources": {
                 "column": "sources",
@@ -1959,15 +2598,13 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         }
     },
     "uses": [
         "Database/Factories/Playground/Matrix/Models/TagFactory",
         "Illuminate/Database/Eloquent/Factories/HasFactory",
-        "Illuminate/Database/Eloquent/Relations/HasMany",
-        "Illuminate/Database/Eloquent/Relations/HasOne",
         "Illuminate/Support/Carbon",
         "Playground/Models/Model"
     ]

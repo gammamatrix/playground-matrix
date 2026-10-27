@@ -36,12 +36,12 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             channel: ${{ secrets.SLACK_CI_CHANNEL_ID }}
-            text: "CI Build Status for playground-directory: IN PROGRESS\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            text: "CI Build Status for playground-matrix: IN PROGRESS\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             blocks:
               - type: "header"
                 text:
                   type: "plain_text"
-                  text: ":runner: CI Build Status for playground-directory"
+                  text: ":runner: CI Build Status for playground-matrix"
               - type: "section"
                 fields:
                   - type: "mrkdwn"
@@ -73,11 +73,10 @@ jobs:
           php_version: "8.4"
           php_extensions: intl
           version: 2.x
-      - uses: php-actions/phpunit@v3
+      - uses: php-actions/phpunit@v4
         env:
           XDEBUG_MODE: coverage
         with:
-          version: "12.3"
           php_version: "8.4"
           php_extensions: intl xdebug
           configuration: phpunit-ci.xml
@@ -119,12 +118,12 @@ jobs:
           payload: |
             channel: ${{ secrets.SLACK_CI_CHANNEL_ID }}
             ts: ${{ steps.slack.outputs.ts }}
-            text: "CI Build Status for playground-directory: DONE\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            text: "CI Build Status for playground-matrix: DONE\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             blocks:
               - type: "header"
                 text:
                   type: "plain_text"
-                  text: ":white_check_mark: CI Build Status for playground-directory"
+                  text: ":white_check_mark: CI Build Status for playground-matrix"
               - type: "section"
                 fields:
                   - type: "mrkdwn"
@@ -164,7 +163,7 @@ jobs:
               - type: "header"
                 text:
                   type: "plain_text"
-                  text: ":warning: CI Build Status for playground-directory"
+                  text: ":warning: CI Build Status for playground-matrix"
               - type: "section"
                 fields:
                   - type: "mrkdwn"

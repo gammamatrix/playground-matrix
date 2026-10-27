@@ -11,6 +11,7 @@ namespace Playground\Matrix\Models;
 use Database\Factories\Playground\Matrix\Models\FlowFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
@@ -26,7 +27,6 @@ use Playground\Models\Model;
  * @property ?string $parent_id
  * @property ?string $matrix_id
  * @property ?string $note_id
- * @property ?string $tag_id
  * @property ?string $team_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
@@ -119,7 +119,6 @@ class Flow extends Model
         'parent_id' => null,
         'matrix_id' => null,
         'note_id' => null,
-        'tag_id' => null,
         'team_id' => null,
         'created_at' => null,
         'updated_at' => null,
@@ -147,7 +146,7 @@ class Flow extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -190,12 +189,12 @@ class Flow extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
@@ -204,7 +203,6 @@ class Flow extends Model
         'parent_id',
         'matrix_id',
         'note_id',
-        'tag_id',
         'team_id',
         'canceled_at',
         'closed_at',
@@ -390,20 +388,6 @@ class Flow extends Model
     }
 
     /**
-     * The tag of the flow.
-     *
-     * @return HasOne<Tag, $this>
-     */
-    public function tag(): HasOne
-    {
-        return $this->hasOne(
-            Tag::class,
-            'id',
-            'tag_id'
-        );
-    }
-
-    /**
      * The team of the flow.
      *
      * @return HasOne<Team, $this>
@@ -554,6 +538,23 @@ class Flow extends Model
             Ticket::class,
             'flow_id',
             'id'
+        );
+    }
+
+    /**
+     * The tags of the flow.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'flow_id',
+            'id',
+            'id',
+            'tag_id'
         );
     }
 }

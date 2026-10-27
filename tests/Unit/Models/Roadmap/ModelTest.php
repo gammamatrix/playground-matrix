@@ -48,7 +48,6 @@ class ModelTest extends ModelCase
         'release',
         'source',
         'sprint',
-        'tag',
         'team',
         'ticket',
         'version',

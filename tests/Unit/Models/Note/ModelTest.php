@@ -24,10 +24,12 @@ class ModelTest extends ModelCase
         'backlogs',
         'boards',
         'epics',
+        'flows',
         'milestones',
         'projects',
         'releases',
         'roadmaps',
+        'sources',
         'sprints',
         'teams',
         'tickets',
@@ -39,6 +41,5 @@ class ModelTest extends ModelCase
         'owner',
         'parent',
         'matrix',
-        'tag',
     ];
 }

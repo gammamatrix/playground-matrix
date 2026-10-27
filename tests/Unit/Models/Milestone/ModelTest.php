@@ -48,7 +48,6 @@ class ModelTest extends ModelCase
         'roadmap',
         'source',
         'sprint',
-        'tag',
         'team',
         'ticket',
         'version',

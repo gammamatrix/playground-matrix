@@ -20,7 +20,6 @@ use Playground\Matrix\Models\Release;
 use Playground\Matrix\Models\Roadmap;
 use Playground\Matrix\Models\Source;
 use Playground\Matrix\Models\Sprint;
-use Playground\Matrix\Models\Tag;
 use Playground\Matrix\Models\Team;
 use Playground\Matrix\Models\Ticket;
 use Playground\Matrix\Models\Version;
@@ -49,6 +48,10 @@ class ModelTest extends ModelCase
             'key' => 'team_id',
             'modelClass' => Epic::class,
         ],
+        'flows' => [
+            'key' => 'team_id',
+            'modelClass' => Flow::class,
+        ],
         'milestones' => [
             'key' => 'team_id',
             'modelClass' => Milestone::class,
@@ -65,6 +68,10 @@ class ModelTest extends ModelCase
             'key' => 'team_id',
             'modelClass' => Roadmap::class,
         ],
+        'sources' => [
+            'key' => 'team_id',
+            'modelClass' => Source::class,
+        ],
         'sprints' => [
             'key' => 'team_id',
             'modelClass' => Sprint::class,
@@ -72,6 +79,10 @@ class ModelTest extends ModelCase
         'tickets' => [
             'key' => 'team_id',
             'modelClass' => Ticket::class,
+        ],
+        'versions' => [
+            'key' => 'team_id',
+            'modelClass' => Version::class,
         ],
     ];
 
@@ -155,11 +166,6 @@ class ModelTest extends ModelCase
             'key' => 'sprint_id',
             'rule' => 'create',
             'modelClass' => Sprint::class,
-        ],
-        'tag' => [
-            'key' => 'tag_id',
-            'rule' => 'create',
-            'modelClass' => Tag::class,
         ],
         'ticket' => [
             'key' => 'ticket_id',

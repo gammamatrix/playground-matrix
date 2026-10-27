@@ -11,6 +11,7 @@ namespace Playground\Matrix\Models;
 use Database\Factories\Playground\Matrix\Models\TicketFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
@@ -25,11 +26,11 @@ use Playground\Models\User;
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
+ * @property ?string $matrix_id
  * @property ?string $backlog_id
  * @property ?string $board_id
  * @property ?string $epic_id
  * @property ?string $flow_id
- * @property ?string $matrix_id
  * @property ?string $milestone_id
  * @property ?string $note_id
  * @property ?string $project_id
@@ -37,14 +38,13 @@ use Playground\Models\User;
  * @property ?string $roadmap_id
  * @property ?string $source_id
  * @property ?string $sprint_id
- * @property ?string $tag_id
  * @property ?string $team_id
  * @property ?string $version_id
  * @property ?scalar $completed_by_id
  * @property ?string $duplicate_id
  * @property ?scalar $fixed_by_id
  * @property ?scalar $reported_by_id
- * @property ?string $version_fixed_id
+ * @property ?scalar $version_fixed_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
  * @property ?Carbon $deleted_at
@@ -56,6 +56,7 @@ use Playground\Models\User;
  * @property ?Carbon $planned_start_at
  * @property ?Carbon $postponed_at
  * @property ?Carbon $published_at
+ * @property ?Carbon $released_at
  * @property ?Carbon $resolved_at
  * @property ?Carbon $resumed_at
  * @property ?Carbon $suspended_at
@@ -160,11 +161,11 @@ class Ticket extends Model
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
+        'matrix_id' => null,
         'backlog_id' => null,
         'board_id' => null,
         'epic_id' => null,
         'flow_id' => null,
-        'matrix_id' => null,
         'milestone_id' => null,
         'note_id' => null,
         'project_id' => null,
@@ -172,7 +173,6 @@ class Ticket extends Model
         'roadmap_id' => null,
         'source_id' => null,
         'sprint_id' => null,
-        'tag_id' => null,
         'team_id' => null,
         'version_id' => null,
         'completed_by_id' => null,
@@ -191,6 +191,7 @@ class Ticket extends Model
         'planned_start_at' => null,
         'postponed_at' => null,
         'published_at' => null,
+        'released_at' => null,
         'resolved_at' => null,
         'resumed_at' => null,
         'suspended_at' => null,
@@ -207,7 +208,7 @@ class Ticket extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -270,28 +271,28 @@ class Ticket extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'backlog' => '{}',
-        'board' => '{}',
-        'flow' => '{}',
-        'history' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'backlog' => null,
+        'board' => null,
+        'flow' => null,
+        'history' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'roadmap' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'roadmap' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
         'ticket_type',
         'owned_by_id',
         'parent_id',
+        'matrix_id',
         'backlog_id',
         'board_id',
         'epic_id',
         'flow_id',
-        'matrix_id',
         'milestone_id',
         'note_id',
         'project_id',
@@ -299,7 +300,6 @@ class Ticket extends Model
         'roadmap_id',
         'source_id',
         'sprint_id',
-        'tag_id',
         'team_id',
         'version_id',
         'completed_by_id',
@@ -315,6 +315,7 @@ class Ticket extends Model
         'planned_start_at',
         'postponed_at',
         'published_at',
+        'released_at',
         'resolved_at',
         'resumed_at',
         'suspended_at',
@@ -421,6 +422,7 @@ class Ticket extends Model
             'planned_start_at' => 'datetime',
             'postponed_at' => 'datetime',
             'published_at' => 'datetime',
+            'released_at' => 'datetime',
             'resolved_at' => 'datetime',
             'resumed_at' => 'datetime',
             'suspended_at' => 'datetime',
@@ -683,20 +685,6 @@ class Ticket extends Model
     }
 
     /**
-     * The tag of the ticket.
-     *
-     * @return HasOne<Tag, $this>
-     */
-    public function tag(): HasOne
-    {
-        return $this->hasOne(
-            Tag::class,
-            'id',
-            'tag_id'
-        );
-    }
-
-    /**
      * The team of the ticket.
      *
      * @return HasOne<Team, $this>
@@ -739,6 +727,20 @@ class Ticket extends Model
     }
 
     /**
+     * The duplicate of the ticket.
+     *
+     * @return HasOne<Ticket, $this>
+     */
+    public function duplicateBy(): HasOne
+    {
+        return $this->hasOne(
+            Ticket::class,
+            'id',
+            'duplicate_id'
+        );
+    }
+
+    /**
      * The fixed by user of the ticket.
      *
      * @return HasOne<User, $this>
@@ -763,6 +765,20 @@ class Ticket extends Model
             User::class,
             'id',
             'reported_by_id'
+        );
+    }
+
+    /**
+     * The fixed by user of the ticket
+     *
+     * @return HasOne<Version, $this>
+     */
+    public function versionFixed(): HasOne
+    {
+        return $this->hasOne(
+            Version::class,
+            'id',
+            'version_fixed_id'
         );
     }
 
@@ -889,6 +905,37 @@ class Ticket extends Model
             Team::class,
             'ticket_id',
             'id'
+        );
+    }
+
+    /**
+     * The versions of the ticket.
+     *
+     * @return HasMany<Version, $this>
+     */
+    public function versions(): HasMany
+    {
+        return $this->hasMany(
+            Version::class,
+            'ticket_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tags of the ticket.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'ticket_id',
+            'id',
+            'id',
+            'tag_id'
         );
     }
 }

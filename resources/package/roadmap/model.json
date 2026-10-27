@@ -3,18 +3,38 @@
     "config": "playground-matrix",
     "fqdn": "Playground/Matrix/Models/Roadmap",
     "module": "Matrix",
+    "module_label": "Matrix",
+    "module_labels": "Matrices",
     "module_slug": "matrix",
+    "module_slugs": "matrices",
     "name": "Roadmap",
+    "names": "Roadmaps",
     "namespace": "Playground/Matrix",
     "organization": "Playground",
     "package": "playground-matrix",
     "model": "Roadmap",
     "model_attribute": "title",
     "model_attribute_required": true,
-    "model_plural": "Roadmaps",
-    "model_singular": "Roadmap",
+    "model_camel": "roadmap",
+    "model_camels": "roadmaps",
+    "model_label": "Roadmap",
+    "model_labels": "Roadmaps",
+    "model_lower": "roadmap",
+    "model_lowers": "roadmaps",
+    "model_kebab": "roadmap",
+    "model_kebabs": "roadmaps",
+    "model_plural": "",
+    "model_route_param": "roadmap",
+    "model_singular": "",
     "model_slug": "roadmap",
-    "model_slug_plural": "roadmaps",
+    "model_slugs": "roadmaps",
+    "model_slug_plural": "",
+    "model_snake": "roadmap",
+    "model_snakes": "roadmaps",
+    "model_studly": "Roadmap",
+    "model_studlies": "Roadmaps",
+    "model_variable": "roadmap",
+    "model_variables": "roadmaps",
     "recipe": "matrix",
     "type": "playground-model",
     "table": "matrix_roadmaps",
@@ -108,13 +128,6 @@
             "foreignKey": "id",
             "localKey": "sprint_id"
         },
-        "tag": {
-            "comment": "The tag of the roadmap.",
-            "accessor": "tag",
-            "related": "Tag",
-            "foreignKey": "id",
-            "localKey": "tag_id"
-        },
         "team": {
             "comment": "The team of the roadmap.",
             "accessor": "team",
@@ -202,6 +215,18 @@
             "localKey": "id"
         }
     },
+    "HasManyThrough": {
+        "tags": {
+            "comment": "The tags of the roadmap.",
+            "accessor": "tags",
+            "related": "Tag",
+            "firstKey": "roadmap_id",
+            "secondKey": "id",
+            "localKey": "id",
+            "secondLocalKey": "tag_id",
+            "through": "Tagged"
+        }
+    },
     "scopes": {
         "sort": {
             "include": "minus",
@@ -214,18 +239,17 @@
         "modified_by_id": null,
         "owned_by_id": null,
         "parent_id": null,
+        "matrix_id": null,
         "backlog_id": null,
         "board_id": null,
         "epic_id": null,
         "flow_id": null,
-        "matrix_id": null,
         "milestone_id": null,
         "note_id": null,
         "project_id": null,
         "release_id": null,
         "source_id": null,
         "sprint_id": null,
-        "tag_id": null,
         "team_id": null,
         "ticket_id": null,
         "version_id": null,
@@ -255,7 +279,7 @@
         "status": 0,
         "rank": 0,
         "size": 0,
-        "matrix": "{}",
+        "matrix": null,
         "x": null,
         "y": null,
         "z": null,
@@ -298,17 +322,16 @@
         "icon": "",
         "image": "",
         "avatar": "",
-        "ui": "{}",
-        "assets": "{}",
-        "backlog": "{}",
-        "board": "{}",
-        "flow": "{}",
-        "history": "{}",
-        "meta": "{}",
+        "ui": null,
+        "assets": null,
+        "backlog": null,
+        "board": null,
+        "flow": null,
+        "history": null,
+        "meta": null,
         "notes": "[]",
-        "options": "{}",
-        "roadmap": "{}",
-        "sources": "{}"
+        "options": null,
+        "sources": null
     },
     "casts": {
         "roadmap_type": "string",
@@ -390,25 +413,23 @@
         "meta": "array",
         "notes": "array",
         "options": "array",
-        "roadmap": "array",
         "sources": "array"
     },
     "fillable": [
         "roadmap_type",
         "owned_by_id",
         "parent_id",
+        "matrix_id",
         "backlog_id",
         "board_id",
         "epic_id",
         "flow_id",
-        "matrix_id",
         "milestone_id",
         "note_id",
         "project_id",
         "release_id",
         "source_id",
         "sprint_id",
-        "tag_id",
         "team_id",
         "ticket_id",
         "version_id",
@@ -486,7 +507,6 @@
         "history",
         "meta",
         "options",
-        "roadmap",
         "sources"
     ],
     "filters": {
@@ -510,7 +530,7 @@
             },
             {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -518,7 +538,7 @@
             },
             {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -526,7 +546,7 @@
             },
             {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -535,6 +555,14 @@
             {
                 "column": "parent_id",
                 "label": "Parent id",
+                "icon": "",
+                "nullable": true,
+                "unsigned": true,
+                "type": "uuid"
+            },
+            {
+                "column": "matrix_id",
+                "label": "Matrix id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -567,14 +595,6 @@
             {
                 "column": "flow_id",
                 "label": "Flow id",
-                "icon": "",
-                "nullable": true,
-                "unsigned": true,
-                "type": "uuid"
-            },
-            {
-                "column": "matrix_id",
-                "label": "Matrix id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -623,14 +643,6 @@
             {
                 "column": "sprint_id",
                 "label": "Sprint id",
-                "icon": "",
-                "nullable": true,
-                "unsigned": true,
-                "type": "uuid"
-            },
-            {
-                "column": "tag_id",
-                "label": "Tag id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -827,7 +839,7 @@
             {
                 "column": "featured",
                 "label": "Featured",
-                "icon": "fa-solid fa-star text-warning",
+                "icon": "fa-solid fa-star text-primary",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -1306,14 +1318,6 @@
                 "type": "JSON_OBJECT"
             },
             {
-                "column": "roadmap",
-                "label": "Roadmap",
-                "icon": "",
-                "nullable": true,
-                "unsigned": true,
-                "type": "JSON_OBJECT"
-            },
-            {
                 "column": "sources",
                 "label": "Sources",
                 "icon": "",
@@ -1341,21 +1345,21 @@
         },
         {
             "column": "created_by_id",
-            "label": "Created by id",
+            "label": "Created by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "modified_by_id",
-            "label": "Modified by id",
+            "label": "Modified by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "owned_by_id",
-            "label": "Owned by id",
+            "label": "Owned by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1363,6 +1367,13 @@
         {
             "column": "parent_id",
             "label": "Parent id",
+            "icon": "",
+            "nullable": false,
+            "type": "uuid"
+        },
+        {
+            "column": "matrix_id",
+            "label": "Matrix id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1391,13 +1402,6 @@
         {
             "column": "flow_id",
             "label": "Flow id",
-            "icon": "",
-            "nullable": false,
-            "type": "uuid"
-        },
-        {
-            "column": "matrix_id",
-            "label": "Matrix id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1440,13 +1444,6 @@
         {
             "column": "sprint_id",
             "label": "Sprint id",
-            "icon": "",
-            "nullable": false,
-            "type": "uuid"
-        },
-        {
-            "column": "tag_id",
-            "label": "Tag id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1769,7 +1766,7 @@
         {
             "column": "featured",
             "label": "Featured",
-            "icon": "fa-solid fa-star text-warning",
+            "icon": "fa-solid fa-star text-primary",
             "nullable": false,
             "type": "boolean"
         },
@@ -2019,13 +2016,6 @@
             "type": "JSON_OBJECT"
         },
         {
-            "column": "roadmap",
-            "label": "Roadmap",
-            "icon": "",
-            "nullable": false,
-            "type": "JSON_OBJECT"
-        },
-        {
             "column": "sources",
             "label": "Sources",
             "icon": "",
@@ -2058,7 +2048,7 @@
             },
             "created_by_id": {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -2073,7 +2063,7 @@
             },
             "modified_by_id": {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -2088,7 +2078,7 @@
             },
             "owned_by_id": {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -2106,6 +2096,21 @@
                 "label": "Parent id",
                 "description": "",
                 "foreign": null,
+                "icon": "",
+                "index": true,
+                "nullable": true,
+                "readOnly": false,
+                "unsigned": false,
+                "type": "uuid"
+            },
+            "matrix_id": {
+                "column": "matrix_id",
+                "label": "Matrix id",
+                "description": "",
+                "foreign": {
+                    "references": "id",
+                    "on": "matrix_matrices"
+                },
                 "icon": "",
                 "index": true,
                 "nullable": true,
@@ -2165,21 +2170,6 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_flows"
-                },
-                "icon": "",
-                "index": true,
-                "nullable": true,
-                "readOnly": false,
-                "unsigned": false,
-                "type": "uuid"
-            },
-            "matrix_id": {
-                "column": "matrix_id",
-                "label": "Matrix id",
-                "description": "",
-                "foreign": {
-                    "references": "id",
-                    "on": "matrix_matrices"
                 },
                 "icon": "",
                 "index": true,
@@ -2270,21 +2260,6 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_sprints"
-                },
-                "icon": "",
-                "index": true,
-                "nullable": true,
-                "readOnly": false,
-                "unsigned": false,
-                "type": "uuid"
-            },
-            "tag_id": {
-                "column": "tag_id",
-                "label": "Tag id",
-                "description": "",
-                "foreign": {
-                    "references": "id",
-                    "on": "matrix_tags"
                 },
                 "icon": "",
                 "index": true,
@@ -2541,7 +2516,7 @@
                 "column": "featured",
                 "label": "Featured",
                 "description": "",
-                "icon": "fa-solid fa-star text-warning",
+                "icon": "fa-solid fa-star text-primary",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -2974,7 +2949,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "x": {
                 "column": "x",
@@ -3164,7 +3139,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         },
         "json": {
@@ -3178,7 +3153,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "backlog": {
                 "column": "backlog",
@@ -3190,7 +3165,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "board": {
                 "column": "board",
@@ -3202,7 +3177,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "flow": {
                 "column": "flow",
@@ -3214,7 +3189,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "history": {
                 "column": "history",
@@ -3226,7 +3201,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "meta": {
                 "column": "meta",
@@ -3238,7 +3213,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "notes": {
                 "column": "notes",
@@ -3263,19 +3238,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
-            },
-            "roadmap": {
-                "column": "roadmap",
-                "label": "Roadmap",
-                "description": "",
-                "icon": "",
-                "html": false,
-                "index": false,
-                "nullable": true,
-                "readOnly": false,
-                "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "sources": {
                 "column": "sources",
@@ -3287,7 +3250,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         }
     },
@@ -3295,6 +3258,7 @@
         "Database/Factories/Playground/Matrix/Models/RoadmapFactory",
         "Illuminate/Database/Eloquent/Factories/HasFactory",
         "Illuminate/Database/Eloquent/Relations/HasMany",
+        "Illuminate/Database/Eloquent/Relations/HasManyThrough",
         "Illuminate/Database/Eloquent/Relations/HasOne",
         "Illuminate/Support/Carbon",
         "Playground/Models/Model"

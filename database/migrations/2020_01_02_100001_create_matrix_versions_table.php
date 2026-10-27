@@ -10,9 +10,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Playground\Matrix\Models\Version;
 
 /**
- * \Playground\Matrix\Models\Version
+ * @see Version
  */
 return new class extends Migration
 {
@@ -36,7 +37,6 @@ return new class extends Migration
             $table->uuid('parent_id')->nullable()->index();
             $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('project_id')->nullable()->index();
-            $table->uuid('tag_id')->nullable()->index();
             $table->uuid('team_id')->nullable()->index();
             $table->uuid('ticket_id')->nullable()->index();
 

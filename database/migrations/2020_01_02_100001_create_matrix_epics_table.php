@@ -10,9 +10,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Playground\Matrix\Models\Epic;
 
 /**
- * \Playground\Matrix\Models\Epic
+ * @see Epic
  */
 return new class extends Migration
 {
@@ -34,10 +35,10 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
+            $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('backlog_id')->nullable()->index();
             $table->uuid('board_id')->nullable()->index();
             $table->uuid('flow_id')->nullable()->index();
-            $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('milestone_id')->nullable()->index();
             $table->uuid('note_id')->nullable()->index();
             $table->uuid('project_id')->nullable()->index();
@@ -45,7 +46,6 @@ return new class extends Migration
             $table->uuid('roadmap_id')->nullable()->index();
             $table->uuid('source_id')->nullable()->index();
             $table->uuid('sprint_id')->nullable()->index();
-            $table->uuid('tag_id')->nullable()->index();
             $table->uuid('team_id')->nullable()->index();
             $table->uuid('ticket_id')->nullable()->index();
             $table->uuid('version_id')->nullable()->index();

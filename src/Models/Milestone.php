@@ -11,6 +11,7 @@ namespace Playground\Matrix\Models;
 use Database\Factories\Playground\Matrix\Models\MilestoneFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
@@ -24,18 +25,17 @@ use Playground\Models\Model;
  * @property ?scalar $modified_by_id
  * @property ?scalar $owned_by_id
  * @property ?string $parent_id
+ * @property ?string $matrix_id
  * @property ?string $backlog_id
  * @property ?string $board_id
  * @property ?string $epic_id
  * @property ?string $flow_id
- * @property ?string $matrix_id
  * @property ?string $note_id
  * @property ?string $project_id
  * @property ?string $release_id
  * @property ?string $roadmap_id
  * @property ?string $source_id
  * @property ?string $sprint_id
- * @property ?string $tag_id
  * @property ?string $team_id
  * @property ?string $ticket_id
  * @property ?string $version_id
@@ -133,18 +133,17 @@ class Milestone extends Model
         'modified_by_id' => null,
         'owned_by_id' => null,
         'parent_id' => null,
+        'matrix_id' => null,
         'backlog_id' => null,
         'board_id' => null,
         'epic_id' => null,
         'flow_id' => null,
-        'matrix_id' => null,
         'note_id' => null,
         'project_id' => null,
         'release_id' => null,
         'roadmap_id' => null,
         'source_id' => null,
         'sprint_id' => null,
-        'tag_id' => null,
         'team_id' => null,
         'ticket_id' => null,
         'version_id' => null,
@@ -174,7 +173,7 @@ class Milestone extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -217,35 +216,34 @@ class Milestone extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'backlog' => '{}',
-        'board' => '{}',
-        'flow' => '{}',
-        'history' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'backlog' => null,
+        'board' => null,
+        'flow' => null,
+        'history' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'roadmap' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'roadmap' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
         'milestone_type',
         'owned_by_id',
         'parent_id',
+        'matrix_id',
         'backlog_id',
         'board_id',
         'epic_id',
         'flow_id',
-        'matrix_id',
         'note_id',
         'project_id',
         'release_id',
         'roadmap_id',
         'source_id',
         'sprint_id',
-        'tag_id',
         'team_id',
         'ticket_id',
         'version_id',
@@ -569,20 +567,6 @@ class Milestone extends Model
     }
 
     /**
-     * The tag of the milestone.
-     *
-     * @return HasOne<Tag, $this>
-     */
-    public function tag(): HasOne
-    {
-        return $this->hasOne(
-            Tag::class,
-            'id',
-            'tag_id'
-        );
-    }
-
-    /**
      * The team of the milestone.
      *
      * @return HasOne<Team, $this>
@@ -747,6 +731,23 @@ class Milestone extends Model
             Ticket::class,
             'milestone_id',
             'id'
+        );
+    }
+
+    /**
+     * The tags of the milestone.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'milestone_id',
+            'id',
+            'id',
+            'tag_id'
         );
     }
 }

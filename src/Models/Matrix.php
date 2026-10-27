@@ -10,6 +10,8 @@ namespace Playground\Matrix\Models;
 
 use Database\Factories\Playground\Matrix\Models\MatrixFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Carbon;
 use Playground\Models\Model;
 
@@ -137,7 +139,7 @@ class Matrix extends Model
         'status' => 0,
         'rank' => 0,
         'size' => 0,
-        'matrix' => '{}',
+        'matrix' => null,
         'x' => null,
         'y' => null,
         'z' => null,
@@ -180,12 +182,12 @@ class Matrix extends Model
         'icon' => '',
         'image' => '',
         'avatar' => '',
-        'ui' => '{}',
-        'assets' => '{}',
-        'meta' => '{}',
+        'ui' => null,
+        'assets' => null,
+        'meta' => null,
         'notes' => '[]',
-        'options' => '{}',
-        'sources' => '{}',
+        'options' => null,
+        'sources' => null,
     ];
 
     protected $fillable = [
@@ -345,5 +347,218 @@ class Matrix extends Model
             'options' => 'array',
             'sources' => 'array',
         ];
+    }
+
+    /**
+     * The backlogs of the matrix.
+     *
+     * @return HasMany<Backlog, $this>
+     */
+    public function backlogs(): HasMany
+    {
+        return $this->hasMany(
+            Backlog::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The boards of the matrix.
+     *
+     * @return HasMany<Board, $this>
+     */
+    public function boards(): HasMany
+    {
+        return $this->hasMany(
+            Board::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The epics of the matrix.
+     *
+     * @return HasMany<Epic, $this>
+     */
+    public function epics(): HasMany
+    {
+        return $this->hasMany(
+            Epic::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The flows of the matrix.
+     *
+     * @return HasMany<Flow, $this>
+     */
+    public function flows(): HasMany
+    {
+        return $this->hasMany(
+            Flow::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The milestones of the matrix.
+     *
+     * @return HasMany<Milestone, $this>
+     */
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(
+            Milestone::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The notes of the matrix.
+     *
+     * @return HasMany<Note, $this>
+     */
+    public function notes(): HasMany
+    {
+        return $this->hasMany(
+            Note::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The projects of the matrix.
+     *
+     * @return HasMany<Project, $this>
+     */
+    public function projects(): HasMany
+    {
+        return $this->hasMany(
+            Project::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The releases of the matrix.
+     *
+     * @return HasMany<Release, $this>
+     */
+    public function releases(): HasMany
+    {
+        return $this->hasMany(
+            Release::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The roadmaps of the matrix.
+     *
+     * @return HasMany<Roadmap, $this>
+     */
+    public function roadmaps(): HasMany
+    {
+        return $this->hasMany(
+            Roadmap::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The sources of the matrix.
+     *
+     * @return HasMany<Source, $this>
+     */
+    public function sources(): HasMany
+    {
+        return $this->hasMany(
+            Source::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The sprints of the matrix.
+     *
+     * @return HasMany<Sprint, $this>
+     */
+    public function sprints(): HasMany
+    {
+        return $this->hasMany(
+            Sprint::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The teams of the matrix.
+     *
+     * @return HasMany<Team, $this>
+     */
+    public function teams(): HasMany
+    {
+        return $this->hasMany(
+            Team::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tickets of the matrix.
+     *
+     * @return HasMany<Ticket, $this>
+     */
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(
+            Ticket::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The versions of the matrix.
+     *
+     * @return HasMany<Version, $this>
+     */
+    public function versions(): HasMany
+    {
+        return $this->hasMany(
+            Version::class,
+            'matrix_id',
+            'id'
+        );
+    }
+
+    /**
+     * The tags of the matrix.
+     *
+     * @return HasManyThrough<Tag, Tagged, $this>
+     */
+    public function tags(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Tag::class,
+            Tagged::class,
+            'matrix_id',
+            'id',
+            'id',
+            'tag_id'
+        );
     }
 }

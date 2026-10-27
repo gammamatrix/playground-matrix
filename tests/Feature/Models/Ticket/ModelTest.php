@@ -20,7 +20,6 @@ use Playground\Matrix\Models\Release;
 use Playground\Matrix\Models\Roadmap;
 use Playground\Matrix\Models\Source;
 use Playground\Matrix\Models\Sprint;
-use Playground\Matrix\Models\Tag;
 use Playground\Matrix\Models\Team;
 use Playground\Matrix\Models\Ticket;
 use Playground\Matrix\Models\Version;
@@ -72,6 +71,10 @@ class ModelTest extends ModelCase
         'teams' => [
             'key' => 'ticket_id',
             'modelClass' => Team::class,
+        ],
+        'versions' => [
+            'key' => 'ticket_id',
+            'modelClass' => Version::class,
         ],
     ];
 
@@ -156,11 +159,6 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => Sprint::class,
         ],
-        'tag' => [
-            'key' => 'tag_id',
-            'rule' => 'create',
-            'modelClass' => Tag::class,
-        ],
         'team' => [
             'key' => 'team_id',
             'rule' => 'create',
@@ -176,6 +174,11 @@ class ModelTest extends ModelCase
             'rule' => 'create',
             'modelClass' => User::class,
         ],
+        'duplicateBy' => [
+            'key' => 'duplicate_id',
+            'rule' => 'create',
+            'modelClass' => Ticket::class,
+        ],
         'fixedBy' => [
             'key' => 'fixed_by_id',
             'rule' => 'create',
@@ -185,6 +188,11 @@ class ModelTest extends ModelCase
             'key' => 'reported_by_id',
             'rule' => 'create',
             'modelClass' => User::class,
+        ],
+        'versionFixed' => [
+            'key' => 'version_fixed_id',
+            'rule' => 'create',
+            'modelClass' => Version::class,
         ],
     ];
 }

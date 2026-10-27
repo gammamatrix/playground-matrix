@@ -89,6 +89,7 @@ class ServiceProvider extends AuthServiceProvider
             '2020_01_02_100001_create_matrix_sources_table.php',
             '2020_01_02_100001_create_matrix_sprints_table.php',
             '2020_01_02_100001_create_matrix_tags_table.php',
+            '2020_01_02_000000_create_matrix_tagged_table.php',
             '2020_01_02_100001_create_matrix_teams_table.php',
             '2020_01_02_100001_create_matrix_tickets_table.php',
             '2020_01_02_100001_create_matrix_versions_table.php',

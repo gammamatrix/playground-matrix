@@ -20,24 +20,10 @@ class ModelTest extends ModelCase
 
     protected bool $hasRelationships = true;
 
-    protected array $hasMany = [
-        'backlogs',
-        'boards',
-        'epics',
-        'milestones',
-        'projects',
-        'releases',
-        'roadmaps',
-        'sprints',
-        'teams',
-        'tickets',
-    ];
-
     protected array $hasOne = [
         'creator',
         'modifier',
         'owner',
         'parent',
-        'matrix',
     ];
 }

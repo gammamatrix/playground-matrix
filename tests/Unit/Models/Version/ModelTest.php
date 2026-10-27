@@ -40,7 +40,6 @@ class ModelTest extends ModelCase
         'parent',
         'matrix',
         'project',
-        'tag',
         'team',
         'ticket',
     ];

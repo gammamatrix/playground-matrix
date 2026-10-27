@@ -10,9 +10,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Playground\Matrix\Models\Tag;
 
 /**
- * \Playground\Matrix\Models\Tag
+ * @see Tag
  */
 return new class extends Migration
 {
@@ -41,6 +42,20 @@ return new class extends Migration
             $table->timestamps();
 
             $table->softDeletes();
+
+            $table->dateTime('canceled_at')->nullable();
+            $table->dateTime('closed_at')->nullable()->index();
+            $table->dateTime('embargo_at')->nullable();
+            $table->dateTime('planned_end_at')->nullable();
+            $table->dateTime('planned_start_at')->nullable();
+            $table->dateTime('postponed_at')->nullable();
+            $table->dateTime('published_at')->nullable();
+            $table->dateTime('released_at')->nullable()->index();
+            $table->dateTime('resolved_at')->nullable()->index();
+            $table->dateTime('resumed_at')->nullable();
+            $table->dateTime('suspended_at')->nullable();
+            $table->dateTime('timer_end_at')->nullable()->index();
+            $table->dateTime('timer_start_at')->nullable()->index();
 
             // Permissions
 
@@ -76,13 +91,24 @@ return new class extends Migration
             // Flags
 
             $table->boolean('active')->default(1)->index();
+            $table->boolean('canceled')->default(0);
+            $table->boolean('closed')->default(0);
+            $table->boolean('completed')->default(0);
             $table->boolean('cron')->default(0)->index();
-            $table->boolean('featured')->default(0);
+            $table->boolean('duplicate')->default(0);
+            $table->boolean('fixed')->default(0);
             $table->boolean('flagged')->default(0);
             $table->boolean('internal')->default(0);
             $table->boolean('locked')->default(0);
+            $table->boolean('pending')->default(0);
+            $table->boolean('planned')->default(0);
+            $table->boolean('prioritized')->default(0);
+            $table->boolean('problem')->default(0);
+            $table->boolean('published')->default(0);
+            $table->boolean('released')->default(0);
+            $table->boolean('resolved')->default(0);
             $table->boolean('retired')->default(0);
-            $table->boolean('special')->default(0);
+            $table->boolean('suspended')->default(0);
             $table->boolean('unknown')->default(0);
 
             // Columns

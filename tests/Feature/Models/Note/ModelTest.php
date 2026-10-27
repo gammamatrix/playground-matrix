@@ -11,14 +11,15 @@ namespace Tests\Feature\Playground\Matrix\Models\Note;
 use Playground\Matrix\Models\Backlog;
 use Playground\Matrix\Models\Board;
 use Playground\Matrix\Models\Epic;
+use Playground\Matrix\Models\Flow;
 use Playground\Matrix\Models\Matrix;
 use Playground\Matrix\Models\Milestone;
 use Playground\Matrix\Models\Note;
 use Playground\Matrix\Models\Project;
 use Playground\Matrix\Models\Release;
 use Playground\Matrix\Models\Roadmap;
+use Playground\Matrix\Models\Source;
 use Playground\Matrix\Models\Sprint;
-use Playground\Matrix\Models\Tag;
 use Playground\Matrix\Models\Team;
 use Playground\Matrix\Models\Ticket;
 use Playground\Models\User;
@@ -46,6 +47,10 @@ class ModelTest extends ModelCase
             'key' => 'note_id',
             'modelClass' => Epic::class,
         ],
+        'flows' => [
+            'key' => 'note_id',
+            'modelClass' => Flow::class,
+        ],
         'milestones' => [
             'key' => 'note_id',
             'modelClass' => Milestone::class,
@@ -61,6 +66,10 @@ class ModelTest extends ModelCase
         'roadmaps' => [
             'key' => 'note_id',
             'modelClass' => Roadmap::class,
+        ],
+        'sources' => [
+            'key' => 'note_id',
+            'modelClass' => Source::class,
         ],
         'sprints' => [
             'key' => 'note_id',
@@ -101,11 +110,6 @@ class ModelTest extends ModelCase
             'key' => 'matrix_id',
             'rule' => 'create',
             'modelClass' => Matrix::class,
-        ],
-        'tag' => [
-            'key' => 'tag_id',
-            'rule' => 'create',
-            'modelClass' => Tag::class,
         ],
     ];
 }

@@ -10,9 +10,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Playground\Matrix\Models\Ticket;
 
 /**
- * \Playground\Matrix\Models\Ticket
+ * @see Ticket
  */
 return new class extends Migration
 {
@@ -34,11 +35,11 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable()->index();
             $table->uuid('owned_by_id')->nullable()->index();
             $table->uuid('parent_id')->nullable()->index();
+            $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('backlog_id')->nullable()->index();
             $table->uuid('board_id')->nullable()->index();
             $table->uuid('epic_id')->nullable()->index();
             $table->uuid('flow_id')->nullable()->index();
-            $table->uuid('matrix_id')->nullable()->index();
             $table->uuid('milestone_id')->nullable()->index();
             $table->uuid('note_id')->nullable()->index();
             $table->uuid('project_id')->nullable()->index();
@@ -46,14 +47,13 @@ return new class extends Migration
             $table->uuid('roadmap_id')->nullable()->index();
             $table->uuid('source_id')->nullable()->index();
             $table->uuid('sprint_id')->nullable()->index();
-            $table->uuid('tag_id')->nullable()->index();
             $table->uuid('team_id')->nullable()->index();
             $table->uuid('version_id')->nullable()->index();
-            $table->uuid('completed_by_id')->nullable()->index();
-            $table->uuid('duplicate_id')->nullable()->index();
-            $table->uuid('fixed_by_id')->nullable()->index();
-            $table->uuid('reported_by_id')->nullable()->index();
-            $table->uuid('version_fixed_id')->nullable()->index();
+            $table->uuid('completed_by_id')->nullable()->default(null)->index();
+            $table->uuid('duplicate_id')->nullable()->default(null)->index();
+            $table->uuid('fixed_by_id')->nullable()->default(null)->index();
+            $table->uuid('reported_by_id')->nullable()->default(null)->index();
+            $table->uuid('version_fixed_id')->nullable()->default(null)->index();
 
             // Dates
 
@@ -69,6 +69,7 @@ return new class extends Migration
             $table->dateTime('planned_start_at')->nullable();
             $table->dateTime('postponed_at')->nullable();
             $table->dateTime('published_at')->nullable();
+            $table->dateTime('released_at')->nullable()->index();
             $table->dateTime('resolved_at')->nullable()->index();
             $table->dateTime('resumed_at')->nullable();
             $table->dateTime('suspended_at')->nullable();
@@ -153,7 +154,7 @@ return new class extends Migration
             $table->string('step')->nullable();
             $table->string('state')->nullable();
             $table->string('workflow_type')->nullable();
-            $table->bigInteger('points')->default(0)->unsigned();
+            $table->bigInteger('points')->default(0);
             $table->mediumText('actual')->nullable();
             $table->mediumText('expected')->nullable();
             $table->mediumText('story')->nullable();

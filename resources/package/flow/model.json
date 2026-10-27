@@ -3,18 +3,38 @@
     "config": "playground-matrix",
     "fqdn": "Playground/Matrix/Models/Flow",
     "module": "Matrix",
+    "module_label": "Matrix",
+    "module_labels": "Matrices",
     "module_slug": "matrix",
+    "module_slugs": "matrices",
     "name": "Flow",
+    "names": "Flows",
     "namespace": "Playground/Matrix",
     "organization": "Playground",
     "package": "playground-matrix",
     "model": "Flow",
     "model_attribute": "title",
     "model_attribute_required": true,
-    "model_plural": "Flows",
-    "model_singular": "Flow",
+    "model_camel": "flow",
+    "model_camels": "flows",
+    "model_label": "Flow",
+    "model_labels": "Flows",
+    "model_lower": "flow",
+    "model_lowers": "flows",
+    "model_kebab": "flow",
+    "model_kebabs": "flows",
+    "model_plural": "",
+    "model_route_param": "flow",
+    "model_singular": "",
     "model_slug": "flow",
-    "model_slug_plural": "flows",
+    "model_slugs": "flows",
+    "model_slug_plural": "",
+    "model_snake": "flow",
+    "model_snakes": "flows",
+    "model_studly": "Flow",
+    "model_studlies": "Flows",
+    "model_variable": "flow",
+    "model_variables": "flows",
     "recipe": "matrix",
     "type": "playground-model",
     "table": "matrix_flows",
@@ -44,13 +64,6 @@
             "related": "Note",
             "foreignKey": "id",
             "localKey": "note_id"
-        },
-        "tag": {
-            "comment": "The tag of the flow.",
-            "accessor": "tag",
-            "related": "Tag",
-            "foreignKey": "id",
-            "localKey": "tag_id"
         },
         "team": {
             "comment": "The team of the flow.",
@@ -132,6 +145,18 @@
             "localKey": "id"
         }
     },
+    "HasManyThrough": {
+        "tags": {
+            "comment": "The tags of the flow.",
+            "accessor": "tags",
+            "related": "Tag",
+            "firstKey": "flow_id",
+            "secondKey": "id",
+            "localKey": "id",
+            "secondLocalKey": "tag_id",
+            "through": "Tagged"
+        }
+    },
     "scopes": {
         "sort": {
             "include": "minus",
@@ -146,7 +171,6 @@
         "parent_id": null,
         "matrix_id": null,
         "note_id": null,
-        "tag_id": null,
         "team_id": null,
         "created_at": null,
         "updated_at": null,
@@ -174,7 +198,7 @@
         "status": 0,
         "rank": 0,
         "size": 0,
-        "matrix": "{}",
+        "matrix": null,
         "x": null,
         "y": null,
         "z": null,
@@ -217,12 +241,12 @@
         "icon": "",
         "image": "",
         "avatar": "",
-        "ui": "{}",
-        "assets": "{}",
-        "meta": "{}",
+        "ui": null,
+        "assets": null,
+        "meta": null,
         "notes": "[]",
-        "options": "{}",
-        "sources": "{}"
+        "options": null,
+        "sources": null
     },
     "casts": {
         "flow_type": "string",
@@ -308,7 +332,6 @@
         "parent_id",
         "matrix_id",
         "note_id",
-        "tag_id",
         "team_id",
         "canceled_at",
         "closed_at",
@@ -403,7 +426,7 @@
             },
             {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -411,7 +434,7 @@
             },
             {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -419,7 +442,7 @@
             },
             {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -444,14 +467,6 @@
             {
                 "column": "note_id",
                 "label": "Note id",
-                "icon": "",
-                "nullable": true,
-                "unsigned": true,
-                "type": "uuid"
-            },
-            {
-                "column": "tag_id",
-                "label": "Tag id",
                 "icon": "",
                 "nullable": true,
                 "unsigned": true,
@@ -632,7 +647,7 @@
             {
                 "column": "featured",
                 "label": "Featured",
-                "icon": "fa-solid fa-star text-warning",
+                "icon": "fa-solid fa-star text-primary",
                 "nullable": true,
                 "unsigned": true,
                 "type": "boolean"
@@ -1106,21 +1121,21 @@
         },
         {
             "column": "created_by_id",
-            "label": "Created by id",
+            "label": "Created by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "modified_by_id",
-            "label": "Modified by id",
+            "label": "Modified by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
         },
         {
             "column": "owned_by_id",
-            "label": "Owned by id",
+            "label": "Owned by ID",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1142,13 +1157,6 @@
         {
             "column": "note_id",
             "label": "Note id",
-            "icon": "",
-            "nullable": false,
-            "type": "uuid"
-        },
-        {
-            "column": "tag_id",
-            "label": "Tag id",
             "icon": "",
             "nullable": false,
             "type": "uuid"
@@ -1457,7 +1465,7 @@
         {
             "column": "featured",
             "label": "Featured",
-            "icon": "fa-solid fa-star text-warning",
+            "icon": "fa-solid fa-star text-primary",
             "nullable": false,
             "type": "boolean"
         },
@@ -1711,7 +1719,7 @@
             },
             "created_by_id": {
                 "column": "created_by_id",
-                "label": "Created by id",
+                "label": "Created by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1726,7 +1734,7 @@
             },
             "modified_by_id": {
                 "column": "modified_by_id",
-                "label": "Modified by id",
+                "label": "Modified by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1741,7 +1749,7 @@
             },
             "owned_by_id": {
                 "column": "owned_by_id",
-                "label": "Owned by id",
+                "label": "Owned by ID",
                 "description": "",
                 "foreign": {
                     "references": "id",
@@ -1788,21 +1796,6 @@
                 "foreign": {
                     "references": "id",
                     "on": "matrix_notes"
-                },
-                "icon": "",
-                "index": true,
-                "nullable": true,
-                "readOnly": false,
-                "unsigned": false,
-                "type": "uuid"
-            },
-            "tag_id": {
-                "column": "tag_id",
-                "label": "Tag id",
-                "description": "",
-                "foreign": {
-                    "references": "id",
-                    "on": "matrix_tags"
                 },
                 "icon": "",
                 "index": true,
@@ -2029,7 +2022,7 @@
                 "column": "featured",
                 "label": "Featured",
                 "description": "",
-                "icon": "fa-solid fa-star text-warning",
+                "icon": "fa-solid fa-star text-primary",
                 "default": false,
                 "index": false,
                 "nullable": false,
@@ -2462,7 +2455,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "x": {
                 "column": "x",
@@ -2652,7 +2645,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         },
         "json": {
@@ -2666,7 +2659,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "meta": {
                 "column": "meta",
@@ -2678,7 +2671,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "notes": {
                 "column": "notes",
@@ -2703,7 +2696,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             },
             "sources": {
                 "column": "sources",
@@ -2715,7 +2708,7 @@
                 "nullable": true,
                 "readOnly": false,
                 "type": "JSON_OBJECT",
-                "default": "{}"
+                "default": null
             }
         }
     },
@@ -2723,6 +2716,7 @@
         "Database/Factories/Playground/Matrix/Models/FlowFactory",
         "Illuminate/Database/Eloquent/Factories/HasFactory",
         "Illuminate/Database/Eloquent/Relations/HasMany",
+        "Illuminate/Database/Eloquent/Relations/HasManyThrough",
         "Illuminate/Database/Eloquent/Relations/HasOne",
         "Illuminate/Support/Carbon",
         "Playground/Models/Model"

@@ -17,7 +17,6 @@ use Playground\Matrix\Models\Project;
 use Playground\Matrix\Models\Release;
 use Playground\Matrix\Models\Roadmap;
 use Playground\Matrix\Models\Sprint;
-use Playground\Matrix\Models\Tag;
 use Playground\Matrix\Models\Team;
 use Playground\Matrix\Models\Ticket;
 use Playground\Matrix\Models\Version;
@@ -106,11 +105,6 @@ class ModelTest extends ModelCase
             'key' => 'project_id',
             'rule' => 'create',
             'modelClass' => Project::class,
-        ],
-        'tag' => [
-            'key' => 'tag_id',
-            'rule' => 'create',
-            'modelClass' => Tag::class,
         ],
         'team' => [
             'key' => 'team_id',

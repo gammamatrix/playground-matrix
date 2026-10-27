@@ -24,12 +24,15 @@ class ModelTest extends ModelCase
         'backlogs',
         'boards',
         'epics',
+        'flows',
         'milestones',
         'projects',
         'releases',
         'roadmaps',
+        'sources',
         'sprints',
         'tickets',
+        'versions',
     ];
 
     protected array $hasOne = [
@@ -49,7 +52,6 @@ class ModelTest extends ModelCase
         'roadmap',
         'source',
         'sprint',
-        'tag',
         'ticket',
         'version',
     ];
