@@ -76,6 +76,11 @@ Model (Tests\Feature\Playground\Matrix\Models\Sprint\Model)
  [x] Verify model relationships
  [x] Factory create
 
+Model (Tests\Feature\Playground\Matrix\Models\Tagged\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Factory create
+
 Model (Tests\Feature\Playground\Matrix\Models\Tag\Model)
  [x] Model instance
  [x] Verify model relationships
@@ -152,6 +157,11 @@ Model (Tests\Unit\Playground\Matrix\Models\Source\Model)
  [x] Model factory make
 
 Model (Tests\Unit\Playground\Matrix\Models\Sprint\Model)
+ [x] Model instance
+ [x] Verify model relationships
+ [x] Model factory make
+
+Model (Tests\Unit\Playground\Matrix\Models\Tagged\Model)
  [x] Model instance
  [x] Verify model relationships
  [x] Model factory make

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-13 19:59:25</timestamp>
+  <timestamp>2026-10-27 18:05:25</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>331</methodCount>
+    <methodCount>362</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>352</totalCrap>
+    <totalCrap>398</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -168,17 +168,6 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Backlog</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Backlog</className>
       <methodName>team</methodName>
       <methodSignature>team(): HasOne</methodSignature>
       <fullMethod>team(): HasOne</fullMethod>
@@ -306,6 +295,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Backlog</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -443,17 +443,6 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Board</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Board</className>
       <methodName>team</methodName>
       <methodSignature>team(): HasOne</methodSignature>
       <fullMethod>team(): HasOne</fullMethod>
@@ -581,6 +570,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Board</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -718,17 +718,6 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Epic</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Epic</className>
       <methodName>team</methodName>
       <methodSignature>team(): HasOne</methodSignature>
       <fullMethod>team(): HasOne</fullMethod>
@@ -860,6 +849,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Epic</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Flow</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -886,17 +886,6 @@
       <methodName>note</methodName>
       <methodSignature>note(): HasOne</methodSignature>
       <fullMethod>note(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Flow</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1021,6 +1010,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Flow</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1036,6 +1036,171 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>backlogs</methodName>
+      <methodSignature>backlogs(): HasMany</methodSignature>
+      <fullMethod>backlogs(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>boards</methodName>
+      <methodSignature>boards(): HasMany</methodSignature>
+      <fullMethod>boards(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>epics</methodName>
+      <methodSignature>epics(): HasMany</methodSignature>
+      <fullMethod>epics(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>flows</methodName>
+      <methodSignature>flows(): HasMany</methodSignature>
+      <fullMethod>flows(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>milestones</methodName>
+      <methodSignature>milestones(): HasMany</methodSignature>
+      <fullMethod>milestones(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>notes</methodName>
+      <methodSignature>notes(): HasMany</methodSignature>
+      <fullMethod>notes(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>projects</methodName>
+      <methodSignature>projects(): HasMany</methodSignature>
+      <fullMethod>projects(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>releases</methodName>
+      <methodSignature>releases(): HasMany</methodSignature>
+      <fullMethod>releases(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>roadmaps</methodName>
+      <methodSignature>roadmaps(): HasMany</methodSignature>
+      <fullMethod>roadmaps(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>sources</methodName>
+      <methodSignature>sources(): HasMany</methodSignature>
+      <fullMethod>sources(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>sprints</methodName>
+      <methodSignature>sprints(): HasMany</methodSignature>
+      <fullMethod>sprints(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>teams</methodName>
+      <methodSignature>teams(): HasMany</methodSignature>
+      <fullMethod>teams(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>tickets</methodName>
+      <methodSignature>tickets(): HasMany</methodSignature>
+      <fullMethod>tickets(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>versions</methodName>
+      <methodSignature>versions(): HasMany</methodSignature>
+      <fullMethod>versions(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Matrix</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Milestone</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -1161,17 +1326,6 @@
       <methodName>sprint</methodName>
       <methodSignature>sprint(): HasOne</methodSignature>
       <fullMethod>sprint(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Milestone</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1311,6 +1465,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Milestone</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Note</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -1326,17 +1491,6 @@
       <methodName>matrix</methodName>
       <methodSignature>matrix(): HasOne</methodSignature>
       <fullMethod>matrix(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Note</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1370,6 +1524,17 @@
       <methodName>epics</methodName>
       <methodSignature>epics(): HasMany</methodSignature>
       <fullMethod>epics(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Note</className>
+      <methodName>flows</methodName>
+      <methodSignature>flows(): HasMany</methodSignature>
+      <fullMethod>flows(): HasMany</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1422,6 +1587,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Note</className>
+      <methodName>sources</methodName>
+      <methodSignature>sources(): HasMany</methodSignature>
+      <fullMethod>sources(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Note</className>
       <methodName>sprints</methodName>
       <methodSignature>sprints(): HasMany</methodSignature>
       <fullMethod>sprints(): HasMany</fullMethod>
@@ -1450,6 +1626,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Note</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1579,17 +1766,6 @@
       <methodName>sprint</methodName>
       <methodSignature>sprint(): HasOne</methodSignature>
       <fullMethod>sprint(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Project</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -1729,6 +1905,28 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Project</className>
+      <methodName>versions</methodName>
+      <methodSignature>versions(): HasMany</methodSignature>
+      <fullMethod>versions(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Project</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Release</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -1854,17 +2052,6 @@
       <methodName>sprint</methodName>
       <methodSignature>sprint(): HasOne</methodSignature>
       <fullMethod>sprint(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Release</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2004,6 +2191,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Release</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Roadmap</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -2129,17 +2327,6 @@
       <methodName>sprint</methodName>
       <methodSignature>sprint(): HasOne</methodSignature>
       <fullMethod>sprint(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Roadmap</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2279,6 +2466,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Roadmap</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Source</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -2305,17 +2503,6 @@
       <methodName>note</methodName>
       <methodSignature>note(): HasOne</methodSignature>
       <fullMethod>note(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Source</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2440,6 +2627,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Source</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -2569,17 +2767,6 @@
       <methodName>source</methodName>
       <methodSignature>source(): HasOne</methodSignature>
       <fullMethod>source(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Sprint</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2719,6 +2906,17 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Sprint</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Tag</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -2730,7 +2928,84 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>casts</methodName>
+      <methodSignature>casts(): array</methodSignature>
+      <fullMethod>casts(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>creator</methodName>
+      <methodSignature>creator(): HasOne</methodSignature>
+      <fullMethod>creator(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>tag</methodName>
+      <methodSignature>tag(): HasOne</methodSignature>
+      <fullMethod>tag(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>backlog</methodName>
+      <methodSignature>backlog(): HasOne</methodSignature>
+      <fullMethod>backlog(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>board</methodName>
+      <methodSignature>board(): HasOne</methodSignature>
+      <fullMethod>board(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>epic</methodName>
+      <methodSignature>epic(): HasOne</methodSignature>
+      <fullMethod>epic(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>flow</methodName>
+      <methodSignature>flow(): HasOne</methodSignature>
+      <fullMethod>flow(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Tagged</className>
       <methodName>matrix</methodName>
       <methodSignature>matrix(): HasOne</methodSignature>
       <fullMethod>matrix(): HasOne</fullMethod>
@@ -2741,10 +3016,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>backlogs</methodName>
-      <methodSignature>backlogs(): HasMany</methodSignature>
-      <fullMethod>backlogs(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>milestone</methodName>
+      <methodSignature>milestone(): HasOne</methodSignature>
+      <fullMethod>milestone(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2752,10 +3027,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>boards</methodName>
-      <methodSignature>boards(): HasMany</methodSignature>
-      <fullMethod>boards(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>note</methodName>
+      <methodSignature>note(): HasOne</methodSignature>
+      <fullMethod>note(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2763,10 +3038,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>epics</methodName>
-      <methodSignature>epics(): HasMany</methodSignature>
-      <fullMethod>epics(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>project</methodName>
+      <methodSignature>project(): HasOne</methodSignature>
+      <fullMethod>project(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2774,10 +3049,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>milestones</methodName>
-      <methodSignature>milestones(): HasMany</methodSignature>
-      <fullMethod>milestones(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>release</methodName>
+      <methodSignature>release(): HasOne</methodSignature>
+      <fullMethod>release(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2785,10 +3060,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>projects</methodName>
-      <methodSignature>projects(): HasMany</methodSignature>
-      <fullMethod>projects(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>roadmap</methodName>
+      <methodSignature>roadmap(): HasOne</methodSignature>
+      <fullMethod>roadmap(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2796,10 +3071,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>releases</methodName>
-      <methodSignature>releases(): HasMany</methodSignature>
-      <fullMethod>releases(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>source</methodName>
+      <methodSignature>source(): HasOne</methodSignature>
+      <fullMethod>source(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2807,10 +3082,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>roadmaps</methodName>
-      <methodSignature>roadmaps(): HasMany</methodSignature>
-      <fullMethod>roadmaps(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>sprint</methodName>
+      <methodSignature>sprint(): HasOne</methodSignature>
+      <fullMethod>sprint(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2818,10 +3093,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>sprints</methodName>
-      <methodSignature>sprints(): HasMany</methodSignature>
-      <fullMethod>sprints(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>team</methodName>
+      <methodSignature>team(): HasOne</methodSignature>
+      <fullMethod>team(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2829,10 +3104,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>teams</methodName>
-      <methodSignature>teams(): HasMany</methodSignature>
-      <fullMethod>teams(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>ticket</methodName>
+      <methodSignature>ticket(): HasOne</methodSignature>
+      <fullMethod>ticket(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2840,10 +3115,10 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Tag</className>
-      <methodName>tickets</methodName>
-      <methodSignature>tickets(): HasMany</methodSignature>
-      <fullMethod>tickets(): HasMany</fullMethod>
+      <className>Playground\Matrix\Models\Tagged</className>
+      <methodName>version</methodName>
+      <methodSignature>version(): HasOne</methodSignature>
+      <fullMethod>version(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -2995,17 +3270,6 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Team</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Team</className>
       <methodName>ticket</methodName>
       <methodSignature>ticket(): HasOne</methodSignature>
       <fullMethod>ticket(): HasOne</fullMethod>
@@ -3061,6 +3325,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Team</className>
+      <methodName>flows</methodName>
+      <methodSignature>flows(): HasMany</methodSignature>
+      <fullMethod>flows(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
       <methodName>milestones</methodName>
       <methodSignature>milestones(): HasMany</methodSignature>
       <fullMethod>milestones(): HasMany</fullMethod>
@@ -3105,6 +3380,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Team</className>
+      <methodName>sources</methodName>
+      <methodSignature>sources(): HasMany</methodSignature>
+      <fullMethod>sources(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
       <methodName>sprints</methodName>
       <methodSignature>sprints(): HasMany</methodSignature>
       <fullMethod>sprints(): HasMany</fullMethod>
@@ -3122,6 +3408,28 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
+      <methodName>versions</methodName>
+      <methodSignature>versions(): HasMany</methodSignature>
+      <fullMethod>versions(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Team</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -3262,17 +3570,6 @@
       <methodName>sprint</methodName>
       <methodSignature>sprint(): HasOne</methodSignature>
       <fullMethod>sprint(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Ticket</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -3314,6 +3611,17 @@
     <method>
       <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>duplicateBy</methodName>
+      <methodSignature>duplicateBy(): HasOne</methodSignature>
+      <fullMethod>duplicateBy(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
       <methodName>fixedBy</methodName>
       <methodSignature>fixedBy(): HasOne</methodSignature>
       <fullMethod>fixedBy(): HasOne</fullMethod>
@@ -3328,6 +3636,17 @@
       <methodName>reportedBy</methodName>
       <methodSignature>reportedBy(): HasOne</methodSignature>
       <fullMethod>reportedBy(): HasOne</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>versionFixed</methodName>
+      <methodSignature>versionFixed(): HasOne</methodSignature>
+      <fullMethod>versionFixed(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -3434,6 +3753,28 @@
     </method>
     <method>
       <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>versions</methodName>
+      <methodSignature>versions(): HasMany</methodSignature>
+      <fullMethod>versions(): HasMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Ticket</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
       <className>Playground\Matrix\Models\Version</className>
       <methodName>casts</methodName>
       <methodSignature>casts(): array</methodSignature>
@@ -3460,17 +3801,6 @@
       <methodName>project</methodName>
       <methodSignature>project(): HasOne</methodSignature>
       <fullMethod>project(): HasOne</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Matrix\Models</package>
-      <className>Playground\Matrix\Models\Version</className>
-      <methodName>tag</methodName>
-      <methodSignature>tag(): HasOne</methodSignature>
-      <fullMethod>tag(): HasOne</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -3606,6 +3936,17 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Matrix\Models</package>
+      <className>Playground\Matrix\Models\Version</className>
+      <methodName>tags</methodName>
+      <methodSignature>tags(): HasManyThrough</methodSignature>
+      <fullMethod>tags(): HasManyThrough</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
