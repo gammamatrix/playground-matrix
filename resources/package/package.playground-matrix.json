@@ -56,7 +56,9 @@
         "gammamatrix",
         "laravel",
         "matrix",
-        "playground"
+        "playground",
+        "projects",
+        "tickets"
     ],
     "package_laravel_providers": [
         "Playground/Matrix/ServiceProvider"
